@@ -1,0 +1,31 @@
+services:
+  # 入口前端（工具集首页）
+  frontend-hub:
+    build: ./frontend-hub
+    container_name: yy-crow-hub
+    ports:
+      - "3000:3000"
+    restart: always
+
+  # 深度搜索前端
+  frontend-deep-search:
+    build: 
+      context: ./frontend-deep-search
+      args:
+        - NEXT_PUBLIC_API_URL=http://yy-crow.com:8000
+    container_name: yy-crow-deep-search-ui
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend-deep-search
+    restart: always
+
+  # 深度搜索后端
+  backend-deep-search:
+    build: ./backend-deep-search
+    container_name: yy-crow-deep-search-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend-deep-search/.env
+    restart: always
