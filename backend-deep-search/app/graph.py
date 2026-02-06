@@ -140,13 +140,25 @@ async def research_node(state: AgentState):
     logs.append(log_msg)
     print(log_msg, flush=True)
 
-    # Create async tasks
+    # Create async tasks with priority
     tasks = []
+    primary_count = 0
+    secondary_count = 0
+    
     for i, topic in enumerate(sub_topics):
         q_zh = topic.get("sub_query", "")
         q_en = topic.get("sub_query_en", "")
-        # We wrap the call with metadata so we know which topic it belongs to
-        tasks.append(process_research_task(i, q_zh, q_en, domain, topic.get("reason", "")))
+        priority = topic.get("priority", "primary")
+        
+        if priority == "primary":
+            primary_count += 1
+        else:
+            secondary_count += 1
+        
+        # Pass priority to research task
+        tasks.append(process_research_task(i, q_zh, q_en, domain, topic.get("reason", ""), priority))
+    
+    print(f"LOG_CHAIN [Researcher] Dispatching {primary_count} primary + {secondary_count} secondary tasks", flush=True)
 
     # Run concurrently
     # return_exceptions=True allows one failure not to crash the whole batch
@@ -179,21 +191,27 @@ async def research_node(state: AgentState):
         "logs": logs
     }
 
-async def process_research_task(index, q_zh, q_en, domain, reason):
-    """Helper for async research task"""
+async def process_research_task(index, q_zh, q_en, domain, reason, priority="primary"):
+    """Helper for async research task with priority-based search strategy"""
     import time
     start = time.time()
-    # print(f"  Start Task {index}: {q_zh}")
-    result = await researcher.research_topic_async(query_zh=q_zh, query_en=q_en, domain=domain)
-    # print(f"  End Task {index}")
+    
+    # Pass priority to researcher for layered search
+    result = await researcher.research_topic_async(
+        query_zh=q_zh, 
+        query_en=q_en, 
+        domain=domain,
+        priority=priority
+    )
+    
     end = time.time()
-    # print(f"⏱️ [Task {index}] Search took {end - start:.2f}s", flush=True)
     
     return {
         "summary": result["summary"],
-        "logs": [], # result["logs"] + [f"⏱️ [Task {index}] Time: {end - start:.2f}s"],
+        "logs": [],
         "q_zh": q_zh,
-        "reason": reason
+        "reason": reason,
+        "priority": priority
     }
 
 async def reader_node(state: AgentState):

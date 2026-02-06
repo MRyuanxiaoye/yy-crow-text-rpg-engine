@@ -1,0 +1,120 @@
+name: deep-search
+
+services:
+  # Nginx 反向代理（入口）
+  nginx:
+    build: ./nginx
+    container_name: yy-crow-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - frontend-hub
+      - frontend-deep-search
+      - frontend-world-weaver
+      - backend-deep-search
+      - backend-world-weaver
+    restart: always
+
+  # 入口前端（工具集首页）- 开发模式
+  frontend-hub:
+    build: 
+      context: ./frontend-hub
+      target: deps  # 只构建到依赖层，获取 node_modules
+    container_name: yy-crow-hub
+    expose:
+      - "3000"
+    ports:
+      - "3001:3000"  # 开发模式暴露端口，方便直接访问
+    volumes:
+      # 挂载源码，实现热重载
+      - ./frontend-hub:/app
+      # 排除 node_modules（使用容器内的）
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+    command: sh -c "npm run dev"
+    restart: always
+
+  # 深度搜索前端 - 开发模式
+  frontend-deep-search:
+    build:
+      context: ./frontend-deep-search
+      target: builder  # 构建到 builder 阶段，获取依赖
+    container_name: yy-crow-deep-search-ui
+    expose:
+      - "3000"
+    ports:
+      - "3002:3000"  # 开发模式暴露端口
+    volumes:
+      - ./frontend-deep-search:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+    command: sh -c "npm run dev"
+    depends_on:
+      - backend-deep-search
+    restart: always
+
+  # 深度搜索后端 - 开发模式
+  backend-deep-search:
+    build: ./backend-deep-search
+    container_name: yy-crow-deep-search-api
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"  # 开发模式暴露端口
+    volumes:
+      # 挂载源码，实现热重载
+      - ./backend-deep-search:/app
+      # 排除 Python 缓存
+      - /app/__pycache__
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - ./backend-deep-search/.env
+    # 添加热重载
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload --log-level debug
+    restart: always
+
+  # 世界观构建前端 - 开发模式
+  frontend-world-weaver:
+    build:
+      context: ./frontend-world-weaver
+      target: deps  # 只构建到依赖层
+    container_name: yy-crow-world-weaver-ui
+    expose:
+      - "3000"
+    ports:
+      - "3003:3000"  # 开发模式暴露端口
+    volumes:
+      - ./frontend-world-weaver:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+    command: sh -c "npm run dev"
+    depends_on:
+      - backend-world-weaver
+    restart: always
+
+  # 世界观构建后端 - 开发模式
+  backend-world-weaver:
+    build: ./backend-world-weaver
+    container_name: yy-crow-world-weaver-api
+    expose:
+      - "8001"
+    ports:
+      - "8001:8001"  # 开发模式暴露端口
+    volumes:
+      - ./backend-world-weaver:/app
+      - /app/__pycache__
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - ./backend-deep-search/.env
+    # 添加热重载
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload --log-level debug
+    restart: always

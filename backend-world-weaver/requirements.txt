@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-dotenv
+langchain
+langchain-openai
+langchain-anthropic
+langgraph
+pydantic
+httpx
+

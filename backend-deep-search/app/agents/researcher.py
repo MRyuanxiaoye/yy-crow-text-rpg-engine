@@ -14,6 +14,10 @@ from dotenv import load_dotenv
 # Ensure .env is loaded
 load_dotenv()
 
+# Rate limiting semaphores to avoid 429 errors
+EXA_SEMAPHORE = asyncio.Semaphore(3)      # Exa: max 3 concurrent (limit 5/sec)
+BOCHA_SEMAPHORE = asyncio.Semaphore(2)    # Bocha: max 2 concurrent (more conservative)
+
 class Researcher:
     def __init__(self):
         self.tavily_key = os.getenv("TAVILY_API_KEY")
@@ -44,70 +48,96 @@ class Researcher:
         self.bocha_api_key = self.bocha_key
         self.llm = get_llm(temperature=0.3)
         
-    async def _bocha_search_async(self, query: str, count: int = 3) -> List[Dict]:
-        """Async Bocha API"""
+    async def _bocha_search_async(self, query: str, count: int = 3, retry_count: int = 0) -> List[Dict]:
+        """Async Bocha API with rate limiting"""
         if not self.bocha_api_key:
+            print("⚠️ [Researcher] Bocha API key not set, skipping search.", flush=True)
             return []
+        
+        # Use semaphore to limit concurrent requests
+        async with BOCHA_SEMAPHORE:
+            # Add delay between requests to avoid rate limit
+            await asyncio.sleep(0.5)
             
-        try:
-            url = "https://api.bochaai.com/v1/web-search"
-            headers = {
-                "Authorization": f"Bearer {self.bocha_api_key}",
-                "Content-Type": "application/json"
-            }
-            payload = {
-                "query": query,
-                "freshness": "noLimit",
-                "summary": True,
-                "count": count
-            }
-            
-            async with aiohttp.ClientSession() as session:
-                async with session.post(url, json=payload, headers=headers, timeout=10, ssl=False) as response:
-                    if response.status == 200:
-                        data = await response.json()
-                        results = []
-                        for item in data.get("data", {}).get("webPages", {}).get("value", []):
-                            results.append({
-                                "title": item.get("name"),
-                                "url": item.get("url"),
-                                "content": item.get("summary") or item.get("snippet")
-                            })
-                        return results
-        except Exception as e:
-            print(f"⚠️ [Researcher] Async Bocha Search failed: {e}")
+            try:
+                url = "https://api.bochaai.com/v1/web-search"
+                headers = {
+                    "Authorization": f"Bearer {self.bocha_api_key}",
+                    "Content-Type": "application/json"
+                }
+                payload = {
+                    "query": query,
+                    "freshness": "noLimit",
+                    "summary": True,
+                    "count": count
+                }
+                
+                async with aiohttp.ClientSession() as session:
+                    async with session.post(url, json=payload, headers=headers, timeout=15, ssl=False) as response:
+                        response_text = await response.text()
+                        
+                        # Handle 429 rate limit with retry
+                        if response.status == 429:
+                            if retry_count < 3:
+                                wait_time = (retry_count + 1) * 2
+                                print(f"⚠️ [Researcher] Bocha rate limit hit, waiting {wait_time}s before retry...", flush=True)
+                                await asyncio.sleep(wait_time)
+                                return await self._bocha_search_async(query, count, retry_count + 1)
+                            else:
+                                print(f"⚠️ [Researcher] Bocha rate limit exceeded after {retry_count} retries", flush=True)
+                                return []
+                        
+                        if response.status == 200:
+                            data = await response.json()
+                            
+                            results = []
+                            # Try multiple possible response structures
+                            web_pages = data.get("data", {}).get("webPages", {}).get("value", [])
+                            if not web_pages:
+                                web_pages = data.get("webPages", {}).get("value", [])
+                            if not web_pages:
+                                web_pages = data.get("results", [])
+                            if not web_pages:
+                                web_pages = data.get("data", {}).get("results", [])
+                            
+                            for item in web_pages:
+                                results.append({
+                                    "title": item.get("name") or item.get("title"),
+                                    "url": item.get("url"),
+                                    "content": item.get("summary") or item.get("snippet") or item.get("content", "")
+                                })
+                            
+                            if not results:
+                                print(f"⚠️ [Researcher] Bocha returned 200 but no results. Response: {response_text[:500]}", flush=True)
+                            
+                            return results
+                        else:
+                            print(f"⚠️ [Researcher] Bocha returned status {response.status}: {response_text[:300]}", flush=True)
+            except Exception as e:
+                print(f"⚠️ [Researcher] Async Bocha Search failed: {e}", flush=True)
         return []
 
     async def _exa_search_async(self, query: str) -> List[Dict]:
-        """Async Exa Wrapper (Exa SDK is sync, so we wrap it)"""
+        """Async Exa Wrapper with rate limiting (max 3 concurrent to stay under 5/sec limit)"""
         if not self.exa:
             print("⚠️ [Researcher] Exa client not initialized, skipping search.", flush=True)
             return []
             
-        # Note: Exa currently doesn't have a native async method in public SDK usually, 
-        # so we run it in a thread to not block the event loop.
-        try:
-            loop = asyncio.get_event_loop()
-            return await loop.run_in_executor(None, self._exa_search_sync_impl, query)
-        except Exception as e:
-            print(f"⚠️ [Researcher] Async Exa Search failed: {e}", flush=True)
-            return []
+        # Use semaphore to limit concurrent Exa requests
+        async with EXA_SEMAPHORE:
+            try:
+                # Add small delay between requests to avoid hitting rate limit
+                await asyncio.sleep(0.3)
+                loop = asyncio.get_event_loop()
+                return await loop.run_in_executor(None, self._exa_search_sync_impl, query)
+            except Exception as e:
+                print(f"⚠️ [Researcher] Async Exa Search failed: {e}", flush=True)
+                return []
 
-    def _exa_search_sync_impl(self, query: str) -> List[Dict]:
+    def _exa_search_sync_impl(self, query: str, retry_count: int = 0) -> List[Dict]:
         if not self.exa:
             return []
         try:
-            print(f"DEBUG: Executing Exa search for '{query}'...", flush=True)
-            # Exa SDK 2.0+ Migration:
-            # 1. Use search() instead of search_and_contents()
-            # 2. 'use_autoprompt' is valid for search() in some versions, but error says "Invalid option".
-            #    It implies for 'neural' search it might be implied or parameter name changed.
-            #    Checking docs: use_autoprompt is indeed a parameter for search(). 
-            #    However, the error `Invalid option: 'use_autoprompt'` usually comes from the API response validation 
-            #    if the SDK passes it incorrectly or if the account tier/model doesn't support it.
-            #    Safest fix: Remove it for now to unblock.
-            # 3. 'text=True' becomes 'contents={"text": True}'
-            
             response = self.exa.search(
                 query,
                 type="neural",
@@ -119,11 +149,19 @@ class Researcher:
                 {"title": r.title, "url": r.url, "content": r.text[:1500] if r.text else ""} 
                 for r in response.results
             ]
-            print(f"DEBUG: Exa returned {len(results)} results.", flush=True)
             return results
         except Exception as e:
-            print(f"❌ [Researcher] Exa API Error: {e}", flush=True)
-            return []
+            error_str = str(e)
+            # Handle rate limit (429) with exponential backoff
+            if "429" in error_str and retry_count < 3:
+                import time
+                wait_time = (retry_count + 1) * 2  # 2s, 4s, 6s
+                print(f"⚠️ [Researcher] Exa rate limit hit, waiting {wait_time}s before retry...", flush=True)
+                time.sleep(wait_time)
+                return self._exa_search_sync_impl(query, retry_count + 1)
+            else:
+                print(f"❌ [Researcher] Exa API Error: {e}", flush=True)
+                return []
 
     async def _tavily_search_async(self, query: str) -> List[Dict]:
         """Async Tavily Search"""
@@ -140,10 +178,41 @@ class Researcher:
             print(f"⚠️ [Researcher] Async Tavily Search failed: {e}")
             return []
 
-    async def research_topic_async(self, query_zh: str, query_en: str = "", domain: str = "General") -> dict:
+    async def research_topic_light_async(self, query_zh: str, query_en: str = "") -> dict:
         """
-        Execute 4-Engine Search in Parallel
+        Lightweight search for secondary/low-priority topics.
+        Only uses Tavily for faster, shallower coverage.
         """
+        logs = []
+        tavily_query = query_en if query_en else query_zh
+        logs.append(f"🔎 [Researcher] Light Search (Tavily only): {tavily_query}")
+        
+        try:
+            tavily_results = await self._tavily_search_async(tavily_query)
+            print(f"LOG_CHAIN [Researcher Light] Tavily={len(tavily_results)}", flush=True)
+            
+            if not tavily_results:
+                return {"summary": "NO_DATA", "logs": logs}
+            
+            # Quick summarization for light search
+            loop = asyncio.get_event_loop()
+            summary = await loop.run_in_executor(None, self.analyze_and_select, query_zh, tavily_results)
+            
+            return {"summary": summary, "logs": logs}
+        except Exception as e:
+            print(f"⚠️ [Researcher Light] Failed: {e}", flush=True)
+            return {"summary": "NO_DATA", "logs": logs}
+
+    async def research_topic_async(self, query_zh: str, query_en: str = "", domain: str = "General", priority: str = "primary") -> dict:
+        """
+        Execute multi-engine search.
+        - primary: Full search (Exa + Bocha + Tavily)
+        - secondary: Light search (Tavily only)
+        """
+        # Route to light search for secondary topics
+        if priority == "secondary":
+            return await self.research_topic_light_async(query_zh, query_en)
+        
         logs = []
         tasks = []
         

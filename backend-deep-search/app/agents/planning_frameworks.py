@@ -1,12 +1,110 @@
 """
 Planning Frameworks for Different Query Types and Domains
 Provides structured analysis templates to guide LLM planning
+
+V2: Added person framework and framework fusion logic
 """
 
+from typing import List, Dict
+
 FRAMEWORKS = {
-    # ========== Case Study (案例研究) ==========
+    # ========== Person Analysis (人物分析) ==========
+    "person_history": {
+        "name": "历史人物深度分析框架",
+        "entity_type": "person",
+        "mandatory_dimensions": [
+            {
+                "dimension": "Life Overview",
+                "description": "生平概述：出生、成长、关键转折、结局",
+                "search_hint": "生卒年、早年经历、人生轨迹"
+            },
+            {
+                "dimension": "Character & Motivation",
+                "description": "性格特点与内在动机",
+                "search_hint": "性格、野心、驱动力、价值观"
+            },
+            {
+                "dimension": "Key Decisions & Actions",
+                "description": "关键决策与行动",
+                "search_hint": "重要决定、转折点、标志性事件"
+            },
+            {
+                "dimension": "Relationships & Networks",
+                "description": "人际关系与政治网络",
+                "search_hint": "盟友、敌人、家族、政治联盟"
+            },
+            {
+                "dimension": "Historical Evaluation",
+                "description": "历史评价与争议",
+                "search_hint": "后世评价、功过争议、不同史料观点"
+            }
+        ]
+    },
+    
+    "person_general": {
+        "name": "人物分析框架",
+        "entity_type": "person",
+        "mandatory_dimensions": [
+            {
+                "dimension": "Background & Early Life",
+                "description": "背景与早年经历",
+                "search_hint": "出生、成长环境、教育"
+            },
+            {
+                "dimension": "Achievements & Contributions",
+                "description": "成就与贡献",
+                "search_hint": "主要成就、代表作品、核心贡献"
+            },
+            {
+                "dimension": "Key Events",
+                "description": "关键事件",
+                "search_hint": "人生转折点、重要决定"
+            },
+            {
+                "dimension": "Legacy & Impact",
+                "description": "影响与遗产",
+                "search_hint": "对后世的影响、历史地位"
+            }
+        ]
+    },
+
+    # ========== Event Analysis (事件分析) ==========
+    "event_history": {
+        "name": "历史事件深度分析框架",
+        "entity_type": "event",
+        "mandatory_dimensions": [
+            {
+                "dimension": "Background & Causes",
+                "description": "背景与起因",
+                "search_hint": "历史背景、导火索、深层原因"
+            },
+            {
+                "dimension": "Key Phases & Timeline",
+                "description": "关键阶段与时间线",
+                "search_hint": "时间节点、阶段划分、进程演变"
+            },
+            {
+                "dimension": "Core Actors",
+                "description": "核心人物与势力",
+                "search_hint": "关键人物、主要势力、角色作用"
+            },
+            {
+                "dimension": "Mechanisms & Dynamics",
+                "description": "机制与动态",
+                "search_hint": "运作机制、力量对比、关键转折"
+            },
+            {
+                "dimension": "Consequences & Impact",
+                "description": "后果与影响",
+                "search_hint": "直接后果、长远影响、历史意义"
+            }
+        ]
+    },
+
+    # ========== Case Study (案例研究) - 保留兼容 ==========
     "case_study_history": {
         "name": "历史案例深度分析框架",
+        "entity_type": "event",
         "mandatory_dimensions": [
             {
                 "dimension": "Background Context",
@@ -224,7 +322,7 @@ def select_framework(query_type: str, domain: str = "general") -> dict:
     Select appropriate framework based on query classification
     
     Args:
-        query_type: Type of query (case_study, why, how, compare, trend, what)
+        query_type: Type of query (person, event, case_study, why, how, compare, trend, what)
         domain: Domain of the query (history, tech, science, philosophy, business, general)
     
     Returns:
@@ -242,4 +340,65 @@ def select_framework(query_type: str, domain: str = "general") -> dict:
     
     # Ultimate fallback: case_study_general
     return FRAMEWORKS["case_study_general"]
+
+
+def select_fused_framework(
+    primary_type: str, 
+    secondary_types: List[str], 
+    domain: str = "general"
+) -> Dict:
+    """
+    Fuse multiple frameworks: primary framework gets all dimensions (for deep-dive),
+    secondary frameworks contribute 2 dimensions each (for shallow coverage).
+    
+    Args:
+        primary_type: Main entity type (person, event, concept, etc.)
+        secondary_types: Related entity types
+        domain: Domain context
+    
+    Returns:
+        Fused framework with primary and secondary dimensions marked
+    """
+    # Get primary framework
+    primary_fw = select_framework(primary_type, domain)
+    
+    primary_dims = []
+    for dim in primary_fw.get("mandatory_dimensions", []):
+        dim_copy = dict(dim)
+        dim_copy["priority"] = "primary"
+        primary_dims.append(dim_copy)
+    
+    # Get secondary dimensions (only top 2 from each secondary framework)
+    secondary_dims = []
+    for sec_type in secondary_types[:2]:  # Max 2 secondary types
+        sec_fw = select_framework(sec_type, domain)
+        for dim in sec_fw.get("mandatory_dimensions", [])[:2]:  # Max 2 dims per secondary
+            dim_copy = dict(dim)
+            dim_copy["priority"] = "secondary"
+            dim_copy["source_type"] = sec_type
+            secondary_dims.append(dim_copy)
+    
+    return {
+        "name": f"{primary_fw['name']}（融合）",
+        "primary_type": primary_type,
+        "secondary_types": secondary_types,
+        "primary_dimensions": primary_dims,
+        "secondary_dimensions": secondary_dims,
+        "all_dimensions": primary_dims + secondary_dims
+    }
+
+
+def get_entity_type_hint(entity_name: str) -> str:
+    """
+    Provide hints for LLM to determine entity type.
+    This is used in the classification prompt.
+    """
+    return """
+    判断实体类型：
+    - 'person': 具体的人物（如"安禄山"、"李白"、"乔布斯"）
+    - 'event': 历史事件或事件系列（如"安史之乱"、"工业革命"、"911事件"）
+    - 'concept': 抽象概念或理论（如"量子力学"、"民主制度"、"机器学习"）
+    - 'thing': 具体事物（如"德文卷毛猫"、"特斯拉Model 3"、"长城"）
+    - 'organization': 组织机构（如"苹果公司"、"唐朝政府"、"NASA"）
+    """
 

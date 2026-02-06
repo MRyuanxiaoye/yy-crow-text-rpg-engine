@@ -29,6 +29,7 @@ ENV NODE_ENV=production
 
 # Copy necessary files from builder
 COPY --from=builder /app/package.json ./
+COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/.next ./.next
 # Only copy public if it exists in builder (it should now)
 COPY --from=builder /app/public ./public

@@ -3,3 +3,7 @@ node_modules/
 .env
 __pycache__/
 .DS_Store
+
+# SSL 证书文件（敏感信息，不要提交）
+nginx/certs/*.pem
+nginx/certs/*.key

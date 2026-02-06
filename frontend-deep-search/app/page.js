@@ -4,7 +4,12 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useState, useEffect, useRef } from 'react';
 import { Send, Sparkles, BookOpen, Search, Mic, ArrowUp, Square, Loader2, Copy, Check } from 'lucide-react';
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+// 区分环境：
+// - 本地开发：直接访问 localhost:8000
+// - 生产环境：通过 Nginx 代理，使用相对路径 /api/deep-search
+const IS_PRODUCTION = typeof window !== 'undefined' && !window.location.hostname.includes('localhost');
+const API_BASE_URL = IS_PRODUCTION ? '/api/deep-search' : 'http://localhost:8000';
 
 export default function Chat() {
   const [query, setQuery] = useState('');
