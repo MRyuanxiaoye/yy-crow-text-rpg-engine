@@ -1,0 +1,108 @@
+{
+  "lottery_type": "daletou",
+  "rule_scorer_info": {
+    "n_combo_rules": 350,
+    "n_position_rules": 150,
+    "n_a1_patterns": 9298
+  },
+  "baseline_topk": {
+    "survival_rate": 0.8211764705882353,
+    "avg_combo_count": 167615.85411764705,
+    "combo_reduction": 0.48367427081234426,
+    "efficiency": 0.39718193062001916
+  },
+  "beam_search": {
+    "bw200_rw0.0": {
+      "beam_width": 200,
+      "rule_weight": 0.0,
+      "rules_enabled": false,
+      "survival_rate": 0.18352941176470589,
+      "avg_combo_count": 200.0,
+      "combo_reduction": 0.9993839177899899,
+      "efficiency": 0.18341634255910402,
+      "avg_rule_score_hit": 0.2058879438114992,
+      "avg_rule_score_miss": 0.16749681202335032
+    },
+    "bw200_rw0.1": {
+      "beam_width": 200,
+      "rule_weight": 0.1,
+      "rules_enabled": true,
+      "survival_rate": 0.18352941176470589,
+      "avg_combo_count": 200.0,
+      "combo_reduction": 0.9993839177899899,
+      "efficiency": 0.18341634255910402,
+      "avg_rule_score_hit": 0.2058879438114992,
+      "avg_rule_score_miss": 0.16749681202335032
+    },
+    "bw200_rw0.2": {
+      "beam_width": 200,
+      "rule_weight": 0.2,
+      "rules_enabled": true,
+      "survival_rate": 0.18352941176470589,
+      "avg_combo_count": 200.0,
+      "combo_reduction": 0.9993839177899899,
+      "efficiency": 0.18341634255910402,
+      "avg_rule_score_hit": 0.2058879438114992,
+      "avg_rule_score_miss": 0.16749681202335032
+    },
+    "bw200_rw0.3": {
+      "beam_width": 200,
+      "rule_weight": 0.3,
+      "rules_enabled": true,
+      "survival_rate": 0.18352941176470589,
+      "avg_combo_count": 200.0,
+      "combo_reduction": 0.9993839177899899,
+      "efficiency": 0.18341634255910402,
+      "avg_rule_score_hit": 0.2058879438114992,
+      "avg_rule_score_miss": 0.16749681202335032
+    },
+    "bw200_rw0.5": {
+      "beam_width": 200,
+      "rule_weight": 0.5,
+      "rules_enabled": true,
+      "survival_rate": 0.18352941176470589,
+      "avg_combo_count": 200.0,
+      "combo_reduction": 0.9993839177899899,
+      "efficiency": 0.18341634255910402,
+      "avg_rule_score_hit": 0.2058879438114992,
+      "avg_rule_score_miss": 0.16749681202335032
+    },
+    "bw500_rw0.0": {
+      "beam_width": 500,
+      "rule_weight": 0.0,
+      "rules_enabled": false,
+      "survival_rate": 0.2635294117647059,
+      "avg_combo_count": 500.0,
+      "combo_reduction": 0.9984597944749748,
+      "efficiency": 0.26312352230869923,
+      "avg_rule_score_hit": 0.19989209299101615,
+      "avg_rule_score_miss": 0.1654720095028936
+    },
+    "bw500_rw0.2": {
+      "beam_width": 500,
+      "rule_weight": 0.2,
+      "rules_enabled": true,
+      "survival_rate": 0.2635294117647059,
+      "avg_combo_count": 500.0,
+      "combo_reduction": 0.9984597944749748,
+      "efficiency": 0.26312352230869923,
+      "avg_rule_score_hit": 0.19989209299101615,
+      "avg_rule_score_miss": 0.1654720095028936
+    },
+    "bw500_rw0.3": {
+      "beam_width": 500,
+      "rule_weight": 0.3,
+      "rules_enabled": true,
+      "survival_rate": 0.2635294117647059,
+      "avg_combo_count": 500.0,
+      "combo_reduction": 0.9984597944749748,
+      "efficiency": 0.26312352230869923,
+      "avg_rule_score_hit": 0.19989209299101615,
+      "avg_rule_score_miss": 0.1654720095028936
+    }
+  },
+  "best_beam_config": "bw500_rw0.0",
+  "best_beam_efficiency": 0.26312352230869923,
+  "rule_improvement": 0.07970717974959521,
+  "improvement_over_topk": -0.13405840831131993
+}

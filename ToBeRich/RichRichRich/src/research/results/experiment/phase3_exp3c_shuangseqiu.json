@@ -1,0 +1,47 @@
+{
+  "per_position": {
+    "P0": {
+      "direction_accuracy": 0.814453125,
+      "avg_reduction": 0.3536931818181818,
+      "avg_survival": 0.9296875,
+      "efficiency": 0.32882412997159094
+    },
+    "P1": {
+      "direction_accuracy": 0.875,
+      "avg_reduction": 0.33812736742424243,
+      "avg_survival": 0.93359375,
+      "efficiency": 0.3156735969312263
+    },
+    "P2": {
+      "direction_accuracy": 0.91015625,
+      "avg_reduction": 0.3916903409090909,
+      "avg_survival": 0.94921875,
+      "efficiency": 0.3717998157848011
+    },
+    "P3": {
+      "direction_accuracy": 0.884765625,
+      "avg_reduction": 0.3668323863636363,
+      "avg_survival": 0.931640625,
+      "efficiency": 0.3417559537020596
+    },
+    "P4": {
+      "direction_accuracy": 0.865234375,
+      "avg_reduction": 0.32765151515151514,
+      "avg_survival": 0.9375,
+      "efficiency": 0.3071732954545454
+    },
+    "P5": {
+      "direction_accuracy": 0.857421875,
+      "avg_reduction": 0.36600378787878785,
+      "avg_survival": 0.9375,
+      "efficiency": 0.3431285511363636
+    }
+  },
+  "overall": {
+    "direction_accuracy": 0.8678385416666666,
+    "avg_reduction": 0.357333096590909,
+    "avg_survival": 0.9365234375,
+    "efficiency": 0.33465081995183765
+  },
+  "method": "3C_mlp"
+}

@@ -1,0 +1,143 @@
+{
+  "daletou": {
+    "G0": {
+      "description": "基线 (A1+A2+局面)",
+      "n_features": 1909,
+      "xgboost": {
+        "direction_accuracy": 0.8390588235294117,
+        "efficiency": 0.23276405180425108,
+        "avg_reduction": 0.2499361344537815,
+        "avg_survival": 0.9312941176470588
+      },
+      "mlp": {
+        "direction_accuracy": 0.8767058823529412,
+        "efficiency": 0.33477409787444384,
+        "avg_reduction": 0.3556974789915966,
+        "avg_survival": 0.9411764705882353
+      }
+    },
+    "G1": {
+      "description": "G0 + Transformer 概率特征",
+      "n_features": 1924,
+      "xgboost": {
+        "direction_accuracy": 0.8367058823529412,
+        "efficiency": 0.2279627230845279,
+        "avg_reduction": 0.24441008403361342,
+        "avg_survival": 0.9327058823529412
+      },
+      "mlp": {
+        "direction_accuracy": 0.8828235294117647,
+        "efficiency": 0.34267755689569945,
+        "avg_reduction": 0.36354957983193276,
+        "avg_survival": 0.9425882352941176
+      }
+    },
+    "transformer_importance": {},
+    "conclusion": {
+      "transformer_useful": "有用",
+      "best_accuracy_delta": 0.00611764705882345,
+      "caveat": "Transformer模型用全量数据训练，存在数据泄露风险，结果仅供参考"
+    }
+  },
+  "shuangseqiu": {
+    "G0": {
+      "description": "基线 (A1+A2+局面)",
+      "n_features": 2494,
+      "xgboost": {
+        "direction_accuracy": 0.7874348958333334,
+        "efficiency": 0.19621888234559132,
+        "avg_reduction": 0.21054292929292928,
+        "avg_survival": 0.9319661458333334
+      },
+      "mlp": {
+        "direction_accuracy": 0.8649088541666666,
+        "efficiency": 0.3300629304314302,
+        "avg_reduction": 0.3534169823232323,
+        "avg_survival": 0.9339192708333334
+      }
+    },
+    "G1": {
+      "description": "G0 + Transformer 概率特征",
+      "n_features": 2512,
+      "xgboost": {
+        "direction_accuracy": 0.7848307291666666,
+        "efficiency": 0.20277471574468645,
+        "avg_reduction": 0.21689551767676765,
+        "avg_survival": 0.9348958333333334
+      },
+      "mlp": {
+        "direction_accuracy": 0.8678385416666666,
+        "efficiency": 0.33465081995183765,
+        "avg_reduction": 0.357333096590909,
+        "avg_survival": 0.9365234375
+      }
+    },
+    "transformer_importance": {
+      "P0": [
+        [
+          "transformer_P3_prob_U",
+          0.018467005342245102
+        ],
+        [
+          "transformer_P0_prob_E",
+          0.010597671382129192
+        ]
+      ],
+      "P1": [
+        [
+          "transformer_P3_prob_U",
+          0.02019677683711052
+        ],
+        [
+          "transformer_P0_prob_E",
+          0.01278846338391304
+        ],
+        [
+          "transformer_P0_prob_D",
+          0.011221337132155895
+        ],
+        [
+          "transformer_P3_prob_D",
+          0.009037592448294163
+        ]
+      ],
+      "P2": [
+        [
+          "transformer_P0_prob_D",
+          0.01802026852965355
+        ]
+      ],
+      "P3": [
+        [
+          "transformer_P4_prob_U",
+          0.011353570967912674
+        ]
+      ],
+      "P4": [
+        [
+          "transformer_P4_prob_U",
+          0.014379782602190971
+        ],
+        [
+          "transformer_P2_prob_U",
+          0.011523524299263954
+        ],
+        [
+          "transformer_P4_prob_D",
+          0.011456530541181564
+        ]
+      ],
+      "P5": [
+        [
+          "transformer_P4_prob_D",
+          0.016576986759901047
+        ]
+      ]
+    },
+    "conclusion": {
+      "transformer_useful": "无用",
+      "best_accuracy_delta": 0.0029296875,
+      "caveat": "Transformer模型用全量数据训练，存在数据泄露风险，结果仅供参考"
+    }
+  }
+}

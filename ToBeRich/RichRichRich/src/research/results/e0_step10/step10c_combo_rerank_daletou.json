@@ -1,0 +1,61 @@
+{
+  "lottery_type": "daletou",
+  "evaluations": {
+    "tight": {
+      "n_periods": 1133,
+      "confidence_level": "tight",
+      "avg_hit_positions": 3.005295675198588,
+      "all_hit_rate": 0.0997352162400706,
+      "avg_reduction_ratio": 0.3556525028369688,
+      "avg_combo_compression": 0.005179202768820687,
+      "median_combo_compression": 0.0044333527696793,
+      "position_hit_rates": {
+        "P0": 0.6407766990291263,
+        "P1": 0.5851721094439541,
+        "P2": 0.5842894969108562,
+        "P3": 0.5666372462488968,
+        "P4": 0.6284201235657546
+      },
+      "random_baseline_hit_rate": 0.3556525028369688,
+      "hit_rate_lift": 1.690018009841599
+    },
+    "medium": {
+      "n_periods": 1133,
+      "confidence_level": "medium",
+      "avg_hit_positions": 4.3045013239187995,
+      "all_hit_rate": 0.531332744924978,
+      "avg_reduction_ratio": 0.5721497919556172,
+      "avg_combo_compression": 0.0555979247708697,
+      "median_combo_compression": 0.04790324031653478,
+      "position_hit_rates": {
+        "P0": 0.8631950573698146,
+        "P1": 0.8649602824360106,
+        "P2": 0.8676081200353045,
+        "P3": 0.8411297440423654,
+        "P4": 0.8676081200353045
+      },
+      "random_baseline_hit_rate": 0.5721497919556172,
+      "hit_rate_lift": 1.5046763572895638
+    },
+    "loose": {
+      "n_periods": 1133,
+      "confidence_level": "loose",
+      "avg_hit_positions": 4.3045013239187995,
+      "all_hit_rate": 0.531332744924978,
+      "avg_reduction_ratio": 0.5721497919556172,
+      "avg_combo_compression": 0.0555979247708697,
+      "median_combo_compression": 0.04790324031653478,
+      "position_hit_rates": {
+        "P0": 0.8631950573698146,
+        "P1": 0.8649602824360106,
+        "P2": 0.8676081200353045,
+        "P3": 0.8411297440423654,
+        "P4": 0.8676081200353045
+      },
+      "random_baseline_hit_rate": 0.5721497919556172,
+      "hit_rate_lift": 1.5046763572895638
+    }
+  },
+  "best_confidence_level": "tight",
+  "best_hit_rate_lift": 1.690018009841599
+}

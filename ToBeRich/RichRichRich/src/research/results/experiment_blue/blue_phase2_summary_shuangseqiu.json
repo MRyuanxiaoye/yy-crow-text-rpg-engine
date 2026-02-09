@@ -1,0 +1,21 @@
+{
+  "lottery_type": "shuangseqiu",
+  "ball_type": "blue",
+  "n_draws": 3413,
+  "blue_count": 1,
+  "blue_range": 16,
+  "split1": 2047,
+  "split2": 2901,
+  "train_samples": 854,
+  "test_samples": 512,
+  "n_features": 127,
+  "n_a2_clusters": 50,
+  "n_a1_patterns": 58,
+  "train_Y_distribution": {
+    "P0": {
+      "D": 411,
+      "E": 57,
+      "U": 386
+    }
+  }
+}

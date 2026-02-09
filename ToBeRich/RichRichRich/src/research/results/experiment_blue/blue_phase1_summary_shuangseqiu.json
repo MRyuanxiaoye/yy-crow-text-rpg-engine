@@ -1,0 +1,8 @@
+{
+  "lottery_type": "shuangseqiu",
+  "ball_type": "blue",
+  "n_clusters": 50,
+  "silhouette_score": 0.2816053628921509,
+  "n_a2_rules_input": 129,
+  "a1_filtered_count": 58
+}

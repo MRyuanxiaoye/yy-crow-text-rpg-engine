@@ -1,0 +1,48 @@
+{
+  "methods": [
+    {
+      "method": "3B_xgboost",
+      "direction_accuracy": 0.9670588235294117,
+      "avg_reduction": 0.43823529411764706,
+      "avg_survival": 0.9835294117647059,
+      "efficiency": 0.4310173010380623,
+      "per_position": {
+        "P0": {
+          "direction_accuracy": 0.9670588235294117,
+          "avg_reduction": 0.44823529411764707,
+          "avg_survival": 0.9811764705882353,
+          "efficiency": 0.43979792387543254
+        },
+        "P1": {
+          "direction_accuracy": 0.9670588235294117,
+          "avg_reduction": 0.42823529411764705,
+          "avg_survival": 0.9858823529411764,
+          "efficiency": 0.4221896193771626
+        }
+      }
+    },
+    {
+      "method": "3A_statistical",
+      "direction_accuracy": 0.8223529411764706,
+      "avg_reduction": 0.3019607843137255,
+      "avg_survival": 0.9729411764705882,
+      "efficiency": 0.29379008073817764,
+      "per_position": {
+        "P0": {
+          "direction_accuracy": 0.8188235294117647,
+          "avg_reduction": 0.3452941176470588,
+          "avg_survival": 0.9788235294117648,
+          "efficiency": 0.33798200692041525
+        },
+        "P1": {
+          "direction_accuracy": 0.8258823529411765,
+          "avg_reduction": 0.2586274509803922,
+          "avg_survival": 0.9670588235294117,
+          "efficiency": 0.25010795847750866
+        }
+      }
+    }
+  ],
+  "best_method": "3B_xgboost",
+  "best_efficiency": 0.4310173010380623
+}

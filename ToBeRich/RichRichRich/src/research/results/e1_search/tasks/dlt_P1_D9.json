@@ -1,0 +1,75 @@
+{
+  "status": "completed",
+  "position": 1,
+  "dimensions": [
+    "D9"
+  ],
+  "n_patterns_found": 2,
+  "n_validated": 0,
+  "n_insufficient": 0,
+  "validation_rate": 0.0,
+  "uncond_mean": 7.1643109540636045,
+  "uncond_std": 5.401280071407682,
+  "uncond_iqr": 8.0,
+  "patterns": [
+    {
+      "dimension": "D9",
+      "condition": "(2, 2)",
+      "support": 140,
+      "ks_stat": 0.1665236412586236,
+      "ks_p": 0.0013221437380756692,
+      "js_divergence": 0.03270795661287694,
+      "mean": 5.7,
+      "median": 4.5,
+      "std": 4.700607863427271,
+      "q10": 1.0,
+      "q25": 2.75,
+      "q50": 4.5,
+      "q75": 7.0,
+      "q90": 12.0,
+      "iqr": 4.25,
+      "concentration": 0.53125,
+      "mean_shift_sigma": 0.27110442982120264,
+      "validation": {
+        "status": "invalid",
+        "n_test": 133,
+        "ks_stat": 0.10094681147312726,
+        "ks_p": 0.1641659244590383,
+        "test_mean": 5.586466165413534,
+        "test_median": 5.0,
+        "train_test_mean_diff": 0.11353383458646604
+      }
+    },
+    {
+      "dimension": "D9",
+      "condition": "(3, 3)",
+      "support": 203,
+      "ks_stat": 0.13774246142955782,
+      "ks_p": 0.0018247838836369904,
+      "js_divergence": 0.02955957317517818,
+      "mean": 5.719211822660099,
+      "median": 5.0,
+      "std": 3.9172443528152767,
+      "q10": 1.0,
+      "q25": 3.0,
+      "q50": 5.0,
+      "q75": 8.0,
+      "q90": 11.0,
+      "iqr": 5.0,
+      "concentration": 0.625,
+      "mean_shift_sigma": 0.26754752804863974,
+      "validation": {
+        "status": "invalid",
+        "n_test": 128,
+        "ks_stat": 0.040536816578483244,
+        "ks_p": 0.9872391376998172,
+        "test_mean": 6.4921875,
+        "test_median": 6.0,
+        "train_test_mean_diff": 0.7729756773399012
+      }
+    }
+  ],
+  "task_id": "dlt_P1_D9",
+  "lottery": "daletou",
+  "elapsed_seconds": 0.2
+}

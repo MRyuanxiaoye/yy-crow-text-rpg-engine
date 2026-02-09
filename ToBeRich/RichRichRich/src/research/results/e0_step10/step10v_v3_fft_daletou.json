@@ -1,0 +1,220 @@
+{
+  "lottery_type": "daletou",
+  "positions": {
+    "P0": {
+      "n_points": 2832,
+      "fisher_g": 0.009473443825510087,
+      "fisher_p": 0.0020027560625254866,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.4939971751412429,
+          "period": 2.0243030736240173,
+          "power": 1858519.3460450957,
+          "power_ratio": 0.009473443825510087
+        },
+        {
+          "frequency": 0.379590395480226,
+          "period": 2.6344186046511626,
+          "power": 1406269.842064607,
+          "power_ratio": 0.007168189225825116
+        },
+        {
+          "frequency": 0.4385593220338983,
+          "period": 2.2801932367149758,
+          "power": 1378071.0633268016,
+          "power_ratio": 0.007024451391247791
+        },
+        {
+          "frequency": 0.3471045197740113,
+          "period": 2.880976602238047,
+          "power": 1373633.571742694,
+          "power_ratio": 0.007001832133967702
+        },
+        {
+          "frequency": 0.4682203389830508,
+          "period": 2.1357466063348416,
+          "power": 1364113.645856679,
+          "power_ratio": 0.006953306148324292
+        }
+      ],
+      "significant_value_periods": [
+        {
+          "value": 3,
+          "fisher_g": 0.00937662611597261,
+          "fisher_p": 0.0022998060879680315,
+          "peak_period": 17.374233128834355
+        }
+      ]
+    },
+    "P1": {
+      "n_points": 2832,
+      "fisher_g": 0.007887265676778173,
+      "fisher_p": 0.01927135846870636,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.3237994350282486,
+          "period": 3.0883315158124316,
+          "power": 2416439.757654648,
+          "power_ratio": 0.007887265676778173
+        },
+        {
+          "frequency": 0.4375,
+          "period": 2.2857142857142856,
+          "power": 2151130.8433599677,
+          "power_ratio": 0.007021296687966834
+        },
+        {
+          "frequency": 0.3937146892655367,
+          "period": 2.5399103139013453,
+          "power": 1881179.799857988,
+          "power_ratio": 0.006140175777305211
+        },
+        {
+          "frequency": 0.379590395480226,
+          "period": 2.6344186046511626,
+          "power": 1636289.8948118137,
+          "power_ratio": 0.005340854487982093
+        },
+        {
+          "frequency": 0.3852401129943503,
+          "period": 2.5957836846929423,
+          "power": 1628202.8676006843,
+          "power_ratio": 0.005314458410054861
+        }
+      ],
+      "significant_value_periods": [
+        {
+          "value": 8,
+          "fisher_g": 0.008485920861978951,
+          "fisher_p": 0.008203252999672034,
+          "peak_period": 2.5285714285714285
+        }
+      ]
+    },
+    "P2": {
+      "n_points": 2832,
+      "fisher_g": 0.008274070007571473,
+      "fisher_p": 0.011098756050269207,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.3361581920903955,
+          "period": 2.9747899159663866,
+          "power": 2736451.1695013233,
+          "power_ratio": 0.008274070007571473
+        },
+        {
+          "frequency": 0.4375,
+          "period": 2.2857142857142856,
+          "power": 2452191.80049974,
+          "power_ratio": 0.007414569225814126
+        },
+        {
+          "frequency": 0.5,
+          "period": 2.0,
+          "power": 2211168.9999999995,
+          "power_ratio": 0.006685800685384002
+        },
+        {
+          "frequency": 0.394774011299435,
+          "period": 2.5330948121645798,
+          "power": 2160212.611654919,
+          "power_ratio": 0.006531726412398883
+        },
+        {
+          "frequency": 0.3979519774011299,
+          "period": 2.512866015971606,
+          "power": 2043459.9261416795,
+          "power_ratio": 0.006178707179212799
+        }
+      ],
+      "significant_value_periods": []
+    },
+    "P3": {
+      "n_points": 2832,
+      "fisher_g": 0.009250581750554918,
+      "fisher_p": 0.0027534490080046914,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.4865819209039548,
+          "period": 2.0551523947750363,
+          "power": 2657008.0379128107,
+          "power_ratio": 0.009250581750554918
+        },
+        {
+          "frequency": 0.3361581920903955,
+          "period": 2.9747899159663866,
+          "power": 2493702.575859404,
+          "power_ratio": 0.00868202098390256
+        },
+        {
+          "frequency": 0.4336158192090395,
+          "period": 2.3061889250814334,
+          "power": 2044595.564250888,
+          "power_ratio": 0.007118419720243786
+        },
+        {
+          "frequency": 0.4375,
+          "period": 2.2857142857142856,
+          "power": 1875499.146763988,
+          "power_ratio": 0.006529697288332248
+        },
+        {
+          "frequency": 0.2923728813559322,
+          "period": 3.420289855072464,
+          "power": 1807536.4380484293,
+          "power_ratio": 0.006293079790759191
+        }
+      ],
+      "significant_value_periods": []
+    },
+    "P4": {
+      "n_points": 2832,
+      "fisher_g": 0.01155121353004589,
+      "fisher_p": 0.00010261655299873173,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.4699858757062147,
+          "period": 2.127723516153268,
+          "power": 2000767.583236433,
+          "power_ratio": 0.01155121353004589
+        },
+        {
+          "frequency": 0.3548728813559322,
+          "period": 2.8179104477611943,
+          "power": 1346511.322438009,
+          "power_ratio": 0.007773936331448398
+        },
+        {
+          "frequency": 0.452683615819209,
+          "period": 2.2090483619344776,
+          "power": 1184446.9962598719,
+          "power_ratio": 0.006838275611546856
+        },
+        {
+          "frequency": 0.4470338983050847,
+          "period": 2.2369668246445498,
+          "power": 1141374.3068921708,
+          "power_ratio": 0.006589600135010581
+        },
+        {
+          "frequency": 0.3979519774011299,
+          "period": 2.512866015971606,
+          "power": 1082149.322439479,
+          "power_ratio": 0.0062476711436281526
+        }
+      ],
+      "significant_value_periods": []
+    }
+  },
+  "summary": {
+    "n_positions": 5,
+    "n_significant_diff_periodicity": 5,
+    "n_significant_value_periods": 2,
+    "has_periodic_component": true
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "lottery_type": "shuangseqiu",
+  "positions": {
+    "P0": {
+      "n_points": 3412,
+      "fisher_g": 0.00811194886407909,
+      "fisher_p": 0.0015878585669590072,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.3980070339976553,
+          "period": 2.5125184094256263,
+          "power": 1258738.7466949818,
+          "power_ratio": 0.00811194886407909
+        },
+        {
+          "frequency": 0.4935521688159437,
+          "period": 2.026128266033254,
+          "power": 1055876.8962294746,
+          "power_ratio": 0.006804604538841267
+        },
+        {
+          "frequency": 0.46453692848769046,
+          "period": 2.1526813880126183,
+          "power": 994067.3165380704,
+          "power_ratio": 0.006406272358249077
+        },
+        {
+          "frequency": 0.33440797186400933,
+          "period": 2.9903593339176164,
+          "power": 944178.2957245208,
+          "power_ratio": 0.00608476228574111
+        },
+        {
+          "frequency": 0.36313012895662367,
+          "period": 2.7538337368845847,
+          "power": 910168.4884710707,
+          "power_ratio": 0.005865585893466259
+        }
+      ],
+      "significant_value_periods": []
+    },
+    "P1": {
+      "n_points": 3412,
+      "fisher_g": 0.009828698077008143,
+      "fisher_p": 8.281333616705549e-05,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.3980070339976553,
+          "period": 2.5125184094256263,
+          "power": 2544003.10551696,
+          "power_ratio": 0.009828698077008143
+        },
+        {
+          "frequency": 0.44255568581477134,
+          "period": 2.2596026490066228,
+          "power": 2516337.622427622,
+          "power_ratio": 0.009721813112972526
+        },
+        {
+          "frequency": 0.35756154747948415,
+          "period": 2.79672131147541,
+          "power": 2115086.974000793,
+          "power_ratio": 0.008171590368338871
+        },
+        {
+          "frequency": 0.4909144196951934,
+          "period": 2.0370149253731347,
+          "power": 1723596.6634710063,
+          "power_ratio": 0.006659076466949775
+        },
+        {
+          "frequency": 0.3601992966002344,
+          "period": 2.7762408462164365,
+          "power": 1525589.8120102962,
+          "power_ratio": 0.005894081504496359
+        }
+      ],
+      "significant_value_periods": []
+    },
+    "P2": {
+      "n_points": 3412,
+      "fisher_g": 0.006633345577857453,
+      "fisher_p": 0.020128364687004515,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.48622508792497066,
+          "period": 2.05666063893912,
+          "power": 2112823.5824044226,
+          "power_ratio": 0.006633345577857453
+        },
+        {
+          "frequency": 0.4393317702227432,
+          "period": 2.276184122748499,
+          "power": 2081008.7370629057,
+          "power_ratio": 0.006533460823913063
+        },
+        {
+          "frequency": 0.4768464243845252,
+          "period": 2.0971112476951443,
+          "power": 1700472.3584121554,
+          "power_ratio": 0.005338742379098927
+        },
+        {
+          "frequency": 0.35756154747948415,
+          "period": 2.79672131147541,
+          "power": 1472255.9233200955,
+          "power_ratio": 0.004622242197484361
+        },
+        {
+          "frequency": 0.4337631887456037,
+          "period": 2.3054054054054056,
+          "power": 1469482.1205403097,
+          "power_ratio": 0.00461353366518835
+        }
+      ],
+      "significant_value_periods": []
+    },
+    "P3": {
+      "n_points": 3412,
+      "fisher_g": 0.006576304039975201,
+      "fisher_p": 0.022198671603267283,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.3599062133645955,
+          "period": 2.7785016286644955,
+          "power": 2146914.0402813954,
+          "power_ratio": 0.006576304039975201
+        },
+        {
+          "frequency": 0.4577960140679953,
+          "period": 2.18437900128041,
+          "power": 2040578.6109651825,
+          "power_ratio": 0.006250583447401755
+        },
+        {
+          "frequency": 0.3601992966002344,
+          "period": 2.7762408462164365,
+          "power": 1982391.3540285465,
+          "power_ratio": 0.006072347576897447
+        },
+        {
+          "frequency": 0.4399179366940211,
+          "period": 2.273151232511659,
+          "power": 1878542.0696258862,
+          "power_ratio": 0.005754242400932304
+        },
+        {
+          "frequency": 0.3968347010550996,
+          "period": 2.5199409158050226,
+          "power": 1727082.4296905547,
+          "power_ratio": 0.005290299912639034
+        }
+      ],
+      "significant_value_periods": []
+    },
+    "P4": {
+      "n_points": 3412,
+      "fisher_g": 0.006796134702823074,
+      "fisher_p": 0.015221337529965497,
+      "significant_diff_periodicity": true,
+      "top_frequencies": [
+        {
+          "frequency": 0.46541617819460723,
+          "period": 2.1486146095717884,
+          "power": 1879482.591902446,
+          "power_ratio": 0.006796134702823074
+        },
+        {
+          "frequency": 0.4375732708089097,
+          "period": 2.285331547220362,
+          "power": 1630245.8718389878,
+          "power_ratio": 0.005894904582502285
+        },
+        {
+          "frequency": 0.28282532239155916,
+          "period": 3.5357512953367882,
+          "power": 1480426.0225378103,
+          "power_ratio": 0.005353161934076466
+        },
+        {
+          "frequency": 0.47860492379835873,
+          "period": 2.0894060012247397,
+          "power": 1472635.5996578778,
+          "power_ratio": 0.005324992073120007
+        },
+        {
+          "frequency": 0.4618991793669402,
+          "period": 2.16497461928934,
+          "power": 1427566.0098442195,
+          "power_ratio": 0.0051620222192388055
+        }
+      ],
+      "significant_value_periods": []
+    },
+    "P5": {
+      "n_points": 3412,
+      "fisher_g": 0.005092756968013073,
+      "fisher_p": 0.28268280297578,
+      "significant_diff_periodicity": false,
+      "top_frequencies": [
+        {
+          "frequency": 0.31389214536928484,
+          "period": 3.185807656395892,
+          "power": 866162.2935627659,
+          "power_ratio": 0.005092756968013073
+        },
+        {
+          "frequency": 0.46688159437280186,
+          "period": 2.1418706842435657,
+          "power": 841806.2633881241,
+          "power_ratio": 0.00494955130862696
+        },
+        {
+          "frequency": 0.49062133645955447,
+          "period": 2.0382317801672643,
+          "power": 798602.794087001,
+          "power_ratio": 0.004695528741538972
+        },
+        {
+          "frequency": 0.3388042203985932,
+          "period": 2.9515570934256057,
+          "power": 788638.0087280858,
+          "power_ratio": 0.004636938994041851
+        },
+        {
+          "frequency": 0.3883352872215709,
+          "period": 2.5750943396226416,
+          "power": 788371.8551081992,
+          "power_ratio": 0.0046353740959710005
+        }
+      ],
+      "significant_value_periods": [
+        {
+          "value": 33,
+          "fisher_g": 0.007749988710271963,
+          "fisher_p": 0.0029578481497776667,
+          "peak_period": 9.098666666666668
+        }
+      ]
+    }
+  },
+  "summary": {
+    "n_positions": 6,
+    "n_significant_diff_periodicity": 5,
+    "n_significant_value_periods": 1,
+    "has_periodic_component": true
+  }
+}

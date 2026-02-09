@@ -1,0 +1,42 @@
+{
+  "plan_a_xgboost": {
+    "cross_avg_combos": 680222.552734375,
+    "cross_reduction": 0.385841273191014,
+    "cross_survival": 0.6015625,
+    "cross_efficiency": 0.23210764090396938,
+    "per_pos_survival": {
+      "P0": 0.892578125,
+      "P1": 0.9296875,
+      "P2": 0.9296875,
+      "P3": 0.91796875,
+      "P4": 0.919921875,
+      "P5": 0.916015625
+    }
+  },
+  "baseline": {
+    "avg_combos": 274552.515625,
+    "reduction": 0.7521122715490155,
+    "survival": 0.6875,
+    "efficiency": 0.5170771866899482
+  },
+  "plan_b_mlp": {
+    "per_pos_accuracy": {
+      "P0": 0.685546875,
+      "P1": 0.72265625,
+      "P2": 0.708984375,
+      "P3": 0.70703125,
+      "P4": 0.701171875,
+      "P5": 0.66015625
+    },
+    "overall_accuracy": 0.6975911458333334,
+    "epochs": 60,
+    "best_val_loss": 4.340099334716797
+  },
+  "summary": {
+    "go": false,
+    "decision": "NO-GO",
+    "efficiency_improvement": -0.2849695457859788,
+    "survival_improvement": -0.0859375,
+    "criteria": "效率提升>=5% 或 存活率提升>=2%"
+  }
+}

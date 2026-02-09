@@ -1,0 +1,10 @@
+{
+  "daletou": {
+    "best_strategy": "hybrid_50",
+    "best_roi": -0.6775265957446809
+  },
+  "shuangseqiu": {
+    "best_strategy": "dan_tuo_20",
+    "best_roi": -0.9742647058823529
+  }
+}

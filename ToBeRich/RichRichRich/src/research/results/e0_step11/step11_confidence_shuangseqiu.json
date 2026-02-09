@@ -1,0 +1,34 @@
+{
+  "lottery_type": "shuangseqiu",
+  "weights": {
+    "S1_direction_consistency": 0.2,
+    "S2_amplitude_concentration": 0.15,
+    "S3_pattern_match_strength": 0.15,
+    "S4_sequence_stability": 0.15,
+    "S5_combo_survival": 0.15,
+    "S6_e1_rule_match": 0.2
+  },
+  "evaluation": {
+    "n_periods": 1360,
+    "confidence_stats": {
+      "mean": 0.4715631673042904,
+      "std": 0.024852235478270535,
+      "min": 0.3912236569033283,
+      "max": 0.5566038054591895
+    },
+    "hit_rate_by_confidence": {
+      "low": 0.8533778767631773,
+      "mid": 0.8772321428571429,
+      "high": 0.8711303095752341
+    },
+    "n_by_confidence": {
+      "low": 449,
+      "mid": 448,
+      "high": 463
+    },
+    "spearman_correlation": 0.03387274278889977,
+    "spearman_p_value": 0.21189389048312976,
+    "confidence_effective": true,
+    "high_low_lift": 1.0208025463226102
+  }
+}

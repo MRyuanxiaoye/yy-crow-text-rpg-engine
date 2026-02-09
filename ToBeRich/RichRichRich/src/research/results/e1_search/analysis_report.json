@@ -1,0 +1,140 @@
+{
+  "daletou": {
+    "distribution": {
+      "lottery": "daletou",
+      "total_rules": 333,
+      "by_dimension": {
+        "D1 × D3 × D7": 48,
+        "D7 × D3": 24,
+        "D5 × D3": 15,
+        "D3 × D12": 11,
+        "D2 × D3": 11,
+        "D1 × D3 × D12": 34,
+        "D3": 8,
+        "D1 × D3": 43,
+        "D1 × D4 × D8": 25,
+        "D1 × D4": 13,
+        "D2": 2,
+        "D1 × D7": 40,
+        "D5 × D7": 7,
+        "D1 × D12": 4,
+        "D7": 15,
+        "D4 × D6": 4,
+        "D1 × D8": 17,
+        "D1": 2,
+        "D4": 3,
+        "D8": 5,
+        "D8 × D10": 2
+      },
+      "by_position": {
+        "P4": 117,
+        "P3": 72,
+        "P0": 54,
+        "P2": 49,
+        "P1": 41
+      },
+      "by_ndim": {
+        "3": 107,
+        "2": 191,
+        "1": 35
+      }
+    },
+    "step10a_comparison": {
+      "lottery": "daletou",
+      "step10a_validated": 101,
+      "e1_total": 333,
+      "old_dims_only": 150,
+      "new_dims_only": 20,
+      "mixed_cross": 163,
+      "new_contribution_pct": 55.0
+    },
+    "coverage": {
+      "lottery": "daletou",
+      "top100_by_position": {
+        "4": 54,
+        "3": 24,
+        "0": 12,
+        "2": 5,
+        "1": 5
+      },
+      "test_periods": 1134
+    },
+    "conflicts": {
+      "lottery": "daletou",
+      "shared_conditions": 52,
+      "mean_conflicts": 21,
+      "high_variance_groups": 21
+    }
+  },
+  "shuangseqiu": {
+    "distribution": {
+      "lottery": "shuangseqiu",
+      "total_rules": 402,
+      "by_dimension": {
+        "D1 × D3": 47,
+        "D7 × D3": 45,
+        "D1 × D3 × D7": 60,
+        "D5 × D3": 14,
+        "D3": 9,
+        "D3 × D12": 16,
+        "D1 × D3 × D12": 21,
+        "D1 × D8": 22,
+        "D2 × D3": 15,
+        "D1 × D7": 59,
+        "D7": 19,
+        "D5 × D7": 10,
+        "D2": 3,
+        "D1 × D4": 12,
+        "D1 × D4 × D8": 28,
+        "D4 × D6": 2,
+        "D9": 4,
+        "D8 × D10": 4,
+        "D8": 4,
+        "D1": 3,
+        "D1 × D12": 2,
+        "D6 × D12": 1,
+        "D4": 2
+      },
+      "by_position": {
+        "P5": 110,
+        "P0": 61,
+        "P1": 49,
+        "P4": 74,
+        "P2": 36,
+        "P3": 72
+      },
+      "by_ndim": {
+        "2": 249,
+        "3": 109,
+        "1": 44
+      }
+    },
+    "step10a_comparison": {
+      "lottery": "shuangseqiu",
+      "step10a_validated": 107,
+      "e1_total": 402,
+      "old_dims_only": 147,
+      "new_dims_only": 27,
+      "mixed_cross": 228,
+      "new_contribution_pct": 63.4
+    },
+    "coverage": {
+      "lottery": "shuangseqiu",
+      "top100_by_position": {
+        "5": 31,
+        "0": 14,
+        "1": 9,
+        "4": 18,
+        "2": 8,
+        "3": 20
+      },
+      "test_periods": 1366
+    },
+    "conflicts": {
+      "lottery": "shuangseqiu",
+      "shared_conditions": 71,
+      "mean_conflicts": 20,
+      "high_variance_groups": 20
+    }
+  }
+}

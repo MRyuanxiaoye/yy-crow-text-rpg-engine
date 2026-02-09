@@ -1,0 +1,177 @@
+{
+  "lottery_type": "daletou",
+  "results": {
+    "total_epochs": 318,
+    "best_epoch": 18,
+    "best_val_acc": 0.474,
+    "final_val_acc": 0.474,
+    "final_val_loss": 0.8771,
+    "per_position_accuracy": {
+      "P0": 0.4676,
+      "P1": 0.4935,
+      "P2": 0.4782,
+      "P3": 0.4664,
+      "P4": 0.4641
+    },
+    "total_params": 4913679,
+    "attention_analysis": {
+      "layer_0": {
+        "top_attended_steps": [
+          {
+            "step": 1,
+            "weight": 0.0375
+          },
+          {
+            "step": 0,
+            "weight": 0.0363
+          },
+          {
+            "step": 2,
+            "weight": 0.0351
+          },
+          {
+            "step": 3,
+            "weight": 0.0328
+          },
+          {
+            "step": 4,
+            "weight": 0.0282
+          }
+        ],
+        "recent_bias": 0.0177,
+        "distant_weight": 0.034
+      },
+      "layer_1": {
+        "top_attended_steps": [
+          {
+            "step": 1,
+            "weight": 0.0274
+          },
+          {
+            "step": 0,
+            "weight": 0.0268
+          },
+          {
+            "step": 2,
+            "weight": 0.0261
+          },
+          {
+            "step": 3,
+            "weight": 0.0248
+          },
+          {
+            "step": 4,
+            "weight": 0.0241
+          }
+        ],
+        "recent_bias": 0.0197,
+        "distant_weight": 0.0259
+      },
+      "layer_2": {
+        "top_attended_steps": [
+          {
+            "step": 0,
+            "weight": 0.0219
+          },
+          {
+            "step": 1,
+            "weight": 0.0218
+          },
+          {
+            "step": 6,
+            "weight": 0.0216
+          },
+          {
+            "step": 7,
+            "weight": 0.0215
+          },
+          {
+            "step": 2,
+            "weight": 0.0214
+          }
+        ],
+        "recent_bias": 0.0196,
+        "distant_weight": 0.0215
+      },
+      "layer_3": {
+        "top_attended_steps": [
+          {
+            "step": 6,
+            "weight": 0.0204
+          },
+          {
+            "step": 7,
+            "weight": 0.0204
+          },
+          {
+            "step": 0,
+            "weight": 0.0204
+          },
+          {
+            "step": 5,
+            "weight": 0.0203
+          },
+          {
+            "step": 1,
+            "weight": 0.0203
+          }
+        ],
+        "recent_bias": 0.0199,
+        "distant_weight": 0.0203
+      },
+      "layer_4": {
+        "top_attended_steps": [
+          {
+            "step": 7,
+            "weight": 0.0201
+          },
+          {
+            "step": 8,
+            "weight": 0.0201
+          },
+          {
+            "step": 6,
+            "weight": 0.0201
+          },
+          {
+            "step": 9,
+            "weight": 0.0201
+          },
+          {
+            "step": 5,
+            "weight": 0.0201
+          }
+        ],
+        "recent_bias": 0.02,
+        "distant_weight": 0.02
+      },
+      "layer_5": {
+        "top_attended_steps": [
+          {
+            "step": 7,
+            "weight": 0.02
+          },
+          {
+            "step": 8,
+            "weight": 0.02
+          },
+          {
+            "step": 6,
+            "weight": 0.02
+          },
+          {
+            "step": 9,
+            "weight": 0.02
+          },
+          {
+            "step": 5,
+            "weight": 0.02
+          }
+        ],
+        "recent_bias": 0.02,
+        "distant_weight": 0.02
+      }
+    },
+    "training_time": 2641.3
+  }
+}

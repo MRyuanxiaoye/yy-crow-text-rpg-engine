@@ -1,0 +1,59 @@
+{
+  "lottery_type": "shuangseqiu",
+  "layer0_hard_exclusion": {
+    "avg_candidates_per_pos": 19.832682291666668,
+    "exclusion_error_rate": 0.01171875
+  },
+  "layer1_signal_fusion": {
+    "alphas": {
+      "A": 0.15,
+      "B": 0.8,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 0.0,
+      "F": 0.05
+    },
+    "optimal_ks": [
+      8,
+      12,
+      14,
+      13,
+      14,
+      10
+    ]
+  },
+  "layer2_beam_search": {
+    "beam_width": 500,
+    "rule_weight": 0.0,
+    "n_rules": 500,
+    "n_a1_patterns": 15841,
+    "n_a3_patterns": 240,
+    "n_a4_patterns": 261
+  },
+  "layer3_final": {
+    "survival_rate": 0.353515625,
+    "avg_combo_count": 500.0,
+    "combo_reduction": 0.9995485604495615,
+    "efficiency": 0.353356034065177,
+    "top_n_hits": {
+      "10": 0.05859375,
+      "50": 0.130859375,
+      "100": 0.19140625,
+      "200": 0.24609375
+    },
+    "mean_rank_when_hit": 143.0718232044199
+  },
+  "comparison": {
+    "e1_efficiency": 0,
+    "e3_efficiency": 0.353356034065177,
+    "improvement": 0.353356034065177
+  },
+  "blue_ball": {
+    "best_method": "3B_xgboost",
+    "direction_accuracy": 0.9609375,
+    "avg_reduction": 0.364990234375,
+    "avg_survival": 0.978515625,
+    "efficiency": 0.3571486473083496
+  },
+  "combined_efficiency": 0.12620062958462108
+}

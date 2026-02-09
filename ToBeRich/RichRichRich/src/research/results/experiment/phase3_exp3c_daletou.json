@@ -1,0 +1,41 @@
+{
+  "per_position": {
+    "P0": {
+      "direction_accuracy": 0.8329411764705882,
+      "avg_reduction": 0.38090756302521006,
+      "avg_survival": 0.9505882352941176,
+      "efficiency": 0.36208624814631735
+    },
+    "P1": {
+      "direction_accuracy": 0.9176470588235294,
+      "avg_reduction": 0.36773109243697477,
+      "avg_survival": 0.9482352941176471,
+      "efficiency": 0.34869560059317845
+    },
+    "P2": {
+      "direction_accuracy": 0.9364705882352942,
+      "avg_reduction": 0.35704201680672265,
+      "avg_survival": 0.9647058823529412,
+      "efficiency": 0.344440533860603
+    },
+    "P3": {
+      "direction_accuracy": 0.8847058823529412,
+      "avg_reduction": 0.35831932773109243,
+      "avg_survival": 0.9294117647058824,
+      "efficiency": 0.33302619871478
+    },
+    "P4": {
+      "direction_accuracy": 0.8423529411764706,
+      "avg_reduction": 0.3537478991596638,
+      "avg_survival": 0.92,
+      "efficiency": 0.32544806722689074
+    }
+  },
+  "overall": {
+    "direction_accuracy": 0.8828235294117647,
+    "avg_reduction": 0.36354957983193276,
+    "avg_survival": 0.9425882352941176,
+    "efficiency": 0.34267755689569945
+  },
+  "method": "3C_mlp"
+}

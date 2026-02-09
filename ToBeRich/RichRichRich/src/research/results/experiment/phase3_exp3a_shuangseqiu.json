@@ -1,0 +1,18 @@
+{
+  "per_position": {
+    "P0": {
+      "direction_accuracy": 0.900390625,
+      "avg_reduction": 0.3525390625,
+      "avg_survival": 0.97265625,
+      "efficiency": 0.3428993225097656
+    }
+  },
+  "overall": {
+    "direction_accuracy": 0.900390625,
+    "avg_reduction": 0.3525390625,
+    "avg_survival": 0.97265625,
+    "efficiency": 0.3428993225097656
+  },
+  "method": "3A_statistical_baseline",
+  "n_rule_pos_pairs": 62
+}

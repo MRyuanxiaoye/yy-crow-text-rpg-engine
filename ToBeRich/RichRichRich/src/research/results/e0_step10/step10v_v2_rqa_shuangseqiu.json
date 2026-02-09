@@ -1,0 +1,88 @@
+{
+  "lottery_type": "shuangseqiu",
+  "positions": {
+    "P0": {
+      "n_points": 3412,
+      "RR": 0.11003780297976429,
+      "DET": 0.2355347182927815,
+      "LAM": 0.6487511114703742,
+      "L_max": 6,
+      "L_mean": 2.151994091580502,
+      "ENTR": 0.4491402687685609,
+      "surrogate_DET_mean": 0.20626078594793557,
+      "surrogate_DET_std": 0.004845417499197902,
+      "p_value": 0.0,
+      "significant": true
+    },
+    "P1": {
+      "n_points": 3412,
+      "RR": 0.23651589948854793,
+      "DET": 0.44371067644968276,
+      "LAM": 1.0,
+      "L_max": 10,
+      "L_mean": 2.34523336248708,
+      "ENTR": 0.7660415472907808,
+      "surrogate_DET_mean": 0.41673911443072276,
+      "surrogate_DET_std": 0.006161362418134897,
+      "p_value": 0.0,
+      "significant": true
+    },
+    "P2": {
+      "n_points": 3412,
+      "RR": 0.21035179008227708,
+      "DET": 0.3879858597476405,
+      "LAM": 0.9274846926693955,
+      "L_max": 8,
+      "L_mean": 2.2956865492393916,
+      "ENTR": 0.6958118565183765,
+      "surrogate_DET_mean": 0.3760018264714835,
+      "surrogate_DET_std": 0.005331652909127636,
+      "p_value": 0.015,
+      "significant": true
+    },
+    "P3": {
+      "n_points": 3412,
+      "RR": 0.2065412497220369,
+      "DET": 0.3861346057776783,
+      "LAM": 0.9292217188334395,
+      "L_max": 10,
+      "L_mean": 2.281591938521044,
+      "ENTR": 0.6745810018803541,
+      "surrogate_DET_mean": 0.37385578007140674,
+      "surrogate_DET_std": 0.005328684759095709,
+      "p_value": 0.01,
+      "significant": true
+    },
+    "P4": {
+      "n_points": 3412,
+      "RR": 0.22526662219257282,
+      "DET": 0.41496746375209276,
+      "LAM": 0.9635941497930948,
+      "L_max": 9,
+      "L_mean": 2.3182961263566577,
+      "ENTR": 0.7285367571201403,
+      "surrogate_DET_mean": 0.40531586240083595,
+      "surrogate_DET_std": 0.006243176883023044,
+      "p_value": 0.059,
+      "significant": false
+    },
+    "P5": {
+      "n_points": 3412,
+      "RR": 0.27750144540804983,
+      "DET": 0.5248749122542719,
+      "LAM": 1.0,
+      "L_max": 17,
+      "L_mean": 2.462124857160041,
+      "ENTR": 0.9119680451434298,
+      "surrogate_DET_mean": 0.2552611090046461,
+      "surrogate_DET_std": 0.11835545797427914,
+      "p_value": 0.0,
+      "significant": true
+    }
+  },
+  "summary": {
+    "n_positions": 6,
+    "n_significant": 5,
+    "has_deterministic_component": true
+  }
+}

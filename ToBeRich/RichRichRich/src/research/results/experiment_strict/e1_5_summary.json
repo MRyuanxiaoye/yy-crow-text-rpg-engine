@@ -1,0 +1,44 @@
+{
+  "total_time_seconds": 109.4,
+  "total_time_minutes": 1.8,
+  "results": {
+    "daletou": {
+      "lottery_type": "daletou",
+      "best_method": "3B_xgboost",
+      "n_test_samples": 425,
+      "step_a_summary": {
+        "overall_auc": 0.7818823529411765,
+        "weighted_k95_efficiency": 0.326327984773347,
+        "e1_efficiency": 0.4418508644464798,
+        "improvement": -0.1155228796731328
+      },
+      "step_b_summary": {
+        "all_combined_filter_rate": 0.30405049973698056,
+        "all_combined_true_survival": 0.65
+      },
+      "step_c_summary": {
+        "conditional_improvement": 0.24588235294117644,
+        "any_significant_pair": true
+      }
+    },
+    "shuangseqiu": {
+      "lottery_type": "shuangseqiu",
+      "best_method": "3C_mlp",
+      "n_test_samples": 512,
+      "step_a_summary": {
+        "overall_auc": 0.83319091796875,
+        "weighted_k95_efficiency": 0.5192331607988279,
+        "e1_efficiency": 0.5170771866899482,
+        "improvement": 0.002155974108879688
+      },
+      "step_b_summary": {
+        "all_combined_filter_rate": 0.3309426998154511,
+        "all_combined_true_survival": 0.67
+      },
+      "step_c_summary": {
+        "conditional_improvement": 0.24687499999999996,
+        "any_significant_pair": true
+      }
+    }
+  }
+}

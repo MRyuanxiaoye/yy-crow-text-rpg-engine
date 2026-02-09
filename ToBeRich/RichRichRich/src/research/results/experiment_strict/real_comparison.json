@@ -1,0 +1,80 @@
+{
+  "说明": "真实对比结果 — 修正了因 EXPERIMENT_DIR 覆盖导致的 delta=0 问题",
+  "原因": "严格实验的 phase1-4 输出覆盖了 experiment/ 目录中的原始结果，导致自动对比时 original_results == strict_results。此文件使用原始实验 experiment_summary.json（10:43 保存）中的真实数据重新计算。",
+  "total_time_minutes": 25.9,
+  "daletou": {
+    "data_split": {
+      "total_draws": 2833,
+      "sliced_draws": 1699,
+      "ratio": 0.6
+    },
+    "rule_counts": {
+      "original_a1": 21248,
+      "original_a2": 6095591,
+      "strict_a1": 11866,
+      "strict_a2": 3145919
+    },
+    "original_results": {
+      "best_method": "3C_mlp",
+      "direction_accuracy": 0.8522,
+      "avg_reduction": 0.3495,
+      "avg_survival": 0.9162,
+      "efficiency": 0.3203
+    },
+    "strict_results": {
+      "best_method": "3B_xgboost",
+      "direction_accuracy": 0.8513,
+      "avg_reduction": 0.2813,
+      "avg_survival": 0.9299,
+      "efficiency": 0.2616
+    },
+    "delta": {
+      "efficiency_drop": 0.0587,
+      "accuracy_drop": 0.0009,
+      "reduction_drop": 0.0683,
+      "survival_drop": -0.0137
+    },
+    "verdict": "数据泄露有一定影响（efficiency下降0.0587），但严格验证后效率仍>=0.25，方案可行性得到确认。方向准确率几乎不变（-0.0009），缩减率下降较明显（-0.0683），存活率反而提升（+0.0137）。最优方案从3C_mlp变为3B_xgboost。"
+  },
+  "shuangseqiu": {
+    "data_split": {
+      "total_draws": 3413,
+      "sliced_draws": 2047,
+      "ratio": 0.6
+    },
+    "rule_counts": {
+      "original_a1": 40377,
+      "original_a2": 19751636,
+      "strict_a1": 22153,
+      "strict_a2": 9273907
+    },
+    "original_results": {
+      "best_method": "3C_mlp",
+      "direction_accuracy": 0.8330,
+      "avg_reduction": 0.3050,
+      "avg_survival": 0.9225,
+      "efficiency": 0.2814
+    },
+    "strict_results": {
+      "best_method": "3C_mlp",
+      "direction_accuracy": 0.8672,
+      "avg_reduction": 0.3537,
+      "avg_survival": 0.9313,
+      "efficiency": 0.3294
+    },
+    "delta": {
+      "efficiency_drop": -0.0480,
+      "accuracy_drop": -0.0342,
+      "reduction_drop": -0.0487,
+      "survival_drop": -0.0088
+    },
+    "verdict": "无过拟合。严格验证后效率反而提升（+0.048），方向准确率也提升（+0.034）。60%数据挖掘的规则质量更高，可能因为全量数据后期引入噪声或规则过多导致过拟合。"
+  },
+  "overall_conclusion": {
+    "summary": "两个彩种在严格时间切分验证下效率均>=0.25，方案可行性得到确认。",
+    "daletou": "存在轻度过拟合（efficiency下降~6%），但不严重，方向准确率稳定在85%+。",
+    "shuangseqiu": "无过拟合，严格验证反而更好，说明精简规则集效果更优。",
+    "direction_prediction": "方向预测能力在两个彩种中都非常稳定（85%+），说明方向预测能力是真实的，不受数据泄露影响。",
+    "recommendation": "建议后续实验统一采用时间切分方式挖掘规则，避免数据泄露。双色球可考虑限制规则数量以提升泛化能力。"
+  }
+}

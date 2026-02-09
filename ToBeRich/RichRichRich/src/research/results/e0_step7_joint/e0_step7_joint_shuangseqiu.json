@@ -1,0 +1,287 @@
+{
+  "A_independent": {
+    "method": "A_independent",
+    "description": "逐位置独立MLP（基线）",
+    "direction_accuracy": 0.8430989583333334,
+    "avg_reduction": 0.3228476167929293,
+    "avg_survival": 0.9306640625,
+    "efficiency": 0.3004626746129508,
+    "combo_accuracy": 0.404296875,
+    "direction_consistency": 0.7964843750000001,
+    "per_position": {
+      "P0": {
+        "direction_accuracy": 0.798828125,
+        "avg_reduction": 0.34801136363636365,
+        "avg_survival": 0.93359375,
+        "efficiency": 0.32490123401988635
+      },
+      "P1": {
+        "direction_accuracy": 0.84375,
+        "avg_reduction": 0.3020833333333333,
+        "avg_survival": 0.92578125,
+        "efficiency": 0.2796630859375
+      },
+      "P2": {
+        "direction_accuracy": 0.876953125,
+        "avg_reduction": 0.3500236742424242,
+        "avg_survival": 0.94921875,
+        "efficiency": 0.3322490345348011
+      },
+      "P3": {
+        "direction_accuracy": 0.87109375,
+        "avg_reduction": 0.33291903409090906,
+        "avg_survival": 0.91796875,
+        "efficiency": 0.30560926957563916
+      },
+      "P4": {
+        "direction_accuracy": 0.833984375,
+        "avg_reduction": 0.3091264204545454,
+        "avg_survival": 0.919921875,
+        "efficiency": 0.28437215631658375
+      },
+      "P5": {
+        "direction_accuracy": 0.833984375,
+        "avg_reduction": 0.294921875,
+        "avg_survival": 0.9375,
+        "efficiency": 0.2764892578125
+      }
+    },
+    "conditional_accuracy": {
+      "P0->P1": {
+        "independent_accuracy": 0.84375,
+        "conditional_accuracy": 0.8313968015992005,
+        "per_direction": {
+          "0": 0.8260869565217391,
+          "1": 0.7931034482758621,
+          "2": 0.875
+        }
+      },
+      "P1->P2": {
+        "independent_accuracy": 0.876953125,
+        "conditional_accuracy": 0.9152637301090502,
+        "per_direction": {
+          "0": 0.8503937007874016,
+          "1": 1.0,
+          "2": 0.895397489539749
+        }
+      },
+      "P2->P3": {
+        "independent_accuracy": 0.87109375,
+        "conditional_accuracy": 0.8743932743601864,
+        "per_direction": {
+          "0": 0.8406374501992032,
+          "1": 0.88,
+          "2": 0.902542372881356
+        }
+      },
+      "P3->P4": {
+        "independent_accuracy": 0.833984375,
+        "conditional_accuracy": 0.7644707682269695,
+        "per_direction": {
+          "0": 0.8152610441767069,
+          "1": 0.6,
+          "2": 0.8781512605042017
+        }
+      },
+      "P4->P5": {
+        "independent_accuracy": 0.833984375,
+        "conditional_accuracy": 0.7965592903828198,
+        "per_direction": {
+          "0": 0.8613445378151261,
+          "1": 0.7083333333333334,
+          "2": 0.82
+        }
+      }
+    }
+  },
+  "B_multitask": {
+    "method": "B_multitask",
+    "description": "多任务MLP（共享底层）",
+    "direction_accuracy": 0.8352864583333334,
+    "avg_reduction": 0.33179450757575757,
+    "avg_survival": 0.9150390625,
+    "efficiency": 0.30360493515477033,
+    "combo_accuracy": 0.388671875,
+    "direction_consistency": 0.8367187500000001,
+    "per_position": {
+      "P0": {
+        "direction_accuracy": 0.794921875,
+        "avg_reduction": 0.400390625,
+        "avg_survival": 0.8828125,
+        "efficiency": 0.3534698486328125
+      },
+      "P1": {
+        "direction_accuracy": 0.853515625,
+        "avg_reduction": 0.3191879734848485,
+        "avg_survival": 0.923828125,
+        "efficiency": 0.2948748270670573
+      },
+      "P2": {
+        "direction_accuracy": 0.86328125,
+        "avg_reduction": 0.3491358901515151,
+        "avg_survival": 0.927734375,
+        "efficiency": 0.3239053668397845
+      },
+      "P3": {
+        "direction_accuracy": 0.841796875,
+        "avg_reduction": 0.3279474431818181,
+        "avg_survival": 0.896484375,
+        "efficiency": 0.2939997586337002
+      },
+      "P4": {
+        "direction_accuracy": 0.83203125,
+        "avg_reduction": 0.32315340909090906,
+        "avg_survival": 0.91015625,
+        "efficiency": 0.2941200949928977
+      },
+      "P5": {
+        "direction_accuracy": 0.826171875,
+        "avg_reduction": 0.27095170454545453,
+        "avg_survival": 0.94921875,
+        "efficiency": 0.2571924382990057
+      }
+    },
+    "conditional_accuracy": {
+      "P0->P1": {
+        "independent_accuracy": 0.853515625,
+        "conditional_accuracy": 0.838565538659242,
+        "per_direction": {
+          "0": 0.8565217391304348,
+          "1": 0.7931034482758621,
+          "2": 0.8660714285714286
+        }
+      },
+      "P1->P2": {
+        "independent_accuracy": 0.86328125,
+        "conditional_accuracy": 0.889104577078713,
+        "per_direction": {
+          "0": 0.8622047244094488,
+          "1": 0.9473684210526315,
+          "2": 0.8577405857740585
+        }
+      },
+      "P2->P3": {
+        "independent_accuracy": 0.841796875,
+        "conditional_accuracy": 0.8057764422535846,
+        "per_direction": {
+          "0": 0.8286852589641435,
+          "1": 0.72,
+          "2": 0.8686440677966102
+        }
+      },
+      "P3->P4": {
+        "independent_accuracy": 0.83203125,
+        "conditional_accuracy": 0.762884591587639,
+        "per_direction": {
+          "0": 0.8273092369477911,
+          "1": 0.6,
+          "2": 0.8613445378151261
+        }
+      },
+      "P4->P5": {
+        "independent_accuracy": 0.826171875,
+        "conditional_accuracy": 0.8157992530345471,
+        "per_direction": {
+          "0": 0.8277310924369747,
+          "1": 0.7916666666666666,
+          "2": 0.828
+        }
+      }
+    }
+  },
+  "C_autoregressive": {
+    "method": "C_autoregressive",
+    "description": "自回归MLP（序列化预测）",
+    "direction_accuracy": 0.830078125,
+    "avg_reduction": 0.30834714330808083,
+    "avg_survival": 0.9251302083333334,
+    "efficiency": 0.285261256927593,
+    "combo_accuracy": 0.380859375,
+    "direction_consistency": 0.7984375000000001,
+    "per_position": {
+      "P0": {
+        "direction_accuracy": 0.80078125,
+        "avg_reduction": 0.376953125,
+        "avg_survival": 0.890625,
+        "efficiency": 0.335723876953125
+      },
+      "P1": {
+        "direction_accuracy": 0.8515625,
+        "avg_reduction": 0.3106652462121212,
+        "avg_survival": 0.9296875,
+        "efficiency": 0.2888215960878314
+      },
+      "P2": {
+        "direction_accuracy": 0.849609375,
+        "avg_reduction": 0.3244554924242424,
+        "avg_survival": 0.94140625,
+        "efficiency": 0.3054444284150094
+      },
+      "P3": {
+        "direction_accuracy": 0.84765625,
+        "avg_reduction": 0.29569128787878785,
+        "avg_survival": 0.91796875,
+        "efficiency": 0.271435361919981
+      },
+      "P4": {
+        "direction_accuracy": 0.8046875,
+        "avg_reduction": 0.29071969696969696,
+        "avg_survival": 0.93359375,
+        "efficiency": 0.27141409209280304
+      },
+      "P5": {
+        "direction_accuracy": 0.826171875,
+        "avg_reduction": 0.25159801136363635,
+        "avg_survival": 0.9375,
+        "efficiency": 0.2358731356534091
+      }
+    },
+    "conditional_accuracy": {
+      "P0->P1": {
+        "independent_accuracy": 0.8515625,
+        "conditional_accuracy": 0.8499321767687585,
+        "per_direction": {
+          "0": 0.8478260869565217,
+          "1": 0.8448275862068966,
+          "2": 0.8571428571428571
+        }
+      },
+      "P1->P2": {
+        "independent_accuracy": 0.849609375,
+        "conditional_accuracy": 0.8799182253726762,
+        "per_direction": {
+          "0": 0.8346456692913385,
+          "1": 0.9473684210526315,
+          "2": 0.8577405857740585
+        }
+      },
+      "P2->P3": {
+        "independent_accuracy": 0.84765625,
+        "conditional_accuracy": 0.8338555382987822,
+        "per_direction": {
+          "0": 0.8286852589641435,
+          "1": 0.8,
+          "2": 0.8728813559322034
+        }
+      },
+      "P3->P4": {
+        "independent_accuracy": 0.8046875,
+        "conditional_accuracy": 0.744081086249761,
+        "per_direction": {
+          "0": 0.7751004016064257,
+          "1": 0.6,
+          "2": 0.8571428571428571
+        }
+      },
+      "P4->P5": {
+        "independent_accuracy": 0.826171875,
+        "conditional_accuracy": 0.7912259570494866,
+        "per_direction": {
+          "0": 0.8613445378151261,
+          "1": 0.7083333333333334,
+          "2": 0.804
+        }
+      }
+    }
+  }
+}

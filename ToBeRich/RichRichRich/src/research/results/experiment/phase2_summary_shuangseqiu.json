@@ -1,0 +1,47 @@
+{
+  "lottery_type": "shuangseqiu",
+  "n_draws": 3413,
+  "split1": 2047,
+  "split2": 2901,
+  "train_samples": 854,
+  "test_samples": 512,
+  "n_features": 2755,
+  "n_a2_clusters": 1000,
+  "n_a1_patterns": 1382,
+  "n_a3_groups": 12,
+  "n_a3_features": 120,
+  "n_a4_groups": 21,
+  "n_a4_features": 135,
+  "train_Y_distribution": {
+    "P0": {
+      "D": 391,
+      "E": 96,
+      "U": 367
+    },
+    "P1": {
+      "D": 410,
+      "E": 37,
+      "U": 407
+    },
+    "P2": {
+      "D": 399,
+      "E": 51,
+      "U": 404
+    },
+    "P3": {
+      "D": 418,
+      "E": 39,
+      "U": 397
+    },
+    "P4": {
+      "D": 408,
+      "E": 47,
+      "U": 399
+    },
+    "P5": {
+      "D": 390,
+      "E": 93,
+      "U": 371
+    }
+  }
+}

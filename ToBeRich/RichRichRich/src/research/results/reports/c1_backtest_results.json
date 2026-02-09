@@ -1,0 +1,45 @@
+{
+  "lottery_type": "daletou",
+  "backtest": {
+    "test_range": [
+      1983,
+      2833
+    ],
+    "n_rules_tested": 500,
+    "total_predictions": 0,
+    "hits": 0,
+    "misses": 0,
+    "no_match": 4245,
+    "accuracy": 0,
+    "coverage": 0.0,
+    "per_position": {
+      "P0": {
+        "predictions": 0,
+        "hits": 0,
+        "accuracy": 0
+      },
+      "P1": {
+        "predictions": 0,
+        "hits": 0,
+        "accuracy": 0
+      },
+      "P2": {
+        "predictions": 0,
+        "hits": 0,
+        "accuracy": 0
+      },
+      "P3": {
+        "predictions": 0,
+        "hits": 0,
+        "accuracy": 0
+      },
+      "P4": {
+        "predictions": 0,
+        "hits": 0,
+        "accuracy": 0
+      }
+    },
+    "random_baseline": 0.3333,
+    "time": 0.1
+  }
+}

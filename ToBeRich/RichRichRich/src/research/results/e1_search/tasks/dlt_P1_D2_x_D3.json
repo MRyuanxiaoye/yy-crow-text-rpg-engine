@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "position": 1,
+  "dimensions": [
+    "D2",
+    "D3"
+  ],
+  "n_patterns_found": 2,
+  "n_validated": 0,
+  "n_insufficient": 0,
+  "validation_rate": 0.0,
+  "uncond_mean": 7.1643109540636045,
+  "uncond_std": 5.401280071407682,
+  "uncond_iqr": 8.0,
+  "patterns": [
+    {
+      "dimension": "D2_n1_x_D3",
+      "condition": "((np.int64(5),), np.int64(1))",
+      "support": 98,
+      "ks_stat": 0.25180885074878007,
+      "ks_p": 1.1550100578455145e-05,
+      "js_divergence": 0.056068060119901425,
+      "mean": 4.489795918367347,
+      "median": 3.0,
+      "std": 4.103868006090341,
+      "q10": 1.0,
+      "q25": 2.0,
+      "q50": 3.0,
+      "q75": 6.0,
+      "q90": 9.299999999999997,
+      "iqr": 4.0,
+      "concentration": 0.5,
+      "mean_shift_sigma": 0.49516318360422024,
+      "validation": {
+        "status": "invalid",
+        "n_test": 68,
+        "ks_stat": 0.1080506276584708,
+        "ks_p": 0.4116703809843533,
+        "test_mean": 6.029411764705882,
+        "test_median": 5.5,
+        "train_test_mean_diff": 1.5396158463385357
+      }
+    },
+    {
+      "dimension": "D2_n1_x_D3",
+      "condition": "((np.int64(6),), np.int64(1))",
+      "support": 73,
+      "ks_stat": 0.22005744066347194,
+      "ks_p": 0.001856170211049547,
+      "js_divergence": 0.05476595303322329,
+      "mean": 5.095890410958904,
+      "median": 4.0,
+      "std": 3.456835133279453,
+      "q10": 1.2000000000000002,
+      "q25": 3.0,
+      "q50": 4.0,
+      "q75": 7.0,
+      "q90": 9.0,
+      "iqr": 4.0,
+      "concentration": 0.5,
+      "mean_shift_sigma": 0.38295006290344585,
+      "validation": {
+        "status": "invalid",
+        "n_test": 56,
+        "ks_stat": 0.15013227513227514,
+        "ks_p": 0.16266637850234414,
+        "test_mean": 5.071428571428571,
+        "test_median": 5.0,
+        "train_test_mean_diff": 0.024461839530332874
+      }
+    }
+  ],
+  "task_id": "dlt_P1_D2_x_D3",
+  "lottery": "daletou",
+  "elapsed_seconds": 0.2
+}

@@ -1,0 +1,76 @@
+{
+  "total_time_seconds": 1597.5,
+  "total_time_minutes": 26.6,
+  "comparisons": {
+    "daletou": {
+      "lottery_type": "daletou",
+      "data_split": {
+        "total_draws": 2833,
+        "sliced_draws": 1699,
+        "ratio": 0.6
+      },
+      "rule_counts": {
+        "strict_a1": 11866,
+        "strict_a2": 3145919,
+        "original_a1": 21248,
+        "original_a2": 6095591
+      },
+      "strict_results": {
+        "best_method": "3C_mlp",
+        "efficiency": 0.32164009569945623,
+        "direction_accuracy": 0.8705882352941177,
+        "avg_reduction": 0.34328739495798316,
+        "avg_survival": 0.9369411764705883
+      },
+      "original_results": {
+        "best_method": "3C_mlp",
+        "efficiency": 0.32164009569945623,
+        "direction_accuracy": 0.8705882352941177,
+        "avg_reduction": 0.34328739495798316,
+        "avg_survival": 0.9369411764705883
+      },
+      "delta": {
+        "efficiency_drop": 0.0,
+        "accuracy_drop": 0.0,
+        "reduction_drop": 0.0,
+        "survival_drop": 0.0
+      },
+      "verdict": "数据泄露影响较小（efficiency下降<0.05），原始结果基本可信"
+    },
+    "shuangseqiu": {
+      "lottery_type": "shuangseqiu",
+      "data_split": {
+        "total_draws": 3413,
+        "sliced_draws": 2047,
+        "ratio": 0.6
+      },
+      "rule_counts": {
+        "strict_a1": 22153,
+        "strict_a2": 9273907,
+        "original_a1": 40377,
+        "original_a2": 19751636
+      },
+      "strict_results": {
+        "best_method": "3C_mlp",
+        "efficiency": 0.3010806266707603,
+        "direction_accuracy": 0.8421223958333334,
+        "avg_reduction": 0.32238399621212116,
+        "avg_survival": 0.9339192708333334
+      },
+      "original_results": {
+        "best_method": "3C_mlp",
+        "efficiency": 0.3010806266707603,
+        "direction_accuracy": 0.8421223958333334,
+        "avg_reduction": 0.32238399621212116,
+        "avg_survival": 0.9339192708333334
+      },
+      "delta": {
+        "efficiency_drop": 0.0,
+        "accuracy_drop": 0.0,
+        "reduction_drop": 0.0,
+        "survival_drop": 0.0
+      },
+      "verdict": "数据泄露影响较小（efficiency下降<0.05），原始结果基本可信"
+    }
+  }
+}

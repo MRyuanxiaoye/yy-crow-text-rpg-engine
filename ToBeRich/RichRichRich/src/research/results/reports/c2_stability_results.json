@@ -1,0 +1,462 @@
+{
+  "lottery_type": "daletou",
+  "stability": {
+    "n_rules_checked": 200,
+    "n_stable": 200,
+    "n_high_score": 200,
+    "k_folds": 5,
+    "top20_rules": [
+      {
+        "pattern": "(UUUUU)(DDDDD)(UUUUU)(DDDDD)(UUUUU)",
+        "positions": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "window": 5,
+        "original_chi2": 20143932287.51,
+        "original_confidence": 0.3333,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 23.7262
+      },
+      {
+        "pattern": "(DDDDD)(UUUUU)(DDDDD)(UUUUU)(DDDDD)",
+        "positions": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "window": 5,
+        "original_chi2": 15916193410.58,
+        "original_confidence": 0.5,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 23.4906
+      },
+      {
+        "pattern": "(UUUUU)(DDDDD)(UUUUU)(DDDDD)(UUUUU)",
+        "positions": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "window": 5,
+        "original_chi2": 12185835578.22,
+        "original_confidence": 0.2857,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 23.2235
+      },
+      {
+        "pattern": "(DDDDD)(UUUUU)(DDDDD)(UUUUU)(DDDDD)",
+        "positions": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "window": 5,
+        "original_chi2": 12185835578.22,
+        "original_confidence": 0.4286,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 23.2235
+      },
+      {
+        "pattern": "(UUUUU)(DDDDD)(UUUUU)(DDDDD)(UUUUU)",
+        "positions": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "window": 5,
+        "original_chi2": 8952858790.45,
+        "original_confidence": 0.3333,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 22.9152
+      },
+      {
+        "pattern": "(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)",
+        "positions": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "window": 6,
+        "original_chi2": 8292117903.69,
+        "original_confidence": 0.4,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 22.8386
+      },
+      {
+        "pattern": "(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)",
+        "positions": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "window": 6,
+        "original_chi2": 8292117903.69,
+        "original_confidence": 0.4,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 22.8386
+      },
+      {
+        "pattern": "(UUUUU)(DDDDD)(UUUUU)(DDDDD)(UUUUU)",
+        "positions": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "window": 5,
+        "original_chi2": 6217263047.26,
+        "original_confidence": 0.2,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 22.5506
+      },
+      {
+        "pattern": "(UUUUU)(DDDDD)(UUUUU)(DDDDD)(UUUUU)",
+        "positions": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "window": 5,
+        "original_chi2": 6217263047.26,
+        "original_confidence": 0.2,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 22.5506
+      },
+      {
+        "pattern": "(DDD)(UUU)(DDD)(UUU)(DDD)(UUU)(DDD)(UUU)",
+        "positions": [
+          2,
+          3,
+          4
+        ],
+        "window": 8,
+        "original_chi2": 4065525041.1,
+        "original_confidence": 0.2857,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 22.1258
+      },
+      {
+        "pattern": "(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)",
+        "positions": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "window": 6,
+        "original_chi2": 4063137768.61,
+        "original_confidence": 0.5714,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 22.1252
+      },
+      {
+        "pattern": "(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)",
+        "positions": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "window": 6,
+        "original_chi2": 4063137768.61,
+        "original_confidence": 0.4286,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 22.1252
+      },
+      {
+        "pattern": "(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)",
+        "positions": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "window": 6,
+        "original_chi2": 2985162440.53,
+        "original_confidence": 0.3333,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 21.8169
+      },
+      {
+        "pattern": "(UUUU)(DDDD)(UUUU)(UUUU)(DDDD)(UUUU)",
+        "positions": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "window": 6,
+        "original_chi2": 2985162440.53,
+        "original_confidence": 0.6667,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 21.8169
+      },
+      {
+        "pattern": "(DDDD)(UUUU)(UUUU)(DDDD)(UUUU)(DDDD)",
+        "positions": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "window": 6,
+        "original_chi2": 2985162440.53,
+        "original_confidence": 0.6667,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 21.8169
+      },
+      {
+        "pattern": "(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)",
+        "positions": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "window": 6,
+        "original_chi2": 2985162440.53,
+        "original_confidence": 0.5,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 21.8169
+      },
+      {
+        "pattern": "(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)",
+        "positions": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "window": 6,
+        "original_chi2": 2985162440.53,
+        "original_confidence": 0.5,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 21.8169
+      },
+      {
+        "pattern": "(UUU)(DDD)(UUU)(DDD)(UUU)(DDD)(UUU)(DDD)",
+        "positions": [
+          2,
+          3,
+          5
+        ],
+        "window": 8,
+        "original_chi2": 2074247467.09,
+        "original_confidence": 0.6,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 21.4529
+      },
+      {
+        "pattern": "(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)",
+        "positions": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "window": 6,
+        "original_chi2": 2073029470.92,
+        "original_confidence": 0.2,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 21.4523
+      },
+      {
+        "pattern": "(UUUU)(DDDD)(UUUU)(DDDD)(UUUU)(DDDD)",
+        "positions": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "window": 6,
+        "original_chi2": 2073029470.92,
+        "original_confidence": 0.4,
+        "fold_accuracies": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "avg_fold_accuracy": 1.0,
+        "consistency": 1.0,
+        "composite_score": 21.4523
+      }
+    ],
+    "stability_distribution": {
+      "high": 200,
+      "medium": 0,
+      "low": 0
+    },
+    "time": 0.1
+  }
+}

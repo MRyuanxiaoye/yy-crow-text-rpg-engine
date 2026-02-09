@@ -1,0 +1,77 @@
+{
+  "status": "completed",
+  "position": 3,
+  "dimensions": [
+    "D1",
+    "D4",
+    "D8"
+  ],
+  "n_patterns_found": 2,
+  "n_validated": 1,
+  "n_insufficient": 0,
+  "validation_rate": 0.5,
+  "uncond_mean": 6.573027090694935,
+  "uncond_std": 5.051527462657198,
+  "uncond_iqr": 8.0,
+  "patterns": [
+    {
+      "dimension": "D1_n2_x_D4_x_D8_sum",
+      "condition": "((-1, -1), (-1, np.int64(4)), 0)",
+      "support": 43,
+      "ks_stat": 0.41413975401977704,
+      "ks_p": 5.039826943596604e-07,
+      "js_divergence": 0.1345005225482163,
+      "mean": 11.744186046511627,
+      "median": 13.0,
+      "std": 6.941928635090469,
+      "q10": 2.2,
+      "q25": 5.0,
+      "q50": 13.0,
+      "q75": 17.0,
+      "q90": 19.0,
+      "iqr": 12.0,
+      "concentration": 1.5,
+      "mean_shift_sigma": 1.0236822414693092,
+      "validation": {
+        "status": "valid",
+        "n_test": 21,
+        "ks_stat": 0.3324514991181658,
+        "ks_p": 0.01579364153507717,
+        "test_mean": 11.047619047619047,
+        "test_median": 9.0,
+        "train_test_mean_diff": 0.69656699889258
+      }
+    },
+    {
+      "dimension": "D1_n2_x_D4_x_D8_sum",
+      "condition": "((-1, -1), (-1, np.int64(3)), 0)",
+      "support": 36,
+      "ks_stat": 0.3989988221436985,
+      "ks_p": 1.4236718171691083e-05,
+      "js_divergence": 0.11178557219878876,
+      "mean": 10.75,
+      "median": 11.0,
+      "std": 5.101061980934297,
+      "q10": 4.0,
+      "q25": 7.75,
+      "q50": 11.0,
+      "q75": 14.0,
+      "q90": 17.5,
+      "iqr": 6.25,
+      "concentration": 0.78125,
+      "mean_shift_sigma": 0.8268732458019538,
+      "validation": {
+        "status": "invalid",
+        "n_test": 33,
+        "ks_stat": 0.22470739137405804,
+        "ks_p": 0.06634532590132439,
+        "test_mean": 9.303030303030303,
+        "test_median": 8.0,
+        "train_test_mean_diff": 1.4469696969696972
+      }
+    }
+  ],
+  "task_id": "dlt_P3_D1_x_D4_x_D8",
+  "lottery": "daletou",
+  "elapsed_seconds": 0.2
+}

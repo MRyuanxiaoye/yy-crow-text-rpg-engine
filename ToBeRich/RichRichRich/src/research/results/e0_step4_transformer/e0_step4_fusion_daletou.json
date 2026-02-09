@@ -1,0 +1,40 @@
+{
+  "G0": {
+    "description": "基线 (A1+A2+局面)",
+    "n_features": 1909,
+    "xgboost": {
+      "direction_accuracy": 0.8390588235294117,
+      "efficiency": 0.23276405180425108,
+      "avg_reduction": 0.2499361344537815,
+      "avg_survival": 0.9312941176470588
+    },
+    "mlp": {
+      "direction_accuracy": 0.8767058823529412,
+      "efficiency": 0.33477409787444384,
+      "avg_reduction": 0.3556974789915966,
+      "avg_survival": 0.9411764705882353
+    }
+  },
+  "G1": {
+    "description": "G0 + Transformer 概率特征",
+    "n_features": 1924,
+    "xgboost": {
+      "direction_accuracy": 0.8367058823529412,
+      "efficiency": 0.2279627230845279,
+      "avg_reduction": 0.24441008403361342,
+      "avg_survival": 0.9327058823529412
+    },
+    "mlp": {
+      "direction_accuracy": 0.8828235294117647,
+      "efficiency": 0.34267755689569945,
+      "avg_reduction": 0.36354957983193276,
+      "avg_survival": 0.9425882352941176
+    }
+  },
+  "transformer_importance": {},
+  "conclusion": {
+    "transformer_useful": "有用",
+    "best_accuracy_delta": 0.00611764705882345,
+    "caveat": "Transformer模型用全量数据训练，存在数据泄露风险，结果仅供参考"
+  }
+}

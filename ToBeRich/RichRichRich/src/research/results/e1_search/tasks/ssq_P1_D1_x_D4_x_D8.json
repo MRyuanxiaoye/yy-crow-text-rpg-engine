@@ -1,0 +1,77 @@
+{
+  "status": "completed",
+  "position": 1,
+  "dimensions": [
+    "D1",
+    "D4",
+    "D8"
+  ],
+  "n_patterns_found": 2,
+  "n_validated": 2,
+  "n_insufficient": 0,
+  "validation_rate": 1.0,
+  "uncond_mean": 5.3132942326490715,
+  "uncond_std": 4.001110451731618,
+  "uncond_iqr": 6.0,
+  "patterns": [
+    {
+      "dimension": "D1_n1_x_D4_x_D8_span",
+      "condition": "((1,), (1, np.int64(4)), 0)",
+      "support": 61,
+      "ks_stat": 0.40575773600628173,
+      "ks_p": 2.565543401901889e-09,
+      "js_divergence": 0.13658729897044694,
+      "mean": 9.491803278688524,
+      "median": 10.0,
+      "std": 4.967510676582031,
+      "q10": 2.0,
+      "q25": 6.0,
+      "q50": 10.0,
+      "q75": 14.0,
+      "q90": 16.0,
+      "iqr": 8.0,
+      "concentration": 1.3333333333333333,
+      "mean_shift_sigma": 1.0443373399579756,
+      "validation": {
+        "status": "valid",
+        "n_test": 47,
+        "ks_stat": 0.38610946699479765,
+        "ks_p": 1.327666698528253e-06,
+        "test_mean": 8.829787234042554,
+        "test_median": 9.0,
+        "train_test_mean_diff": 0.66201604464597
+      }
+    },
+    {
+      "dimension": "D1_n1_x_D4_x_D8_ac_value",
+      "condition": "((1,), (1, np.int64(4)), 0)",
+      "support": 36,
+      "ks_stat": 0.3812316715542522,
+      "ks_p": 3.943837602459743e-05,
+      "js_divergence": 0.10471077824574135,
+      "mean": 9.61111111111111,
+      "median": 10.5,
+      "std": 5.095083565871111,
+      "q10": 2.5,
+      "q25": 5.75,
+      "q50": 10.5,
+      "q75": 13.25,
+      "q90": 16.5,
+      "iqr": 7.5,
+      "concentration": 1.25,
+      "mean_shift_sigma": 1.0741560200123972,
+      "validation": {
+        "status": "valid",
+        "n_test": 22,
+        "ks_stat": 0.4615333422068415,
+        "ks_p": 9.75993038000063e-05,
+        "test_mean": 9.727272727272727,
+        "test_median": 9.0,
+        "train_test_mean_diff": 0.11616161616161591
+      }
+    }
+  ],
+  "task_id": "ssq_P1_D1_x_D4_x_D8",
+  "lottery": "shuangseqiu",
+  "elapsed_seconds": 0.3
+}

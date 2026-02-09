@@ -1,0 +1,178 @@
+{
+  "lottery_type": "shuangseqiu",
+  "results": {
+    "total_epochs": 330,
+    "best_epoch": 30,
+    "best_val_acc": 0.472,
+    "final_val_acc": 0.472,
+    "final_val_loss": 0.8889,
+    "per_position_accuracy": {
+      "P0": 0.4497,
+      "P1": 0.4927,
+      "P2": 0.4751,
+      "P3": 0.4839,
+      "P4": 0.477,
+      "P5": 0.4536
+    },
+    "total_params": 4948242,
+    "attention_analysis": {
+      "layer_0": {
+        "top_attended_steps": [
+          {
+            "step": 19,
+            "weight": 0.0287
+          },
+          {
+            "step": 18,
+            "weight": 0.0278
+          },
+          {
+            "step": 20,
+            "weight": 0.027
+          },
+          {
+            "step": 21,
+            "weight": 0.0269
+          },
+          {
+            "step": 17,
+            "weight": 0.0253
+          }
+        ],
+        "recent_bias": 0.0171,
+        "distant_weight": 0.0134
+      },
+      "layer_1": {
+        "top_attended_steps": [
+          {
+            "step": 17,
+            "weight": 0.0231
+          },
+          {
+            "step": 18,
+            "weight": 0.0228
+          },
+          {
+            "step": 19,
+            "weight": 0.0228
+          },
+          {
+            "step": 45,
+            "weight": 0.0227
+          },
+          {
+            "step": 16,
+            "weight": 0.0222
+          }
+        ],
+        "recent_bias": 0.0214,
+        "distant_weight": 0.0158
+      },
+      "layer_2": {
+        "top_attended_steps": [
+          {
+            "step": 18,
+            "weight": 0.021
+          },
+          {
+            "step": 17,
+            "weight": 0.021
+          },
+          {
+            "step": 19,
+            "weight": 0.021
+          },
+          {
+            "step": 39,
+            "weight": 0.0207
+          },
+          {
+            "step": 36,
+            "weight": 0.0207
+          }
+        ],
+        "recent_bias": 0.0204,
+        "distant_weight": 0.0186
+      },
+      "layer_3": {
+        "top_attended_steps": [
+          {
+            "step": 17,
+            "weight": 0.0204
+          },
+          {
+            "step": 18,
+            "weight": 0.0204
+          },
+          {
+            "step": 16,
+            "weight": 0.0204
+          },
+          {
+            "step": 19,
+            "weight": 0.0203
+          },
+          {
+            "step": 15,
+            "weight": 0.0202
+          }
+        ],
+        "recent_bias": 0.0199,
+        "distant_weight": 0.0198
+      },
+      "layer_4": {
+        "top_attended_steps": [
+          {
+            "step": 17,
+            "weight": 0.0201
+          },
+          {
+            "step": 18,
+            "weight": 0.0201
+          },
+          {
+            "step": 16,
+            "weight": 0.0201
+          },
+          {
+            "step": 19,
+            "weight": 0.0201
+          },
+          {
+            "step": 22,
+            "weight": 0.0201
+          }
+        ],
+        "recent_bias": 0.0199,
+        "distant_weight": 0.02
+      },
+      "layer_5": {
+        "top_attended_steps": [
+          {
+            "step": 48,
+            "weight": 0.02
+          },
+          {
+            "step": 47,
+            "weight": 0.02
+          },
+          {
+            "step": 8,
+            "weight": 0.02
+          },
+          {
+            "step": 9,
+            "weight": 0.02
+          },
+          {
+            "step": 46,
+            "weight": 0.02
+          }
+        ],
+        "recent_bias": 0.02,
+        "distant_weight": 0.02
+      }
+    },
+    "training_time": 1906.7
+  }
+}

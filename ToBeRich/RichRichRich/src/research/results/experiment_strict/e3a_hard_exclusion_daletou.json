@@ -1,0 +1,157 @@
+{
+  "lottery_type": "daletou",
+  "rules": {
+    "rule1_ordering_constraint": {
+      "error_rate": 0.0,
+      "errors": 0,
+      "total": 2125,
+      "avg_excluded_per_pos": 4.0,
+      "go": true
+    },
+    "rule2_direction_extreme": {
+      "scan_results": {
+        "theta_0.9": {
+          "theta": 0.9,
+          "error_rate": 0.04318936877076412,
+          "errors": 52,
+          "total_checks": 1204,
+          "trigger_rate": 0.5665882352941176,
+          "avg_excluded_when_triggered": 13.046511627906977,
+          "go": false
+        },
+        "theta_0.92": {
+          "theta": 0.92,
+          "error_rate": 0.03856749311294766,
+          "errors": 42,
+          "total_checks": 1089,
+          "trigger_rate": 0.5124705882352941,
+          "avg_excluded_when_triggered": 12.820936639118457,
+          "go": false
+        },
+        "theta_0.94": {
+          "theta": 0.94,
+          "error_rate": 0.030303030303030304,
+          "errors": 29,
+          "total_checks": 957,
+          "trigger_rate": 0.45035294117647057,
+          "avg_excluded_when_triggered": 12.54649947753396,
+          "go": false
+        },
+        "theta_0.95": {
+          "theta": 0.95,
+          "error_rate": 0.026837806301050177,
+          "errors": 23,
+          "total_checks": 857,
+          "trigger_rate": 0.4032941176470588,
+          "avg_excluded_when_triggered": 12.375729288214702,
+          "go": false
+        },
+        "theta_0.96": {
+          "theta": 0.96,
+          "error_rate": 0.02834008097165992,
+          "errors": 21,
+          "total_checks": 741,
+          "trigger_rate": 0.3487058823529412,
+          "avg_excluded_when_triggered": 12.260458839406208,
+          "go": false
+        },
+        "theta_0.97": {
+          "theta": 0.97,
+          "error_rate": 0.025728987993138937,
+          "errors": 15,
+          "total_checks": 583,
+          "trigger_rate": 0.2743529411764706,
+          "avg_excluded_when_triggered": 11.799313893653517,
+          "go": false
+        },
+        "theta_0.98": {
+          "theta": 0.98,
+          "error_rate": 0.023746701846965697,
+          "errors": 9,
+          "total_checks": 379,
+          "trigger_rate": 0.17835294117647058,
+          "avg_excluded_when_triggered": 11.07915567282322,
+          "go": false
+        },
+        "theta_0.99": {
+          "theta": 0.99,
+          "error_rate": 0.01680672268907563,
+          "errors": 2,
+          "total_checks": 119,
+          "trigger_rate": 0.056,
+          "avg_excluded_when_triggered": 9.268907563025211,
+          "go": false
+        }
+      },
+      "best_theta": null,
+      "go": false
+    },
+    "rule3_diff_extreme": {
+      "error_rate": 0.007058823529411765,
+      "errors": 15,
+      "total": 2125,
+      "avg_excluded_per_pos": 5.736,
+      "diff_percentiles": {
+        "P0": {
+          "U": {
+            "p1": 1.0,
+            "p99": 20.0
+          },
+          "D": {
+            "p1": -20.04,
+            "p99": -1.0
+          }
+        },
+        "P1": {
+          "U": {
+            "p1": 1.0,
+            "p99": 22.0
+          },
+          "D": {
+            "p1": -21.39,
+            "p99": -1.0
+          }
+        },
+        "P2": {
+          "U": {
+            "p1": 1.0,
+            "p99": 23.0
+          },
+          "D": {
+            "p1": -21.0,
+            "p99": -1.0
+          }
+        },
+        "P3": {
+          "U": {
+            "p1": 1.0,
+            "p99": 22.0
+          },
+          "D": {
+            "p1": -21.0,
+            "p99": -1.0
+          }
+        },
+        "P4": {
+          "U": {
+            "p1": 1.0,
+            "p99": 18.0
+          },
+          "D": {
+            "p1": -18.0,
+            "p99": -1.0
+          }
+        }
+      },
+      "go": true
+    }
+  },
+  "summary": {
+    "go_rules": [
+      "rule1_ordering_constraint",
+      "rule3_diff_extreme"
+    ],
+    "n_go_rules": 2,
+    "overall_go": true
+  }
+}

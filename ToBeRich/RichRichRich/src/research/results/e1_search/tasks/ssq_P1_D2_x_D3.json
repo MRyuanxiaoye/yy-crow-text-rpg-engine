@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "position": 1,
+  "dimensions": [
+    "D2",
+    "D3"
+  ],
+  "n_patterns_found": 2,
+  "n_validated": 1,
+  "n_insufficient": 0,
+  "validation_rate": 0.5,
+  "uncond_mean": 5.3132942326490715,
+  "uncond_std": 4.001110451731618,
+  "uncond_iqr": 6.0,
+  "patterns": [
+    {
+      "dimension": "D2_n1_x_D3",
+      "condition": "((np.int64(9),), np.int64(3))",
+      "support": 33,
+      "ks_stat": 0.5205278592375366,
+      "ks_p": 1.0710463297078046e-08,
+      "js_divergence": 0.18505793050862276,
+      "mean": 11.454545454545455,
+      "median": 13.0,
+      "std": 4.619398551240909,
+      "q10": 5.0,
+      "q25": 8.0,
+      "q50": 13.0,
+      "q75": 15.0,
+      "q90": 17.0,
+      "iqr": 7.0,
+      "concentration": 1.1666666666666667,
+      "mean_shift_sigma": 1.5348867010753342,
+      "validation": {
+        "status": "valid",
+        "n_test": 14,
+        "ks_stat": 0.582304957121941,
+        "ks_p": 5.4732132399237546e-05,
+        "test_mean": 12.0,
+        "test_median": 11.0,
+        "train_test_mean_diff": 0.545454545454545
+      }
+    },
+    {
+      "dimension": "D2_n1_x_D3",
+      "condition": "((np.int64(4),), np.int64(1))",
+      "support": 106,
+      "ks_stat": 0.17470812814695955,
+      "ks_p": 0.003666959373693644,
+      "js_divergence": 0.03668006224830999,
+      "mean": 3.641509433962264,
+      "median": 3.0,
+      "std": 3.1895722764212096,
+      "q10": 0.0,
+      "q25": 1.0,
+      "q50": 3.0,
+      "q75": 5.0,
+      "q90": 8.0,
+      "iqr": 4.0,
+      "concentration": 0.6666666666666666,
+      "mean_shift_sigma": 0.4178302046031459,
+      "validation": {
+        "status": "invalid",
+        "n_test": 67,
+        "ks_stat": 0.13514783330783856,
+        "ks_p": 0.17623261472383872,
+        "test_mean": 4.417910447761194,
+        "test_median": 4.0,
+        "train_test_mean_diff": 0.7764010137989303
+      }
+    }
+  ],
+  "task_id": "ssq_P1_D2_x_D3",
+  "lottery": "shuangseqiu",
+  "elapsed_seconds": 0.3
+}

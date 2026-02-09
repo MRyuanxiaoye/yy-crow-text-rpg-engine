@@ -1,0 +1,131 @@
+{
+  "last_updated": "2026-02-09T00:38:11.159571",
+  "total_tasks": 308,
+  "completed": 308,
+  "failed": 0,
+  "pending": 0,
+  "elapsed_seconds": 58.0,
+  "avg_seconds_per_task": 0.2,
+  "by_lottery": {
+    "daletou": {
+      "completed": 110,
+      "total": 0
+    },
+    "shuangseqiu": {
+      "completed": 132,
+      "total": 0
+    }
+  },
+  "by_dimension": {
+    "D1": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 5
+    },
+    "D2": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 5
+    },
+    "D3": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 17
+    },
+    "D4": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 5
+    },
+    "D5": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 0
+    },
+    "D6": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 0
+    },
+    "D9": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 4
+    },
+    "D10": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 0
+    },
+    "D11": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 0
+    },
+    "D3xD12": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 27
+    },
+    "D8xD10": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 6
+    },
+    "D5xD7": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 17
+    },
+    "D6xD12": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 1
+    },
+    "D1xD12": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 6
+    },
+    "D1xD3": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 90
+    },
+    "D1xD4": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 25
+    },
+    "D2xD3": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 26
+    },
+    "D4xD6": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 6
+    },
+    "D5xD3": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 29
+    },
+    "D1xD3xD7": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 108
+    },
+    "D1xD3xD12": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 55
+    },
+    "D1xD4xD8": {
+      "completed": 11,
+      "total": 0,
+      "valid_patterns": 53
+    }
+  }
+}

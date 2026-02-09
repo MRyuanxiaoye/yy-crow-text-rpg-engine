@@ -1,0 +1,12 @@
+{
+  "daletou": {
+    "total_patterns": 174,
+    "total_validated": 101,
+    "validation_rate": 0.5804597701149425
+  },
+  "shuangseqiu": {
+    "total_patterns": 190,
+    "total_validated": 107,
+    "validation_rate": 0.5631578947368421
+  }
+}

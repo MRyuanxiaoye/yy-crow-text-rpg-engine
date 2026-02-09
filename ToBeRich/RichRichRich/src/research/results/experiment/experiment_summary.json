@@ -1,0 +1,28 @@
+{
+  "total_time_seconds": 43.7,
+  "total_time_minutes": 0.7,
+  "lottery_types": [
+    "daletou",
+    "shuangseqiu"
+  ],
+  "results": {
+    "daletou": {
+      "status": "OK",
+      "verdict": "SUCCESS",
+      "best_method": "3C_mlp",
+      "direction_accuracy": 0.8522352941176471,
+      "avg_reduction": 0.3495394957983193,
+      "avg_survival": 0.916235294117647,
+      "efficiency": 0.32026042273850713
+    },
+    "shuangseqiu": {
+      "status": "OK",
+      "verdict": "SUCCESS",
+      "best_method": "3C_mlp",
+      "direction_accuracy": 0.8330078125,
+      "avg_reduction": 0.30499329229797983,
+      "avg_survival": 0.9225260416666666,
+      "efficiency": 0.28136425467854
+    }
+  }
+}

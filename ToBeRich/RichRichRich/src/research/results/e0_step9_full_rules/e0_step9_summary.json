@@ -1,0 +1,133 @@
+{
+  "experiment": "E0-Step9: 全量规则下重跑 E3 四层架构",
+  "description": "将 A3 差分模式和 A4 统计量模式纳入 E3 框架的全部四层（硬排除、多信号融合、组合构造、端到端评估），验证全量规则的端到端贡献",
+  "signals": {
+    "A": "基线概率权重（MLP 预测）",
+    "B": "A2 规则簇条件权重（1000 个聚类）",
+    "C": "跨位置一致性权重",
+    "D": "A3 差分模式条件权重",
+    "E": "A4 统计量模式条件权重"
+  },
+  "shuangseqiu": {
+    "e3a_hard_exclusion": {
+      "n_rules_passed": 3,
+      "rules": ["rule1_ordering_constraint", "rule2_direction_extreme", "rule3_diff_extreme"],
+      "rule1_error_rate": 0.0,
+      "rule1_avg_excluded": 5.0,
+      "rule2_best_theta": 0.98,
+      "rule2_error_rate": 0.0071,
+      "rule3_error_rate": 0.0088,
+      "rule3_avg_excluded": 7.27,
+      "avg_candidates_per_pos": 19.83
+    },
+    "e3b_signal_fusion": {
+      "baseline_auc_A_only": 0.8332,
+      "best_auc": 0.9264,
+      "auc_improvement": 0.0932,
+      "best_config": {"A": 0.15, "B": 0.80, "C": 0.00, "D": 0.05, "E": 0.00},
+      "optimal_ks": [8, 12, 13, 14, 14, 10],
+      "combo_reduction": 0.6869,
+      "combo_survival": 0.7891,
+      "combo_efficiency": 0.5420,
+      "marginal_contribution": {
+        "B": 0.0932,
+        "C": 0.0000,
+        "D": 0.0001,
+        "E": 0.0000
+      }
+    },
+    "e3c_combo_construction": {
+      "best_beam_config": "bw500_rw0.0",
+      "best_beam_efficiency": 0.3514,
+      "baseline_beam_efficiency": 0.2421,
+      "rule_improvement": 0.1093,
+      "rule_weight_effect": "rule_weight 对存活率无影响，规则得分区分命中/未命中（0.184 vs 0.148）"
+    },
+    "e3d_end_to_end": {
+      "red_ball": {
+        "survival_rate": 0.3496,
+        "avg_combo_count": 500,
+        "combo_reduction": 0.9995,
+        "efficiency": 0.3495,
+        "mean_rank_when_hit": 143.3,
+        "top10_hit_rate": 0.0586,
+        "top50_hit_rate": 0.1289,
+        "top100_hit_rate": 0.1836,
+        "top200_hit_rate": 0.2441
+      },
+      "blue_ball": {
+        "best_method": "3B_xgboost",
+        "direction_accuracy": 0.9609,
+        "avg_reduction": 0.3650,
+        "avg_survival": 0.9785,
+        "efficiency": 0.3571
+      },
+      "combined_efficiency": 0.1248
+    }
+  },
+  "daletou": {
+    "e3a_hard_exclusion": {
+      "n_rules_passed": 2,
+      "rules": ["rule1_ordering_constraint", "rule3_diff_extreme"],
+      "rule1_error_rate": 0.0,
+      "rule1_avg_excluded": 4.0,
+      "rule2_best_theta": null,
+      "rule2_note": "所有阈值误排除率均>1%，不满足条件",
+      "rule3_error_rate": 0.0071,
+      "rule3_avg_excluded": 5.74,
+      "avg_candidates_per_pos": 27.57
+    },
+    "e3b_signal_fusion": {
+      "baseline_auc_A_only": 0.7819,
+      "best_auc": 0.8884,
+      "auc_improvement": 0.1065,
+      "best_config": {"A": 0.15, "B": 0.55, "C": 0.20, "D": 0.10, "E": 0.00},
+      "optimal_ks": [14, 16, 18, 19, 16],
+      "combo_reduction": 0.4837,
+      "combo_survival": 0.8212,
+      "combo_efficiency": 0.3972,
+      "marginal_contribution": {
+        "B": 0.1178,
+        "C": 0.0020,
+        "D": 0.0002,
+        "E": 0.0000
+      }
+    },
+    "e3c_combo_construction": {
+      "best_beam_config": "bw500_rw0.0",
+      "best_beam_efficiency": 0.2631,
+      "baseline_beam_efficiency": 0.1834,
+      "rule_improvement": 0.0797,
+      "rule_weight_effect": "rule_weight 对存活率无影响，规则得分区分命中/未命中（0.206 vs 0.168）"
+    },
+    "e3d_end_to_end": {
+      "red_ball": {
+        "survival_rate": 0.2565,
+        "avg_combo_count": 500,
+        "combo_reduction": 0.9985,
+        "efficiency": 0.2561,
+        "mean_rank_when_hit": 149.4,
+        "top10_hit_rate": 0.0400,
+        "top50_hit_rate": 0.0824,
+        "top100_hit_rate": 0.1318,
+        "top200_hit_rate": 0.1835
+      },
+      "blue_ball": {
+        "best_method": "3B_xgboost",
+        "direction_accuracy": 0.9671,
+        "avg_reduction": 0.4382,
+        "avg_survival": 0.9835,
+        "efficiency": 0.4310
+      },
+      "combined_efficiency": 0.1104
+    }
+  },
+  "conclusions": {
+    "signal_value_ranking": "B >> C > D >> E (A4 无贡献)",
+    "a3_contribution": "A3 差分模式作为信号 D 被最优配置选中（权重 5%-10%），但边际 AUC 贡献极微（+0.0001~0.0002）",
+    "a4_contribution": "A4 统计量模式作为信号 E 在所有配置中权重为 0，无边际贡献",
+    "cross_position_consistency": "信号 C 对大乐透有微小贡献（+0.002 AUC），对双色球无贡献",
+    "rule_scorer_in_beam": "A3/A4 规则已纳入 RuleScorer，但 Beam Search 中 rule_weight=0.0 为最优，说明规则评分在组合构造层面也无显著增量",
+    "overall": "全量规则（A1+A2+A3+A4）相比仅 A1+A2 的端到端性能提升可忽略不计，A2 规则簇（信号 B）仍是唯一有实质贡献的规则信号"
+  }
+}

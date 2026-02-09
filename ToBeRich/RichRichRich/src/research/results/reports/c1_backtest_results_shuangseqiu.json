@@ -1,0 +1,50 @@
+{
+  "lottery_type": "shuangseqiu",
+  "backtest": {
+    "test_range": [
+      2389,
+      3413
+    ],
+    "n_rules_tested": 600,
+    "total_predictions": 967,
+    "hits": 601,
+    "misses": 366,
+    "no_match": 5171,
+    "accuracy": 0.6215,
+    "coverage": 0.1575,
+    "per_position": {
+      "P0": {
+        "predictions": 350,
+        "hits": 206,
+        "accuracy": 0.5886
+      },
+      "P1": {
+        "predictions": 90,
+        "hits": 72,
+        "accuracy": 0.8
+      },
+      "P2": {
+        "predictions": 37,
+        "hits": 23,
+        "accuracy": 0.6216
+      },
+      "P3": {
+        "predictions": 103,
+        "hits": 69,
+        "accuracy": 0.6699
+      },
+      "P4": {
+        "predictions": 88,
+        "hits": 54,
+        "accuracy": 0.6136
+      },
+      "P5": {
+        "predictions": 299,
+        "hits": 177,
+        "accuracy": 0.592
+      }
+    },
+    "random_baseline": 0.3333,
+    "time": 1.5
+  }
+}

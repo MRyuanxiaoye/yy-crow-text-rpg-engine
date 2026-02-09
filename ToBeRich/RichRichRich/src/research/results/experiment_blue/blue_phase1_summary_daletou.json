@@ -1,0 +1,8 @@
+{
+  "lottery_type": "daletou",
+  "ball_type": "blue",
+  "n_clusters": 1000,
+  "silhouette_score": 0.3616885244846344,
+  "n_a2_rules_input": 10000,
+  "a1_filtered_count": 129
+}

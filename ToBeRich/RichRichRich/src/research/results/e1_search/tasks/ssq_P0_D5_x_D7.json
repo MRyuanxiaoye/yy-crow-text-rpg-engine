@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "position": 0,
+  "dimensions": [
+    "D5",
+    "D7"
+  ],
+  "n_patterns_found": 0,
+  "n_validated": 0,
+  "n_insufficient": 0,
+  "validation_rate": 0,
+  "uncond_mean": 3.8470185728250246,
+  "uncond_std": 3.349991378382439,
+  "uncond_iqr": 5.0,
+  "patterns": [],
+  "task_id": "ssq_P0_D5_x_D7",
+  "lottery": "shuangseqiu",
+  "elapsed_seconds": 0.2
+}

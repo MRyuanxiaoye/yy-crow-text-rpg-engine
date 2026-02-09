@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "position": 3,
+  "dimensions": [
+    "D2",
+    "D3"
+  ],
+  "n_patterns_found": 1,
+  "n_validated": 0,
+  "n_insufficient": 0,
+  "validation_rate": 0.0,
+  "uncond_mean": 5.953567937438905,
+  "uncond_std": 4.355566822255883,
+  "uncond_iqr": 7.0,
+  "patterns": [
+    {
+      "dimension": "D2_n1_x_D3",
+      "condition": "((np.int64(6),), np.int64(2))",
+      "support": 138,
+      "ks_stat": 0.14652131412299715,
+      "ks_p": 0.006897732684173448,
+      "js_divergence": 0.02447111023540633,
+      "mean": 4.760869565217392,
+      "median": 4.5,
+      "std": 3.1999872006675343,
+      "q10": 1.0,
+      "q25": 2.0,
+      "q50": 4.5,
+      "q75": 7.0,
+      "q90": 9.0,
+      "iqr": 5.0,
+      "concentration": 0.7142857142857143,
+      "mean_shift_sigma": 0.27383310161311625,
+      "validation": {
+        "status": "invalid",
+        "n_test": 78,
+        "ks_stat": 0.1372339227390472,
+        "ks_p": 0.11241981966729472,
+        "test_mean": 4.858974358974359,
+        "test_median": 4.0,
+        "train_test_mean_diff": 0.09810479375696701
+      }
+    }
+  ],
+  "task_id": "ssq_P3_D2_x_D3",
+  "lottery": "shuangseqiu",
+  "elapsed_seconds": 0.3
+}

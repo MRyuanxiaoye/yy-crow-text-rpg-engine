@@ -1,0 +1,36 @@
+{
+  "methods": [
+    {
+      "method": "3B_xgboost",
+      "direction_accuracy": 0.9609375,
+      "avg_reduction": 0.364990234375,
+      "avg_survival": 0.978515625,
+      "efficiency": 0.3571486473083496,
+      "per_position": {
+        "P0": {
+          "direction_accuracy": 0.9609375,
+          "avg_reduction": 0.364990234375,
+          "avg_survival": 0.978515625,
+          "efficiency": 0.3571486473083496
+        }
+      }
+    },
+    {
+      "method": "3A_statistical",
+      "direction_accuracy": 0.900390625,
+      "avg_reduction": 0.3525390625,
+      "avg_survival": 0.97265625,
+      "efficiency": 0.3428993225097656,
+      "per_position": {
+        "P0": {
+          "direction_accuracy": 0.900390625,
+          "avg_reduction": 0.3525390625,
+          "avg_survival": 0.97265625,
+          "efficiency": 0.3428993225097656
+        }
+      }
+    }
+  ],
+  "best_method": "3B_xgboost",
+  "best_efficiency": 0.3571486473083496
+}

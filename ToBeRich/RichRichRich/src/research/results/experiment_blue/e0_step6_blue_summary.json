@@ -1,0 +1,21 @@
+{
+  "total_time_seconds": 11.0,
+  "reports": {
+    "daletou": {
+      "best_method": "3B_xgboost",
+      "efficiency": 0.4310173010380623,
+      "direction_accuracy": 0.9670588235294117,
+      "avg_reduction": 0.43823529411764706,
+      "avg_survival": 0.9835294117647059,
+      "verdict": "SUCCESS"
+    },
+    "shuangseqiu": {
+      "best_method": "3B_xgboost",
+      "efficiency": 0.3571486473083496,
+      "direction_accuracy": 0.9609375,
+      "avg_reduction": 0.364990234375,
+      "avg_survival": 0.978515625,
+      "verdict": "SUCCESS"
+    }
+  }
+}

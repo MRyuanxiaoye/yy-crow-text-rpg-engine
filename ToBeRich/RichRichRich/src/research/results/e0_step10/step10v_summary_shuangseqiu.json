@@ -1,0 +1,9 @@
+{
+  "lottery_type": "shuangseqiu",
+  "v1_clusters": null,
+  "v1_silhouette": null,
+  "v2_n_significant": 5,
+  "v2_has_deterministic": true,
+  "v3_n_periodic_diff": 5,
+  "v3_n_periodic_val": 1
+}

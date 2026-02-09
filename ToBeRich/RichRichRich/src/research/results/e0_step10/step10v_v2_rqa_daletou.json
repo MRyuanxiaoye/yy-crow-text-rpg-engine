@@ -1,0 +1,75 @@
+{
+  "lottery_type": "daletou",
+  "positions": {
+    "P0": {
+      "n_points": 2832,
+      "RR": 0.24971758950411385,
+      "DET": 0.4740672140198401,
+      "LAM": 1.0,
+      "L_max": 10,
+      "L_mean": 2.411130636424573,
+      "ENTR": 0.8511302317373668,
+      "surrogate_DET_mean": 0.4152424218621679,
+      "surrogate_DET_std": 0.007353968039890074,
+      "p_value": 0.0,
+      "significant": true
+    },
+    "P1": {
+      "n_points": 2832,
+      "RR": 0.18772248165443628,
+      "DET": 0.3508839263292063,
+      "LAM": 0.8122077072879501,
+      "L_max": 8,
+      "L_mean": 2.2511247568093387,
+      "ENTR": 0.6272704402479116,
+      "surrogate_DET_mean": 0.3315885882704233,
+      "surrogate_DET_std": 0.005244130087531864,
+      "p_value": 0.0,
+      "significant": true
+    },
+    "P2": {
+      "n_points": 2832,
+      "RR": 0.17727284856571046,
+      "DET": 0.3306689948268682,
+      "LAM": 0.7536314783315521,
+      "L_max": 7,
+      "L_mean": 2.2178024566717145,
+      "ENTR": 0.5718295522658022,
+      "surrogate_DET_mean": 0.31588139894529155,
+      "surrogate_DET_std": 0.004589720626385032,
+      "p_value": 0.0,
+      "significant": true
+    },
+    "P3": {
+      "n_points": 2832,
+      "RR": 0.1822610629308428,
+      "DET": 0.3483141132318564,
+      "LAM": 0.8322556086419692,
+      "L_max": 7,
+      "L_mean": 2.2382087305569494,
+      "ENTR": 0.6061857155532361,
+      "surrogate_DET_mean": 0.33951518535936676,
+      "surrogate_DET_std": 0.005090856885881979,
+      "p_value": 0.043,
+      "significant": true
+    },
+    "P4": {
+      "n_points": 2832,
+      "RR": 0.2326466533244385,
+      "DET": 0.4573872217103226,
+      "LAM": 1.0,
+      "L_max": 11,
+      "L_mean": 2.363548355230663,
+      "ENTR": 0.7906155884195153,
+      "surrogate_DET_mean": 0.4358701051424194,
+      "surrogate_DET_std": 0.0077901172265016135,
+      "p_value": 0.002,
+      "significant": true
+    }
+  },
+  "summary": {
+    "n_positions": 5,
+    "n_significant": 5,
+    "has_deterministic_component": true
+  }
+}

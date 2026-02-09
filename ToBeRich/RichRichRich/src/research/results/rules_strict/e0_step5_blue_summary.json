@@ -1,0 +1,24 @@
+{
+  "daletou": {
+    "lottery_type": "daletou",
+    "blue_count": 2,
+    "blue_range": 12,
+    "n_draws_total": 2833,
+    "n_draws_used": 1699,
+    "a1_patterns": 1949,
+    "a1_time": 0.2,
+    "a2_rules": 13011,
+    "a2_time": 0.9
+  },
+  "shuangseqiu": {
+    "lottery_type": "shuangseqiu",
+    "blue_count": 1,
+    "blue_range": 16,
+    "n_draws_total": 3413,
+    "n_draws_used": 2047,
+    "a1_patterns": 1082,
+    "a1_time": 0.1,
+    "a2_rules": 129,
+    "a2_time": 0.1
+  }
+}

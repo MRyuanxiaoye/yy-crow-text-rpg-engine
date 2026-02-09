@@ -1,0 +1,478 @@
+{
+  "lottery_type": "shuangseqiu",
+  "groups": {
+    "G0": {
+      "group": "G0",
+      "description": "基线 (A1+A2+局面)",
+      "n_features": 2494,
+      "xgboost": {
+        "direction_accuracy": 0.8033854166666666,
+        "avg_reduction": 0.21583017676767677,
+        "avg_survival": 0.9326171875,
+        "efficiency": 0.20128693243469856,
+        "per_position": {
+          "P0": {
+            "direction_accuracy": 0.791015625,
+            "avg_reduction": 0.24627130681818182,
+            "avg_survival": 0.93359375,
+            "efficiency": 0.22991735284978693
+          },
+          "P1": {
+            "direction_accuracy": 0.82421875,
+            "avg_reduction": 0.20833333333333331,
+            "avg_survival": 0.9375,
+            "efficiency": 0.19531249999999997
+          },
+          "P2": {
+            "direction_accuracy": 0.849609375,
+            "avg_reduction": 0.2661576704545454,
+            "avg_survival": 0.935546875,
+            "efficiency": 0.2490029768510298
+          },
+          "P3": {
+            "direction_accuracy": 0.796875,
+            "avg_reduction": 0.20933948863636365,
+            "avg_survival": 0.921875,
+            "efficiency": 0.19298484108664773
+          },
+          "P4": {
+            "direction_accuracy": 0.787109375,
+            "avg_reduction": 0.19981060606060602,
+            "avg_survival": 0.927734375,
+            "efficiency": 0.18537116773200754
+          },
+          "P5": {
+            "direction_accuracy": 0.771484375,
+            "avg_reduction": 0.16506865530303028,
+            "avg_survival": 0.939453125,
+            "efficiency": 0.15507426406397962
+          }
+        }
+      },
+      "mlp": {
+        "direction_accuracy": 0.8658854166666666,
+        "avg_reduction": 0.35639599116161613,
+        "avg_survival": 0.9332682291666666,
+        "efficiency": 0.33261305555350046,
+        "per_position": {
+          "P0": {
+            "direction_accuracy": 0.8125,
+            "avg_reduction": 0.3633996212121212,
+            "avg_survival": 0.953125,
+            "efficiency": 0.34636526396780304
+          },
+          "P1": {
+            "direction_accuracy": 0.896484375,
+            "avg_reduction": 0.35564630681818177,
+            "avg_survival": 0.9375,
+            "efficiency": 0.3334184126420454
+          },
+          "P2": {
+            "direction_accuracy": 0.904296875,
+            "avg_reduction": 0.39364346590909083,
+            "avg_survival": 0.943359375,
+            "efficiency": 0.37134725397283375
+          },
+          "P3": {
+            "direction_accuracy": 0.873046875,
+            "avg_reduction": 0.3506155303030302,
+            "avg_survival": 0.916015625,
+            "efficiency": 0.32116930412523664
+          },
+          "P4": {
+            "direction_accuracy": 0.865234375,
+            "avg_reduction": 0.3338068181818181,
+            "avg_survival": 0.92578125,
+            "efficiency": 0.3090320933948863
+          },
+          "P5": {
+            "direction_accuracy": 0.84375,
+            "avg_reduction": 0.34126420454545453,
+            "avg_survival": 0.923828125,
+            "efficiency": 0.31526947021484375
+          }
+        }
+      }
+    },
+    "G1": {
+      "group": "G1",
+      "description": "G0 + A3 差分模式",
+      "n_features": 2617,
+      "xgboost": {
+        "direction_accuracy": 0.8024088541666666,
+        "avg_reduction": 0.21382773042929293,
+        "avg_survival": 0.9313151041666666,
+        "efficiency": 0.19914099503847885,
+        "per_position": {
+          "P0": {
+            "direction_accuracy": 0.77734375,
+            "avg_reduction": 0.2421875,
+            "avg_survival": 0.927734375,
+            "efficiency": 0.2246856689453125
+          },
+          "P1": {
+            "direction_accuracy": 0.822265625,
+            "avg_reduction": 0.20022490530303028,
+            "avg_survival": 0.93359375,
+            "efficiency": 0.18692872018525092
+          },
+          "P2": {
+            "direction_accuracy": 0.853515625,
+            "avg_reduction": 0.2649147727272727,
+            "avg_survival": 0.93359375,
+            "efficiency": 0.24732277610085227
+          },
+          "P3": {
+            "direction_accuracy": 0.787109375,
+            "avg_reduction": 0.21993371212121213,
+            "avg_survival": 0.91796875,
+            "efficiency": 0.20189227479876895
+          },
+          "P4": {
+            "direction_accuracy": 0.78515625,
+            "avg_reduction": 0.18744081439393936,
+            "avg_survival": 0.935546875,
+            "efficiency": 0.175359668153705
+          },
+          "P5": {
+            "direction_accuracy": 0.7890625,
+            "avg_reduction": 0.168264678030303,
+            "avg_survival": 0.939453125,
+            "efficiency": 0.158076777602687
+          }
+        }
+      },
+      "mlp": {
+        "direction_accuracy": 0.84765625,
+        "avg_reduction": 0.32837160669191917,
+        "avg_survival": 0.9296875,
+        "efficiency": 0.3052829780963936,
+        "per_position": {
+          "P0": {
+            "direction_accuracy": 0.80078125,
+            "avg_reduction": 0.35120738636363635,
+            "avg_survival": 0.93359375,
+            "efficiency": 0.32788502086292615
+          },
+          "P1": {
+            "direction_accuracy": 0.876953125,
+            "avg_reduction": 0.3396661931818181,
+            "avg_survival": 0.931640625,
+            "efficiency": 0.3164468245072798
+          },
+          "P2": {
+            "direction_accuracy": 0.884765625,
+            "avg_reduction": 0.3494910037878788,
+            "avg_survival": 0.943359375,
+            "efficiency": 0.32969561490145594
+          },
+          "P3": {
+            "direction_accuracy": 0.857421875,
+            "avg_reduction": 0.33558238636363635,
+            "avg_survival": 0.91015625,
+            "efficiency": 0.3054324063387784
+          },
+          "P4": {
+            "direction_accuracy": 0.837890625,
+            "avg_reduction": 0.3056936553030303,
+            "avg_survival": 0.923828125,
+            "efficiency": 0.28240839640299475
+          },
+          "P5": {
+            "direction_accuracy": 0.828125,
+            "avg_reduction": 0.28858901515151514,
+            "avg_survival": 0.935546875,
+            "efficiency": 0.26998855128432764
+          }
+        }
+      }
+    },
+    "G2": {
+      "group": "G2",
+      "description": "G0 + A4 统计量模式",
+      "n_features": 2632,
+      "xgboost": {
+        "direction_accuracy": 0.8024088541666666,
+        "avg_reduction": 0.21521859217171713,
+        "avg_survival": 0.9352213541666666,
+        "efficiency": 0.20127702321267685,
+        "per_position": {
+          "P0": {
+            "direction_accuracy": 0.794921875,
+            "avg_reduction": 0.25023674242424243,
+            "avg_survival": 0.927734375,
+            "efficiency": 0.23215322783499054
+          },
+          "P1": {
+            "direction_accuracy": 0.82421875,
+            "avg_reduction": 0.20087594696969696,
+            "avg_survival": 0.9375,
+            "efficiency": 0.1883212002840909
+          },
+          "P2": {
+            "direction_accuracy": 0.8515625,
+            "avg_reduction": 0.2685842803030303,
+            "avg_survival": 0.9375,
+            "efficiency": 0.2517977627840909
+          },
+          "P3": {
+            "direction_accuracy": 0.791015625,
+            "avg_reduction": 0.21164772727272727,
+            "avg_survival": 0.92578125,
+            "efficiency": 0.19593949751420453
+          },
+          "P4": {
+            "direction_accuracy": 0.78125,
+            "avg_reduction": 0.18199573863636365,
+            "avg_survival": 0.94140625,
+            "efficiency": 0.17133192582563922
+          },
+          "P5": {
+            "direction_accuracy": 0.771484375,
+            "avg_reduction": 0.17797111742424243,
+            "avg_survival": 0.94140625,
+            "efficiency": 0.16754312226266574
+          }
+        }
+      },
+      "mlp": {
+        "direction_accuracy": 0.8665364583333334,
+        "avg_reduction": 0.3432962436868687,
+        "avg_survival": 0.9401041666666666,
+        "efficiency": 0.3227342290910406,
+        "per_position": {
+          "P0": {
+            "direction_accuracy": 0.828125,
+            "avg_reduction": 0.38719223484848486,
+            "avg_survival": 0.943359375,
+            "efficiency": 0.3652614246715199
+          },
+          "P1": {
+            "direction_accuracy": 0.892578125,
+            "avg_reduction": 0.3513849431818182,
+            "avg_survival": 0.947265625,
+            "efficiency": 0.3328548778187145
+          },
+          "P2": {
+            "direction_accuracy": 0.900390625,
+            "avg_reduction": 0.35108901515151514,
+            "avg_survival": 0.953125,
+            "efficiency": 0.33463171756628785
+          },
+          "P3": {
+            "direction_accuracy": 0.869140625,
+            "avg_reduction": 0.34191524621212116,
+            "avg_survival": 0.92578125,
+            "efficiency": 0.3165387240323153
+          },
+          "P4": {
+            "direction_accuracy": 0.861328125,
+            "avg_reduction": 0.3077059659090909,
+            "avg_survival": 0.93359375,
+            "efficiency": 0.2872723666104403
+          },
+          "P5": {
+            "direction_accuracy": 0.84765625,
+            "avg_reduction": 0.3204900568181818,
+            "avg_survival": 0.9375,
+            "efficiency": 0.30045942826704547
+          }
+        }
+      }
+    },
+    "G3": {
+      "group": "G3",
+      "description": "全量 (A1+A2+A3+A4)",
+      "n_features": 2755,
+      "xgboost": {
+        "direction_accuracy": 0.8037109375,
+        "avg_reduction": 0.21014835858585856,
+        "avg_survival": 0.9368489583333334,
+        "efficiency": 0.1968772708366214,
+        "per_position": {
+          "P0": {
+            "direction_accuracy": 0.78515625,
+            "avg_reduction": 0.22721354166666666,
+            "avg_survival": 0.931640625,
+            "efficiency": 0.21168136596679688
+          },
+          "P1": {
+            "direction_accuracy": 0.826171875,
+            "avg_reduction": 0.19318181818181815,
+            "avg_survival": 0.94140625,
+            "efficiency": 0.18186257102272724
+          },
+          "P2": {
+            "direction_accuracy": 0.849609375,
+            "avg_reduction": 0.2595880681818182,
+            "avg_survival": 0.939453125,
+            "efficiency": 0.24387082186612216
+          },
+          "P3": {
+            "direction_accuracy": 0.791015625,
+            "avg_reduction": 0.20880681818181818,
+            "avg_survival": 0.9296875,
+            "efficiency": 0.1941250887784091
+          },
+          "P4": {
+            "direction_accuracy": 0.783203125,
+            "avg_reduction": 0.19241240530303028,
+            "avg_survival": 0.9375,
+            "efficiency": 0.18038662997159088
+          },
+          "P5": {
+            "direction_accuracy": 0.787109375,
+            "avg_reduction": 0.17968749999999997,
+            "avg_survival": 0.94140625,
+            "efficiency": 0.16915893554687497
+          }
+        }
+      },
+      "mlp": {
+        "direction_accuracy": 0.8525390625,
+        "avg_reduction": 0.3431482796717171,
+        "avg_survival": 0.92578125,
+        "efficiency": 0.31768024328983185,
+        "per_position": {
+          "P0": {
+            "direction_accuracy": 0.81640625,
+            "avg_reduction": 0.3932883522727273,
+            "avg_survival": 0.921875,
+            "efficiency": 0.36256269975142047
+          },
+          "P1": {
+            "direction_accuracy": 0.890625,
+            "avg_reduction": 0.3400213068181818,
+            "avg_survival": 0.939453125,
+            "efficiency": 0.31943407925692474
+          },
+          "P2": {
+            "direction_accuracy": 0.87890625,
+            "avg_reduction": 0.34049479166666663,
+            "avg_survival": 0.94140625,
+            "efficiency": 0.3205439249674479
+          },
+          "P3": {
+            "direction_accuracy": 0.869140625,
+            "avg_reduction": 0.3420336174242424,
+            "avg_survival": 0.9140625,
+            "efficiency": 0.31264010342684656
+          },
+          "P4": {
+            "direction_accuracy": 0.837890625,
+            "avg_reduction": 0.32587594696969696,
+            "avg_survival": 0.91796875,
+            "efficiency": 0.299143935694839
+          },
+          "P5": {
+            "direction_accuracy": 0.822265625,
+            "avg_reduction": 0.31717566287878785,
+            "avg_survival": 0.919921875,
+            "efficiency": 0.2917768304998224
+          }
+        }
+      }
+    }
+  },
+  "mcnemar_tests": {
+    "G0_vs_G1_xgb": {
+      "chi2": 0.038461538461538464,
+      "p_value": 0.8445192674729399,
+      "significant": false
+    },
+    "G0_vs_G2_xgb": {
+      "chi2": 0.64,
+      "p_value": 0.4237107971667936,
+      "significant": false
+    },
+    "G0_vs_G3_xgb": {
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    "G0_vs_G1_mlp": {
+      "chi2": 4.063492063492063,
+      "p_value": 0.043819792802674784,
+      "significant": true
+    },
+    "G0_vs_G2_mlp": {
+      "chi2": 1.1136363636363635,
+      "p_value": 0.2912928476178127,
+      "significant": false
+    },
+    "G0_vs_G3_mlp": {
+      "chi2": 0.3787878787878788,
+      "p_value": 0.5382526579885007,
+      "significant": false
+    }
+  },
+  "summary_table": [
+    {
+      "group": "G0",
+      "description": "基线 (A1+A2+局面)",
+      "n_features": 2494,
+      "xgboost_accuracy": 0.8033854166666666,
+      "xgboost_efficiency": 0.20128693243469856,
+      "mlp_accuracy": 0.8658854166666666,
+      "mlp_efficiency": 0.33261305555350046
+    },
+    {
+      "group": "G1",
+      "description": "G0 + A3 差分模式",
+      "n_features": 2617,
+      "xgboost_accuracy": 0.8024088541666666,
+      "xgboost_efficiency": 0.19914099503847885,
+      "mlp_accuracy": 0.84765625,
+      "mlp_efficiency": 0.3052829780963936
+    },
+    {
+      "group": "G2",
+      "description": "G0 + A4 统计量模式",
+      "n_features": 2632,
+      "xgboost_accuracy": 0.8024088541666666,
+      "xgboost_efficiency": 0.20127702321267685,
+      "mlp_accuracy": 0.8665364583333334,
+      "mlp_efficiency": 0.3227342290910406
+    },
+    {
+      "group": "G3",
+      "description": "全量 (A1+A2+A3+A4)",
+      "n_features": 2755,
+      "xgboost_accuracy": 0.8037109375,
+      "xgboost_efficiency": 0.1968772708366214,
+      "mlp_accuracy": 0.8525390625,
+      "mlp_efficiency": 0.31768024328983185
+    }
+  ],
+  "increments": {
+    "G1": {
+      "group": "G1",
+      "xgb_acc_delta": -0.0009765625,
+      "xgb_eff_delta": -0.0021459373962197104,
+      "mlp_acc_delta": -0.01822916666666663,
+      "mlp_eff_delta": -0.02733007745710686
+    },
+    "G2": {
+      "group": "G2",
+      "xgb_acc_delta": -0.0009765625,
+      "xgb_eff_delta": -9.909222021708963e-06,
+      "mlp_acc_delta": 0.0006510416666667407,
+      "mlp_eff_delta": -0.009878826462459855
+    },
+    "G3": {
+      "group": "G3",
+      "xgb_acc_delta": 0.00032552083333337034,
+      "xgb_eff_delta": -0.0044096615980771525,
+      "mlp_acc_delta": -0.01334635416666663,
+      "mlp_eff_delta": -0.014932812263668604
+    }
+  },
+  "conclusion": {
+    "a3_useful": "无用",
+    "a4_useful": "无用",
+    "a3_xgb_delta": -0.0009765625,
+    "a3_mlp_delta": -0.01822916666666663,
+    "a4_xgb_delta": -0.0009765625,
+    "a4_mlp_delta": 0.0006510416666667407
+  }
+}

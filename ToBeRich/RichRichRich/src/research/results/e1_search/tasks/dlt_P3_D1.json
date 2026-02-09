@@ -1,0 +1,103 @@
+{
+  "status": "completed",
+  "position": 3,
+  "dimensions": [
+    "D1"
+  ],
+  "n_patterns_found": 3,
+  "n_validated": 0,
+  "n_insufficient": 0,
+  "validation_rate": 0.0,
+  "uncond_mean": 6.573027090694935,
+  "uncond_std": 5.051527462657198,
+  "uncond_iqr": 8.0,
+  "patterns": [
+    {
+      "dimension": "D1_n5",
+      "condition": "(-1, 1, 1, -1, 1)",
+      "support": 94,
+      "ks_stat": 0.18078841189885472,
+      "ks_p": 0.005078693343748075,
+      "js_divergence": 0.039499697094139835,
+      "mean": 4.829787234042553,
+      "median": 4.0,
+      "std": 3.9669868995389477,
+      "q10": 1.0,
+      "q25": 2.0,
+      "q50": 4.0,
+      "q75": 6.0,
+      "q90": 10.0,
+      "iqr": 4.0,
+      "concentration": 0.5,
+      "mean_shift_sigma": 0.3450916320932768,
+      "validation": {
+        "status": "invalid",
+        "n_test": 52,
+        "ks_stat": 0.06111789445122778,
+        "ks_p": 0.986537221173171,
+        "test_mean": 6.4423076923076925,
+        "test_median": 6.0,
+        "train_test_mean_diff": 1.6125204582651396
+      }
+    },
+    {
+      "dimension": "D1_n3",
+      "condition": "(1, -1, 1)",
+      "support": 315,
+      "ks_stat": 0.12185203881316956,
+      "ks_p": 0.0006716164315717379,
+      "js_divergence": 0.01662634162642003,
+      "mean": 5.444444444444445,
+      "median": 5.0,
+      "std": 4.6290242990504264,
+      "q10": 1.0,
+      "q25": 2.0,
+      "q50": 5.0,
+      "q75": 7.0,
+      "q90": 11.600000000000023,
+      "iqr": 5.0,
+      "concentration": 0.625,
+      "mean_shift_sigma": 0.22341413653462247,
+      "validation": {
+        "status": "invalid",
+        "n_test": 215,
+        "ks_stat": 0.04686436159304376,
+        "ks_p": 0.8017387402735799,
+        "test_mean": 6.497674418604651,
+        "test_median": 6.0,
+        "train_test_mean_diff": 1.0532299741602067
+      }
+    },
+    {
+      "dimension": "D1_n2",
+      "condition": "(-1, 1)",
+      "support": 521,
+      "ks_stat": 0.0971437549878032,
+      "ks_p": 0.0009904438949703183,
+      "js_divergence": 0.008653153445733875,
+      "mean": 5.595009596928983,
+      "median": 5.0,
+      "std": 4.641370136775237,
+      "q10": 1.0,
+      "q25": 2.0,
+      "q50": 5.0,
+      "q75": 8.0,
+      "q90": 12.0,
+      "iqr": 6.0,
+      "concentration": 0.75,
+      "mean_shift_sigma": 0.19360827017091906,
+      "validation": {
+        "status": "invalid",
+        "n_test": 358,
+        "ks_stat": 0.05119072251288266,
+        "ks_p": 0.45590310950897756,
+        "test_mean": 6.4581005586592175,
+        "test_median": 6.0,
+        "train_test_mean_diff": 0.8630909617302347
+      }
+    }
+  ],
+  "task_id": "dlt_P3_D1",
+  "lottery": "daletou",
+  "elapsed_seconds": 0.2
+}

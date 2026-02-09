@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "position": 0,
+  "dimensions": [
+    "D10"
+  ],
+  "n_patterns_found": 0,
+  "n_validated": 0,
+  "n_insufficient": 0,
+  "validation_rate": 0,
+  "uncond_mean": 5.435806831566549,
+  "uncond_std": 4.821886628938159,
+  "uncond_iqr": 6.0,
+  "patterns": [],
+  "task_id": "dlt_P0_D10",
+  "lottery": "daletou",
+  "elapsed_seconds": 0.2
+}

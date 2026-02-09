@@ -1,0 +1,61 @@
+{
+  "total_tasks_scanned": 308,
+  "libraries": {
+    "daletou": {
+      "total_rules": 333,
+      "by_position": {
+        "P0": 54,
+        "P1": 41,
+        "P2": 49,
+        "P3": 72,
+        "P4": 117
+      },
+      "by_dimension": {
+        "cross": 298,
+        "D3": 8,
+        "D2": 2,
+        "D7": 15,
+        "D1": 2,
+        "D4": 3,
+        "D8": 5
+      },
+      "quality_stats": {
+        "mean": 0.6047,
+        "median": 0.5964,
+        "min": 0.4265,
+        "max": 0.8054,
+        "q25": 0.5705,
+        "q75": 0.6354
+      }
+    },
+    "shuangseqiu": {
+      "total_rules": 402,
+      "by_position": {
+        "P0": 61,
+        "P1": 49,
+        "P2": 36,
+        "P3": 72,
+        "P4": 74,
+        "P5": 110
+      },
+      "by_dimension": {
+        "cross": 358,
+        "D3": 9,
+        "D7": 19,
+        "D2": 3,
+        "D9": 4,
+        "D8": 4,
+        "D1": 3,
+        "D4": 2
+      },
+      "quality_stats": {
+        "mean": 0.6153,
+        "median": 0.6088,
+        "min": 0.3482,
+        "max": 0.8344,
+        "q25": 0.5778,
+        "q75": 0.6499
+      }
+    }
+  }
+}

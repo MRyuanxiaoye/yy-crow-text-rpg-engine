@@ -1,0 +1,34 @@
+{
+  "lottery_type": "daletou",
+  "weights": {
+    "S1_direction_consistency": 0.2,
+    "S2_amplitude_concentration": 0.15,
+    "S3_pattern_match_strength": 0.15,
+    "S4_sequence_stability": 0.15,
+    "S5_combo_survival": 0.15,
+    "S6_e1_rule_match": 0.2
+  },
+  "evaluation": {
+    "n_periods": 1128,
+    "confidence_stats": {
+      "mean": 0.4755431784158995,
+      "std": 0.027097848217016902,
+      "min": 0.3942994476512859,
+      "max": 0.5780285095481331
+    },
+    "hit_rate_by_confidence": {
+      "low": 0.8586021505376343,
+      "mid": 0.8580645161290321,
+      "high": 0.865625
+    },
+    "n_by_confidence": {
+      "low": 372,
+      "mid": 372,
+      "high": 384
+    },
+    "spearman_correlation": -0.0007697415993374143,
+    "spearman_p_value": 0.9793979902720764,
+    "confidence_effective": true,
+    "high_low_lift": 1.0081793988728867
+  }
+}

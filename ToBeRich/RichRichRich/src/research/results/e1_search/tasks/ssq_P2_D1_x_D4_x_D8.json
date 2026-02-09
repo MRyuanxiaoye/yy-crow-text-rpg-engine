@@ -1,0 +1,77 @@
+{
+  "status": "completed",
+  "position": 2,
+  "dimensions": [
+    "D1",
+    "D4",
+    "D8"
+  ],
+  "n_patterns_found": 2,
+  "n_validated": 0,
+  "n_insufficient": 0,
+  "validation_rate": 0.0,
+  "uncond_mean": 6.009286412512219,
+  "uncond_std": 4.326192904054333,
+  "uncond_iqr": 6.0,
+  "patterns": [
+    {
+      "dimension": "D1_n2_x_D4_x_D8_ac_value",
+      "condition": "((1, -1), (-1, np.int64(1)), np.int64(3))",
+      "support": 31,
+      "ks_stat": 0.3147605083088954,
+      "ks_p": 0.00348793645551297,
+      "js_divergence": 0.09365432785686925,
+      "mean": 3.4193548387096775,
+      "median": 3.0,
+      "std": 2.744780307894535,
+      "q10": 1.0,
+      "q25": 1.5,
+      "q50": 3.0,
+      "q75": 5.0,
+      "q90": 7.0,
+      "iqr": 3.5,
+      "concentration": 0.5833333333333334,
+      "mean_shift_sigma": 0.5986629887389817,
+      "validation": {
+        "status": "invalid",
+        "n_test": 20,
+        "ks_stat": 0.06786237188872621,
+        "ks_p": 0.9999117872884058,
+        "test_mean": 5.4,
+        "test_median": 4.5,
+        "train_test_mean_diff": 1.9806451612903229
+      }
+    },
+    {
+      "dimension": "D1_n1_x_D4_x_D8_sum",
+      "condition": "((1,), (1, np.int64(1)), np.int64(1))",
+      "support": 38,
+      "ks_stat": 0.3181560940474353,
+      "ks_p": 0.0007393416015080908,
+      "js_divergence": 0.048998489953072044,
+      "mean": 3.1315789473684212,
+      "median": 3.0,
+      "std": 2.4297612253446563,
+      "q10": 0.7000000000000002,
+      "q25": 1.0,
+      "q50": 3.0,
+      "q75": 5.0,
+      "q90": 7.0,
+      "iqr": 4.0,
+      "concentration": 0.6666666666666666,
+      "mean_shift_sigma": 0.6651824199625789,
+      "validation": {
+        "status": "invalid",
+        "n_test": 30,
+        "ks_stat": 0.22625671059053196,
+        "ks_p": 0.0838588039081556,
+        "test_mean": 5.366666666666666,
+        "test_median": 3.0,
+        "train_test_mean_diff": 2.235087719298245
+      }
+    }
+  ],
+  "task_id": "ssq_P2_D1_x_D4_x_D8",
+  "lottery": "shuangseqiu",
+  "elapsed_seconds": 0.3
+}

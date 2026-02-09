@@ -1,0 +1,119 @@
+{
+  "lottery_type": "shuangseqiu",
+  "strategies": {
+    "dan_tuo_20": {
+      "n_periods": 1360,
+      "total_cost": 2720,
+      "total_prize": 70,
+      "net_profit": -2650,
+      "roi": -0.9742647058823529,
+      "win_rate": 0.005147058823529412,
+      "avg_cost_per_period": 2.0,
+      "avg_prize_per_period": 0.051470588235294115,
+      "max_prize": 10,
+      "prize_std": 0.715581344711874
+    },
+    "fushi_100": {
+      "n_periods": 1360,
+      "total_cost": 87040,
+      "total_prize": 2140,
+      "net_profit": -84900,
+      "roi": -0.9754136029411765,
+      "win_rate": 0.03308823529411765,
+      "avg_cost_per_period": 64.0,
+      "avg_prize_per_period": 1.5735294117647058,
+      "max_prize": 500,
+      "prize_std": 15.320897086765271
+    },
+    "hybrid_50": {
+      "n_periods": 1360,
+      "total_cost": 43520,
+      "total_prize": 800,
+      "net_profit": -42720,
+      "roi": -0.9816176470588235,
+      "win_rate": 0.022058823529411766,
+      "avg_cost_per_period": 32.0,
+      "avg_prize_per_period": 0.5882352941176471,
+      "max_prize": 80,
+      "prize_std": 4.482762062539408
+    }
+  },
+  "best_strategy": "dan_tuo_20",
+  "best_roi": -0.9742647058823529,
+  "next_recommendation": {
+    "dan_tuo": {
+      "type": "dan_tuo",
+      "dan": [],
+      "tuo": [
+        [
+          0,
+          [
+            8
+          ]
+        ],
+        [
+          1,
+          [
+            11
+          ]
+        ],
+        [
+          2,
+          [
+            14
+          ]
+        ],
+        [
+          3,
+          [
+            21
+          ]
+        ],
+        [
+          4,
+          [
+            24
+          ]
+        ],
+        [
+          5,
+          [
+            29
+          ]
+        ]
+      ],
+      "n_bets": 1,
+      "cost": 2
+    },
+    "fushi": {
+      "type": "fushi",
+      "positions": {
+        "P0": [
+          8
+        ],
+        "P1": [
+          9,
+          11
+        ],
+        "P2": [
+          12,
+          14
+        ],
+        "P3": [
+          20,
+          21
+        ],
+        "P4": [
+          23,
+          24
+        ],
+        "P5": [
+          28,
+          29
+        ]
+      },
+      "n_bets": 32,
+      "cost": 64
+    }
+  }
+}

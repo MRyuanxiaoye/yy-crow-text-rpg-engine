@@ -1,0 +1,2519 @@
+{
+  "lottery_type": "shuangseqiu",
+  "ball_type": "blue",
+  "blue_count": 1,
+  "blue_range": 16,
+  "n_draws_used": 2047,
+  "total_rules": 129,
+  "rules": [
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_even",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 23,
+      "n_both": 22,
+      "confidence": 0.9565,
+      "expected_confidence": 0.4538,
+      "lift": 2.1076,
+      "chi2": 12.81,
+      "contingency": [
+        22,
+        1,
+        907,
+        1117
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_even"
+      ],
+      "target": "next_P0_D",
+      "support": 132,
+      "n_both": 125,
+      "confidence": 0.947,
+      "expected_confidence": 0.4538,
+      "lift": 2.0866,
+      "chi2": 70.73,
+      "contingency": [
+        125,
+        7,
+        804,
+        1111
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_even",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 132,
+      "n_both": 125,
+      "confidence": 0.947,
+      "expected_confidence": 0.4538,
+      "lift": 2.0866,
+      "chi2": 70.73,
+      "contingency": [
+        125,
+        7,
+        804,
+        1111
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_even",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 109,
+      "n_both": 103,
+      "confidence": 0.945,
+      "expected_confidence": 0.4538,
+      "lift": 2.0822,
+      "chi2": 57.93,
+      "contingency": [
+        103,
+        6,
+        826,
+        1112
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_dir_U",
+        "P0_even"
+      ],
+      "target": "next_P0_D",
+      "support": 125,
+      "n_both": 118,
+      "confidence": 0.944,
+      "expected_confidence": 0.4538,
+      "lift": 2.0801,
+      "chi2": 66.18,
+      "contingency": [
+        118,
+        7,
+        811,
+        1111
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 55,
+      "n_both": 50,
+      "confidence": 0.9091,
+      "expected_confidence": 0.4538,
+      "lift": 2.0031,
+      "chi2": 25.12,
+      "contingency": [
+        50,
+        5,
+        879,
+        1113
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_big",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 55,
+      "n_both": 50,
+      "confidence": 0.9091,
+      "expected_confidence": 0.4538,
+      "lift": 2.0031,
+      "chi2": 25.12,
+      "contingency": [
+        50,
+        5,
+        879,
+        1113
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16"
+      ],
+      "target": "next_P0_D",
+      "support": 261,
+      "n_both": 237,
+      "confidence": 0.908,
+      "expected_confidence": 0.4538,
+      "lift": 2.0008,
+      "chi2": 118.65,
+      "contingency": [
+        237,
+        24,
+        692,
+        1094
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 261,
+      "n_both": 237,
+      "confidence": 0.908,
+      "expected_confidence": 0.4538,
+      "lift": 2.0008,
+      "chi2": 118.65,
+      "contingency": [
+        237,
+        24,
+        692,
+        1094
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 206,
+      "n_both": 187,
+      "confidence": 0.9078,
+      "expected_confidence": 0.4538,
+      "lift": 2.0002,
+      "chi2": 93.53,
+      "contingency": [
+        187,
+        19,
+        742,
+        1099
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_big",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 206,
+      "n_both": 187,
+      "confidence": 0.9078,
+      "expected_confidence": 0.4538,
+      "lift": 2.0002,
+      "chi2": 93.53,
+      "contingency": [
+        187,
+        19,
+        742,
+        1099
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_dir_U",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 206,
+      "n_both": 187,
+      "confidence": 0.9078,
+      "expected_confidence": 0.4538,
+      "lift": 2.0002,
+      "chi2": 93.53,
+      "contingency": [
+        187,
+        19,
+        742,
+        1099
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_dir_U"
+      ],
+      "target": "next_P0_D",
+      "support": 239,
+      "n_both": 216,
+      "confidence": 0.9038,
+      "expected_confidence": 0.4538,
+      "lift": 1.9914,
+      "chi2": 106.61,
+      "contingency": [
+        216,
+        23,
+        713,
+        1095
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_dir_U",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 239,
+      "n_both": 216,
+      "confidence": 0.9038,
+      "expected_confidence": 0.4538,
+      "lift": 1.9914,
+      "chi2": 106.61,
+      "contingency": [
+        216,
+        23,
+        713,
+        1095
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_U",
+      "support": 32,
+      "n_both": 30,
+      "confidence": 0.9375,
+      "expected_confidence": 0.4748,
+      "lift": 1.9743,
+      "chi2": 14.43,
+      "contingency": [
+        30,
+        2,
+        942,
+        1073
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_odd",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_U",
+      "support": 32,
+      "n_both": 30,
+      "confidence": 0.9375,
+      "expected_confidence": 0.4748,
+      "lift": 1.9743,
+      "chi2": 14.43,
+      "contingency": [
+        30,
+        2,
+        942,
+        1073
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_small",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_U",
+      "support": 32,
+      "n_both": 30,
+      "confidence": 0.9375,
+      "expected_confidence": 0.4748,
+      "lift": 1.9743,
+      "chi2": 14.43,
+      "contingency": [
+        30,
+        2,
+        942,
+        1073
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_dir_U",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 33,
+      "n_both": 29,
+      "confidence": 0.8788,
+      "expected_confidence": 0.4538,
+      "lift": 1.9364,
+      "chi2": 13.13,
+      "contingency": [
+        29,
+        4,
+        900,
+        1114
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2"
+      ],
+      "target": "next_P0_U",
+      "support": 132,
+      "n_both": 121,
+      "confidence": 0.9167,
+      "expected_confidence": 0.4748,
+      "lift": 1.9305,
+      "chi2": 54.27,
+      "contingency": [
+        121,
+        11,
+        851,
+        1064
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_odd"
+      ],
+      "target": "next_P0_U",
+      "support": 132,
+      "n_both": 121,
+      "confidence": 0.9167,
+      "expected_confidence": 0.4748,
+      "lift": 1.9305,
+      "chi2": 54.27,
+      "contingency": [
+        121,
+        11,
+        851,
+        1064
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 132,
+      "n_both": 121,
+      "confidence": 0.9167,
+      "expected_confidence": 0.4748,
+      "lift": 1.9305,
+      "chi2": 54.27,
+      "contingency": [
+        121,
+        11,
+        851,
+        1064
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_odd",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 132,
+      "n_both": 121,
+      "confidence": 0.9167,
+      "expected_confidence": 0.4748,
+      "lift": 1.9305,
+      "chi2": 54.27,
+      "contingency": [
+        121,
+        11,
+        851,
+        1064
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_odd",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 32,
+      "n_both": 28,
+      "confidence": 0.875,
+      "expected_confidence": 0.4538,
+      "lift": 1.928,
+      "chi2": 12.51,
+      "contingency": [
+        28,
+        4,
+        901,
+        1114
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 100,
+      "n_both": 91,
+      "confidence": 0.91,
+      "expected_confidence": 0.4748,
+      "lift": 1.9164,
+      "chi2": 39.88,
+      "contingency": [
+        91,
+        9,
+        881,
+        1066
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_dir_D",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 100,
+      "n_both": 91,
+      "confidence": 0.91,
+      "expected_confidence": 0.4748,
+      "lift": 1.9164,
+      "chi2": 39.88,
+      "contingency": [
+        91,
+        9,
+        881,
+        1066
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_odd",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 100,
+      "n_both": 91,
+      "confidence": 0.91,
+      "expected_confidence": 0.4748,
+      "lift": 1.9164,
+      "chi2": 39.88,
+      "contingency": [
+        91,
+        9,
+        881,
+        1066
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_small",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 100,
+      "n_both": 91,
+      "confidence": 0.91,
+      "expected_confidence": 0.4748,
+      "lift": 1.9164,
+      "chi2": 39.88,
+      "contingency": [
+        91,
+        9,
+        881,
+        1066
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_dir_D"
+      ],
+      "target": "next_P0_U",
+      "support": 121,
+      "n_both": 110,
+      "confidence": 0.9091,
+      "expected_confidence": 0.4748,
+      "lift": 1.9145,
+      "chi2": 48.05,
+      "contingency": [
+        110,
+        11,
+        862,
+        1064
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_dir_D",
+        "P0_odd"
+      ],
+      "target": "next_P0_U",
+      "support": 121,
+      "n_both": 110,
+      "confidence": 0.9091,
+      "expected_confidence": 0.4748,
+      "lift": 1.9145,
+      "chi2": 48.05,
+      "contingency": [
+        110,
+        11,
+        862,
+        1064
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_1_2",
+        "P0_dir_D",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 121,
+      "n_both": 110,
+      "confidence": 0.9091,
+      "expected_confidence": 0.4748,
+      "lift": 1.9145,
+      "chi2": 48.05,
+      "contingency": [
+        110,
+        11,
+        862,
+        1064
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_odd"
+      ],
+      "target": "next_P0_D",
+      "support": 129,
+      "n_both": 112,
+      "confidence": 0.8682,
+      "expected_confidence": 0.4538,
+      "lift": 1.9131,
+      "chi2": 48.81,
+      "contingency": [
+        112,
+        17,
+        817,
+        1101
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_odd",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 129,
+      "n_both": 112,
+      "confidence": 0.8682,
+      "expected_confidence": 0.4538,
+      "lift": 1.9131,
+      "chi2": 48.81,
+      "contingency": [
+        112,
+        17,
+        817,
+        1101
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_odd",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 97,
+      "n_both": 84,
+      "confidence": 0.866,
+      "expected_confidence": 0.4538,
+      "lift": 1.9081,
+      "chi2": 36.31,
+      "contingency": [
+        84,
+        13,
+        845,
+        1105
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_15_16",
+        "P0_dir_U",
+        "P0_odd"
+      ],
+      "target": "next_P0_D",
+      "support": 114,
+      "n_both": 98,
+      "confidence": 0.8596,
+      "expected_confidence": 0.4538,
+      "lift": 1.8942,
+      "chi2": 41.37,
+      "contingency": [
+        98,
+        16,
+        831,
+        1102
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_dir_D",
+        "P0_even"
+      ],
+      "target": "next_P0_U",
+      "support": 103,
+      "n_both": 90,
+      "confidence": 0.8738,
+      "expected_confidence": 0.4748,
+      "lift": 1.8402,
+      "chi2": 34.52,
+      "contingency": [
+        90,
+        13,
+        882,
+        1062
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_even"
+      ],
+      "target": "next_P0_U",
+      "support": 118,
+      "n_both": 103,
+      "confidence": 0.8729,
+      "expected_confidence": 0.4748,
+      "lift": 1.8383,
+      "chi2": 39.37,
+      "contingency": [
+        103,
+        15,
+        869,
+        1060
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_even",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 118,
+      "n_both": 103,
+      "confidence": 0.8729,
+      "expected_confidence": 0.4748,
+      "lift": 1.8383,
+      "chi2": 39.37,
+      "contingency": [
+        103,
+        15,
+        869,
+        1060
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_even",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 86,
+      "n_both": 75,
+      "confidence": 0.8721,
+      "expected_confidence": 0.4748,
+      "lift": 1.8366,
+      "chi2": 28.58,
+      "contingency": [
+        75,
+        11,
+        897,
+        1064
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 162,
+      "n_both": 141,
+      "confidence": 0.8704,
+      "expected_confidence": 0.4748,
+      "lift": 1.833,
+      "chi2": 53.37,
+      "contingency": [
+        141,
+        21,
+        831,
+        1054
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_dir_D",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 162,
+      "n_both": 141,
+      "confidence": 0.8704,
+      "expected_confidence": 0.4748,
+      "lift": 1.833,
+      "chi2": 53.37,
+      "contingency": [
+        141,
+        21,
+        831,
+        1054
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_small",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 162,
+      "n_both": 141,
+      "confidence": 0.8704,
+      "expected_confidence": 0.4748,
+      "lift": 1.833,
+      "chi2": 53.37,
+      "contingency": [
+        141,
+        21,
+        831,
+        1054
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_odd",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 76,
+      "n_both": 66,
+      "confidence": 0.8684,
+      "expected_confidence": 0.4748,
+      "lift": 1.8289,
+      "chi2": 24.79,
+      "contingency": [
+        66,
+        10,
+        906,
+        1065
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_dir_D"
+      ],
+      "target": "next_P0_U",
+      "support": 199,
+      "n_both": 172,
+      "confidence": 0.8643,
+      "expected_confidence": 0.4748,
+      "lift": 1.8202,
+      "chi2": 63.57,
+      "contingency": [
+        172,
+        27,
+        800,
+        1048
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_dir_D",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 199,
+      "n_both": 172,
+      "confidence": 0.8643,
+      "expected_confidence": 0.4748,
+      "lift": 1.8202,
+      "chi2": 63.57,
+      "contingency": [
+        172,
+        27,
+        800,
+        1048
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4"
+      ],
+      "target": "next_P0_U",
+      "support": 240,
+      "n_both": 206,
+      "confidence": 0.8583,
+      "expected_confidence": 0.4748,
+      "lift": 1.8076,
+      "chi2": 74.33,
+      "contingency": [
+        206,
+        34,
+        766,
+        1041
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 240,
+      "n_both": 206,
+      "confidence": 0.8583,
+      "expected_confidence": 0.4748,
+      "lift": 1.8076,
+      "chi2": 74.33,
+      "contingency": [
+        206,
+        34,
+        766,
+        1041
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_dir_U",
+        "P0_even"
+      ],
+      "target": "next_P0_D",
+      "support": 111,
+      "n_both": 91,
+      "confidence": 0.8198,
+      "expected_confidence": 0.4538,
+      "lift": 1.8064,
+      "chi2": 32.76,
+      "contingency": [
+        91,
+        20,
+        838,
+        1098
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_dir_D",
+        "P0_odd"
+      ],
+      "target": "next_P0_U",
+      "support": 96,
+      "n_both": 82,
+      "confidence": 0.8542,
+      "expected_confidence": 0.4748,
+      "lift": 1.7988,
+      "chi2": 29.09,
+      "contingency": [
+        82,
+        14,
+        890,
+        1061
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_even",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 98,
+      "n_both": 80,
+      "confidence": 0.8163,
+      "expected_confidence": 0.4538,
+      "lift": 1.7987,
+      "chi2": 28.37,
+      "contingency": [
+        80,
+        18,
+        849,
+        1100
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_even"
+      ],
+      "target": "next_P0_D",
+      "support": 134,
+      "n_both": 109,
+      "confidence": 0.8134,
+      "expected_confidence": 0.4538,
+      "lift": 1.7924,
+      "chi2": 38.18,
+      "contingency": [
+        109,
+        25,
+        820,
+        1093
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_even",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 134,
+      "n_both": 109,
+      "confidence": 0.8134,
+      "expected_confidence": 0.4538,
+      "lift": 1.7924,
+      "chi2": 38.18,
+      "contingency": [
+        109,
+        25,
+        820,
+        1093
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_odd"
+      ],
+      "target": "next_P0_U",
+      "support": 122,
+      "n_both": 103,
+      "confidence": 0.8443,
+      "expected_confidence": 0.4748,
+      "lift": 1.778,
+      "chi2": 35.06,
+      "contingency": [
+        103,
+        19,
+        869,
+        1056
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_odd",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 122,
+      "n_both": 103,
+      "confidence": 0.8443,
+      "expected_confidence": 0.4748,
+      "lift": 1.778,
+      "chi2": 35.06,
+      "contingency": [
+        103,
+        19,
+        869,
+        1056
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_E",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 59,
+      "n_both": 47,
+      "confidence": 0.7966,
+      "expected_confidence": 0.4538,
+      "lift": 1.7553,
+      "chi2": 15.27,
+      "contingency": [
+        47,
+        12,
+        882,
+        1106
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_E",
+        "P0_big",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 59,
+      "n_both": 47,
+      "confidence": 0.7966,
+      "expected_confidence": 0.4538,
+      "lift": 1.7553,
+      "chi2": 15.27,
+      "contingency": [
+        47,
+        12,
+        882,
+        1106
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_U",
+      "support": 78,
+      "n_both": 65,
+      "confidence": 0.8333,
+      "expected_confidence": 0.4748,
+      "lift": 1.755,
+      "chi2": 21.11,
+      "contingency": [
+        65,
+        13,
+        907,
+        1062
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_2_4",
+        "P0_small",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_U",
+      "support": 78,
+      "n_both": 65,
+      "confidence": 0.8333,
+      "expected_confidence": 0.4748,
+      "lift": 1.755,
+      "chi2": 21.11,
+      "contingency": [
+        65,
+        13,
+        907,
+        1062
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_dir_U"
+      ],
+      "target": "next_P0_D",
+      "support": 207,
+      "n_both": 163,
+      "confidence": 0.7874,
+      "expected_confidence": 0.4538,
+      "lift": 1.7351,
+      "chi2": 50.76,
+      "contingency": [
+        163,
+        44,
+        766,
+        1074
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_dir_U",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 207,
+      "n_both": 163,
+      "confidence": 0.7874,
+      "expected_confidence": 0.4538,
+      "lift": 1.7351,
+      "chi2": 50.76,
+      "contingency": [
+        163,
+        44,
+        766,
+        1074
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 90,
+      "n_both": 70,
+      "confidence": 0.7778,
+      "expected_confidence": 0.4538,
+      "lift": 1.7138,
+      "chi2": 20.81,
+      "contingency": [
+        70,
+        20,
+        859,
+        1098
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_big",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 90,
+      "n_both": 70,
+      "confidence": 0.7778,
+      "expected_confidence": 0.4538,
+      "lift": 1.7138,
+      "chi2": 20.81,
+      "contingency": [
+        70,
+        20,
+        859,
+        1098
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15"
+      ],
+      "target": "next_P0_D",
+      "support": 265,
+      "n_both": 206,
+      "confidence": 0.7774,
+      "expected_confidence": 0.4538,
+      "lift": 1.7129,
+      "chi2": 61.12,
+      "contingency": [
+        206,
+        59,
+        723,
+        1059
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 265,
+      "n_both": 206,
+      "confidence": 0.7774,
+      "expected_confidence": 0.4538,
+      "lift": 1.7129,
+      "chi2": 61.12,
+      "contingency": [
+        206,
+        59,
+        723,
+        1059
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 175,
+      "n_both": 136,
+      "confidence": 0.7771,
+      "expected_confidence": 0.4538,
+      "lift": 1.7124,
+      "chi2": 40.31,
+      "contingency": [
+        136,
+        39,
+        793,
+        1079
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_dir_U",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 175,
+      "n_both": 136,
+      "confidence": 0.7771,
+      "expected_confidence": 0.4538,
+      "lift": 1.7124,
+      "chi2": 40.31,
+      "contingency": [
+        136,
+        39,
+        793,
+        1079
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_big",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 175,
+      "n_both": 136,
+      "confidence": 0.7771,
+      "expected_confidence": 0.4538,
+      "lift": 1.7124,
+      "chi2": 40.31,
+      "contingency": [
+        136,
+        39,
+        793,
+        1079
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_even",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 65,
+      "n_both": 52,
+      "confidence": 0.8,
+      "expected_confidence": 0.4748,
+      "lift": 1.6848,
+      "chi2": 14.47,
+      "contingency": [
+        52,
+        13,
+        920,
+        1062
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_odd",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 54,
+      "n_both": 41,
+      "confidence": 0.7593,
+      "expected_confidence": 0.4538,
+      "lift": 1.673,
+      "chi2": 11.1,
+      "contingency": [
+        41,
+        13,
+        888,
+        1105
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_even"
+      ],
+      "target": "next_P0_U",
+      "support": 116,
+      "n_both": 92,
+      "confidence": 0.7931,
+      "expected_confidence": 0.4748,
+      "lift": 1.6702,
+      "chi2": 24.74,
+      "contingency": [
+        92,
+        24,
+        880,
+        1051
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_even",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 116,
+      "n_both": 92,
+      "confidence": 0.7931,
+      "expected_confidence": 0.4748,
+      "lift": 1.6702,
+      "chi2": 24.74,
+      "contingency": [
+        92,
+        24,
+        880,
+        1051
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_odd",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 289,
+      "n_both": 218,
+      "confidence": 0.7543,
+      "expected_confidence": 0.4538,
+      "lift": 1.6621,
+      "chi2": 57.5,
+      "contingency": [
+        218,
+        71,
+        711,
+        1047
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_dir_D",
+        "P0_even"
+      ],
+      "target": "next_P0_U",
+      "support": 89,
+      "n_both": 70,
+      "confidence": 0.7865,
+      "expected_confidence": 0.4748,
+      "lift": 1.6564,
+      "chi2": 18.21,
+      "contingency": [
+        70,
+        19,
+        902,
+        1056
+      ]
+    },
+    {
+      "conditions": [
+        "P0_odd",
+        "P0_big",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 240,
+      "n_both": 180,
+      "confidence": 0.75,
+      "expected_confidence": 0.4538,
+      "lift": 1.6526,
+      "chi2": 46.39,
+      "contingency": [
+        180,
+        60,
+        749,
+        1058
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_dir_U",
+        "P0_odd"
+      ],
+      "target": "next_P0_D",
+      "support": 96,
+      "n_both": 72,
+      "confidence": 0.75,
+      "expected_confidence": 0.4538,
+      "lift": 1.6526,
+      "chi2": 18.55,
+      "contingency": [
+        72,
+        24,
+        857,
+        1094
+      ]
+    },
+    {
+      "conditions": [
+        "P0_big",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 567,
+      "n_both": 425,
+      "confidence": 0.7496,
+      "expected_confidence": 0.4538,
+      "lift": 1.6516,
+      "chi2": 109.26,
+      "contingency": [
+        425,
+        142,
+        504,
+        976
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_big",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 567,
+      "n_both": 425,
+      "confidence": 0.7496,
+      "expected_confidence": 0.4538,
+      "lift": 1.6516,
+      "chi2": 109.26,
+      "contingency": [
+        425,
+        142,
+        504,
+        976
+      ]
+    },
+    {
+      "conditions": [
+        "P0_even",
+        "P0_big",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 327,
+      "n_both": 245,
+      "confidence": 0.7492,
+      "expected_confidence": 0.4538,
+      "lift": 1.6509,
+      "chi2": 62.87,
+      "contingency": [
+        245,
+        82,
+        684,
+        1036
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 689,
+      "n_both": 516,
+      "confidence": 0.7489,
+      "expected_confidence": 0.4538,
+      "lift": 1.6502,
+      "chi2": 132.19,
+      "contingency": [
+        516,
+        173,
+        413,
+        945
+      ]
+    },
+    {
+      "conditions": [
+        "P0_even",
+        "P0_small",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 237,
+      "n_both": 185,
+      "confidence": 0.7806,
+      "expected_confidence": 0.4748,
+      "lift": 1.6439,
+      "chi2": 46.66,
+      "contingency": [
+        185,
+        52,
+        787,
+        1023
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_big",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 122,
+      "n_both": 91,
+      "confidence": 0.7459,
+      "expected_confidence": 0.4538,
+      "lift": 1.6436,
+      "chi2": 22.93,
+      "contingency": [
+        91,
+        31,
+        838,
+        1087
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_even",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 400,
+      "n_both": 298,
+      "confidence": 0.745,
+      "expected_confidence": 0.4538,
+      "lift": 1.6416,
+      "chi2": 74.72,
+      "contingency": [
+        298,
+        102,
+        631,
+        1016
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_odd"
+      ],
+      "target": "next_P0_D",
+      "support": 131,
+      "n_both": 97,
+      "confidence": 0.7405,
+      "expected_confidence": 0.4538,
+      "lift": 1.6316,
+      "chi2": 23.71,
+      "contingency": [
+        97,
+        34,
+        832,
+        1084
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_odd",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 131,
+      "n_both": 97,
+      "confidence": 0.7405,
+      "expected_confidence": 0.4538,
+      "lift": 1.6316,
+      "chi2": 23.71,
+      "contingency": [
+        97,
+        34,
+        832,
+        1084
+      ]
+    },
+    {
+      "conditions": [
+        "P0_odd",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 398,
+      "n_both": 294,
+      "confidence": 0.7387,
+      "expected_confidence": 0.4538,
+      "lift": 1.6277,
+      "chi2": 71.16,
+      "contingency": [
+        294,
+        104,
+        635,
+        1014
+      ]
+    },
+    {
+      "conditions": [
+        "P0_small",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 561,
+      "n_both": 431,
+      "confidence": 0.7683,
+      "expected_confidence": 0.4748,
+      "lift": 1.618,
+      "chi2": 101.72,
+      "contingency": [
+        431,
+        130,
+        541,
+        945
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_small",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 561,
+      "n_both": 431,
+      "confidence": 0.7683,
+      "expected_confidence": 0.4748,
+      "lift": 1.618,
+      "chi2": 101.72,
+      "contingency": [
+        431,
+        130,
+        541,
+        945
+      ]
+    },
+    {
+      "conditions": [
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 929,
+      "n_both": 679,
+      "confidence": 0.7309,
+      "expected_confidence": 0.4538,
+      "lift": 1.6105,
+      "chi2": 157.13,
+      "contingency": [
+        679,
+        250,
+        250,
+        868
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_13_15",
+        "P0_odd",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 77,
+      "n_both": 56,
+      "confidence": 0.7273,
+      "expected_confidence": 0.4538,
+      "lift": 1.6025,
+      "chi2": 12.69,
+      "contingency": [
+        56,
+        21,
+        873,
+        1097
+      ]
+    },
+    {
+      "conditions": [
+        "P0_odd",
+        "P0_small",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 324,
+      "n_both": 246,
+      "confidence": 0.7593,
+      "expected_confidence": 0.4748,
+      "lift": 1.599,
+      "chi2": 55.2,
+      "contingency": [
+        246,
+        78,
+        726,
+        997
+      ]
+    },
+    {
+      "conditions": [
+        "P0_even",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 531,
+      "n_both": 385,
+      "confidence": 0.725,
+      "expected_confidence": 0.4538,
+      "lift": 1.5976,
+      "chi2": 86.06,
+      "contingency": [
+        385,
+        146,
+        544,
+        972
+      ]
+    },
+    {
+      "conditions": [
+        "P0_odd",
+        "P0_big",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 137,
+      "n_both": 99,
+      "confidence": 0.7226,
+      "expected_confidence": 0.4538,
+      "lift": 1.5923,
+      "chi2": 21.81,
+      "contingency": [
+        99,
+        38,
+        830,
+        1080
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_even",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 319,
+      "n_both": 240,
+      "confidence": 0.7524,
+      "expected_confidence": 0.4748,
+      "lift": 1.5844,
+      "chi2": 51.74,
+      "contingency": [
+        240,
+        79,
+        732,
+        996
+      ]
+    },
+    {
+      "conditions": [
+        "P0_even",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 263,
+      "n_both": 197,
+      "confidence": 0.749,
+      "expected_confidence": 0.4748,
+      "lift": 1.5775,
+      "chi2": 41.65,
+      "contingency": [
+        197,
+        66,
+        775,
+        1009
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_even",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 263,
+      "n_both": 197,
+      "confidence": 0.749,
+      "expected_confidence": 0.4748,
+      "lift": 1.5775,
+      "chi2": 41.65,
+      "contingency": [
+        197,
+        66,
+        775,
+        1009
+      ]
+    },
+    {
+      "conditions": [
+        "P0_big",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 315,
+      "n_both": 225,
+      "confidence": 0.7143,
+      "expected_confidence": 0.4538,
+      "lift": 1.5739,
+      "chi2": 47.08,
+      "contingency": [
+        225,
+        90,
+        704,
+        1028
+      ]
+    },
+    {
+      "conditions": [
+        "P0_even",
+        "P0_big",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 178,
+      "n_both": 126,
+      "confidence": 0.7079,
+      "expected_confidence": 0.4538,
+      "lift": 1.5597,
+      "chi2": 25.31,
+      "contingency": [
+        126,
+        52,
+        803,
+        1066
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 749,
+      "n_both": 553,
+      "confidence": 0.7383,
+      "expected_confidence": 0.4748,
+      "lift": 1.5549,
+      "chi2": 109.5,
+      "contingency": [
+        553,
+        196,
+        419,
+        879
+      ]
+    },
+    {
+      "conditions": [
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 607,
+      "n_both": 446,
+      "confidence": 0.7348,
+      "expected_confidence": 0.4748,
+      "lift": 1.5474,
+      "chi2": 86.36,
+      "contingency": [
+        446,
+        161,
+        526,
+        914
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 607,
+      "n_both": 446,
+      "confidence": 0.7348,
+      "expected_confidence": 0.4748,
+      "lift": 1.5474,
+      "chi2": 86.36,
+      "contingency": [
+        446,
+        161,
+        526,
+        914
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_odd",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 430,
+      "n_both": 313,
+      "confidence": 0.7279,
+      "expected_confidence": 0.4748,
+      "lift": 1.5329,
+      "chi2": 57.99,
+      "contingency": [
+        313,
+        117,
+        659,
+        958
+      ]
+    },
+    {
+      "conditions": [
+        "P0_odd",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 344,
+      "n_both": 249,
+      "confidence": 0.7238,
+      "expected_confidence": 0.4748,
+      "lift": 1.5244,
+      "chi2": 44.92,
+      "contingency": [
+        249,
+        95,
+        723,
+        980
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_odd",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 344,
+      "n_both": 249,
+      "confidence": 0.7238,
+      "expected_confidence": 0.4748,
+      "lift": 1.5244,
+      "chi2": 44.92,
+      "contingency": [
+        249,
+        95,
+        723,
+        980
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 132,
+      "n_both": 95,
+      "confidence": 0.7197,
+      "expected_confidence": 0.4748,
+      "lift": 1.5157,
+      "chi2": 16.67,
+      "contingency": [
+        95,
+        37,
+        877,
+        1038
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_dir_D",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 132,
+      "n_both": 95,
+      "confidence": 0.7197,
+      "expected_confidence": 0.4748,
+      "lift": 1.5157,
+      "chi2": 16.67,
+      "contingency": [
+        95,
+        37,
+        877,
+        1038
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_small",
+        "P0_diff_-15_-3"
+      ],
+      "target": "next_P0_U",
+      "support": 132,
+      "n_both": 95,
+      "confidence": 0.7197,
+      "expected_confidence": 0.4748,
+      "lift": 1.5157,
+      "chi2": 16.67,
+      "contingency": [
+        95,
+        37,
+        877,
+        1038
+      ]
+    },
+    {
+      "conditions": [
+        "P0_even",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 472,
+      "n_both": 339,
+      "confidence": 0.7182,
+      "expected_confidence": 0.4748,
+      "lift": 1.5125,
+      "chi2": 58.88,
+      "contingency": [
+        339,
+        133,
+        633,
+        942
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_dir_D"
+      ],
+      "target": "next_P0_U",
+      "support": 177,
+      "n_both": 125,
+      "confidence": 0.7062,
+      "expected_confidence": 0.4748,
+      "lift": 1.4873,
+      "chi2": 19.96,
+      "contingency": [
+        125,
+        52,
+        847,
+        1023
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_dir_D",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 177,
+      "n_both": 125,
+      "confidence": 0.7062,
+      "expected_confidence": 0.4748,
+      "lift": 1.4873,
+      "chi2": 19.96,
+      "contingency": [
+        125,
+        52,
+        847,
+        1023
+      ]
+    },
+    {
+      "conditions": [
+        "P0_even",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 390,
+      "n_both": 263,
+      "confidence": 0.6744,
+      "expected_confidence": 0.4538,
+      "lift": 1.4859,
+      "chi2": 41.79,
+      "contingency": [
+        263,
+        127,
+        666,
+        991
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_even",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 390,
+      "n_both": 263,
+      "confidence": 0.6744,
+      "expected_confidence": 0.4538,
+      "lift": 1.4859,
+      "chi2": 41.79,
+      "contingency": [
+        263,
+        127,
+        666,
+        991
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6"
+      ],
+      "target": "next_P0_U",
+      "support": 241,
+      "n_both": 169,
+      "confidence": 0.7012,
+      "expected_confidence": 0.4748,
+      "lift": 1.4768,
+      "chi2": 26.02,
+      "contingency": [
+        169,
+        72,
+        803,
+        1003
+      ]
+    },
+    {
+      "conditions": [
+        "P0_val_4_6",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 241,
+      "n_both": 169,
+      "confidence": 0.7012,
+      "expected_confidence": 0.4748,
+      "lift": 1.4768,
+      "chi2": 26.02,
+      "contingency": [
+        169,
+        72,
+        803,
+        1003
+      ]
+    },
+    {
+      "conditions": [
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 1118,
+      "n_both": 782,
+      "confidence": 0.6995,
+      "expected_confidence": 0.4748,
+      "lift": 1.473,
+      "chi2": 118.8,
+      "contingency": [
+        782,
+        336,
+        190,
+        739
+      ]
+    },
+    {
+      "conditions": [
+        "P0_odd",
+        "P0_small"
+      ],
+      "target": "next_P0_U",
+      "support": 646,
+      "n_both": 443,
+      "confidence": 0.6858,
+      "expected_confidence": 0.4748,
+      "lift": 1.4442,
+      "chi2": 60.52,
+      "contingency": [
+        443,
+        203,
+        529,
+        872
+      ]
+    },
+    {
+      "conditions": [
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 737,
+      "n_both": 480,
+      "confidence": 0.6513,
+      "expected_confidence": 0.4538,
+      "lift": 1.4351,
+      "chi2": 63.31,
+      "contingency": [
+        480,
+        257,
+        449,
+        861
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 737,
+      "n_both": 480,
+      "confidence": 0.6513,
+      "expected_confidence": 0.4538,
+      "lift": 1.4351,
+      "chi2": 63.31,
+      "contingency": [
+        480,
+        257,
+        449,
+        861
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_big",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_D",
+      "support": 134,
+      "n_both": 87,
+      "confidence": 0.6493,
+      "expected_confidence": 0.4538,
+      "lift": 1.4306,
+      "chi2": 11.28,
+      "contingency": [
+        87,
+        47,
+        842,
+        1071
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_big"
+      ],
+      "target": "next_P0_D",
+      "support": 180,
+      "n_both": 116,
+      "confidence": 0.6444,
+      "expected_confidence": 0.4538,
+      "lift": 1.42,
+      "chi2": 14.41,
+      "contingency": [
+        116,
+        64,
+        813,
+        1054
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_even"
+      ],
+      "target": "next_P0_D",
+      "support": 515,
+      "n_both": 330,
+      "confidence": 0.6408,
+      "expected_confidence": 0.4538,
+      "lift": 1.4119,
+      "chi2": 39.66,
+      "contingency": [
+        330,
+        185,
+        599,
+        933
+      ]
+    },
+    {
+      "conditions": [
+        "P0_even",
+        "P0_small",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_U",
+      "support": 172,
+      "n_both": 115,
+      "confidence": 0.6686,
+      "expected_confidence": 0.4748,
+      "lift": 1.4081,
+      "chi2": 13.6,
+      "contingency": [
+        115,
+        57,
+        857,
+        1018
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_even"
+      ],
+      "target": "next_P0_U",
+      "support": 420,
+      "n_both": 276,
+      "confidence": 0.6571,
+      "expected_confidence": 0.4748,
+      "lift": 1.3839,
+      "chi2": 29.4,
+      "contingency": [
+        276,
+        144,
+        696,
+        931
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U"
+      ],
+      "target": "next_P0_D",
+      "support": 972,
+      "n_both": 610,
+      "confidence": 0.6276,
+      "expected_confidence": 0.4538,
+      "lift": 1.3828,
+      "chi2": 64.65,
+      "contingency": [
+        610,
+        362,
+        319,
+        756
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D"
+      ],
+      "target": "next_P0_U",
+      "support": 929,
+      "n_both": 608,
+      "confidence": 0.6545,
+      "expected_confidence": 0.4748,
+      "lift": 1.3783,
+      "chi2": 63.13,
+      "contingency": [
+        608,
+        321,
+        364,
+        754
+      ]
+    },
+    {
+      "conditions": [
+        "P0_odd",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 347,
+      "n_both": 217,
+      "confidence": 0.6254,
+      "expected_confidence": 0.4538,
+      "lift": 1.3779,
+      "chi2": 22.5,
+      "contingency": [
+        217,
+        130,
+        712,
+        988
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_odd",
+        "P0_diff_3_15"
+      ],
+      "target": "next_P0_D",
+      "support": 347,
+      "n_both": 217,
+      "confidence": 0.6254,
+      "expected_confidence": 0.4538,
+      "lift": 1.3779,
+      "chi2": 22.5,
+      "contingency": [
+        217,
+        130,
+        712,
+        988
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_odd"
+      ],
+      "target": "next_P0_U",
+      "support": 509,
+      "n_both": 332,
+      "confidence": 0.6523,
+      "expected_confidence": 0.4748,
+      "lift": 1.3736,
+      "chi2": 33.74,
+      "contingency": [
+        332,
+        177,
+        640,
+        898
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_D",
+        "P0_small",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_U",
+      "support": 188,
+      "n_both": 122,
+      "confidence": 0.6489,
+      "expected_confidence": 0.4748,
+      "lift": 1.3666,
+      "chi2": 12.0,
+      "contingency": [
+        122,
+        66,
+        850,
+        1009
+      ]
+    },
+    {
+      "conditions": [
+        "P0_small",
+        "P0_diff_-3_3"
+      ],
+      "target": "next_P0_U",
+      "support": 387,
+      "n_both": 249,
+      "confidence": 0.6434,
+      "expected_confidence": 0.4748,
+      "lift": 1.355,
+      "chi2": 23.16,
+      "contingency": [
+        249,
+        138,
+        723,
+        937
+      ]
+    },
+    {
+      "conditions": [
+        "P0_dir_U",
+        "P0_odd"
+      ],
+      "target": "next_P0_D",
+      "support": 457,
+      "n_both": 280,
+      "confidence": 0.6127,
+      "expected_confidence": 0.4538,
+      "lift": 1.35,
+      "chi2": 25.41,
+      "contingency": [
+        280,
+        177,
+        649,
+        941
+      ]
+    }
+  ]
+}

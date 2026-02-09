@@ -1,0 +1,67 @@
+{
+  "position_level": {
+    "baseline_reduction": 0.28127731092436975,
+    "enhanced_reduction": 0.5042420168067225,
+    "incremental_reduction": 0.25405313942089347,
+    "baseline_survival": 0.9298823529411765,
+    "enhanced_survival": 0.8884705882352941
+  },
+  "combo_level": {
+    "avg_combo_count": 98481.80235294117,
+    "combo_reduction": 0.6966355678031089,
+    "combo_survival": 0.5835294117647059
+  },
+  "diff_ci": {
+    "P0_U": {
+      "lo": 1,
+      "hi": 16
+    },
+    "P0_D": {
+      "lo": 1,
+      "hi": 15
+    },
+    "P1_U": {
+      "lo": 1,
+      "hi": 18
+    },
+    "P1_D": {
+      "lo": 1,
+      "hi": 17
+    },
+    "P2_U": {
+      "lo": 1,
+      "hi": 17
+    },
+    "P2_D": {
+      "lo": 1,
+      "hi": 18
+    },
+    "P3_U": {
+      "lo": 1,
+      "hi": 18
+    },
+    "P3_D": {
+      "lo": 1,
+      "hi": 17
+    },
+    "P4_U": {
+      "lo": 1,
+      "hi": 14
+    },
+    "P4_D": {
+      "lo": 1,
+      "hi": 14
+    }
+  },
+  "wilcoxon": {
+    "statistic": 1287210.0,
+    "p_value": 3.754026843922286e-264
+  },
+  "summary": {
+    "go": true,
+    "decision": "GO",
+    "incremental_reduction": 0.25405313942089347,
+    "enhanced_survival": 0.8884705882352941,
+    "criteria": "增量缩减>=10% 且 存活率>=88%"
+  }
+}

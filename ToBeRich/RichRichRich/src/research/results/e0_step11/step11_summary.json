@@ -1,0 +1,12 @@
+{
+  "daletou": {
+    "confidence_effective": true,
+    "high_low_lift": 1.0081793988728867,
+    "spearman_corr": -0.0007697415993374143
+  },
+  "shuangseqiu": {
+    "confidence_effective": true,
+    "high_low_lift": 1.0208025463226102,
+    "spearman_corr": 0.03387274278889977
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "position": 4,
+  "dimensions": [
+    "D8",
+    "D10"
+  ],
+  "n_patterns_found": 2,
+  "n_validated": 2,
+  "n_insufficient": 0,
+  "validation_rate": 1.0,
+  "uncond_mean": 5.396871945259042,
+  "uncond_std": 4.072758364334535,
+  "uncond_iqr": 6.0,
+  "patterns": [
+    {
+      "dimension": "D8_sum_x_D10_w10",
+      "condition": "(np.int64(2), 0)",
+      "support": 205,
+      "ks_stat": 0.14909758481749041,
+      "ks_p": 0.00044053398166201215,
+      "js_divergence": 0.02065809276494448,
+      "mean": 4.3463414634146345,
+      "median": 4.0,
+      "std": 3.550616405500951,
+      "q10": 1.0,
+      "q25": 2.0,
+      "q50": 4.0,
+      "q75": 6.0,
+      "q90": 9.0,
+      "iqr": 4.0,
+      "concentration": 0.6666666666666666,
+      "mean_shift_sigma": 0.25794078309285057,
+      "validation": {
+        "status": "valid",
+        "n_test": 130,
+        "ks_stat": 0.1323459849082104,
+        "ks_p": 0.028206354398737966,
+        "test_mean": 4.484615384615385,
+        "test_median": 4.0,
+        "train_test_mean_diff": 0.13827392120075022
+      }
+    },
+    {
+      "dimension": "D8_sum_x_D10_w20",
+      "condition": "(np.int64(2), 0)",
+      "support": 272,
+      "ks_stat": 0.1279325513196481,
+      "ks_p": 0.000690122050692395,
+      "js_divergence": 0.018282246641954103,
+      "mean": 4.3088235294117645,
+      "median": 3.5,
+      "std": 3.4524388350895663,
+      "q10": 1.0,
+      "q25": 2.0,
+      "q50": 3.5,
+      "q75": 6.0,
+      "q90": 9.0,
+      "iqr": 4.0,
+      "concentration": 0.6666666666666666,
+      "mean_shift_sigma": 0.26715270549203274,
+      "validation": {
+        "status": "valid",
+        "n_test": 183,
+        "ks_stat": 0.10729344182288042,
+        "ks_p": 0.044802280791834785,
+        "test_mean": 4.639344262295082,
+        "test_median": 4.0,
+        "train_test_mean_diff": 0.3305207328833175
+      }
+    }
+  ],
+  "task_id": "ssq_P4_D8_x_D10",
+  "lottery": "shuangseqiu",
+  "elapsed_seconds": 0.3
+}

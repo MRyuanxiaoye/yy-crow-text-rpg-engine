@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "position": 0,
+  "dimensions": [
+    "D3"
+  ],
+  "n_patterns_found": 1,
+  "n_validated": 1,
+  "n_insufficient": 0,
+  "validation_rate": 1.0,
+  "uncond_mean": 5.435806831566549,
+  "uncond_std": 4.821886628938159,
+  "uncond_iqr": 6.0,
+  "patterns": [
+    {
+      "dimension": "D3",
+      "condition": "2",
+      "support": 121,
+      "ks_stat": 0.5419745154727487,
+      "ks_p": 1.9762969125303948e-31,
+      "js_divergence": 0.1902390919925319,
+      "mean": 11.190082644628099,
+      "median": 12.0,
+      "std": 4.683916651668925,
+      "q10": 4.0,
+      "q25": 8.0,
+      "q50": 12.0,
+      "q75": 15.0,
+      "q90": 17.0,
+      "iqr": 7.0,
+      "concentration": 1.1666666666666667,
+      "mean_shift_sigma": 1.1933660527246188,
+      "validation": {
+        "status": "valid",
+        "n_test": 67,
+        "ks_stat": 0.5896575324436021,
+        "ks_p": 2.3044639530653044e-21,
+        "test_mean": 11.223880597014926,
+        "test_median": 11.0,
+        "train_test_mean_diff": 0.033797952386827035
+      }
+    }
+  ],
+  "task_id": "dlt_P0_D3",
+  "lottery": "daletou",
+  "elapsed_seconds": 0.2
+}

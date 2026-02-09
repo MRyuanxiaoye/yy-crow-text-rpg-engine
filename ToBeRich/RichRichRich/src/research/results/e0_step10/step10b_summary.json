@@ -1,0 +1,12 @@
+{
+  "daletou": {
+    "avg_regression_mae": 4.718247795104981,
+    "avg_classification_acc": 0.31234567901234567,
+    "n_positions": 5
+  },
+  "shuangseqiu": {
+    "avg_regression_mae": 3.822729468345642,
+    "avg_classification_acc": 0.33577354807223037,
+    "n_positions": 6
+  }
+}

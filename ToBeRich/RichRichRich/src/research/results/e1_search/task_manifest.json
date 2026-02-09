@@ -1,0 +1,2988 @@
+{
+  "version": "1.0",
+  "created": "2026-02-09T00:34:46.033232",
+  "total_tasks": 308,
+  "tasks": [
+    {
+      "task_id": "dlt_P0_D7",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P0_D8",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P1_D7",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P1_D8",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P2_D7",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P2_D8",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P3_D7",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P3_D8",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P4_D7",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P4_D8",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P0_D7",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P0_D8",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P1_D7",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P1_D8",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P2_D7",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P2_D8",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P3_D7",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P3_D8",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P4_D7",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P4_D8",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P5_D7",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D7"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "ssq_P5_D8",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D8"
+      ],
+      "priority": 1
+    },
+    {
+      "task_id": "dlt_P0_D12",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P0_D1_x_D7",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P0_D1_x_D8",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P0_D7_x_D3",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P1_D12",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P1_D1_x_D7",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P1_D1_x_D8",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P1_D7_x_D3",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P2_D12",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P2_D1_x_D7",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P2_D1_x_D8",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P2_D7_x_D3",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P3_D12",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P3_D1_x_D7",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P3_D1_x_D8",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P3_D7_x_D3",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P4_D12",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P4_D1_x_D7",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P4_D1_x_D8",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P4_D7_x_D3",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P0_D12",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P0_D1_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P0_D1_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P0_D7_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P1_D12",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P1_D1_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P1_D1_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P1_D7_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P2_D12",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P2_D1_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P2_D1_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P2_D7_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P3_D12",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P3_D1_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P3_D1_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P3_D7_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P4_D12",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P4_D1_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P4_D1_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P4_D7_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P5_D12",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D12"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P5_D1_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1",
+        "D7"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P5_D1_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1",
+        "D8"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "ssq_P5_D7_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D7",
+        "D3"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "dlt_P0_D1",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D2",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D3",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D4",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D5",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D6",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D9",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D10",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D11",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D3_x_D12",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D8_x_D10",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D5_x_D7",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D6_x_D12",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D1_x_D12",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D1",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D2",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D3",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D4",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D5",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D6",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D9",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D10",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D11",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D3_x_D12",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D8_x_D10",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D5_x_D7",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D6_x_D12",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P1_D1_x_D12",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D1",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D2",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D3",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D4",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D5",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D6",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D9",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D10",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D11",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D3_x_D12",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D8_x_D10",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D5_x_D7",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D6_x_D12",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P2_D1_x_D12",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D1",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D2",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D3",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D4",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D5",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D6",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D9",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D10",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D11",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D3_x_D12",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D8_x_D10",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D5_x_D7",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D6_x_D12",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P3_D1_x_D12",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D1",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D2",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D3",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D4",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D5",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D6",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D9",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D10",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D11",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D3_x_D12",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D8_x_D10",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D5_x_D7",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D6_x_D12",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P4_D1_x_D12",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D1",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D2",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D3",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D4",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D5",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D6",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D9",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D10",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D11",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D8_x_D10",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D5_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D6_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P0_D1_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D1",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D2",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D3",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D4",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D5",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D6",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D9",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D10",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D11",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D8_x_D10",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D5_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D6_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P1_D1_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D1",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D2",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D3",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D4",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D5",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D6",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D9",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D10",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D11",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D8_x_D10",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D5_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D6_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P2_D1_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D1",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D2",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D3",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D4",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D5",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D6",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D9",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D10",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D11",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D8_x_D10",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D5_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D6_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P3_D1_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D1",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D2",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D3",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D4",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D5",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D6",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D9",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D10",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D11",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D8_x_D10",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D5_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D6_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P4_D1_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D1",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D2",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D2"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D3",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D3"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D4",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D4"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D5",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D5"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D6",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D6"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D9",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D9"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D10",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D11",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D11"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D3",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D8_x_D10",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D8",
+        "D10"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D5_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D5",
+        "D7"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D6_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D6",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "ssq_P5_D1_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1",
+        "D12"
+      ],
+      "priority": 3
+    },
+    {
+      "task_id": "dlt_P0_D1_x_D3",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P0_D1_x_D4",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P0_D2_x_D3",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P0_D4_x_D6",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P0_D5_x_D3",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P1_D1_x_D3",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P1_D1_x_D4",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P1_D2_x_D3",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P1_D4_x_D6",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P1_D5_x_D3",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P2_D1_x_D3",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P2_D1_x_D4",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P2_D2_x_D3",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P2_D4_x_D6",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P2_D5_x_D3",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P3_D1_x_D3",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P3_D1_x_D4",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P3_D2_x_D3",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P3_D4_x_D6",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P3_D5_x_D3",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P4_D1_x_D3",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P4_D1_x_D4",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P4_D2_x_D3",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P4_D4_x_D6",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P4_D5_x_D3",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P0_D1_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P0_D1_x_D4",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P0_D2_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P0_D4_x_D6",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P0_D5_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P1_D1_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P1_D1_x_D4",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P1_D2_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P1_D4_x_D6",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P1_D5_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P2_D1_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P2_D1_x_D4",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P2_D2_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P2_D4_x_D6",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P2_D5_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P3_D1_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P3_D1_x_D4",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P3_D2_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P3_D4_x_D6",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P3_D5_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P4_D1_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P4_D1_x_D4",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P4_D2_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P4_D4_x_D6",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P4_D5_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P5_D1_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P5_D1_x_D4",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1",
+        "D4"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P5_D2_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D2",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P5_D4_x_D6",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D4",
+        "D6"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "ssq_P5_D5_x_D3",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D5",
+        "D3"
+      ],
+      "priority": 4
+    },
+    {
+      "task_id": "dlt_P0_D1_x_D3_x_D7",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P0_D1_x_D3_x_D12",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P0_D1_x_D4_x_D8",
+      "lottery": "daletou",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P1_D1_x_D3_x_D7",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P1_D1_x_D3_x_D12",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P1_D1_x_D4_x_D8",
+      "lottery": "daletou",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P2_D1_x_D3_x_D7",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P2_D1_x_D3_x_D12",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P2_D1_x_D4_x_D8",
+      "lottery": "daletou",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P3_D1_x_D3_x_D7",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P3_D1_x_D3_x_D12",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P3_D1_x_D4_x_D8",
+      "lottery": "daletou",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P4_D1_x_D3_x_D7",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P4_D1_x_D3_x_D12",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "dlt_P4_D1_x_D4_x_D8",
+      "lottery": "daletou",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P0_D1_x_D3_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P0_D1_x_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P0_D1_x_D4_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 0,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P1_D1_x_D3_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P1_D1_x_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P1_D1_x_D4_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 1,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P2_D1_x_D3_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P2_D1_x_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P2_D1_x_D4_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 2,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P3_D1_x_D3_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P3_D1_x_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P3_D1_x_D4_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 3,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P4_D1_x_D3_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P4_D1_x_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P4_D1_x_D4_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 4,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P5_D1_x_D3_x_D7",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D7"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P5_D1_x_D3_x_D12",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1",
+        "D3",
+        "D12"
+      ],
+      "priority": 5
+    },
+    {
+      "task_id": "ssq_P5_D1_x_D4_x_D8",
+      "lottery": "shuangseqiu",
+      "position": 5,
+      "dimensions": [
+        "D1",
+        "D4",
+        "D8"
+      ],
+      "priority": 5
+    }
+  ]
+}

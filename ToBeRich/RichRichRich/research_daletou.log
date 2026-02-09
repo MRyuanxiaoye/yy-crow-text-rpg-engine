@@ -1,0 +1,277 @@
+============================================================
+  彩票研究系统
+  彩种: daletou
+  模块: all
+  时间: 2026-02-07 19:41:43
+============================================================
+[数据] 加载 daletou: 2833 期, 红球 5/35, 蓝球 2/12
+
+============================================================
+  A1: 方向模式扫描
+============================================================
+[A1] 方向模式扫描: 共 228 个扫描任务
+[A1] 进度: 50/228 任务, 已发现 3178 个显著模式, 速度 229.1 任务/秒
+[A1] 进度: 100/228 任务, 已发现 5532 个显著模式, 速度 227.4 任务/秒
+[A1] 进度: 150/228 任务, 已发现 7775 个显著模式, 速度 225.8 任务/秒
+[A1] 进度: 200/228 任务, 已发现 9307 个显著模式, 速度 222.8 任务/秒
+[A1] 进度: 228/228 任务, 已发现 9779 个显著模式, 速度 221.7 任务/秒
+[A1] 完成: 9779 个显著模式, 耗时 1.0s
+[A1] 结果已保存: /Users/yuanye/Documents/深度搜索/ToBeRich/RichRichRich/src/research/results/rules/a1_direction_patterns_daletou.json
+[A1] 摘要: {
+  "total": 9779,
+  "by_position_count": {
+    "1": {
+      "count": 3885,
+      "top_chi2": 61090.51,
+      "avg_confidence": 0.6738
+    },
+    "2": {
+      "count": 3685,
+      "top_chi2": 30889291.92,
+      "avg_confidence": 0.5108
+    },
+    "3": {
+      "count": 1835,
+      "top_chi2": 181436200.85,
+      "avg_confidence": 0.4186
+    },
+    "4": {
+      "count": 348,
+      "top_chi2": 2498491997.09,
+      "avg_confidence": 0.3601
+    },
+    "5": {
+      "count": 26,
+      "top_chi2": 74928
+
+============================================================
+  A2: 条件排除规则挖掘
+============================================================
+[A2] 生成 91 个原子条件, 掩码矩阵 (91, 2833)
+[A2] 目标条件: 15 个
+[A2] 1条件组合完成: 发现 148 条规则, 累计 148 条, 耗时 0.0s
+[A2] 2条件组合完成: 发现 8968 条规则, 累计 9116 条, 耗时 0.4s
+[A2] 进度: 10000 组合已扫描, 已发现 19911 条规则, 耗时 0.7s
+[A2] 进度: 30000 组合已扫描, 已发现 55194 条规则, 耗时 1.9s
+[A2] 进度: 40000 组合已扫描, 已发现 70031 条规则, 耗时 2.5s
+[A2] 进度: 50000 组合已扫描, 已发现 84772 条规则, 耗时 3.1s
+[A2] 进度: 60000 组合已扫描, 已发现 103970 条规则, 耗时 3.7s
+[A2] 进度: 70000 组合已扫描, 已发现 120013 条规则, 耗时 4.3s
+[A2] 进度: 90000 组合已扫描, 已发现 152464 条规则, 耗时 5.7s
+[A2] 进度: 100000 组合已扫描, 已发现 167858 条规则, 耗时 6.3s
+[A2] 进度: 110000 组合已扫描, 已发现 188331 条规则, 耗时 7.1s
+[A2] 进度: 120000 组合已扫描, 已发现 213179 条规则, 耗时 8.0s
+[A2] 3条件组合完成: 发现 215380 条规则, 累计 224496 条, 耗时 8.4s
+[A2] 规则数已超过 100000，跳过更高阶组合
+[A2] 完成: 扫描 125671 个组合, 原始规则 224496, 显著规则 129301, 耗时 8.4s
+[A2] 结果已保存: /Users/yuanye/Documents/深度搜索/ToBeRich/RichRichRich/src/research/results/rules/a2_exclusion_rules_daletou.json
+[A2] 摘要: {
+  "total": 129301,
+  "by_target": {
+    "next_P0_D": {
+      "count": 12609,
+      "top_lift": 2.1809,
+      "avg_confidence": 0.7527
+    },
+    "next_P0_E": {
+      "count": 1400,
+      "top_lift": 4.4791,
+      "avg_confidence": 0.1829
+    },
+    "next_P0_U": {
+      "count": 9870,
+      "top_lift": 2.2133,
+      "avg_confidence": 0.7041
+    },
+    "next_P1_D": {
+      "count": 12580,
+      "top_lift": 2.08,
+      "avg_confidence": 0.7574
+    },
+    "next_P1_E": {
+      "count": 300,
+      "
+
+============================================================
+  A3: 差分空间分析
+============================================================
+[A3] 开始差分分析: 5 个位置, 最大 4 阶
+[A3] 差分分布+ACF+游程检验完成, 耗时 0.0s
+[A3] 计算跨位置差分相关性...
+[A3] 跨位置分析完成, 耗时 0.0s
+[A3] 差分模式扫描...
+[A3] 完成: 共发现 3096 个差分模式, 耗时 0.5s
+[A3] 结果已保存: /Users/yuanye/Documents/深度搜索/ToBeRich/RichRichRich/src/research/results/rules/a3_diff_analysis_daletou.json
+[A3] 摘要: {
+  "non_random_series": [
+    "P0_order_1",
+    "P0_order_2",
+    "P0_order_3",
+    "P0_order_4",
+    "P1_order_1",
+    "P1_order_2",
+    "P1_order_3",
+    "P1_order_4",
+    "P2_order_1",
+    "P2_order_2",
+    "P2_order_3",
+    "P2_order_4",
+    "P3_order_1",
+    "P3_order_2",
+    "P3_order_3",
+    "P3_order_4",
+    "P4_order_1",
+    "P4_order_2",
+    "P4_order_3",
+    "P4_order_4"
+  ],
+  "n_non_random": 20,
+  "total_significant_acf_lags": 172,
+  "total_diff_patterns": 3096
+}
+
+============================================================
+  A4: 滑动窗口统计量扫描
+============================================================
+[A4] 滑动窗口分析: 6 个统计量, 窗口 (3, 50)
+[A4] 分析统计量: sum (长度 2833)
+[A4] 分析统计量: span (长度 2833)
+[A4] 分析统计量: odd_count (长度 2833)
+[A4] 分析统计量: big_count (长度 2833)
+[A4] 分析统计量: ac_value (长度 2833)
+[A4] 分析统计量: consec_groups (长度 2833)
+[A4] 基础分析完成, 耗时 0.7s
+[A4] 计算统计量间滞后相关...
+[A4] 滞后相关完成, 耗时 0.7s
+[A4] 统计量模式扫描...
+[A4] 联合统计量模式扫描...
+[A4] 完成: 共发现 6988 个统计量模式, 耗时 1.1s
+[A4] 结果已保存: /Users/yuanye/Documents/深度搜索/ToBeRich/RichRichRich/src/research/results/rules/a4_sliding_stats_daletou.json
+[A4] 摘要: {
+  "total_changepoints": 0,
+  "strong_periods": [],
+  "total_stat_patterns": 6988
+}
+
+============================================================
+  B1: Transformer 序列预测
+============================================================
+[设备] 使用 Apple MPS 加速
+[B1] 训练集: 1952 样本, 验证集: 849 样本, 特征维度: 31
+[B1] 模型参数量: 839,695
+[B1] Epoch 1/1000: train_loss=0.9037, val_loss=0.8792, val_acc=0.4697, best=0.4697@1, 耗时 1.5s
+[B1] Epoch 50/1000: train_loss=0.8838, val_loss=0.8789, val_acc=0.4690, best=0.4808@16, 耗时 31.8s
+[B1] Epoch 100/1000: train_loss=0.8830, val_loss=0.8773, val_acc=0.4688, best=0.4808@16, 耗时 62.6s
+[B1] 早停: 100 轮无改善, 最佳 epoch=16
+[B1] 训练完成: 最佳验证准确率 0.4808, 各位置: [0.4676, 0.4923, 0.4782, 0.4853, 0.4806], 耗时 72.6s
+[B1] 结果已保存: /Users/yuanye/Documents/深度搜索/ToBeRich/RichRichRich/src/research/results/rules/b1_transformer_results_daletou.json
+[B1] 摘要: {
+  "total_epochs": 116,
+  "best_epoch": 16,
+  "best_val_acc": 0.4808,
+  "final_val_acc": 0.4808,
+  "final_val_loss": 0.8819,
+  "per_position_accuracy": {
+    "P0": 0.4676,
+    "P1": 0.4923,
+    "P2": 0.4782,
+    "P3": 0.4853,
+    "P4": 0.4806
+  },
+  "total_params": 839695,
+  "attention_analysis": {
+    "layer_0": {
+      "top_attended_steps": [
+        {
+          "step": 2,
+          "weight": 0.1026
+        },
+        {
+          "step": 1,
+          "weight": 0.0949
+        },
+        {
+    
+
+============================================================
+  C1: 回测验证
+============================================================
+[C1] 回测: 训练期 0-1983, 测试期 1983-2833
+[C1] 回测 500 条单位置规则
+[C1] 回测完成: 准确率 0.6108 (随机基线 0.3333), 覆盖率 0.3008, 预测 1277 次, 耗时 0.8s
+[C1] 结果已保存: /Users/yuanye/Documents/深度搜索/ToBeRich/RichRichRich/src/research/results/reports/c1_backtest_results_daletou.json
+[C1] 摘要: {
+  "test_range": [
+    1983,
+    2833
+  ],
+  "n_rules_tested": 500,
+  "total_predictions": 1277,
+  "hits": 780,
+  "misses": 497,
+  "no_match": 2968,
+  "accuracy": 0.6108,
+  "coverage": 0.3008,
+  "per_position": {
+    "P0": {
+      "predictions": 320,
+      "hits": 197,
+      "accuracy": 0.6156
+    },
+    "P1": {
+      "predictions": 240,
+      "hits": 144,
+      "accuracy": 0.6
+    },
+    "P2": {
+      "predictions": 151,
+      "hits": 98,
+      "accuracy": 0.649
+    },
+    "P3": {
+      "predi
+
+============================================================
+  C2: 稳定性检验 + 规则排名
+============================================================
+[C2] 稳定性检验: 200 条规则, 5 折
+[C2] 进度: 50/200, 耗时 0.0s
+[C2] 进度: 100/200, 耗时 0.0s
+[C2] 进度: 150/200, 耗时 0.0s
+[C2] 进度: 200/200, 耗时 0.0s
+[C2] 完成: 200/200 条规则稳定 (一致性>0.5), 200 条高分规则, 耗时 0.0s
+[C2] 结果已保存: /Users/yuanye/Documents/深度搜索/ToBeRich/RichRichRich/src/research/results/reports/c2_stability_results_daletou.json
+[C2] 摘要: {
+  "n_rules_checked": 200,
+  "n_stable": 200,
+  "n_high_score": 200,
+  "k_folds": 5,
+  "top20_rules": [
+    {
+      "pattern": "(DDDDD)(UUUUU)(DDDDD)(UUUUU)(DDDDD)",
+      "positions": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "window": 5,
+      "original_chi2": 7492824622.5,
+      "original_confidence": 0.2,
+      "fold_accuracies": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "avg_fold_accuracy": 1.0,
+      "consistency": 1.0,
+ 
+
+[报告] 研究报告已保存: /Users/yuanye/Documents/深度搜索/ToBeRich/RichRichRich/src/research/results/reports/research_report_daletou_20260207_194308.json
+
+============================================================
+  全部完成! 总耗时 85.8s
+============================================================

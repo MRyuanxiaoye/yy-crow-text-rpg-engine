@@ -1,0 +1,26 @@
+{
+  "lottery_type": "daletou",
+  "ball_type": "blue",
+  "n_draws": 2833,
+  "blue_count": 2,
+  "blue_range": 12,
+  "split1": 1699,
+  "split2": 2408,
+  "train_samples": 709,
+  "test_samples": 425,
+  "n_features": 1163,
+  "n_a2_clusters": 1000,
+  "n_a1_patterns": 129,
+  "train_Y_distribution": {
+    "P0": {
+      "D": 316,
+      "E": 80,
+      "U": 313
+    },
+    "P1": {
+      "D": 315,
+      "E": 87,
+      "U": 307
+    }
+  }
+}

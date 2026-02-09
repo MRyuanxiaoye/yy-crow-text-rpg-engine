@@ -1,0 +1,42 @@
+{
+  "lottery_type": "daletou",
+  "n_draws": 2833,
+  "split1": 1699,
+  "split2": 2408,
+  "train_samples": 709,
+  "test_samples": 425,
+  "n_features": 2147,
+  "n_a2_clusters": 1000,
+  "n_a1_patterns": 812,
+  "n_a3_groups": 10,
+  "n_a3_features": 100,
+  "n_a4_groups": 21,
+  "n_a4_features": 132,
+  "train_Y_distribution": {
+    "P0": {
+      "D": 318,
+      "E": 80,
+      "U": 311
+    },
+    "P1": {
+      "D": 333,
+      "E": 35,
+      "U": 341
+    },
+    "P2": {
+      "D": 339,
+      "E": 36,
+      "U": 334
+    },
+    "P3": {
+      "D": 349,
+      "E": 30,
+      "U": 330
+    },
+    "P4": {
+      "D": 330,
+      "E": 45,
+      "U": 334
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "lottery_type": "shuangseqiu",
+  "best_method": "3C_mlp",
+  "n_test_samples": 512,
+  "baseline": {
+    "red_combos": 1107568,
+    "blue_combos": 66,
+    "total_combos": 73099488
+  },
+  "combo_stats": {
+    "avg_combo_count": 274552.515625,
+    "median_combo_count": 211830.5,
+    "min_combo_count": 0.0,
+    "max_combo_count": 1012530.0,
+    "std_combo_count": 217510.33572962595,
+    "avg_combo_reduction": 0.7521122715490155,
+    "combo_survival_rate": 0.6875,
+    "combo_efficiency": 0.5170771866899482
+  },
+  "practical_value": {
+    "avg_tickets_needed": 274552.515625,
+    "cost_per_draw_yuan": 549105.03125,
+    "probability_uplift_red": 4.034084326194198,
+    "jackpot_yuan": 5000000,
+    "note": "仅评估红球部分，蓝球未纳入缩号"
+  },
+  "per_position": {
+    "P0": {
+      "avg_size": 20.318359375,
+      "avg_reduction": 0.38429214015151514
+    },
+    "P1": {
+      "avg_size": 21.322265625,
+      "avg_reduction": 0.35387073863636365
+    },
+    "P2": {
+      "avg_size": 20.7734375,
+      "avg_reduction": 0.3705018939393939
+    },
+    "P3": {
+      "avg_size": 21.3046875,
+      "avg_reduction": 0.35440340909090906
+    },
+    "P4": {
+      "avg_size": 21.501953125,
+      "avg_reduction": 0.34842566287878785
+    },
+    "P5": {
+      "avg_size": 21.615234375,
+      "avg_reduction": 0.3449928977272727
+    }
+  },
+  "distribution": {
+    "combo_count_percentiles": {
+      "p10": 38639.6,
+      "p25": 101295.0,
+      "p50": 211830.5,
+      "p75": 406298.5,
+      "p90": 597737.0
+    }
+  },
+  "consistency_check": {
+    "position_survival_product": 0.664470497444225,
+    "combo_survival": 0.6875,
+    "note": "组合存活率应 >= 各位置存活率乘积（独立下界）",
+    "position_survival_rates": {
+      "P0": 0.947265625,
+      "P1": 0.939453125,
+      "P2": 0.953125,
+      "P3": 0.912109375,
+      "P4": 0.92578125,
+      "P5": 0.927734375
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "lottery_type": "daletou",
+  "layer0_hard_exclusion": {
+    "avg_candidates_per_pos": 27.566117647058825,
+    "exclusion_error_rate": 0.007058823529411765
+  },
+  "layer1_signal_fusion": {
+    "alphas": {
+      "A": 0.15,
+      "B": 0.55,
+      "C": 0.2,
+      "D": 0.1,
+      "E": 0.0,
+      "F": 0.0
+    },
+    "optimal_ks": [
+      14,
+      16,
+      18,
+      19,
+      16
+    ]
+  },
+  "layer2_beam_search": {
+    "beam_width": 500,
+    "rule_weight": 0.0,
+    "n_rules": 500,
+    "n_a1_patterns": 9298,
+    "n_a3_patterns": 200,
+    "n_a4_patterns": 262
+  },
+  "layer3_final": {
+    "survival_rate": 0.2564705882352941,
+    "avg_combo_count": 500.0,
+    "combo_reduction": 0.9984597944749748,
+    "efficiency": 0.25607557081828763,
+    "top_n_hits": {
+      "10": 0.04,
+      "50": 0.08235294117647059,
+      "100": 0.13176470588235295,
+      "200": 0.18352941176470589
+    },
+    "mean_rank_when_hit": 149.42201834862385
+  },
+  "comparison": {
+    "e1_efficiency": 0,
+    "e3_efficiency": 0.25607557081828763,
+    "improvement": 0.25607557081828763
+  },
+  "blue_ball": {
+    "best_method": "3B_xgboost",
+    "direction_accuracy": 0.9670588235294117,
+    "avg_reduction": 0.43823529411764706,
+    "avg_survival": 0.9835294117647059,
+    "efficiency": 0.4310173010380623
+  },
+  "combined_efficiency": 0.11037300139587952
+}

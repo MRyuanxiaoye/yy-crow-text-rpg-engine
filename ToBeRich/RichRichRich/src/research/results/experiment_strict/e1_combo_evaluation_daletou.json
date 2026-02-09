@@ -1,0 +1,70 @@
+{
+  "lottery_type": "daletou",
+  "best_method": "3B_xgboost",
+  "n_test_samples": 425,
+  "baseline": {
+    "red_combos": 324632,
+    "blue_combos": 66,
+    "total_combos": 21425712
+  },
+  "combo_stats": {
+    "avg_combo_count": 121426.8494117647,
+    "median_combo_count": 114933.0,
+    "min_combo_count": 697.0,
+    "max_combo_count": 287331.0,
+    "std_combo_count": 67764.82091723096,
+    "avg_combo_reduction": 0.6259553912991797,
+    "combo_survival_rate": 0.7058823529411765,
+    "combo_efficiency": 0.4418508644464798
+  },
+  "practical_value": {
+    "avg_tickets_needed": 121426.8494117647,
+    "cost_per_draw_yuan": 242853.6988235294,
+    "probability_uplift_red": 2.6734779134321123,
+    "jackpot_yuan": 10000000,
+    "note": "仅评估红球部分，蓝球未纳入缩号"
+  },
+  "per_position": {
+    "P0": {
+      "avg_size": 26.491764705882353,
+      "avg_reduction": 0.24309243697478988
+    },
+    "P1": {
+      "avg_size": 25.098823529411764,
+      "avg_reduction": 0.28289075630252103
+    },
+    "P2": {
+      "avg_size": 22.823529411764707,
+      "avg_reduction": 0.34789915966386553
+    },
+    "P3": {
+      "avg_size": 25.79294117647059,
+      "avg_reduction": 0.2630588235294118
+    },
+    "P4": {
+      "avg_size": 25.569411764705883,
+      "avg_reduction": 0.26944537815126046
+    }
+  },
+  "distribution": {
+    "combo_count_percentiles": {
+      "p10": 31814.600000000002,
+      "p25": 66780.0,
+      "p50": 114933.0,
+      "p75": 175692.0,
+      "p90": 215763.6
+    }
+  },
+  "consistency_check": {
+    "position_survival_product": 0.6946296562290901,
+    "combo_survival": 0.7058823529411765,
+    "note": "组合存活率应 >= 各位置存活率乘积（独立下界）",
+    "position_survival_rates": {
+      "P0": 0.9505882352941176,
+      "P1": 0.9247058823529412,
+      "P2": 0.9505882352941176,
+      "P3": 0.9105882352941177,
+      "P4": 0.9129411764705883
+    }
+  }
+}

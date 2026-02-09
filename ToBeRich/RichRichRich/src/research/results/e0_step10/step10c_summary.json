@@ -1,0 +1,10 @@
+{
+  "daletou": {
+    "best_confidence_level": "tight",
+    "best_hit_rate_lift": 1.690018009841599
+  },
+  "shuangseqiu": {
+    "best_confidence_level": "tight",
+    "best_hit_rate_lift": 1.8623824486464122
+  }
+}

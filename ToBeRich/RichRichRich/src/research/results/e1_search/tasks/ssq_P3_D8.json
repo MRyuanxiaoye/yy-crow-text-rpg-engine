@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "position": 3,
+  "dimensions": [
+    "D8"
+  ],
+  "n_patterns_found": 1,
+  "n_validated": 1,
+  "n_insufficient": 0,
+  "validation_rate": 1.0,
+  "uncond_mean": 5.953567937438905,
+  "uncond_std": 4.355566822255883,
+  "uncond_iqr": 7.0,
+  "patterns": [
+    {
+      "dimension": "D8_sum",
+      "condition": "2",
+      "support": 384,
+      "ks_stat": 0.11870723362658847,
+      "ks_p": 0.0001979700923741671,
+      "js_divergence": 0.018229563757148425,
+      "mean": 4.770833333333333,
+      "median": 4.0,
+      "std": 3.458772562469075,
+      "q10": 1.0,
+      "q25": 2.0,
+      "q50": 4.0,
+      "q75": 7.0,
+      "q90": 9.0,
+      "iqr": 5.0,
+      "concentration": 0.7142857142857143,
+      "mean_shift_sigma": 0.27154550770799485,
+      "validation": {
+        "status": "valid",
+        "n_test": 242,
+        "ks_stat": 0.12508016407923236,
+        "ks_p": 0.0028890403409450273,
+        "test_mean": 4.962809917355372,
+        "test_median": 4.0,
+        "train_test_mean_diff": 0.1919765840220391
+      }
+    }
+  ],
+  "task_id": "ssq_P3_D8",
+  "lottery": "shuangseqiu",
+  "elapsed_seconds": 0.3
+}

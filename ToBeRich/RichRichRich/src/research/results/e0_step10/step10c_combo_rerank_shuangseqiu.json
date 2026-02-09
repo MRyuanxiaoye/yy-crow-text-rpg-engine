@@ -1,0 +1,64 @@
+{
+  "lottery_type": "shuangseqiu",
+  "evaluations": {
+    "tight": {
+      "n_periods": 1365,
+      "confidence_level": "tight",
+      "avg_hit_positions": 3.6974358974358976,
+      "all_hit_rate": 0.07765567765567766,
+      "avg_reduction_ratio": 0.3308876308876309,
+      "avg_combo_compression": 0.001156986271815705,
+      "median_combo_compression": 0.000986474330436917,
+      "position_hit_rates": {
+        "P0": 0.6534798534798535,
+        "P1": 0.5941391941391941,
+        "P2": 0.5648351648351648,
+        "P3": 0.6095238095238096,
+        "P4": 0.591941391941392,
+        "P5": 0.6835164835164835
+      },
+      "random_baseline_hit_rate": 0.3308876308876309,
+      "hit_rate_lift": 1.8623824486464122
+    },
+    "medium": {
+      "n_periods": 1365,
+      "confidence_level": "medium",
+      "avg_hit_positions": 5.201465201465202,
+      "all_hit_rate": 0.4989010989010989,
+      "avg_reduction_ratio": 0.516080216080216,
+      "avg_combo_compression": 0.016741900487491083,
+      "median_combo_compression": 0.01415319654745537,
+      "position_hit_rates": {
+        "P0": 0.9054945054945055,
+        "P1": 0.8622710622710623,
+        "P2": 0.8586080586080586,
+        "P3": 0.8446886446886447,
+        "P4": 0.8293040293040294,
+        "P5": 0.9010989010989011
+      },
+      "random_baseline_hit_rate": 0.516080216080216,
+      "hit_rate_lift": 1.6797986822577988
+    },
+    "loose": {
+      "n_periods": 1365,
+      "confidence_level": "loose",
+      "avg_hit_positions": 5.201465201465202,
+      "all_hit_rate": 0.4989010989010989,
+      "avg_reduction_ratio": 0.516080216080216,
+      "avg_combo_compression": 0.016741900487491083,
+      "median_combo_compression": 0.01415319654745537,
+      "position_hit_rates": {
+        "P0": 0.9054945054945055,
+        "P1": 0.8622710622710623,
+        "P2": 0.8586080586080586,
+        "P3": 0.8446886446886447,
+        "P4": 0.8293040293040294,
+        "P5": 0.9010989010989011
+      },
+      "random_baseline_hit_rate": 0.516080216080216,
+      "hit_rate_lift": 1.6797986822577988
+    }
+  },
+  "best_confidence_level": "tight",
+  "best_hit_rate_lift": 1.8623824486464122
+}

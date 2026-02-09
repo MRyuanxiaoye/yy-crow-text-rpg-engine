@@ -1,0 +1,98 @@
+{
+  "status": "completed",
+  "position": 0,
+  "dimensions": [
+    "D2"
+  ],
+  "n_patterns_found": 3,
+  "n_validated": 1,
+  "n_insufficient": 1,
+  "validation_rate": 0.3333333333333333,
+  "uncond_mean": 3.8470185728250246,
+  "uncond_std": 3.349991378382439,
+  "uncond_iqr": 5.0,
+  "patterns": [
+    {
+      "dimension": "D2_n2",
+      "condition": "(np.int64(2), np.int64(9))",
+      "support": 30,
+      "ks_stat": 0.4696969696969697,
+      "ks_p": 1.687042356949474e-06,
+      "js_divergence": 0.2171812220390809,
+      "mean": 8.066666666666666,
+      "median": 9.0,
+      "std": 4.312256434345661,
+      "q10": 2.8000000000000007,
+      "q25": 4.25,
+      "q50": 9.0,
+      "q75": 11.0,
+      "q90": 13.0,
+      "iqr": 6.75,
+      "concentration": 1.35,
+      "mean_shift_sigma": 1.259599687650277,
+      "validation": {
+        "status": "valid",
+        "n_test": 23,
+        "ks_stat": 0.5437965497485517,
+        "ks_p": 8.679148812928913e-07,
+        "test_mean": 8.91304347826087,
+        "test_median": 10.0,
+        "train_test_mean_diff": 0.8463768115942027
+      }
+    },
+    {
+      "dimension": "D2_n2",
+      "condition": "(np.int64(1), np.int64(9))",
+      "support": 23,
+      "ks_stat": 0.4825321943134005,
+      "ks_p": 2.140134220226988e-05,
+      "js_divergence": 0.16500457469556046,
+      "mean": 7.913043478260869,
+      "median": 8.0,
+      "std": 4.272389042274173,
+      "q10": 1.2000000000000002,
+      "q25": 5.5,
+      "q50": 8.0,
+      "q75": 10.5,
+      "q90": 14.0,
+      "iqr": 5.0,
+      "concentration": 1.0,
+      "mean_shift_sigma": 1.2137419014490556,
+      "validation": {
+        "status": "insufficient",
+        "n_test": 9
+      }
+    },
+    {
+      "dimension": "D2_n2",
+      "condition": "(np.int64(6), np.int64(2))",
+      "support": 37,
+      "ks_stat": 0.2986446857414599,
+      "ks_p": 0.002272519510354255,
+      "js_divergence": 0.09324640623205716,
+      "mean": 2.4594594594594597,
+      "median": 2.0,
+      "std": 2.717258103255525,
+      "q10": 0.0,
+      "q25": 1.0,
+      "q50": 2.0,
+      "q75": 3.0,
+      "q90": 5.0,
+      "iqr": 2.0,
+      "concentration": 0.4,
+      "mean_shift_sigma": 0.4141978162449944,
+      "validation": {
+        "status": "invalid",
+        "n_test": 23,
+        "ks_stat": 0.223056846393787,
+        "ks_p": 0.18029793918100484,
+        "test_mean": 3.0869565217391304,
+        "test_median": 1.0,
+        "train_test_mean_diff": 0.6274970622796707
+      }
+    }
+  ],
+  "task_id": "ssq_P0_D2",
+  "lottery": "shuangseqiu",
+  "elapsed_seconds": 0.3
+}
