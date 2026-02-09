@@ -6,103 +6,103 @@
     "n_a1_patterns": 15841
   },
   "baseline_topk": {
-    "survival_rate": 0.7890625,
-    "avg_combo_count": 346758.81640625,
-    "combo_reduction": 0.6869187116219952,
-    "efficiency": 0.5420217958892306
+    "survival_rate": 0.798828125,
+    "avg_combo_count": 350466.30859375,
+    "combo_reduction": 0.6835712944092371,
+    "efficiency": 0.5460559754167539
   },
   "beam_search": {
     "bw200_rw0.0": {
       "beam_width": 200,
       "rule_weight": 0.0,
       "rules_enabled": false,
-      "survival_rate": 0.2421875,
+      "survival_rate": 0.248046875,
       "avg_combo_count": 200.0,
       "combo_reduction": 0.9998194241798246,
-      "efficiency": 0.24214376679355126,
-      "avg_rule_score_hit": 0.18411500628069785,
-      "avg_rule_score_miss": 0.14781930611271735
+      "efficiency": 0.24800208373210494,
+      "avg_rule_score_hit": 0.18021667527869825,
+      "avg_rule_score_miss": 0.14882242542895113
     },
     "bw200_rw0.1": {
       "beam_width": 200,
       "rule_weight": 0.1,
       "rules_enabled": true,
-      "survival_rate": 0.2421875,
+      "survival_rate": 0.248046875,
       "avg_combo_count": 200.0,
       "combo_reduction": 0.9998194241798246,
-      "efficiency": 0.24214376679355126,
-      "avg_rule_score_hit": 0.18411500628069785,
-      "avg_rule_score_miss": 0.14781930611271735
+      "efficiency": 0.24800208373210494,
+      "avg_rule_score_hit": 0.18021667527869825,
+      "avg_rule_score_miss": 0.14882242542895113
     },
     "bw200_rw0.2": {
       "beam_width": 200,
       "rule_weight": 0.2,
       "rules_enabled": true,
-      "survival_rate": 0.2421875,
+      "survival_rate": 0.248046875,
       "avg_combo_count": 200.0,
       "combo_reduction": 0.9998194241798246,
-      "efficiency": 0.24214376679355126,
-      "avg_rule_score_hit": 0.18411500628069785,
-      "avg_rule_score_miss": 0.14781930611271735
+      "efficiency": 0.24800208373210494,
+      "avg_rule_score_hit": 0.18021667527869825,
+      "avg_rule_score_miss": 0.14882242542895113
     },
     "bw200_rw0.3": {
       "beam_width": 200,
       "rule_weight": 0.3,
       "rules_enabled": true,
-      "survival_rate": 0.2421875,
+      "survival_rate": 0.248046875,
       "avg_combo_count": 200.0,
       "combo_reduction": 0.9998194241798246,
-      "efficiency": 0.24214376679355126,
-      "avg_rule_score_hit": 0.18411500628069785,
-      "avg_rule_score_miss": 0.14781930611271735
+      "efficiency": 0.24800208373210494,
+      "avg_rule_score_hit": 0.18021667527869825,
+      "avg_rule_score_miss": 0.14882242542895113
     },
     "bw200_rw0.5": {
       "beam_width": 200,
       "rule_weight": 0.5,
       "rules_enabled": true,
-      "survival_rate": 0.2421875,
+      "survival_rate": 0.248046875,
       "avg_combo_count": 200.0,
       "combo_reduction": 0.9998194241798246,
-      "efficiency": 0.24214376679355126,
-      "avg_rule_score_hit": 0.18411500628069785,
-      "avg_rule_score_miss": 0.14781930611271735
+      "efficiency": 0.24800208373210494,
+      "avg_rule_score_hit": 0.18021667527869825,
+      "avg_rule_score_miss": 0.14882242542895113
     },
     "bw500_rw0.0": {
       "beam_width": 500,
       "rule_weight": 0.0,
       "rules_enabled": false,
-      "survival_rate": 0.3515625,
+      "survival_rate": 0.35546875,
       "avg_combo_count": 500.0,
       "combo_reduction": 0.9995485604495615,
-      "efficiency": 0.35140379078304895,
-      "avg_rule_score_hit": 0.17582916090178766,
-      "avg_rule_score_miss": 0.14618946562716592
+      "efficiency": 0.3553082773473051,
+      "avg_rule_score_hit": 0.17684860392172067,
+      "avg_rule_score_miss": 0.14544759283875064
     },
     "bw500_rw0.2": {
       "beam_width": 500,
       "rule_weight": 0.2,
       "rules_enabled": true,
-      "survival_rate": 0.3515625,
+      "survival_rate": 0.35546875,
       "avg_combo_count": 500.0,
       "combo_reduction": 0.9995485604495615,
-      "efficiency": 0.35140379078304895,
-      "avg_rule_score_hit": 0.17582916090178766,
-      "avg_rule_score_miss": 0.14618946562716592
+      "efficiency": 0.3553082773473051,
+      "avg_rule_score_hit": 0.17684860392172067,
+      "avg_rule_score_miss": 0.14544759283875064
     },
     "bw500_rw0.3": {
       "beam_width": 500,
       "rule_weight": 0.3,
       "rules_enabled": true,
-      "survival_rate": 0.3515625,
+      "survival_rate": 0.35546875,
       "avg_combo_count": 500.0,
       "combo_reduction": 0.9995485604495615,
-      "efficiency": 0.35140379078304895,
-      "avg_rule_score_hit": 0.17582916090178766,
-      "avg_rule_score_miss": 0.14618946562716592
+      "efficiency": 0.3553082773473051,
+      "avg_rule_score_hit": 0.17684860392172067,
+      "avg_rule_score_miss": 0.14544759283875064
     }
   },
   "best_beam_config": "bw500_rw0.0",
-  "best_beam_efficiency": 0.35140379078304895,
-  "rule_improvement": 0.10926002398949769,
-  "improvement_over_topk": -0.19061800510618165
+  "best_beam_efficiency": 0.3553082773473051,
+  "rule_improvement": 0.10730619361520013,
+  "improvement_over_topk": -0.1907476980694488
 }

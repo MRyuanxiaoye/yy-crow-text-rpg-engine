@@ -971,6 +971,375 @@ def signal_f_e1_amplitude(probs, data, test_indices, max_train_idx):
     return all_weights_f
 
 
+# ============================================================
+#  信号源 G：多期局面条件频率（辅助函数）
+# ============================================================
+
+def _precompute_atom_cache(data, max_train_idx):
+    """向量化预计算所有期的 7 种原子条件编码
+
+    用训练期数据计算分位边界，然后编码所有期。
+    返回 dict，键为 (type, pos_or_stat)，值为 np.ndarray[int8]，长度 = n_draws。
+    """
+    n_draws = data.red_matrix.shape[0]
+    n_pos = data.red_count
+    red_range = data.red_range
+    mid = (1 + red_range) / 2
+    cache = {}
+
+    # --- dir(pos): 方向 0=D, 1=E, 2=U ---
+    for pos in range(n_pos):
+        ds = data.direction_series[pos]  # 长度 n_draws-1, 值 -1/0/1
+        arr = np.zeros(n_draws, dtype=np.int8)
+        # ds[i] 是第 i+1 期相对第 i 期的方向
+        arr[1:len(ds)+1] = ds + 1  # -1→0(D), 0→1(E), 1→2(U)
+        cache[("dir", pos)] = arr
+
+    # --- val_zone(pos): 按训练期 20/40/60/80 分位切 5 区 ---
+    for pos in range(n_pos):
+        vals = data.red_matrix[:max_train_idx, pos].astype(np.float64)
+        edges = np.percentile(vals, [20, 40, 60, 80])
+        all_vals = data.red_matrix[:, pos].astype(np.float64)
+        arr = np.digitize(all_vals, edges).astype(np.int8)  # 0-4
+        cache[("val_zone", pos)] = arr
+
+    # --- amp_bin(pos): abs(diff) 按训练期 25/50/75 分位切 4 区 ---
+    for pos in range(n_pos):
+        diff_s = data.get_diff_series(pos, 1)  # 长度 n_draws-1
+        train_amp = np.abs(diff_s[:max_train_idx - 1])
+        edges = np.percentile(train_amp, [25, 50, 75])
+        all_amp = np.zeros(n_draws, dtype=np.float64)
+        all_amp[1:len(diff_s)+1] = np.abs(diff_s)
+        arr = np.digitize(all_amp, edges).astype(np.int8)  # 0-3
+        cache[("amp_bin", pos)] = arr
+
+    # --- odd(pos): 奇偶 ---
+    for pos in range(n_pos):
+        arr = (data.red_matrix[:, pos] % 2).astype(np.int8)
+        cache[("odd", pos)] = arr
+
+    # --- big(pos): 大小 ---
+    for pos in range(n_pos):
+        arr = (data.red_matrix[:, pos] > mid).astype(np.int8)
+        cache[("big", pos)] = arr
+
+    # --- diff_sign(pos): 差分符号 0=负, 1=零, 2=正 ---
+    for pos in range(n_pos):
+        diff_s = data.get_diff_series(pos, 1)
+        arr = np.ones(n_draws, dtype=np.int8)  # 默认 1=零
+        signs = np.sign(diff_s).astype(np.int8)  # -1/0/1
+        arr[1:len(signs)+1] = signs + 1  # -1→0, 0→1, 1→2
+        cache[("diff_sign", pos)] = arr
+
+    # --- combo_zone(stat): 6 种组合统计量按训练期 33/67 分位切 3 区 ---
+    combo_stats = data.get_combo_stats_series()
+    for stat_name, stat_arr in combo_stats.items():
+        train_vals = stat_arr[:max_train_idx].astype(np.float64)
+        edges = np.percentile(train_vals, [33, 67])
+        arr = np.digitize(stat_arr.astype(np.float64), edges).astype(np.int8)
+        cache[("combo_zone", stat_name)] = arr
+
+    return cache
+
+
+# 位置级原子条件类型列表
+_POS_ATOMS = ["dir", "val_zone", "amp_bin", "odd", "big", "diff_sign"]
+# 组合统计量名称列表
+_COMBO_STATS = ["sum", "span", "odd_count", "big_count", "ac_value", "consec_groups"]
+
+
+def _generate_spec_groups(n_pos):
+    """生成三个窗口的条件规格组
+
+    返回 dict: {window_size: list_of_spec_groups}
+    每个 spec_group 是 dict:
+      - "window": 1/3/5
+      - "pos": 目标位置
+      - "atoms": 位置级原子条件名列表（从 t-1 期取）
+      - "combo_atom": 组合统计量名 或 None
+      - "dir_window": 方向序列窗口长度（0 表示不用方向序列）
+    """
+    from itertools import combinations
+
+    groups = {1: [], 3: [], 5: []}
+
+    # === 窗口 1：当前 1 期，3 个条件 ===
+    for pos in range(n_pos):
+        # 纯位置级：从 6 种原子中取 3 个
+        for combo in combinations(_POS_ATOMS, 3):
+            groups[1].append({
+                "window": 1, "pos": pos,
+                "atoms": list(combo), "combo_atom": None,
+                "dir_window": 0,
+            })
+        # 位置级 2 个 + 1 个 combo_zone
+        for combo in combinations(_POS_ATOMS, 2):
+            for stat in _COMBO_STATS:
+                groups[1].append({
+                    "window": 1, "pos": pos,
+                    "atoms": list(combo), "combo_atom": stat,
+                    "dir_window": 0,
+                })
+
+    # === 窗口 3：最近 3 期方向序列 + 0~1 个当前期条件 ===
+    for pos in range(n_pos):
+        # 纯 3 期方向序列
+        groups[3].append({
+            "window": 3, "pos": pos,
+            "atoms": [], "combo_atom": None,
+            "dir_window": 3,
+        })
+        # 3 期方向 + 1 个位置级条件
+        for atom in ["val_zone", "amp_bin", "odd", "big"]:
+            groups[3].append({
+                "window": 3, "pos": pos,
+                "atoms": [atom], "combo_atom": None,
+                "dir_window": 3,
+            })
+        # 3 期方向 + 1 个 combo_zone
+        for stat in _COMBO_STATS:
+            groups[3].append({
+                "window": 3, "pos": pos,
+                "atoms": [], "combo_atom": stat,
+                "dir_window": 3,
+            })
+
+    # === 窗口 5：最近 5 期方向序列 + 0~1 个粗粒度条件 ===
+    for pos in range(n_pos):
+        # 纯 5 期方向序列
+        groups[5].append({
+            "window": 5, "pos": pos,
+            "atoms": [], "combo_atom": None,
+            "dir_window": 5,
+        })
+        # 5 期方向 + 粗粒度条件
+        for atom in ["big", "odd"]:
+            groups[5].append({
+                "window": 5, "pos": pos,
+                "atoms": [atom], "combo_atom": None,
+                "dir_window": 5,
+            })
+        for stat in _COMBO_STATS:
+            groups[5].append({
+                "window": 5, "pos": pos,
+                "atoms": [], "combo_atom": stat,
+                "dir_window": 5,
+            })
+
+    for w in [1, 3, 5]:
+        log(f"  [信号G] 窗口 W{w}: {len(groups[w])} 个条件规格组")
+
+    return groups
+
+
+def _encode_condition_key(atom_cache, spec, t):
+    """对第 t 期编码条件键
+
+    根据 spec 中的配置，从 atom_cache 中提取原子条件值，拼接为整数键。
+    返回 int 或 None（如果 t 越界）。
+    """
+    pos = spec["pos"]
+    parts = []
+
+    # 方向序列窗口
+    dw = spec["dir_window"]
+    if dw > 0:
+        dir_arr = atom_cache[("dir", pos)]
+        # 取 t-dw 到 t-1 的方向值，用 3 进制编码
+        code = 0
+        for offset in range(dw, 0, -1):
+            idx = t - offset
+            if idx < 0 or idx >= len(dir_arr):
+                return None
+            code = code * 3 + int(dir_arr[idx])
+        parts.append(code)
+
+    # 位置级原子条件（取 t-1 期）
+    prev = t - 1
+    if prev < 0:
+        return None
+    for atom_name in spec["atoms"]:
+        arr = atom_cache[(atom_name, pos)]
+        if prev >= len(arr):
+            return None
+        parts.append(int(arr[prev]))
+
+    # 组合统计量条件（取 t-1 期）
+    if spec["combo_atom"] is not None:
+        arr = atom_cache[("combo_zone", spec["combo_atom"])]
+        if prev >= len(arr):
+            return None
+        parts.append(int(arr[prev]))
+
+    # 将 parts 编码为单个整数（混合进制）
+    # 简单方案：用 tuple hash 保证唯一性
+    return tuple(parts)
+
+
+def _mine_rules_for_window(atom_cache, data, max_train_idx, window, spec_groups):
+    """对指定窗口的所有条件规格组，扫描训练期挖掘条件频率规则
+
+    返回 dict:
+      键 = (group_idx, condition_key_tuple)
+      值 = {"support": int, "freq": {pos: {v: count}}}
+    """
+    n_pos = data.red_count
+    red_range = data.red_range
+    min_t = window + 5  # 确保有足够历史
+    total_periods = max_train_idx - min_t
+
+    # support 阈值
+    min_support = max(5, int(total_periods * 0.003))
+
+    # 临时存储：(group_idx, key) → {support, freq_by_pos}
+    rule_store = {}
+
+    for gi, spec in enumerate(spec_groups):
+        for t in range(min_t, max_train_idx):
+            key = _encode_condition_key(atom_cache, spec, t)
+            if key is None:
+                continue
+
+            rk = (gi, key)
+            if rk not in rule_store:
+                rule_store[rk] = {
+                    "support": 0,
+                    "freq": {pos: defaultdict(int) for pos in range(n_pos)},
+                }
+            rule_store[rk]["support"] += 1
+            # 记录第 t 期各位置的实际号码
+            for pos in range(n_pos):
+                v = int(data.red_matrix[t, pos])
+                rule_store[rk]["freq"][pos][v] += 1
+
+    # 筛选：support >= min_support
+    filtered = {}
+    for rk, info in rule_store.items():
+        if info["support"] >= min_support:
+            # 将 defaultdict 转为普通 dict
+            info["freq"] = {pos: dict(freq) for pos, freq in info["freq"].items()}
+            filtered[rk] = info
+
+    return filtered
+
+
+def signal_g_multi_period(probs, data, test_indices, max_train_idx):
+    """信号源 G：多期局面条件频率
+
+    对 3 个时间窗口（W1/W3/W5）分别在线挖掘条件频率规则，
+    测试期匹配触发规则，用历史频率生成号码权重，三窗口加权融合。
+    """
+    n_samples, n_pos, _ = probs.shape
+    red_range = data.red_range
+
+    # Step 1: 原子条件预计算
+    atom_cache = _precompute_atom_cache(data, max_train_idx)
+
+    # Step 2: 生成条件规格组
+    spec_groups = _generate_spec_groups(n_pos)
+
+    # Step 3: 对每个窗口挖掘规则
+    window_rules = {}
+    window_weights_cfg = {1: 0.5, 3: 0.3, 5: 0.2}
+
+    for w in [1, 3, 5]:
+        with Timer(f"  [信号G] 挖掘 W{w} 规则"):
+            rules = _mine_rules_for_window(
+                atom_cache, data, max_train_idx, w, spec_groups[w])
+        window_rules[w] = rules
+        log(f"  [信号G] W{w}: {len(rules)} 条规则 "
+            f"(规格组 {len(spec_groups[w])})")
+
+    total_rules = sum(len(r) for r in window_rules.values())
+    if total_rules == 0:
+        log(f"  [信号G] 无可用规则，跳过")
+        return None
+
+    # 预计算全局频率（回退用）
+    global_freq = {pos: defaultdict(int) for pos in range(n_pos)}
+    for t in range(20, max_train_idx):
+        for pos in range(n_pos):
+            v = int(data.red_matrix[t, pos])
+            global_freq[pos][v] += 1
+    n_train = max_train_idx - 20
+
+    # Step 4: 测试期匹配与权重计算
+    all_weights_g = []
+    match_stats = {w: [] for w in [1, 3, 5]}
+
+    for i in range(n_samples):
+        t = int(test_indices[i])
+        # 每个窗口独立计算权重
+        window_pos_weights = {}  # {w: {pos: {v: weight}}}
+
+        for w in [1, 3, 5]:
+            pos_weights = {}
+            matched_count = 0
+
+            for pos in range(n_pos):
+                weights = {}
+                total_support = 0
+
+                # 遍历该窗口中目标位置为 pos 的规格组
+                for gi, spec in enumerate(spec_groups[w]):
+                    if spec["pos"] != pos:
+                        continue
+                    key = _encode_condition_key(atom_cache, spec, t)
+                    if key is None:
+                        continue
+                    rk = (gi, key)
+                    if rk not in window_rules[w]:
+                        continue
+                    rule = window_rules[w][rk]
+                    sup = rule["support"]
+                    matched_count += 1
+                    # 拉普拉斯平滑频率，support 加权
+                    for v in range(1, red_range + 1):
+                        freq = (rule["freq"][pos].get(v, 0) + 1) / (sup + red_range)
+                        weights[v] = weights.get(v, 0.0) + freq * sup
+                    total_support += sup
+
+                if total_support > 0:
+                    # 归一化
+                    tw = sum(weights.values())
+                    if tw > 0:
+                        weights = {v: w_val / tw for v, w_val in weights.items()}
+                else:
+                    # 无匹配，用全局频率
+                    weights = {}
+                    for v in range(1, red_range + 1):
+                        weights[v] = (global_freq[pos].get(v, 0) + 1) / (n_train + red_range)
+                    tw = sum(weights.values())
+                    weights = {v: w_val / tw for v, w_val in weights.items()}
+
+                pos_weights[pos] = weights
+            match_stats[w].append(matched_count)
+            window_pos_weights[w] = pos_weights
+
+        # 三窗口加权融合
+        sample_weights = []
+        for pos in range(n_pos):
+            fused = {}
+            for v in range(1, red_range + 1):
+                val = 0.0
+                for w in [1, 3, 5]:
+                    val += window_weights_cfg[w] * window_pos_weights[w][pos].get(v, 0.0)
+                fused[v] = val
+            # 归一化
+            tw = sum(fused.values())
+            if tw > 0:
+                fused = {v: w_val / tw for v, w_val in fused.items()}
+            sample_weights.append(fused)
+        all_weights_g.append(sample_weights)
+
+    # 统计匹配信息
+    for w in [1, 3, 5]:
+        avg_m = float(np.mean(match_stats[w])) if match_stats[w] else 0
+        log(f"  [信号G] W{w} 平均每样本匹配规则数: {avg_m:.1f}")
+
+    return all_weights_g
+
+
 def fuse_signals(weights_list, alphas, candidates_per_sample=None):
     """融合多个信号源的权重
 
@@ -1157,6 +1526,14 @@ def e3b_signal_fusion(lottery_type, e3a_results=None):
     else:
         log(f"  信号 F: 不可用")
 
+    # === 信号源 G：多期局面条件频率 ===
+    with Timer("信号源 G（多期局面条件频率）"):
+        weights_g = signal_g_multi_period(probs, data, test_indices, max_train_idx)
+    if weights_g:
+        log(f"  信号 G: {len(weights_g)} 样本")
+    else:
+        log(f"  信号 G: 不可用")
+
     # === 网格搜索最优融合权重 ===
     log("\n  --- 网格搜索融合权重 ---")
 
@@ -1177,6 +1554,8 @@ def e3b_signal_fusion(lottery_type, e3a_results=None):
         all_signals.append(("E", weights_e))
     if weights_f is not None:
         all_signals.append(("F", weights_f))
+    if weights_g is not None:
+        all_signals.append(("G", weights_g))
 
     n_signals = len(all_signals)
     signal_names = [s[0] for s in all_signals]
@@ -2235,6 +2614,7 @@ def e3d_end_to_end(lottery_type):
     weights_d = signal_d_a3_diff(probs, data, test_indices, max_train_idx)
     weights_e = signal_e_a4_stat(probs, data, test_indices, max_train_idx)
     weights_f = signal_f_e1_amplitude(probs, data, test_indices, max_train_idx)
+    weights_g = signal_g_multi_period(probs, data, test_indices, max_train_idx)
 
     # 按 best_alphas 构建信号列表
     signal_map = {
@@ -2244,10 +2624,11 @@ def e3d_end_to_end(lottery_type):
         "D": weights_d,
         "E": weights_e,
         "F": weights_f,
+        "G": weights_g,
     }
     signal_list = []
     alpha_list = []
-    for name in ["A", "B", "C", "D", "E", "F"]:
+    for name in ["A", "B", "C", "D", "E", "F", "G"]:
         w = signal_map.get(name)
         a = best_alphas.get(name, 0.0)
         if w is not None and a > 0.001:
