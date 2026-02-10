@@ -1,0 +1,110 @@
+{
+  "lottery_type": "daletou",
+  "single_auc": {
+    "e5a": 0.7099,
+    "e5b": 0.7134,
+    "e5c": 0.7635,
+    "e5d": 0.7115,
+    "e5e": 0.7075,
+    "e5f": 0.7246
+  },
+  "pairwise_fusion": [
+    {
+      "pair": "e5c+e5f",
+      "best_alpha": {
+        "e5c": 0.9,
+        "e5f": 0.1
+      },
+      "auc": 0.7657
+    },
+    {
+      "pair": "e5c+e5e",
+      "best_alpha": {
+        "e5c": 0.9,
+        "e5e": 0.1
+      },
+      "auc": 0.764
+    },
+    {
+      "pair": "e5b+e5c",
+      "best_alpha": {
+        "e5b": 0.1,
+        "e5c": 0.9
+      },
+      "auc": 0.7632
+    },
+    {
+      "pair": "e5c+e5d",
+      "best_alpha": {
+        "e5c": 0.9,
+        "e5d": 0.1
+      },
+      "auc": 0.7632
+    },
+    {
+      "pair": "e5a+e5c",
+      "best_alpha": {
+        "e5a": 0.1,
+        "e5c": 0.9
+      },
+      "auc": 0.7619
+    }
+  ],
+  "top_n_fusion": [
+    {
+      "top_n": 2,
+      "signals": [
+        "e5c",
+        "e5f"
+      ],
+      "auc": 0.7609
+    },
+    {
+      "top_n": 3,
+      "signals": [
+        "e5c",
+        "e5f",
+        "e5b"
+      ],
+      "auc": 0.7578
+    },
+    {
+      "top_n": 4,
+      "signals": [
+        "e5c",
+        "e5f",
+        "e5b",
+        "e5d"
+      ],
+      "auc": 0.7581
+    }
+  ],
+  "full_fusion": {
+    "equal_weight": {
+      "auc": 0.7583
+    },
+    "auc_weighted": {
+      "auc": 0.7588,
+      "alphas": {
+        "e5a": 0.164,
+        "e5b": 0.165,
+        "e5c": 0.176,
+        "e5d": 0.164,
+        "e5e": 0.163,
+        "e5f": 0.167
+      }
+    },
+    "best": {
+      "auc": 0.7668,
+      "strategy": "随机搜索#22",
+      "alphas": {
+        "e5a": 0.022,
+        "e5b": 0.072,
+        "e5c": 0.499,
+        "e5d": 0.068,
+        "e5e": 0.127,
+        "e5f": 0.212
+      }
+    }
+  }
+}

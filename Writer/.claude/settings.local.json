@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(pip3 install:*)",
+      "Bash(python3:*)",
+      "WebFetch(domain:zh.wikisource.org)",
+      "Bash(curl:*)",
+      "Bash(ls:*)",
+      "Bash(\"/Applications/Python 3.13/Install Certificates.command\")",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n新增Writer项目：黑乌鸦角色、参考库、首篇故事《图穷》及风格学习机制\n\n- 黑乌鸦角色设定（prompt/style_guide/corrections）\n- 参考库：鲁迅21部 + 南派三叔7部\n- 首篇故事《图穷》原稿及修改稿\n- diff_learn.py 风格学习工具\n- corrections.md 首轮优化规则（从《图穷》修改中提炼）\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)",
+      "Bash(git remote set-url:*)"
+    ]
+  }
+}

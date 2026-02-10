@@ -1,0 +1,14 @@
+{
+  "sub_experiment": "e5f",
+  "lottery_type": "shuangseqiu",
+  "best_params": {
+    "W": 10,
+    "n_comp": 50,
+    "alpha": 1.0,
+    "k": 50
+  },
+  "auc": 0.7619,
+  "mean_rank": 8.6,
+  "n_test_samples": 511,
+  "n_positions": 6
+}
