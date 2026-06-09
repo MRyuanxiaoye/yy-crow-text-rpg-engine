@@ -1,0 +1,11 @@
+{
+  "lottery_type": "shuangseqiu",
+  "n_constraints_total": 109,
+  "n_constraints_selected": 30,
+  "best_hdi_level": "hdi_90",
+  "best_efficiency": 0.4892,
+  "best_reduction": 0.9524,
+  "best_survival": 0.5137,
+  "e6_efficiency": null,
+  "improvement_vs_e6": 0.4892
+}

@@ -1,0 +1,25 @@
+{
+  "novels": [
+    {
+      "id": 1,
+      "title": "诡秘之主",
+      "author": "爱潜水的乌贼",
+      "slug": "诡秘之主",
+      "total_chapters": 1468
+    },
+    {
+      "id": 2,
+      "title": "苟在初圣魔门当人材",
+      "author": "鹤守月满池",
+      "slug": "苟在初圣魔门当人材",
+      "total_chapters": 1307
+    },
+    {
+      "id": 3,
+      "title": "捞尸人",
+      "author": "纯洁滴小龙",
+      "slug": "捞尸人",
+      "total_chapters": 508
+    }
+  ]
+}

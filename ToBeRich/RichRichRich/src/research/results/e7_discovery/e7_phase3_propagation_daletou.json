@@ -1,0 +1,50 @@
+{
+  "lottery_type": "daletou",
+  "total_combos": 324632,
+  "phase3": {
+    "hdi_70": {
+      "hdi_level": "hdi_70",
+      "n_constraints": 30,
+      "n_test": 432,
+      "avg_reduction": 0.9691,
+      "combo_survival": 0.0185,
+      "efficiency": 0.0179,
+      "avg_valid_combos": 10046,
+      "median_valid_combos": 6802
+    },
+    "hdi_80": {
+      "hdi_level": "hdi_80",
+      "n_constraints": 30,
+      "n_test": 432,
+      "avg_reduction": 0.8449,
+      "combo_survival": 0.1389,
+      "efficiency": 0.1173,
+      "avg_valid_combos": 50360,
+      "median_valid_combos": 49897
+    },
+    "hdi_90": {
+      "hdi_level": "hdi_90",
+      "n_constraints": 30,
+      "n_test": 432,
+      "avg_reduction": 0.7163,
+      "combo_survival": 0.4144,
+      "efficiency": 0.2968,
+      "avg_valid_combos": 92084,
+      "median_valid_combos": 80730
+    }
+  },
+  "e6_comparison": {
+    "e6_reduction": 0.4758,
+    "e6_survival": 0.48,
+    "e6_efficiency": 0.2284,
+    "e7_hdi_70_reduction": 0.9691,
+    "e7_hdi_70_survival": 0.0185,
+    "e7_hdi_70_efficiency": 0.0179,
+    "e7_hdi_80_reduction": 0.8449,
+    "e7_hdi_80_survival": 0.1389,
+    "e7_hdi_80_efficiency": 0.1173,
+    "e7_hdi_90_reduction": 0.7163,
+    "e7_hdi_90_survival": 0.4144,
+    "e7_hdi_90_efficiency": 0.2968
+  }
+}

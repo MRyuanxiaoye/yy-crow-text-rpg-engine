@@ -1,0 +1,223 @@
+{
+  "lottery_type": "shuangseqiu",
+  "thresholds": [
+    4.166666666666667,
+    5.666666666666667
+  ],
+  "strategies": {
+    "all_conditioned": {
+      "hdi_80": {
+        "hdi_level": "hdi_80",
+        "conditioned": true,
+        "n_constraints": 30,
+        "n_test": 512,
+        "avg_reduction": 0.9218,
+        "combo_survival": 0.2441,
+        "efficiency": 0.2251,
+        "context_stats": {
+          "low": {
+            "n": 177,
+            "avg_reduction": 0.891,
+            "survival": 0.096,
+            "efficiency": 0.0856
+          },
+          "mid": {
+            "n": 172,
+            "avg_reduction": 0.9294,
+            "survival": 0.2384,
+            "efficiency": 0.2215
+          },
+          "high": {
+            "n": 163,
+            "avg_reduction": 0.9472,
+            "survival": 0.411,
+            "efficiency": 0.3893
+          }
+        },
+        "context_counts": {
+          "low": 177,
+          "mid": 172,
+          "high": 163
+        }
+      },
+      "hdi_90": {
+        "hdi_level": "hdi_90",
+        "conditioned": true,
+        "n_constraints": 30,
+        "n_test": 512,
+        "avg_reduction": 0.9144,
+        "combo_survival": 0.4902,
+        "efficiency": 0.4483,
+        "context_stats": {
+          "low": {
+            "n": 177,
+            "avg_reduction": 0.9242,
+            "survival": 0.3107,
+            "efficiency": 0.2872
+          },
+          "mid": {
+            "n": 172,
+            "avg_reduction": 0.95,
+            "survival": 0.4651,
+            "efficiency": 0.4419
+          },
+          "high": {
+            "n": 163,
+            "avg_reduction": 0.8663,
+            "survival": 0.7117,
+            "efficiency": 0.6165
+          }
+        },
+        "context_counts": {
+          "low": 177,
+          "mid": 172,
+          "high": 163
+        }
+      }
+    },
+    "high_only": {
+      "hdi_80": {
+        "hdi_level": "hdi_80",
+        "conditioned": true,
+        "n_constraints": 30,
+        "n_test": 512,
+        "avg_reduction": 0.9423,
+        "combo_survival": 0.3125,
+        "efficiency": 0.2945,
+        "context_stats": {
+          "low": {
+            "n": 177,
+            "avg_reduction": 0.9458,
+            "survival": 0.2712,
+            "efficiency": 0.2565
+          },
+          "mid": {
+            "n": 172,
+            "avg_reduction": 0.9339,
+            "survival": 0.2616,
+            "efficiency": 0.2443
+          },
+          "high": {
+            "n": 163,
+            "avg_reduction": 0.9472,
+            "survival": 0.411,
+            "efficiency": 0.3893
+          }
+        },
+        "context_counts": {
+          "low": 177,
+          "mid": 172,
+          "high": 163
+        }
+      },
+      "hdi_90": {
+        "hdi_level": "hdi_90",
+        "conditioned": true,
+        "n_constraints": 30,
+        "n_test": 512,
+        "avg_reduction": 0.9255,
+        "combo_survival": 0.5977,
+        "efficiency": 0.5532,
+        "context_stats": {
+          "low": {
+            "n": 177,
+            "avg_reduction": 0.9561,
+            "survival": 0.5876,
+            "efficiency": 0.5618
+          },
+          "mid": {
+            "n": 172,
+            "avg_reduction": 0.9502,
+            "survival": 0.5,
+            "efficiency": 0.4751
+          },
+          "high": {
+            "n": 163,
+            "avg_reduction": 0.8663,
+            "survival": 0.7117,
+            "efficiency": 0.6165
+          }
+        },
+        "context_counts": {
+          "low": 177,
+          "mid": 172,
+          "high": 163
+        }
+      }
+    },
+    "high_mid": {
+      "hdi_80": {
+        "hdi_level": "hdi_80",
+        "conditioned": true,
+        "n_constraints": 30,
+        "n_test": 512,
+        "avg_reduction": 0.9407,
+        "combo_survival": 0.3047,
+        "efficiency": 0.2866,
+        "context_stats": {
+          "low": {
+            "n": 177,
+            "avg_reduction": 0.9458,
+            "survival": 0.2712,
+            "efficiency": 0.2565
+          },
+          "mid": {
+            "n": 172,
+            "avg_reduction": 0.9294,
+            "survival": 0.2384,
+            "efficiency": 0.2215
+          },
+          "high": {
+            "n": 163,
+            "avg_reduction": 0.9472,
+            "survival": 0.411,
+            "efficiency": 0.3893
+          }
+        },
+        "context_counts": {
+          "low": 177,
+          "mid": 172,
+          "high": 163
+        }
+      },
+      "hdi_90": {
+        "hdi_level": "hdi_90",
+        "conditioned": true,
+        "n_constraints": 30,
+        "n_test": 512,
+        "avg_reduction": 0.9255,
+        "combo_survival": 0.5859,
+        "efficiency": 0.5423,
+        "context_stats": {
+          "low": {
+            "n": 177,
+            "avg_reduction": 0.9561,
+            "survival": 0.5876,
+            "efficiency": 0.5618
+          },
+          "mid": {
+            "n": 172,
+            "avg_reduction": 0.95,
+            "survival": 0.4651,
+            "efficiency": 0.4419
+          },
+          "high": {
+            "n": 163,
+            "avg_reduction": 0.8663,
+            "survival": 0.7117,
+            "efficiency": 0.6165
+          }
+        },
+        "context_counts": {
+          "low": 177,
+          "mid": 172,
+          "high": 163
+        }
+      }
+    }
+  },
+  "best_strategy": "high_only",
+  "best_hdi": "hdi_90",
+  "best_efficiency": 0.5532,
+  "phase3_efficiency": 0.4892
+}

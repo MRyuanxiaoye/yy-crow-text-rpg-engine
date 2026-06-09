@@ -1,0 +1,1164 @@
+{
+  "summary": {
+    "n_test_periods": 199,
+    "direction": {
+      "avg_accuracy": 0.5896,
+      "all_correct_rate": 0.1106,
+      "per_position": {
+        "P0": 0.5528,
+        "P1": 0.598,
+        "P2": 0.6181,
+        "P3": 0.6281,
+        "P4": 0.603,
+        "P5": 0.5377
+      }
+    },
+    "amplitude": {
+      "avg_mae": 4.58,
+      "per_position": {
+        "P0": 3.24,
+        "P1": 4.66,
+        "P2": 4.73,
+        "P3": 5.36,
+        "P4": 5.23,
+        "P5": 4.27
+      }
+    },
+    "ranking": {
+      "avg_rank": 9.03,
+      "per_position": {
+        "P0": 6.05,
+        "P1": 8.83,
+        "P2": 10.18,
+        "P3": 11.03,
+        "P4": 10.42,
+        "P5": 7.68
+      }
+    },
+    "coverage": {
+      "avg_contributors": 184.1
+    }
+  },
+  "sample_periods": [
+    {
+      "t": 3212,
+      "n_contributors": 173,
+      "per_position": {
+        "0": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.5330472859787816,
+            "0": 0.10500484909042819,
+            "1": 0.36194786493079023
+          },
+          "true_diff": -1,
+          "pred_diff": -1.15,
+          "mae": 0.15,
+          "true_val": 1,
+          "pred_rank": 2,
+          "true_prob": 0.144,
+          "n_candidates": 21
+        },
+        "1": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6768448584947248,
+            "0": 0.03558938490022629,
+            "1": 0.2875657566050489
+          },
+          "true_diff": -4,
+          "pred_diff": -3.07,
+          "mae": 0.93,
+          "true_val": 5,
+          "pred_rank": 5,
+          "true_prob": 0.0706,
+          "n_candidates": 28
+        },
+        "2": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6774914038851501,
+            "0": 0.05184118494137009,
+            "1": 0.27066741117347987
+          },
+          "true_diff": -19,
+          "pred_diff": -3.77,
+          "mae": 15.23,
+          "true_val": 7,
+          "pred_rank": 27,
+          "true_prob": 0.0044,
+          "n_candidates": 30
+        },
+        "3": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.682487436447527,
+            "0": 0.040409086901578156,
+            "1": 0.27710347665089485
+          },
+          "true_diff": -16,
+          "pred_diff": -3.67,
+          "mae": 12.33,
+          "true_val": 11,
+          "pred_rank": 24,
+          "true_prob": 0.0066,
+          "n_candidates": 30
+        },
+        "4": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6451935227907251,
+            "0": 0.05933523378493549,
+            "1": 0.2954712434243395
+          },
+          "true_diff": -13,
+          "pred_diff": -2.88,
+          "mae": 10.12,
+          "true_val": 18,
+          "pred_rank": 14,
+          "true_prob": 0.0293,
+          "n_candidates": 25
+        },
+        "5": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.5864754459693773,
+            "0": 0.1334234578423017,
+            "1": 0.280101096188321
+          },
+          "true_diff": -13,
+          "pred_diff": -1.77,
+          "mae": 11.23,
+          "true_val": 19,
+          "pred_rank": 15,
+          "true_prob": 0.0057,
+          "n_candidates": 22
+        }
+      },
+      "dir_accuracy": 1.0,
+      "avg_mae": 8.33,
+      "avg_rank": 14.5,
+      "all_dir_correct": true
+    },
+    {
+      "t": 3213,
+      "n_contributors": 180,
+      "per_position": {
+        "0": {
+          "true_dir": 0,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.30128722382324685,
+            "0": 0.13289145052833815,
+            "1": 0.565821325648415
+          },
+          "true_diff": 0,
+          "pred_diff": 1.48,
+          "mae": 1.48,
+          "true_val": 1,
+          "pred_rank": 1,
+          "true_prob": 0.1902,
+          "n_candidates": 19
+        },
+        "1": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.3200576368876081,
+            "0": 0.045225744476464935,
+            "1": 0.634716618635927
+          },
+          "true_diff": 2,
+          "pred_diff": 2.7,
+          "mae": 0.7,
+          "true_val": 7,
+          "pred_rank": 5,
+          "true_prob": 0.0687,
+          "n_candidates": 26
+        },
+        "2": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.26839577329490877,
+            "0": 0.04895292987512008,
+            "1": 0.6826512968299712
+          },
+          "true_diff": 3,
+          "pred_diff": 3.55,
+          "mae": 0.55,
+          "true_val": 10,
+          "pred_rank": 9,
+          "true_prob": 0.0519,
+          "n_candidates": 30
+        },
+        "3": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.2790778097982709,
+            "0": 0.04057636887608069,
+            "1": 0.6803458213256485
+          },
+          "true_diff": 2,
+          "pred_diff": 3.97,
+          "mae": 1.97,
+          "true_val": 13,
+          "pred_rank": 4,
+          "true_prob": 0.0525,
+          "n_candidates": 33
+        },
+        "4": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.27926993275696443,
+            "0": 0.03585014409221902,
+            "1": 0.6848799231508165
+          },
+          "true_diff": 9,
+          "pred_diff": 3.55,
+          "mae": 5.45,
+          "true_val": 27,
+          "pred_rank": 10,
+          "true_prob": 0.0453,
+          "n_candidates": 33
+        },
+        "5": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.2954082612872238,
+            "0": 0.06668587896253603,
+            "1": 0.6379058597502402
+          },
+          "true_diff": 14,
+          "pred_diff": 2.84,
+          "mae": 11.16,
+          "true_val": 33,
+          "pred_rank": 25,
+          "true_prob": 0.0096,
+          "n_candidates": 32
+        }
+      },
+      "dir_accuracy": 0.8333333333333334,
+      "avg_mae": 3.55,
+      "avg_rank": 9.0,
+      "all_dir_correct": false
+    },
+    {
+      "t": 3214,
+      "n_contributors": 187,
+      "per_position": {
+        "0": {
+          "true_dir": 1,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.5190285509652636,
+            "0": 0.11325975843995181,
+            "1": 0.36771169059478465
+          },
+          "true_diff": 4,
+          "pred_diff": -0.93,
+          "mae": 4.93,
+          "true_val": 5,
+          "pred_rank": 5,
+          "true_prob": 0.0847,
+          "n_candidates": 20
+        },
+        "1": {
+          "true_dir": 0,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.6382459224533645,
+            "0": 0.04267994921379041,
+            "1": 0.319074128332845
+          },
+          "true_diff": 0,
+          "pred_diff": -2.35,
+          "mae": 2.35,
+          "true_val": 7,
+          "pred_rank": 8,
+          "true_prob": 0.0584,
+          "n_candidates": 26
+        },
+        "2": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6197870885828695,
+            "0": 0.05931568838102679,
+            "1": 0.3208972230361038
+          },
+          "true_diff": -1,
+          "pred_diff": -2.74,
+          "mae": 1.74,
+          "true_val": 9,
+          "pred_rank": 6,
+          "true_prob": 0.0569,
+          "n_candidates": 29
+        },
+        "3": {
+          "true_dir": 1,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.6247680437542729,
+            "0": 0.04460070970472377,
+            "1": 0.33063124654100334
+          },
+          "true_diff": 3,
+          "pred_diff": -2.7,
+          "mae": 5.7,
+          "true_val": 16,
+          "pred_rank": 8,
+          "true_prob": 0.0523,
+          "n_candidates": 32
+        },
+        "4": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6125272650323925,
+            "0": 0.05863202786730475,
+            "1": 0.3288407071003028
+          },
+          "true_diff": -10,
+          "pred_diff": -2.42,
+          "mae": 7.58,
+          "true_val": 17,
+          "pred_rank": 12,
+          "true_prob": 0.0417,
+          "n_candidates": 29
+        },
+        "5": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.5669824527134811,
+            "0": 0.1294397239313735,
+            "1": 0.3035778233551454
+          },
+          "true_diff": -4,
+          "pred_diff": -1.58,
+          "mae": 2.42,
+          "true_val": 29,
+          "pred_rank": 4,
+          "true_prob": 0.1101,
+          "n_candidates": 21
+        }
+      },
+      "dir_accuracy": 0.5,
+      "avg_mae": 4.12,
+      "avg_rank": 7.166666666666667,
+      "all_dir_correct": false
+    },
+    {
+      "t": 3215,
+      "n_contributors": 159,
+      "per_position": {
+        "0": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.513435273159145,
+            "0": 0.0951603325415677,
+            "1": 0.3914043942992874
+          },
+          "true_diff": -3,
+          "pred_diff": -0.53,
+          "mae": 2.47,
+          "true_val": 2,
+          "pred_rank": 5,
+          "true_prob": 0.0962,
+          "n_candidates": 24
+        },
+        "1": {
+          "true_dir": 1,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.48144299287410924,
+            "0": 0.05819477434679335,
+            "1": 0.4603622327790974
+          },
+          "true_diff": 8,
+          "pred_diff": 0.42,
+          "mae": 7.58,
+          "true_val": 15,
+          "pred_rank": 14,
+          "true_prob": 0.039,
+          "n_candidates": 28
+        },
+        "2": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.40758610451306415,
+            "0": 0.057897862232779096,
+            "1": 0.5345160332541568
+          },
+          "true_diff": 13,
+          "pred_diff": 1.22,
+          "mae": 11.78,
+          "true_val": 22,
+          "pred_rank": 22,
+          "true_prob": 0.0177,
+          "n_candidates": 31
+        },
+        "3": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.41300475059382424,
+            "0": 0.0558937054631829,
+            "1": 0.5311015439429929
+          },
+          "true_diff": 10,
+          "pred_diff": 1.04,
+          "mae": 8.96,
+          "true_val": 26,
+          "pred_rank": 16,
+          "true_prob": 0.0298,
+          "n_candidates": 33
+        },
+        "4": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.35963479809976245,
+            "0": 0.05396377672209026,
+            "1": 0.5864014251781473
+          },
+          "true_diff": 13,
+          "pred_diff": 1.67,
+          "mae": 11.33,
+          "true_val": 30,
+          "pred_rank": 23,
+          "true_prob": 0.0177,
+          "n_candidates": 33
+        },
+        "5": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.3531769596199525,
+            "0": 0.08855403800475059,
+            "1": 0.5582690023752969
+          },
+          "true_diff": 4,
+          "pred_diff": 1.35,
+          "mae": 2.65,
+          "true_val": 33,
+          "pred_rank": 6,
+          "true_prob": 0.0901,
+          "n_candidates": 24
+        }
+      },
+      "dir_accuracy": 0.8333333333333334,
+      "avg_mae": 7.46,
+      "avg_rank": 14.333333333333334,
+      "all_dir_correct": false
+    },
+    {
+      "t": 3216,
+      "n_contributors": 181,
+      "per_position": {
+        "0": {
+          "true_dir": 0,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.5046133923272001,
+            "0": 0.10394971132574327,
+            "1": 0.3914368963470566
+          },
+          "true_diff": 0,
+          "pred_diff": -0.84,
+          "mae": 0.84,
+          "true_val": 2,
+          "pred_rank": 1,
+          "true_prob": 0.1801,
+          "n_candidates": 21
+        },
+        "1": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6687800140290293,
+            "0": 0.03911940862245724,
+            "1": 0.29210057734851347
+          },
+          "true_diff": -1,
+          "pred_diff": -2.97,
+          "mae": 1.97,
+          "true_val": 14,
+          "pred_rank": 1,
+          "true_prob": 0.075,
+          "n_candidates": 33
+        },
+        "2": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6856418280904333,
+            "0": 0.04610694436950305,
+            "1": 0.2682512275400637
+          },
+          "true_diff": -7,
+          "pred_diff": -3.84,
+          "mae": 3.16,
+          "true_val": 15,
+          "pred_rank": 6,
+          "true_prob": 0.0498,
+          "n_candidates": 33
+        },
+        "3": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6917120811525387,
+            "0": 0.04413748448713106,
+            "1": 0.2641504343603302
+          },
+          "true_diff": -9,
+          "pred_diff": -3.81,
+          "mae": 5.19,
+          "true_val": 17,
+          "pred_rank": 5,
+          "true_prob": 0.0564,
+          "n_candidates": 31
+        },
+        "4": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6449306642205795,
+            "0": 0.06483030270328603,
+            "1": 0.29023903307613447
+          },
+          "true_diff": -5,
+          "pred_diff": -2.95,
+          "mae": 2.05,
+          "true_val": 25,
+          "pred_rank": 7,
+          "true_prob": 0.0669,
+          "n_candidates": 26
+        },
+        "5": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.5879242432417849,
+            "0": 0.1381859385960179,
+            "1": 0.27388981816219715
+          },
+          "true_diff": -3,
+          "pred_diff": -1.77,
+          "mae": 1.23,
+          "true_val": 30,
+          "pred_rank": 5,
+          "true_prob": 0.1026,
+          "n_candidates": 21
+        }
+      },
+      "dir_accuracy": 0.8333333333333334,
+      "avg_mae": 2.41,
+      "avg_rank": 4.166666666666667,
+      "all_dir_correct": false
+    },
+    {
+      "t": 3217,
+      "n_contributors": 188,
+      "per_position": {
+        "0": {
+          "true_dir": -1,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.3363584438662182,
+            "0": 0.12143809100717141,
+            "1": 0.5422034651266104
+          },
+          "true_diff": -1,
+          "pred_diff": 1.26,
+          "mae": 2.26,
+          "true_val": 1,
+          "pred_rank": 4,
+          "true_prob": 0.1169,
+          "n_candidates": 20
+        },
+        "1": {
+          "true_dir": -1,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.32953607920289396,
+            "0": 0.05200863108459732,
+            "1": 0.6184552897125087
+          },
+          "true_diff": -10,
+          "pred_diff": 2.51,
+          "mae": 12.51,
+          "true_val": 4,
+          "pred_rank": 27,
+          "true_prob": 0.0046,
+          "n_candidates": 33
+        },
+        "2": {
+          "true_dir": -1,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.2820333819889573,
+            "0": 0.050644158151932475,
+            "1": 0.6673224598591102
+          },
+          "true_diff": -2,
+          "pred_diff": 3.36,
+          "mae": 5.36,
+          "true_val": 13,
+          "pred_rank": 10,
+          "true_prob": 0.0444,
+          "n_candidates": 33
+        },
+        "3": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.2832709272069556,
+            "0": 0.04670939899727106,
+            "1": 0.6700196737957733
+          },
+          "true_diff": 1,
+          "pred_diff": 3.73,
+          "mae": 2.73,
+          "true_val": 18,
+          "pred_rank": 12,
+          "true_prob": 0.043,
+          "n_candidates": 33
+        },
+        "4": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.2862219965729517,
+            "0": 0.04667766706860443,
+            "1": 0.6671003363584439
+          },
+          "true_diff": 1,
+          "pred_diff": 3.11,
+          "mae": 2.11,
+          "true_val": 26,
+          "pred_rank": 4,
+          "true_prob": 0.0736,
+          "n_candidates": 31
+        },
+        "5": {
+          "true_dir": 0,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.31611347337691187,
+            "0": 0.073998857650568,
+            "1": 0.6098876689725201
+          },
+          "true_diff": 0,
+          "pred_diff": 2.13,
+          "mae": 2.13,
+          "true_val": 30,
+          "pred_rank": 2,
+          "true_prob": 0.1226,
+          "n_candidates": 22
+        }
+      },
+      "dir_accuracy": 0.3333333333333333,
+      "avg_mae": 4.52,
+      "avg_rank": 9.833333333333334,
+      "all_dir_correct": false
+    },
+    {
+      "t": 3218,
+      "n_contributors": 180,
+      "per_position": {
+        "0": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.328038862507505,
+            "0": 0.13912996015501336,
+            "1": 0.5328311773374815
+          },
+          "true_diff": 13,
+          "pred_diff": 1.21,
+          "mae": 11.79,
+          "true_val": 14,
+          "pred_rank": 14,
+          "true_prob": 0.0067,
+          "n_candidates": 21
+        },
+        "1": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.39397412804977894,
+            "0": 0.04557611484089297,
+            "1": 0.5604497571093281
+          },
+          "true_diff": 14,
+          "pred_diff": 1.68,
+          "mae": 12.32,
+          "true_val": 18,
+          "pred_rank": 21,
+          "true_prob": 0.006,
+          "n_candidates": 25
+        },
+        "2": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.43196332077943345,
+            "0": 0.05501883084984444,
+            "1": 0.5130178483707222
+          },
+          "true_diff": 10,
+          "pred_diff": 0.78,
+          "mae": 9.22,
+          "true_val": 23,
+          "pred_rank": 18,
+          "true_prob": 0.0293,
+          "n_candidates": 33
+        },
+        "3": {
+          "true_dir": 1,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.5301020686643743,
+            "0": 0.05398176955406364,
+            "1": 0.41591616178156215
+          },
+          "true_diff": 6,
+          "pred_diff": -0.97,
+          "mae": 6.97,
+          "true_val": 24,
+          "pred_rank": 14,
+          "true_prob": 0.0352,
+          "n_candidates": 33
+        },
+        "4": {
+          "true_dir": 0,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.5468042137437913,
+            "0": 0.055728399104852354,
+            "1": 0.3974673871513564
+          },
+          "true_diff": 0,
+          "pred_diff": -1.41,
+          "mae": 1.41,
+          "true_val": 26,
+          "pred_rank": 5,
+          "true_prob": 0.0613,
+          "n_candidates": 30
+        },
+        "5": {
+          "true_dir": 1,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.5113258009933955,
+            "0": 0.12248239724905846,
+            "1": 0.366191801757546
+          },
+          "true_diff": 3,
+          "pred_diff": -0.91,
+          "mae": 3.91,
+          "true_val": 33,
+          "pred_rank": 9,
+          "true_prob": 0.0529,
+          "n_candidates": 23
+        }
+      },
+      "dir_accuracy": 0.5,
+      "avg_mae": 7.6,
+      "avg_rank": 13.5,
+      "all_dir_correct": false
+    },
+    {
+      "t": 3219,
+      "n_contributors": 174,
+      "per_position": {
+        "0": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.672459746613604,
+            "0": 0.06696118879842272,
+            "1": 0.26057906458797325
+          },
+          "true_diff": -12,
+          "pred_diff": -2.78,
+          "mae": 9.22,
+          "true_val": 2,
+          "pred_rank": 21,
+          "true_prob": 0.0141,
+          "n_candidates": 31
+        },
+        "1": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.7236116689181789,
+            "0": 0.03486801270583081,
+            "1": 0.24152031837599036
+          },
+          "true_diff": -13,
+          "pred_diff": -3.96,
+          "mae": 9.04,
+          "true_val": 5,
+          "pred_rank": 15,
+          "true_prob": 0.0301,
+          "n_candidates": 33
+        },
+        "2": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.68662601774435,
+            "0": 0.04589433714264851,
+            "1": 0.2674796451130016
+          },
+          "true_diff": -10,
+          "pred_diff": -3.93,
+          "mae": 6.07,
+          "true_val": 13,
+          "pred_rank": 3,
+          "true_prob": 0.0581,
+          "n_candidates": 32
+        },
+        "3": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.6686991127825039,
+            "0": 0.048742195772025265,
+            "1": 0.2825586914454708
+          },
+          "true_diff": -4,
+          "pred_diff": -3.54,
+          "mae": 0.46,
+          "true_val": 20,
+          "pred_rank": 1,
+          "true_prob": 0.0624,
+          "n_candidates": 32
+        },
+        "4": {
+          "true_dir": 1,
+          "pred_dir": -1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.6125816933805542,
+            "0": 0.06272591186242653,
+            "1": 0.3246923947570192
+          },
+          "true_diff": 1,
+          "pred_diff": -2.49,
+          "mae": 3.49,
+          "true_val": 27,
+          "pred_rank": 3,
+          "true_prob": 0.0676,
+          "n_candidates": 30
+        },
+        "5": {
+          "true_dir": -1,
+          "pred_dir": -1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.5788820329329293,
+            "0": 0.1295045456205046,
+            "1": 0.29161342144656616
+          },
+          "true_diff": -1,
+          "pred_diff": -1.61,
+          "mae": 0.61,
+          "true_val": 32,
+          "pred_rank": 2,
+          "true_prob": 0.1664,
+          "n_candidates": 21
+        }
+      },
+      "dir_accuracy": 0.8333333333333334,
+      "avg_mae": 4.81,
+      "avg_rank": 7.5,
+      "all_dir_correct": false
+    },
+    {
+      "t": 3220,
+      "n_contributors": 181,
+      "per_position": {
+        "0": {
+          "true_dir": -1,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.29720427510416036,
+            "0": 0.12188273654972526,
+            "1": 0.5809129883461144
+          },
+          "true_diff": -1,
+          "pred_diff": 1.61,
+          "mae": 2.61,
+          "true_val": 1,
+          "pred_rank": 4,
+          "true_prob": 0.1092,
+          "n_candidates": 21
+        },
+        "1": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.3296298532697301,
+            "0": 0.05126502022824709,
+            "1": 0.6191051265020229
+          },
+          "true_diff": 3,
+          "pred_diff": 2.6,
+          "mae": 0.4,
+          "true_val": 8,
+          "pred_rank": 7,
+          "true_prob": 0.0626,
+          "n_candidates": 26
+        },
+        "2": {
+          "true_dir": 0,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.30061590483666445,
+            "0": 0.0501781293400157,
+            "1": 0.6492059658233198
+          },
+          "true_diff": 0,
+          "pred_diff": 3.01,
+          "mae": 3.01,
+          "true_val": 13,
+          "pred_rank": 6,
+          "true_prob": 0.0508,
+          "n_candidates": 33
+        },
+        "3": {
+          "true_dir": -1,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.3444840287422257,
+            "0": 0.05361995048608176,
+            "1": 0.6018960207716926
+          },
+          "true_diff": -2,
+          "pred_diff": 2.56,
+          "mae": 4.56,
+          "true_val": 18,
+          "pred_rank": 8,
+          "true_prob": 0.0495,
+          "n_candidates": 33
+        },
+        "4": {
+          "true_dir": -1,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.4142261940704064,
+            "0": 0.038645009359338206,
+            "1": 0.5471287965702554
+          },
+          "true_diff": -7,
+          "pred_diff": 1.13,
+          "mae": 8.13,
+          "true_val": 20,
+          "pred_rank": 15,
+          "true_prob": 0.0358,
+          "n_candidates": 29
+        },
+        "5": {
+          "true_dir": -1,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.37908338868425817,
+            "0": 0.0877664392246845,
+            "1": 0.5331501720910573
+          },
+          "true_diff": -6,
+          "pred_diff": 1.15,
+          "mae": 7.15,
+          "true_val": 26,
+          "pred_rank": 9,
+          "true_prob": 0.0382,
+          "n_candidates": 22
+        }
+      },
+      "dir_accuracy": 0.16666666666666666,
+      "avg_mae": 4.31,
+      "avg_rank": 8.166666666666666,
+      "all_dir_correct": false
+    },
+    {
+      "t": 3221,
+      "n_contributors": 186,
+      "per_position": {
+        "0": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.36368943374197316,
+            "0": 0.12002335084646819,
+            "1": 0.5162872154115586
+          },
+          "true_diff": 8,
+          "pred_diff": 0.78,
+          "mae": 7.22,
+          "true_val": 9,
+          "pred_rank": 9,
+          "true_prob": 0.039,
+          "n_candidates": 20
+        },
+        "1": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.44880326911850554,
+            "0": 0.05131348511383538,
+            "1": 0.4998832457676591
+          },
+          "true_diff": 2,
+          "pred_diff": 0.81,
+          "mae": 1.19,
+          "true_val": 10,
+          "pred_rank": 6,
+          "true_prob": 0.0586,
+          "n_candidates": 29
+        },
+        "2": {
+          "true_dir": 0,
+          "pred_dir": 1,
+          "dir_correct": false,
+          "dir_probs": {
+            "-1": 0.39252772913018097,
+            "0": 0.053298307063631055,
+            "1": 0.554173963806188
+          },
+          "true_diff": 0,
+          "pred_diff": 1.62,
+          "mae": 1.62,
+          "true_val": 13,
+          "pred_rank": 4,
+          "true_prob": 0.0542,
+          "n_candidates": 33
+        },
+        "3": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.3502626970227671,
+            "0": 0.04512551079976649,
+            "1": 0.6046117921774664
+          },
+          "true_diff": 1,
+          "pred_diff": 2.47,
+          "mae": 1.47,
+          "true_val": 19,
+          "pred_rank": 11,
+          "true_prob": 0.044,
+          "n_candidates": 33
+        },
+        "4": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.3058377116170461,
+            "0": 0.04179801517805021,
+            "1": 0.6523642732049036
+          },
+          "true_diff": 4,
+          "pred_diff": 2.81,
+          "mae": 1.19,
+          "true_val": 24,
+          "pred_rank": 5,
+          "true_prob": 0.0557,
+          "n_candidates": 33
+        },
+        "5": {
+          "true_dir": 1,
+          "pred_dir": 1,
+          "dir_correct": true,
+          "dir_probs": {
+            "-1": 0.3028604786923526,
+            "0": 0.07197898423817864,
+            "1": 0.6251605370694687
+          },
+          "true_diff": 6,
+          "pred_diff": 2.42,
+          "mae": 3.58,
+          "true_val": 32,
+          "pred_rank": 7,
+          "true_prob": 0.0671,
+          "n_candidates": 27
+        }
+      },
+      "dir_accuracy": 0.8333333333333334,
+      "avg_mae": 2.71,
+      "avg_rank": 7.0,
+      "all_dir_correct": false
+    }
+  ]
+}

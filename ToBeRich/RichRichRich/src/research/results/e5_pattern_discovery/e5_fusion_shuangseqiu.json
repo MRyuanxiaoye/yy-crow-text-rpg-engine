@@ -1,0 +1,110 @@
+{
+  "lottery_type": "shuangseqiu",
+  "single_auc": {
+    "e5a": 0.758,
+    "e5b": 0.7594,
+    "e5c": 0.8056,
+    "e5d": 0.7592,
+    "e5e": 0.7407,
+    "e5f": 0.7619
+  },
+  "pairwise_fusion": [
+    {
+      "pair": "e5c+e5f",
+      "best_alpha": {
+        "e5c": 0.9,
+        "e5f": 0.1
+      },
+      "auc": 0.8062
+    },
+    {
+      "pair": "e5c+e5d",
+      "best_alpha": {
+        "e5c": 0.9,
+        "e5d": 0.1
+      },
+      "auc": 0.8056
+    },
+    {
+      "pair": "e5b+e5c",
+      "best_alpha": {
+        "e5b": 0.1,
+        "e5c": 0.9
+      },
+      "auc": 0.8052
+    },
+    {
+      "pair": "e5a+e5c",
+      "best_alpha": {
+        "e5a": 0.1,
+        "e5c": 0.9
+      },
+      "auc": 0.8045
+    },
+    {
+      "pair": "e5c+e5e",
+      "best_alpha": {
+        "e5c": 0.9,
+        "e5e": 0.1
+      },
+      "auc": 0.8044
+    }
+  ],
+  "top_n_fusion": [
+    {
+      "top_n": 2,
+      "signals": [
+        "e5c",
+        "e5f"
+      ],
+      "auc": 0.7979
+    },
+    {
+      "top_n": 3,
+      "signals": [
+        "e5c",
+        "e5f",
+        "e5b"
+      ],
+      "auc": 0.7975
+    },
+    {
+      "top_n": 4,
+      "signals": [
+        "e5c",
+        "e5f",
+        "e5b",
+        "e5d"
+      ],
+      "auc": 0.7981
+    }
+  ],
+  "full_fusion": {
+    "equal_weight": {
+      "auc": 0.7976
+    },
+    "auc_weighted": {
+      "auc": 0.7978,
+      "alphas": {
+        "e5a": 0.165,
+        "e5b": 0.166,
+        "e5c": 0.176,
+        "e5d": 0.166,
+        "e5e": 0.162,
+        "e5f": 0.166
+      }
+    },
+    "best": {
+      "auc": 0.8028,
+      "strategy": "随机搜索#10",
+      "alphas": {
+        "e5a": 0.119,
+        "e5b": 0.077,
+        "e5c": 0.428,
+        "e5d": 0.107,
+        "e5e": 0.08,
+        "e5f": 0.19
+      }
+    }
+  }
+}

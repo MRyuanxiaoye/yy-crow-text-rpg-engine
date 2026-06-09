@@ -1,0 +1,63 @@
+{
+  "lottery_type": "daletou",
+  "total_combos": 324632,
+  "constraints": {
+    "span": [
+      13.0,
+      33.0
+    ],
+    "sum": [
+      55.0,
+      130.0
+    ],
+    "pos_diff": {
+      "0": [
+        -12.0,
+        12.0
+      ],
+      "1": [
+        -15.0,
+        15.0
+      ],
+      "2": [
+        -15.0,
+        15.0
+      ],
+      "3": [
+        -14.0,
+        14.0
+      ],
+      "4": [
+        -11.0,
+        11.0
+      ]
+    },
+    "gap": {
+      "0": [
+        1,
+        16
+      ],
+      "1": [
+        1,
+        17
+      ],
+      "2": [
+        1,
+        15
+      ],
+      "3": [
+        1,
+        15
+      ]
+    }
+  },
+  "test_samples": 50,
+  "avg_valid_combos": 170180,
+  "median_valid_combos": 195577,
+  "min_valid_combos": 29926,
+  "max_valid_combos": 216163,
+  "avg_reduction_rate": 0.4758,
+  "pos_survival_rate": 0.58,
+  "combo_survival_rate": 0.48,
+  "efficiency": 0.2284
+}

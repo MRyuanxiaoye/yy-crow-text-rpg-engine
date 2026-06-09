@@ -29,7 +29,7 @@ CACHE_DIR = E5_RESULTS_DIR / "weights_cache"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 # 子实验名称列表
-SUB_NAMES = ["e5a", "e5b", "e5c", "e5d", "e5e", "e5f"]
+SUB_NAMES = ["e5a", "e5b", "e5c", "e5d", "e5e", "e5f", "e5g"]
 
 
 def get_cache_path(sub_name: str, lottery_type: str) -> Path:
@@ -62,10 +62,12 @@ def collect_all_weights(lottery_type: str) -> Dict[str, list]:
     from research.experiment.e5d_shapelet import run_e5d
     from research.experiment.e5e_contrastive import run_e5e
     from research.experiment.e5f_dictionary import run_e5f
+    from research.experiment.e5g_adaptive_features import run_e5g
 
     run_funcs = {
         "e5a": run_e5a, "e5b": run_e5b, "e5c": run_e5c,
         "e5d": run_e5d, "e5e": run_e5e, "e5f": run_e5f,
+        "e5g": run_e5g,
     }
 
     data = LotteryData(lottery_type)

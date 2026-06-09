@@ -1,0 +1,48 @@
+{
+  "lottery_type": "daletou",
+  "total_combos": 324632,
+  "scan_results": [
+    {
+      "percentiles": "1-99",
+      "avg_combos": 288855,
+      "reduction": 0.1102,
+      "survival": 0.85,
+      "efficiency": 0.0937
+    },
+    {
+      "percentiles": "2-98",
+      "avg_combos": 255111,
+      "reduction": 0.2142,
+      "survival": 0.76,
+      "efficiency": 0.1628
+    },
+    {
+      "percentiles": "3-97",
+      "avg_combos": 219657,
+      "reduction": 0.3234,
+      "survival": 0.68,
+      "efficiency": 0.2199
+    },
+    {
+      "percentiles": "5-95",
+      "avg_combos": 173750,
+      "reduction": 0.4648,
+      "survival": 0.52,
+      "efficiency": 0.2417
+    },
+    {
+      "percentiles": "7-93",
+      "avg_combos": 128297,
+      "reduction": 0.6048,
+      "survival": 0.4,
+      "efficiency": 0.2419
+    },
+    {
+      "percentiles": "10-90",
+      "avg_combos": 80819,
+      "reduction": 0.751,
+      "survival": 0.27,
+      "efficiency": 0.2028
+    }
+  ]
+}

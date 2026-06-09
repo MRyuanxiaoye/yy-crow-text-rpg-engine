@@ -1,0 +1,667 @@
+{
+  "lottery_type": "shuangseqiu",
+  "top_constraints": [
+    {
+      "rank": 1,
+      "name": "pos_diff_P0",
+      "type": "A",
+      "reliability": 0.9396,
+      "tightness": 0.561,
+      "usefulness": 0.5271,
+      "hdi_90": [
+        -9.0,
+        9.0
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "diff2_P0",
+      "type": "F",
+      "reliability": 0.9181,
+      "tightness": 0.5652,
+      "usefulness": 0.5189,
+      "hdi_90": [
+        -15.0,
+        15.0
+      ]
+    },
+    {
+      "rank": 3,
+      "name": "triple_mid_P0_P1_P2",
+      "type": "D",
+      "reliability": 0.9162,
+      "tightness": 0.5652,
+      "usefulness": 0.5178,
+      "hdi_90": [
+        -5.0,
+        5.0
+      ]
+    },
+    {
+      "rank": 4,
+      "name": "cross_P5_lag_P0",
+      "type": "C",
+      "reliability": 0.9298,
+      "tightness": 0.5526,
+      "usefulness": 0.5139,
+      "hdi_90": [
+        16.0,
+        33.0
+      ]
+    },
+    {
+      "rank": 5,
+      "name": "pos_diff_P5",
+      "type": "A",
+      "reliability": 0.9142,
+      "tightness": 0.5556,
+      "usefulness": 0.5079,
+      "hdi_90": [
+        -10.0,
+        10.0
+      ]
+    },
+    {
+      "rank": 6,
+      "name": "triple_mid_P2_P3_P4",
+      "type": "D",
+      "reliability": 0.9162,
+      "tightness": 0.5455,
+      "usefulness": 0.4997,
+      "hdi_90": [
+        -5.0,
+        5.0
+      ]
+    },
+    {
+      "rank": 7,
+      "name": "cross_P1_lag_P0",
+      "type": "C",
+      "reliability": 0.9435,
+      "tightness": 0.5217,
+      "usefulness": 0.4922,
+      "hdi_90": [
+        -6.0,
+        16.0
+      ]
+    },
+    {
+      "rank": 8,
+      "name": "cross_P5_lag_P4",
+      "type": "C",
+      "reliability": 0.9142,
+      "tightness": 0.5319,
+      "usefulness": 0.4863,
+      "hdi_90": [
+        -6.0,
+        16.0
+      ]
+    },
+    {
+      "rank": 9,
+      "name": "triple_mid_P3_P4_P5",
+      "type": "D",
+      "reliability": 0.9474,
+      "tightness": 0.5111,
+      "usefulness": 0.4842,
+      "hdi_90": [
+        -6.0,
+        5.0
+      ]
+    },
+    {
+      "rank": 10,
+      "name": "diff2_P5",
+      "type": "F",
+      "reliability": 0.883,
+      "tightness": 0.5429,
+      "usefulness": 0.4794,
+      "hdi_90": [
+        -16.0,
+        16.0
+      ]
+    },
+    {
+      "rank": 11,
+      "name": "cross_P5_lag_P3",
+      "type": "C",
+      "reliability": 0.9103,
+      "tightness": 0.5217,
+      "usefulness": 0.475,
+      "hdi_90": [
+        -1.0,
+        21.0
+      ]
+    },
+    {
+      "rank": 12,
+      "name": "gap_P4_P5",
+      "type": "B",
+      "reliability": 0.9357,
+      "tightness": 0.5,
+      "usefulness": 0.4678,
+      "hdi_90": [
+        -1.0,
+        11.0
+      ]
+    },
+    {
+      "rank": 13,
+      "name": "gap_P0_P1",
+      "type": "B",
+      "reliability": 0.9337,
+      "tightness": 0.5,
+      "usefulness": 0.4669,
+      "hdi_90": [
+        -1.0,
+        11.0
+      ]
+    },
+    {
+      "rank": 14,
+      "name": "cross_P2_lag_P0",
+      "type": "C",
+      "reliability": 0.9474,
+      "tightness": 0.4884,
+      "usefulness": 0.4627,
+      "hdi_90": [
+        -1.0,
+        21.0
+      ]
+    },
+    {
+      "rank": 15,
+      "name": "cross_P1_lag_P4",
+      "type": "C",
+      "reliability": 0.922,
+      "tightness": 0.5,
+      "usefulness": 0.461,
+      "hdi_90": [
+        -26.0,
+        -3.0
+      ]
+    },
+    {
+      "rank": 16,
+      "name": "cross_P1_lag_P5",
+      "type": "C",
+      "reliability": 0.9415,
+      "tightness": 0.4878,
+      "usefulness": 0.4593,
+      "hdi_90": [
+        -30.0,
+        -9.0
+      ]
+    },
+    {
+      "rank": 17,
+      "name": "triple_mid_P1_P2_P3",
+      "type": "D",
+      "reliability": 0.9357,
+      "tightness": 0.4884,
+      "usefulness": 0.457,
+      "hdi_90": [
+        -6.0,
+        5.0
+      ]
+    },
+    {
+      "rank": 18,
+      "name": "cross_P2_lag_P5",
+      "type": "C",
+      "reliability": 0.922,
+      "tightness": 0.4884,
+      "usefulness": 0.4503,
+      "hdi_90": [
+        -26.0,
+        -4.0
+      ]
+    },
+    {
+      "rank": 19,
+      "name": "diff2_P1",
+      "type": "F",
+      "reliability": 0.922,
+      "tightness": 0.4872,
+      "usefulness": 0.4492,
+      "hdi_90": [
+        -20.0,
+        20.0
+      ]
+    },
+    {
+      "rank": 20,
+      "name": "cross_P3_lag_P5",
+      "type": "C",
+      "reliability": 0.9181,
+      "tightness": 0.4884,
+      "usefulness": 0.4484,
+      "hdi_90": [
+        -21.0,
+        1.0
+      ]
+    },
+    {
+      "rank": 21,
+      "name": "agg_sum",
+      "type": "E",
+      "reliability": 0.9064,
+      "tightness": 0.4894,
+      "usefulness": 0.4436,
+      "hdi_90": [
+        65.0,
+        137.0
+      ]
+    },
+    {
+      "rank": 22,
+      "name": "cross_P5_lag_P2",
+      "type": "C",
+      "reliability": 0.9493,
+      "tightness": 0.4634,
+      "usefulness": 0.4399,
+      "hdi_90": [
+        4.0,
+        26.0
+      ]
+    },
+    {
+      "rank": 23,
+      "name": "triple_mid_P2_P4_P5",
+      "type": "D",
+      "reliability": 0.9552,
+      "tightness": 0.4583,
+      "usefulness": 0.4378,
+      "hdi_90": [
+        -4.0,
+        9.0
+      ]
+    },
+    {
+      "rank": 24,
+      "name": "cross_P4_lag_P0",
+      "type": "C",
+      "reliability": 0.9454,
+      "tightness": 0.4615,
+      "usefulness": 0.4363,
+      "hdi_90": [
+        9.0,
+        30.0
+      ]
+    },
+    {
+      "rank": 25,
+      "name": "cross_P0_lag_P5",
+      "type": "C",
+      "reliability": 0.9279,
+      "tightness": 0.4688,
+      "usefulness": 0.4349,
+      "hdi_90": [
+        -33.0,
+        -16.0
+      ]
+    },
+    {
+      "rank": 26,
+      "name": "cross_P4_lag_P5",
+      "type": "C",
+      "reliability": 0.9357,
+      "tightness": 0.4634,
+      "usefulness": 0.4336,
+      "hdi_90": [
+        -16.0,
+        6.0
+      ]
+    },
+    {
+      "rank": 27,
+      "name": "cross_P3_lag_P4",
+      "type": "C",
+      "reliability": 0.9045,
+      "tightness": 0.4792,
+      "usefulness": 0.4334,
+      "hdi_90": [
+        -17.0,
+        8.0
+      ]
+    },
+    {
+      "rank": 28,
+      "name": "triple_mid_P0_P1_P5",
+      "type": "D",
+      "reliability": 0.9415,
+      "tightness": 0.4583,
+      "usefulness": 0.4315,
+      "hdi_90": [
+        -14.0,
+        -1.0
+      ]
+    },
+    {
+      "rank": 29,
+      "name": "cross_P3_lag_P0",
+      "type": "C",
+      "reliability": 0.9279,
+      "tightness": 0.4634,
+      "usefulness": 0.43,
+      "hdi_90": [
+        4.0,
+        26.0
+      ]
+    },
+    {
+      "rank": 30,
+      "name": "cross_P1_lag_P3",
+      "type": "C",
+      "reliability": 0.9357,
+      "tightness": 0.4565,
+      "usefulness": 0.4272,
+      "hdi_90": [
+        -22.0,
+        3.0
+      ]
+    }
+  ],
+  "all_ranked": [
+    {
+      "name": "pos_diff_P0",
+      "type": "A",
+      "usefulness": 0.5271,
+      "redundant": false
+    },
+    {
+      "name": "cross_P0_lag_P0",
+      "type": "C",
+      "usefulness": 0.5271,
+      "redundant": true
+    },
+    {
+      "name": "diff2_P0",
+      "type": "F",
+      "usefulness": 0.5189,
+      "redundant": false
+    },
+    {
+      "name": "triple_mid_P0_P1_P2",
+      "type": "D",
+      "usefulness": 0.5178,
+      "redundant": false
+    },
+    {
+      "name": "cross_P5_lag_P0",
+      "type": "C",
+      "usefulness": 0.5139,
+      "redundant": false
+    },
+    {
+      "name": "pos_diff_P5",
+      "type": "A",
+      "usefulness": 0.5079,
+      "redundant": false
+    },
+    {
+      "name": "cross_P5_lag_P5",
+      "type": "C",
+      "usefulness": 0.5079,
+      "redundant": true
+    },
+    {
+      "name": "triple_mid_P2_P3_P4",
+      "type": "D",
+      "usefulness": 0.4997,
+      "redundant": false
+    },
+    {
+      "name": "cross_P1_lag_P0",
+      "type": "C",
+      "usefulness": 0.4922,
+      "redundant": false
+    },
+    {
+      "name": "cross_P5_lag_P4",
+      "type": "C",
+      "usefulness": 0.4863,
+      "redundant": false
+    },
+    {
+      "name": "triple_mid_P3_P4_P5",
+      "type": "D",
+      "usefulness": 0.4842,
+      "redundant": false
+    },
+    {
+      "name": "diff2_P5",
+      "type": "F",
+      "usefulness": 0.4794,
+      "redundant": false
+    },
+    {
+      "name": "cross_P5_lag_P3",
+      "type": "C",
+      "usefulness": 0.475,
+      "redundant": false
+    },
+    {
+      "name": "gap_P4_P5",
+      "type": "B",
+      "usefulness": 0.4678,
+      "redundant": false
+    },
+    {
+      "name": "gap_P0_P1",
+      "type": "B",
+      "usefulness": 0.4669,
+      "redundant": false
+    },
+    {
+      "name": "cross_P2_lag_P0",
+      "type": "C",
+      "usefulness": 0.4627,
+      "redundant": false
+    },
+    {
+      "name": "cross_P1_lag_P4",
+      "type": "C",
+      "usefulness": 0.461,
+      "redundant": false
+    },
+    {
+      "name": "cross_P1_lag_P5",
+      "type": "C",
+      "usefulness": 0.4593,
+      "redundant": false
+    },
+    {
+      "name": "triple_mid_P1_P2_P3",
+      "type": "D",
+      "usefulness": 0.457,
+      "redundant": false
+    },
+    {
+      "name": "cross_P2_lag_P5",
+      "type": "C",
+      "usefulness": 0.4503,
+      "redundant": false
+    },
+    {
+      "name": "diff2_P1",
+      "type": "F",
+      "usefulness": 0.4492,
+      "redundant": false
+    },
+    {
+      "name": "cross_P3_lag_P5",
+      "type": "C",
+      "usefulness": 0.4484,
+      "redundant": false
+    },
+    {
+      "name": "agg_sum",
+      "type": "E",
+      "usefulness": 0.4436,
+      "redundant": false
+    },
+    {
+      "name": "pos_diff_P1",
+      "type": "A",
+      "usefulness": 0.4421,
+      "redundant": true
+    },
+    {
+      "name": "cross_P1_lag_P1",
+      "type": "C",
+      "usefulness": 0.4421,
+      "redundant": true
+    },
+    {
+      "name": "cross_P5_lag_P2",
+      "type": "C",
+      "usefulness": 0.4399,
+      "redundant": false
+    },
+    {
+      "name": "triple_mid_P2_P4_P5",
+      "type": "D",
+      "usefulness": 0.4378,
+      "redundant": false
+    },
+    {
+      "name": "cross_P4_lag_P0",
+      "type": "C",
+      "usefulness": 0.4363,
+      "redundant": false
+    },
+    {
+      "name": "cross_P0_lag_P5",
+      "type": "C",
+      "usefulness": 0.4349,
+      "redundant": false
+    },
+    {
+      "name": "cross_P4_lag_P5",
+      "type": "C",
+      "usefulness": 0.4336,
+      "redundant": false
+    },
+    {
+      "name": "cross_P3_lag_P4",
+      "type": "C",
+      "usefulness": 0.4334,
+      "redundant": false
+    },
+    {
+      "name": "triple_mid_P0_P1_P5",
+      "type": "D",
+      "usefulness": 0.4315,
+      "redundant": false
+    },
+    {
+      "name": "cross_P1_lag_P2",
+      "type": "C",
+      "usefulness": 0.4307,
+      "redundant": true
+    },
+    {
+      "name": "cross_P3_lag_P0",
+      "type": "C",
+      "usefulness": 0.43,
+      "redundant": false
+    },
+    {
+      "name": "cross_P1_lag_P3",
+      "type": "C",
+      "usefulness": 0.4272,
+      "redundant": false
+    },
+    {
+      "name": "gap_P2_P3",
+      "type": "B",
+      "usefulness": 0.4253,
+      "redundant": false
+    },
+    {
+      "name": "cross_P0_lag_P1",
+      "type": "C",
+      "usefulness": 0.4237,
+      "redundant": false
+    },
+    {
+      "name": "gap_P3_P4",
+      "type": "B",
+      "usefulness": 0.4226,
+      "redundant": false
+    },
+    {
+      "name": "gap_P1_P2",
+      "type": "B",
+      "usefulness": 0.4209,
+      "redundant": false
+    },
+    {
+      "name": "cross_P5_lag_P1",
+      "type": "C",
+      "usefulness": 0.4203,
+      "redundant": false
+    },
+    {
+      "name": "diff2_P3",
+      "type": "F",
+      "usefulness": 0.4203,
+      "redundant": false
+    },
+    {
+      "name": "diff2_P4",
+      "type": "F",
+      "usefulness": 0.4203,
+      "redundant": false
+    },
+    {
+      "name": "pos_diff_P4",
+      "type": "A",
+      "usefulness": 0.42,
+      "redundant": false
+    },
+    {
+      "name": "cross_P4_lag_P4",
+      "type": "C",
+      "usefulness": 0.42,
+      "redundant": false
+    },
+    {
+      "name": "cross_P2_lag_P4",
+      "type": "C",
+      "usefulness": 0.4191,
+      "redundant": false
+    },
+    {
+      "name": "triple_mid_P1_P2_P5",
+      "type": "D",
+      "usefulness": 0.4189,
+      "redundant": false
+    },
+    {
+      "name": "triple_mid_P0_P4_P5",
+      "type": "D",
+      "usefulness": 0.4186,
+      "redundant": false
+    },
+    {
+      "name": "pos_diff_P3",
+      "type": "A",
+      "usefulness": 0.4163,
+      "redundant": false
+    },
+    {
+      "name": "cross_P3_lag_P3",
+      "type": "C",
+      "usefulness": 0.4163,
+      "redundant": false
+    },
+    {
+      "name": "triple_mid_P1_P2_P4",
+      "type": "D",
+      "usefulness": 0.4102,
+      "redundant": false
+    }
+  ]
+}

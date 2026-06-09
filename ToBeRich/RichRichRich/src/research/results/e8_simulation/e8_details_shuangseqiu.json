@@ -1,0 +1,903 @@
+[
+  {
+    "period_idx": 2901,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 15,
+    "net": -3,
+    "best_prize": 5,
+    "best_red_hit": 0,
+    "best_blue_hit": 1,
+    "hit_distribution": {
+      "0r1b": 3,
+      "0r0b": 6
+    },
+    "prize_details": {
+      "5": 3
+    },
+    "e5_cand_sizes": [
+      5,
+      8,
+      10,
+      10,
+      9,
+      4
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      10,
+      10,
+      9,
+      4
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 55181,
+    "true_red": [
+      1,
+      7,
+      13,
+      17,
+      18,
+      31
+    ],
+    "true_blue": [
+      15
+    ]
+  },
+  {
+    "period_idx": 2902,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 1,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "1r0b": 6,
+      "0r0b": 3
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      10,
+      9,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      10,
+      9,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 73279,
+    "true_red": [
+      4,
+      11,
+      13,
+      19,
+      22,
+      33
+    ],
+    "true_blue": [
+      11
+    ]
+  },
+  {
+    "period_idx": 2903,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 15,
+    "net": -3,
+    "best_prize": 5,
+    "best_red_hit": 1,
+    "best_blue_hit": 1,
+    "hit_distribution": {
+      "1r1b": 2,
+      "1r0b": 4,
+      "0r1b": 1,
+      "0r0b": 2
+    },
+    "prize_details": {
+      "5": 3
+    },
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      10,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      9,
+      10,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 63492,
+    "true_red": [
+      9,
+      13,
+      15,
+      18,
+      20,
+      28
+    ],
+    "true_blue": [
+      15
+    ]
+  },
+  {
+    "period_idx": 2904,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 15,
+    "net": -3,
+    "best_prize": 5,
+    "best_red_hit": 2,
+    "best_blue_hit": 1,
+    "hit_distribution": {
+      "1r0b": 4,
+      "1r1b": 2,
+      "2r0b": 2,
+      "2r1b": 1
+    },
+    "prize_details": {
+      "5": 3
+    },
+    "e5_cand_sizes": [
+      5,
+      8,
+      10,
+      10,
+      9,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      10,
+      10,
+      9,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 69499,
+    "true_red": [
+      2,
+      10,
+      11,
+      13,
+      28,
+      31
+    ],
+    "true_blue": [
+      1
+    ]
+  },
+  {
+    "period_idx": 2905,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 15,
+    "net": -3,
+    "best_prize": 5,
+    "best_red_hit": 0,
+    "best_blue_hit": 1,
+    "hit_distribution": {
+      "0r0b": 6,
+      "0r1b": 3
+    },
+    "prize_details": {
+      "5": 3
+    },
+    "e5_cand_sizes": [
+      5,
+      9,
+      10,
+      10,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      9,
+      10,
+      10,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 66072,
+    "true_red": [
+      3,
+      5,
+      8,
+      17,
+      25,
+      31
+    ],
+    "true_blue": [
+      1
+    ]
+  },
+  {
+    "period_idx": 2906,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 2,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "1r0b": 6,
+      "2r0b": 3
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      10,
+      9,
+      9,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      10,
+      9,
+      9,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 62607,
+    "true_red": [
+      13,
+      14,
+      20,
+      24,
+      27,
+      29
+    ],
+    "true_blue": [
+      2
+    ]
+  },
+  {
+    "period_idx": 2907,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 2,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "1r0b": 6,
+      "2r0b": 3
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      10,
+      9,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      2,
+      5,
+      9,
+      9,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 14798,
+    "true_red": [
+      1,
+      5,
+      15,
+      19,
+      26,
+      29
+    ],
+    "true_blue": [
+      13
+    ]
+  },
+  {
+    "period_idx": 2908,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 3,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "2r0b": 3,
+      "3r0b": 6
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      10,
+      9,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      9,
+      10,
+      9,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 64829,
+    "true_red": [
+      6,
+      7,
+      18,
+      20,
+      27,
+      29
+    ],
+    "true_blue": [
+      9
+    ]
+  },
+  {
+    "period_idx": 2909,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 15,
+    "net": -3,
+    "best_prize": 5,
+    "best_red_hit": 2,
+    "best_blue_hit": 1,
+    "hit_distribution": {
+      "2r0b": 4,
+      "2r1b": 2,
+      "1r0b": 2,
+      "1r1b": 1
+    },
+    "prize_details": {
+      "5": 3
+    },
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      9,
+      9,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      9,
+      9,
+      9,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 65308,
+    "true_red": [
+      8,
+      14,
+      26,
+      27,
+      30,
+      33
+    ],
+    "true_blue": [
+      1
+    ]
+  },
+  {
+    "period_idx": 2910,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 1,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "0r0b": 6,
+      "1r0b": 3
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      9,
+      9,
+      5
+    ],
+    "e7_cand_sizes": [
+      1,
+      4,
+      5,
+      9,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 4028,
+    "true_red": [
+      4,
+      13,
+      17,
+      18,
+      28,
+      29
+    ],
+    "true_blue": [
+      6
+    ]
+  },
+  {
+    "period_idx": 2911,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 2,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "2r0b": 6,
+      "1r0b": 3
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      10,
+      9,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      9,
+      10,
+      9,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 67825,
+    "true_red": [
+      2,
+      6,
+      7,
+      11,
+      14,
+      33
+    ],
+    "true_blue": [
+      8
+    ]
+  },
+  {
+    "period_idx": 2912,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 1,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "1r0b": 6,
+      "0r0b": 3
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      9,
+      9,
+      10,
+      9,
+      5
+    ],
+    "e7_cand_sizes": [
+      4,
+      8,
+      9,
+      10,
+      5,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 35571,
+    "true_red": [
+      2,
+      5,
+      15,
+      18,
+      26,
+      27
+    ],
+    "true_blue": [
+      4
+    ]
+  },
+  {
+    "period_idx": 2913,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 30,
+    "net": 12,
+    "best_prize": 10,
+    "best_red_hit": 3,
+    "best_blue_hit": 1,
+    "hit_distribution": {
+      "3r0b": 6,
+      "3r1b": 3
+    },
+    "prize_details": {
+      "10": 3
+    },
+    "e5_cand_sizes": [
+      4,
+      8,
+      10,
+      9,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      4,
+      8,
+      10,
+      9,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 42966,
+    "true_red": [
+      2,
+      15,
+      19,
+      26,
+      27,
+      29
+    ],
+    "true_blue": [
+      2
+    ]
+  },
+  {
+    "period_idx": 2914,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 15,
+    "net": -3,
+    "best_prize": 5,
+    "best_red_hit": 1,
+    "best_blue_hit": 1,
+    "hit_distribution": {
+      "1r0b": 6,
+      "1r1b": 3
+    },
+    "prize_details": {
+      "5": 3
+    },
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      9,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      9,
+      9,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 61411,
+    "true_red": [
+      12,
+      17,
+      22,
+      27,
+      30,
+      31
+    ],
+    "true_blue": [
+      2
+    ]
+  },
+  {
+    "period_idx": 2915,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 2,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "2r0b": 6,
+      "1r0b": 3
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      4,
+      8,
+      10,
+      9,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      2,
+      6,
+      9,
+      9,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 19545,
+    "true_red": [
+      6,
+      8,
+      17,
+      19,
+      24,
+      28
+    ],
+    "true_blue": [
+      5
+    ]
+  },
+  {
+    "period_idx": 2916,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 1,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "1r0b": 9
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      9,
+      8,
+      4
+    ],
+    "e7_cand_sizes": [
+      4,
+      8,
+      9,
+      9,
+      8,
+      4
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 41387,
+    "true_red": [
+      10,
+      13,
+      16,
+      20,
+      21,
+      25
+    ],
+    "true_blue": [
+      5
+    ]
+  },
+  {
+    "period_idx": 2917,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 15,
+    "net": -3,
+    "best_prize": 5,
+    "best_red_hit": 1,
+    "best_blue_hit": 1,
+    "hit_distribution": {
+      "0r0b": 4,
+      "0r1b": 2,
+      "1r0b": 2,
+      "1r1b": 1
+    },
+    "prize_details": {
+      "5": 3
+    },
+    "e5_cand_sizes": [
+      4,
+      8,
+      10,
+      10,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      4,
+      7,
+      10,
+      10,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 48084,
+    "true_red": [
+      5,
+      10,
+      13,
+      18,
+      24,
+      26
+    ],
+    "true_blue": [
+      1
+    ]
+  },
+  {
+    "period_idx": 2918,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 1,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "0r0b": 6,
+      "1r0b": 3
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      7,
+      10,
+      9,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      7,
+      10,
+      9,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 54805,
+    "true_red": [
+      2,
+      3,
+      7,
+      12,
+      20,
+      31
+    ],
+    "true_blue": [
+      16
+    ]
+  },
+  {
+    "period_idx": 2919,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 1,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "1r0b": 9
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      10,
+      9,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      8,
+      10,
+      9,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 60518,
+    "true_red": [
+      1,
+      13,
+      15,
+      17,
+      26,
+      33
+    ],
+    "true_blue": [
+      13
+    ]
+  },
+  {
+    "period_idx": 2920,
+    "n_tickets": 9,
+    "cost": 18,
+    "total_prize": 0,
+    "net": -18,
+    "best_prize": 0,
+    "best_red_hit": 0,
+    "best_blue_hit": 0,
+    "hit_distribution": {
+      "0r0b": 9
+    },
+    "prize_details": {},
+    "e5_cand_sizes": [
+      5,
+      8,
+      9,
+      9,
+      8,
+      5
+    ],
+    "e7_cand_sizes": [
+      5,
+      8,
+      9,
+      9,
+      8,
+      5
+    ],
+    "n_red_combos": 20,
+    "n_valid_combos": 69606,
+    "true_red": [
+      3,
+      4,
+      9,
+      10,
+      29,
+      33
+    ],
+    "true_blue": [
+      13
+    ]
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "experiment": "E5 数据驱动模式发现实验",
+  "description": "不预设假设，用6种算法从原始数据中发现相似局面和重复模式",
+  "completion_date": "2026-02-10",
+
+  "sub_experiments": {
+    "e5a_matrix_profile": {
+      "method": "Matrix Profile 时序Motif发现",
+      "daletou": {"auc": 0.7099, "best_params": {"m": 3, "k": 50}},
+      "shuangseqiu": {"auc": 0.7580, "best_params": {"m": 5, "k": 50}}
+    },
+    "e5b_autoencoder": {
+      "method": "自编码器 + 最近邻检索",
+      "daletou": {"auc": 0.7134, "best_params": {"W": 10, "latent_dim": 32, "k": 50, "metric": "euclidean"}},
+      "shuangseqiu": {"auc": 0.7594, "best_params": {"W": 5, "latent_dim": 16, "k": 50, "metric": "cosine"}}
+    },
+    "e5c_sax": {
+      "method": "SAX符号化 + 频繁子串匹配",
+      "daletou": {"auc": 0.7635, "best_params": {"alpha": 3, "L": 3, "min_freq": 5}},
+      "shuangseqiu": {"auc": 0.8056, "best_params": {"alpha": 3, "L": 3, "min_freq": 5}}
+    },
+    "e5d_shapelet": {
+      "method": "Shapelet判别性子序列发现",
+      "daletou": {"auc": 0.7115, "best_params": {"shapelet_len": 5, "k": 50}},
+      "shuangseqiu": {"auc": 0.7592, "best_params": {"shapelet_len": 7, "k": 50}}
+    },
+    "e5e_contrastive": {
+      "method": "对比学习（结果导向表示学习）",
+      "daletou": {"auc": 0.7075, "best_params": {"W": 5, "embed_dim": 16, "tau": 0.1, "k": 50}},
+      "shuangseqiu": {"auc": 0.7407, "best_params": {"W": 5, "embed_dim": 32, "tau": 0.1, "k": 50}}
+    },
+    "e5f_dictionary": {
+      "method": "字典学习 / 稀疏编码",
+      "daletou": {"auc": 0.7246, "best_params": {"W": 10, "n_comp": 100, "alpha": 1.0, "k": 50}},
+      "shuangseqiu": {"auc": 0.7619, "best_params": {"W": 10, "n_comp": 50, "alpha": 1.0, "k": 50}}
+    }
+  },
+
+  "fusion_results": {
+    "daletou": {
+      "best_pairwise": {"pair": "e5c+e5f", "auc": 0.7657, "alpha": {"e5c": 0.9, "e5f": 0.1}},
+      "best_full_fusion": {"auc": 0.7668, "strategy": "随机搜索#22", "alphas": {"e5a": 0.022, "e5b": 0.072, "e5c": 0.499, "e5d": 0.068, "e5e": 0.127, "e5f": 0.212}},
+      "equal_weight": {"auc": 0.7583},
+      "auc_weighted": {"auc": 0.7588}
+    },
+    "shuangseqiu": {
+      "best_pairwise": {"pair": "e5c+e5f", "auc": 0.8062, "alpha": {"e5c": 0.9, "e5f": 0.1}},
+      "best_full_fusion": {"auc": 0.8028, "strategy": "随机搜索#10", "alphas": {"e5a": 0.119, "e5b": 0.077, "e5c": 0.428, "e5d": 0.107, "e5e": 0.08, "e5f": 0.19}},
+      "equal_weight": {"auc": 0.7976},
+      "auc_weighted": {"auc": 0.7978}
+    }
+  },
+
+  "key_findings": [
+    "所有6种算法AUC均显著高于0.5随机基线，数据驱动模式发现有效",
+    "E5c SAX符号化是最强单信号（大乐透0.7635，双色球0.8056）",
+    "E5c的优势在于粗粒度符号化天然抗噪，频繁子串匹配捕捉了重复出现的走势模式",
+    "融合后AUC提升有限（大乐透+0.003，双色球-0.003），说明6种算法捕捉的信息高度重叠",
+    "最优融合中E5c权重占比约43-50%，其他算法贡献较小",
+    "k=50（邻居数）在所有算法中一致最优，说明更多邻居的平滑效果重要",
+    "双色球整体AUC高于大乐透（数据量更大：3413 vs 2833期）"
+  ]
+}

@@ -476,6 +476,7 @@ def run_e5_experiment(lottery_type: str, sub_experiments: List[str] = None):
         "e5b": ("research.experiment.e5b_autoencoder", "run_e5b"),
         "e5d": ("research.experiment.e5d_shapelet", "run_e5d"),
         "e5e": ("research.experiment.e5e_contrastive", "run_e5e"),
+        "e5g": ("research.experiment.e5g_adaptive_features", "run_e5g"),
     }
 
     if sub_experiments is None:

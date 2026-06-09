@@ -1,0 +1,246 @@
+{
+  "G1": {
+    "total_combos": 26,
+    "by_order": {
+      "2元组": {
+        "n_combos": 10,
+        "n_situations": 90,
+        "avg_situations_per_combo": 9.0,
+        "total_observations": 26310,
+        "count_percentiles": {
+          "min": 3,
+          "p25": 55,
+          "median": 123,
+          "p75": 454,
+          "max": 948
+        },
+        "singleton_rate": NaN
+      },
+      "3元组": {
+        "n_combos": 10,
+        "n_situations": 260,
+        "avg_situations_per_combo": 26.0,
+        "total_observations": 26310,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 15,
+          "median": 32,
+          "p75": 108,
+          "max": 717
+        },
+        "singleton_rate": 0.0038
+      },
+      "4元组": {
+        "n_combos": 5,
+        "n_situations": 347,
+        "avg_situations_per_combo": 69.4,
+        "total_observations": 13155,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 4,
+          "median": 11,
+          "p75": 33,
+          "max": 517
+        },
+        "singleton_rate": 0.0029
+      },
+      "5元组": {
+        "n_combos": 1,
+        "n_situations": 163,
+        "avg_situations_per_combo": 163.0,
+        "total_observations": 2631,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 2,
+          "median": 4,
+          "p75": 11,
+          "max": 375
+        },
+        "singleton_rate": 0.0061
+      }
+    }
+  },
+  "G2": {
+    "total_combos": 26,
+    "by_order": {
+      "2元组": {
+        "n_combos": 10,
+        "n_situations": 250,
+        "avg_situations_per_combo": 25.0,
+        "total_observations": 26310,
+        "count_percentiles": {
+          "min": 3,
+          "p25": 36,
+          "median": 78,
+          "p75": 157,
+          "max": 347
+        },
+        "singleton_rate": NaN
+      },
+      "3元组": {
+        "n_combos": 10,
+        "n_situations": 1174,
+        "avg_situations_per_combo": 117.4,
+        "total_observations": 26310,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 5,
+          "median": 12,
+          "p75": 30,
+          "max": 216
+        },
+        "singleton_rate": 0.0009
+      },
+      "4元组": {
+        "n_combos": 5,
+        "n_situations": 2062,
+        "avg_situations_per_combo": 412.4,
+        "total_observations": 13155,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 1,
+          "median": 3,
+          "p75": 7,
+          "max": 130
+        },
+        "singleton_rate": 0.0005
+      },
+      "5元组": {
+        "n_combos": 1,
+        "n_situations": 941,
+        "avg_situations_per_combo": 941.0,
+        "total_observations": 2631,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 3,
+          "max": 79
+        },
+        "singleton_rate": 0.0011
+      }
+    }
+  },
+  "G3": {
+    "total_combos": 26,
+    "by_order": {
+      "2元组": {
+        "n_combos": 10,
+        "n_situations": 490,
+        "avg_situations_per_combo": 49.0,
+        "total_observations": 26310,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 23,
+          "median": 47,
+          "p75": 78,
+          "max": 245
+        },
+        "singleton_rate": 0.002
+      },
+      "3元组": {
+        "n_combos": 10,
+        "n_situations": 2960,
+        "avg_situations_per_combo": 296.0,
+        "total_observations": 26310,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 3,
+          "median": 6,
+          "p75": 12,
+          "max": 131
+        },
+        "singleton_rate": 0.0003
+      },
+      "4元组": {
+        "n_combos": 5,
+        "n_situations": 5056,
+        "avg_situations_per_combo": 1011.2,
+        "total_observations": 13155,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 1,
+          "median": 2,
+          "p75": 3,
+          "max": 74
+        },
+        "singleton_rate": 0.0002
+      },
+      "5元组": {
+        "n_combos": 1,
+        "n_situations": 1826,
+        "avg_situations_per_combo": 1826.0,
+        "total_observations": 2631,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "max": 36
+        },
+        "singleton_rate": 0.0005
+      }
+    }
+  },
+  "G4": {
+    "total_combos": 26,
+    "by_order": {
+      "2元组": {
+        "n_combos": 10,
+        "n_situations": 8784,
+        "avg_situations_per_combo": 878.4,
+        "total_observations": 26310,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 1,
+          "median": 2,
+          "p75": 4,
+          "max": 22
+        },
+        "singleton_rate": 0.0001
+      },
+      "3元组": {
+        "n_combos": 10,
+        "n_situations": 23799,
+        "avg_situations_per_combo": 2379.9,
+        "total_observations": 26310,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "max": 5
+        },
+        "singleton_rate": 0.0
+      },
+      "4元组": {
+        "n_combos": 5,
+        "n_situations": 13072,
+        "avg_situations_per_combo": 2614.4,
+        "total_observations": 13155,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "max": 2
+        },
+        "singleton_rate": 0.0001
+      },
+      "5元组": {
+        "n_combos": 1,
+        "n_situations": 2629,
+        "avg_situations_per_combo": 2629.0,
+        "total_observations": 2631,
+        "count_percentiles": {
+          "min": 1,
+          "p25": 1,
+          "median": 1,
+          "p75": 1,
+          "max": 2
+        },
+        "singleton_rate": 0.0004
+      }
+    }
+  }
+}

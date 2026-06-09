@@ -1,0 +1,61 @@
+{
+  "lottery_type": "shuangseqiu",
+  "n_periods": 20,
+  "budget_bets": 10,
+  "total_cost": 360,
+  "total_prize": 135,
+  "total_net": -225,
+  "roi": -0.625,
+  "best_red_hit_distribution": {
+    "3": 2,
+    "2": 6,
+    "1": 9,
+    "0": 3
+  },
+  "max_red_hit": 3,
+  "max_red_hit_period": 2908,
+  "periods_with_4plus_red": 0,
+  "periods_with_3_red": 2,
+  "avg_best_red_hit": 1.35,
+  "all_ticket_hit_distribution": {
+    "3r1b": 3,
+    "3r0b": 12,
+    "2r1b": 3,
+    "2r0b": 27,
+    "1r1b": 9,
+    "1r0b": 72,
+    "0r1b": 9,
+    "0r0b": 45
+  },
+  "max_single_prize": 30,
+  "max_prize_period": 2913,
+  "avg_e5_cand_sizes": [
+    4.8,
+    8.1,
+    9.5,
+    9.4,
+    8.4,
+    4.9
+  ],
+  "avg_e7_cand_sizes": [
+    4.3,
+    7.5,
+    9.2,
+    9.4,
+    8.2,
+    4.9
+  ],
+  "avg_valid_combos": 52040.6,
+  "median_valid_combos": 60964.5,
+  "combo_reduction_rate": 0.554,
+  "rolling_hits": [
+    {
+      "start_idx": 2901,
+      "end_idx": 2920,
+      "max_red_hit": 3,
+      "avg_red_hit": 1.35,
+      "prize": 135,
+      "roi": -0.625
+    }
+  ]
+}

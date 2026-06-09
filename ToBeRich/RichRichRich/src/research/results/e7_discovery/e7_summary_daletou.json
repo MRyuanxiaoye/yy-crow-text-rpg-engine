@@ -1,0 +1,11 @@
+{
+  "lottery_type": "daletou",
+  "n_constraints_total": 71,
+  "n_constraints_selected": 30,
+  "best_hdi_level": "hdi_90",
+  "best_efficiency": 0.2968,
+  "best_reduction": 0.7163,
+  "best_survival": 0.4144,
+  "e6_efficiency": 0.2284,
+  "improvement_vs_e6": 0.0684
+}
