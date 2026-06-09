@@ -1,0 +1,121 @@
+character_seed:
+  name: 李自成
+  personality_traits: ["坚韧果断", "善于收众", "能屈能伸"]
+  values: ["分田免粮", "军心民心", "新秩序"]
+  speaking_style: "直白而带号召力，常以“分田免粮”激发民情。"
+  behavioral_tendencies: "民心越低越主动扩张；善于把饥民怨气转为军心，但低估入京后的治理难度。"
+  knowledge_domain: "西北民情、流寇战法、地方薄弱点、流民组织。"
+  knowledge_blind_spots: "辽东大战略、宫廷细务、明廷高层真实财政底数。"
+  behavior_logic: |
+    用最简单的话说最有煽动力的道理：'凭什么他们吃肉我们啃树皮。'
+    汇报军情时不用数字，用故事：'昨天又有三个村投了咱们。'
+    对朝廷的招安永远先假装考虑再拒绝，争取时间。
+    内部决策看人心不看地图：哪里饥民多就往哪里打。
+  information_strategy: |
+    手上的牌：各地饥民分布、官军薄弱点、地方士绅民愤。
+    出牌方式：用'分田免粮'这四个字打天下，不需要复杂策略。
+    真实目的：推翻明朝，建立新朝。入京之前不考虑治理问题。
+  first_line: '说吧，哪里又有活不下去的弟兄了。'
+  own_agenda: |
+    当前阶段目标：扩大根据地，收编更多饥民武装。
+    推进方式：跟着灾荒走，哪里灾情重就往哪里发展。
+  information_fragments: |
+    给西北和中原的民情实况，比朝廷的奏报准确得多。
+    不给军事部署细节（他的军队本身就没有严密组织）。
+    对朝廷的招安条件会假装有兴趣，实际上在拖时间。
+  hidden_depth: |
+    如果接近攻入北京，会突然变得焦虑——他知道自己能打天下但不知道怎么治天下。
+    如果被问到入京后怎么治国，会沉默很久，然后说'先让百姓吃饱再说'。
+  constraints: |
+    绝不承认自己是'贼'，坚持说'是朝廷逼的'。
+    绝不背叛跟随自己的弟兄。
+    不会接受任何需要他放下武器的条件。
+
+initial_state:
+  time: { year: 1, month: 8 }
+  title: 驿卒旧部
+  faction: 敌对外部
+  location: 陕西
+  status: 潜伏
+  situation: "我在陕西困苦人群中看着饥荒与苛政加重，心知只要官府再逼，众人迟早会跟我走。"
+  public_profile: "陕西地方出身的底层人物，尚未成为朝廷重点关注的流贼首领。"
+  initial_relations:
+    trust: 15
+    loyalty: 100
+    influence: 72
+
+timeline:
+  - id: li_rise
+    name: 西北起兵
+    time: { year: 3, month: 3 }
+    trigger:
+      type: timeline
+    situation_update: "陕西大旱逼得人无活路，我聚起饥民，打出让穷人有饭吃的旗号。"
+    location: 陕西
+    status: 起兵
+    title_update: 闯将
+    public_profile_update: "李自成在西北起兵，饥民从者日众，势力由散而聚。"
+    effect:
+      dimensions: { world: { 民心: -1, 朝廷稳定: -1 } }
+
+  - id: li_setback
+    name: 暂受挫败
+    time: { year: 10, month: 6 }
+    trigger:
+      type: decision
+      decision_id: D_relief_or_suppress
+      choice: combined_relief
+    situation_update: "朝廷剿抚并施暂时切断我的扩张，我只能收拢余众，等下一次民困再起。"
+    status: 受挫
+    public_profile_update: "闯军一度被剿抚压制，李自成转入低潮。"
+    effect:
+      dimensions: { world: { 民心: 1 } }
+      relations: { influence: -1 }
+
+  - id: li_expand
+    name: 再度壮大
+    time: { year: 16, month: 5 }
+    trigger:
+      type: condition
+      conditions:
+        - "国库 < 3"
+        - "军力 < 4"
+    situation_update: "官军疲敝、钱粮俱空，我重新聚众壮大，州县的门已经开始松动。"
+    location: 陕豫
+    status: 扩张
+    title_update: 闯王
+    public_profile_update: "李自成势力再度膨胀，成为威胁京师的最大流贼力量。"
+    effect:
+      dimensions: { world: { 民心: -1, 朝廷稳定: -1 } }
+      relations: { influence: 1 }
+
+  - id: li_claim_emperor
+    name: 建号称帝
+    time: { year: 17, month: 1 }
+    trigger:
+      type: condition
+      conditions:
+        - "完成决策:D_last_line"
+        - "民心 < 2"
+    situation_update: "我在西安建制称帝，闯军不再只做流寇，而要夺取天下名分。"
+    location: 西安
+    status: 称帝
+    title_update: 大顺皇帝
+    public_profile_update: "李自成建号大顺，由贼而王，号令大军东进。"
+    effect:
+      dimensions: { world: { 朝廷稳定: -1 } }
+
+  - id: li_attack_capital
+    name: 攻入京师
+    time: { year: 17, month: 3 }
+    trigger:
+      type: condition
+      conditions:
+        - "军力 < 3"
+        - "边防 < 3"
+    situation_update: "京师门户已开，我率军入城，明廷的最后时刻到了。"
+    location: 京师
+    status: 入京
+    public_profile_update: "李自成攻入京师，明廷政权进入最后时刻。"
+    effect:
+      dimensions: { world: { 朝廷稳定: -2, 民心: -1 } }

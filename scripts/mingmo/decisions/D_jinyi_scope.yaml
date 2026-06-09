@@ -1,0 +1,25 @@
+decision_id: D_jinyi_scope
+id: D_jinyi_scope
+name: 锦衣卫权限边界
+chapter: ch03_yuan
+context: 袁案后情报体系被推到台前。是扩大密侦，还是依法收束，影响朝堂生态与决策质量。
+options:
+  - key: expand_secret_police
+    label: 扩权缉察，先求控局
+    effect:
+      朝廷稳定: 6
+      民心: -7
+      权势: 6
+  - key: legal_limit
+    label: 明定边界，归法司统辖
+    effect:
+      民心: 5
+      朝廷稳定: -4
+      帝王威望: 2
+  - key: dual_track
+    label: 大案特办，小案归刑部
+    effect:
+      朝廷稳定: 2
+      民心: 1
+      国库: -2
+allow_free_input: false

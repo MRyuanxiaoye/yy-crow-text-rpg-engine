@@ -1,0 +1,5 @@
+id: test
+name: 测试剧本
+player_role: 国王
+description: 用于引擎验证的最小剧本
+first_chapter: ch01_test

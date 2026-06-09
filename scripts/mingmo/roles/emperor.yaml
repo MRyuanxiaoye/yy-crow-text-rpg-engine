@@ -1,0 +1,726 @@
+schema_version: '2.0'
+world_script_id: mingmo
+role:
+  role_id: emperor
+  name: 崇祯皇帝
+  source_npc_id: ''
+  identity: 大明天子，崇祯朝最高决策者
+  perspective: 全局
+  start_location: 乾清宫东暖阁
+  initial_scene:
+    context: 先帝梓宫未远，魏党余脉仍在厂卫与地方要津。内阁、司礼监和老臣同时入见，人人都在试探新君的刀该落向何处。
+    present_npcs:
+    - wen_tiren
+    - sun_chengzong
+    - wang_chengen
+    immediate_choices_hint:
+    - 处置魏党余脉
+    - 重整言路与厂卫
+    - 询问辽东与国库实情
+player_goal:
+  core_goal: 在崇祯十七年内守住大明法统，化解财政、边防、民变与党争的连锁崩塌。
+  success_definition: 京师或合法中枢未失，至少两条危机线被压低，且国库、民心、军力中至少两项维持在可续命水平。
+  default_failure_trajectory:
+    summary: 若玩家长期无作为，财政、军心、民心与政治信任会互相拖垮，角色目标被历史默认线吞没。
+    stages:
+    - phase_id: failure_stage_1
+      name: 隐患显现
+      trigger_hint: 早期里程碑到来或关键维度降至4。
+      description: 奏报、流言或军情开始互相矛盾，角色必须牺牲一部分目标止血。
+    - phase_id: failure_stage_2
+      name: 局势失控
+      trigger_hint: 中期多个世界维度低于3，或角色核心维度跌破警戒。
+      description: NPC开始按自身目标主动行动，玩家不再能用单一命令统合局面。
+    - phase_id: failure_stage_3
+      name: 默认失败
+      trigger_hint: 底线条件被击穿或崇祯十七年三月到达。
+      description: 京师、边防、内阁、义军或宫禁之一彻底崩坏，进入失败或苦涩结算。
+initial_agenda:
+  - id: agenda_weigui_cleanup
+    description: '处置魏忠贤余党——朝中仍有魏党残余势力，必须做出清洗力度的决定'
+    urgency: urgent
+    consequence: '拖延不决将使朝臣对新君魄力产生质疑，派系势力持续膨胀'
+    relevant_npcs: ['温体仁', '王承恩', '锦衣卫指挥使', '刑部尚书']
+  - id: agenda_liaodong_defense
+    description: '辽东军情紧急——边军粮饷拖欠数月，宁远前线急需定策'
+    urgency: urgent
+    consequence: '欠饷过久边军可能哗变，士气与兵力同时下滑'
+    relevant_npcs: ['袁崇焕', '孙承宗', '兵部尚书', '户部尚书']
+  - id: agenda_cabinet_vacancy
+    description: '内阁空缺——首辅人选悬而未决，朝政运转迟缓'
+    urgency: normal
+    consequence: '无首辅则六部各行其是，政令难以统一'
+    relevant_npcs: ['温体仁', '周延儒', '吏部尚书']
+  - id: agenda_famine_report
+    description: '陕西灾报——陕西连年旱灾，流民渐成隐患'
+    urgency: normal
+    consequence: '若不及时赈济，流民可能被裹挟为流贼'
+    relevant_npcs: ['户部尚书', '工部尚书']
+opening:
+  icebreaker_hint: "新君初登大宝，魏党余脉盘踞，内阁、司礼监同时入见试探刀锋。"
+  action_modes:
+    - mode_id: status_briefing
+      label: "查阅奏章急报"
+      icon: "📋"
+      description: "翻阅内阁呈上的折子与各方急报"
+      route: status_briefing
+    - mode_id: court_session
+      label: "上朝议事"
+      icon: "🏛️"
+      description: "召集在场大臣当面议事"
+      route: court_session
+      route_params:
+        topic: "先帝驾崩后的朝政安排"
+        target_npcs: ["温体仁", "孙承宗", "王承恩"]
+    - mode_id: npc_select
+      label: "召见近臣密谈"
+      icon: "🤝"
+      description: "私下召见一人，听取不便公开的消息"
+      route: npc_select
+pressure_sources:
+  decay:
+  - pressure_id: P_emperor_treasury_drain
+    dimension: 财政
+    rate: -1
+    per: 月
+    floor: 0
+    narrative: 边饷、赈灾与宫廷运转持续吞噬国库。
+    counterplay:
+    - 清丈田亩
+    - 裁撤冗费
+    - 向商帮借贷
+  - pressure_id: P_emperor_public_patience
+    dimension: 民心
+    rate: -1
+    per: 月
+    floor: 1
+    narrative: 灾荒与加派会不断消磨百姓忍耐。
+    counterplay:
+    - 减免税赋
+    - 开仓赈济
+    - 惩办贪腐
+  milestones:
+  - pressure_id: P_jisi_invasion
+    at:
+      year: 2
+      month: 11
+    event_id: E_jisi_invasion
+    description: 己巳之变必然逼近京师与边防。
+    can_be_prepared_for: true
+  - pressure_id: P_shaanxi_famine
+    at:
+      year: 3
+      month: 3
+    event_id: E_shaanxi_famine
+    description: 陕西大旱会把民困推成兵火。
+    can_be_prepared_for: true
+  - pressure_id: P_songjin_battle
+    at:
+      year: 14
+      month: 2
+    event_id: E_songjin_battle
+    description: 松锦大战是边防与国力的一次总账。
+    can_be_prepared_for: true
+  - pressure_id: P_li_march
+    at:
+      year: 17
+      month: 1
+    event_id: E_li_zicheng_march
+    description: 闯军东进会迫使所有角色进入终局。
+    can_be_prepared_for: true
+  reactions:
+  - pressure_id: P_emperor_low_treasury
+    trigger:
+      all:
+      - dimension: 财政
+        operator: '<='
+        value: 2
+    event_id: T_financial_crisis
+    cooldown_units: 3
+    description: 国库过低会触发欠饷、赈灾和官僚停摆的连锁反应。
+  - pressure_id: P_emperor_low_people
+    trigger:
+      all:
+      - dimension: 民心
+        operator: '<='
+        value: 2
+    event_id: T_civil_unrest
+    cooldown_units: 3
+    description: 民心过低时，地方会把灾荒转化为民变。
+role_dimensions:
+  definitions:
+  - id: 武力
+    name: 武力
+    range:
+    - 0
+    - 10
+    initial: 4
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 个人战斗、军事指挥或武力威慑能力。
+  - id: 智谋
+    name: 智谋
+    range:
+    - 0
+    - 10
+    initial: 5
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 分析局势、谋划策略和识破计谋的能力。
+  - id: 口才
+    name: 口才
+    range:
+    - 0
+    - 10
+    initial: 4
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 说服、谈判和公开表达能力。
+  - id: 意志
+    name: 意志
+    range:
+    - 0
+    - 10
+    initial: 6
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 承压、坚持、抗诱惑和精神韧性。
+  - id: 感知
+    name: 感知
+    range:
+    - 0
+    - 10
+    initial: 5
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 观察、直觉、侦查和察觉异常能力。
+  - id: 魅力
+    name: 魅力
+    range:
+    - 0
+    - 10
+    initial: 6
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 个人吸引力、亲和力和社交影响力。
+  world_dimension_overrides:
+    财政:
+      set: 5
+    兵力:
+      set: 5
+    补给:
+      set: 4
+    情报:
+      set: 3
+    民心:
+      set: 5
+    士气:
+      set: 5
+    派系势力:
+      set: 5
+npc_relationships:
+- npc_id: sun_chengzong
+  numeric:
+    好感度: 7
+    忠诚度: 8
+    利益绑定: 3
+  tags:
+  - 旧交
+  stance: ally
+  relationship_summary: 老臣可托，但常以稳健谏阻急令。
+  reveal_policy: visible
+- npc_id: wang_chengen
+  numeric:
+    好感度: 8
+    忠诚度: 9
+    利益绑定: 5
+  tags:
+  - 旧交
+  stance: ally
+  relationship_summary: 近侍忠谨，是宫禁与密报入口。
+  reveal_policy: visible
+- npc_id: yuan_chonghuan
+  numeric:
+    好感度: 6
+    忠诚度: 8
+    利益绑定: 2
+  tags:
+  - 旧交
+  stance: neutral
+  relationship_summary: 边将有功也有疑，信任结构脆弱。
+  reveal_policy: visible
+- npc_id: wen_tiren
+  numeric:
+    好感度: 4
+    忠诚度: 5
+    利益绑定: 3
+  tags:
+  - 旧交
+  - 恩怨
+  stance: rival
+  relationship_summary: 可用其制衡群臣，但私心难测。
+  reveal_policy: partial
+- npc_id: zhou_yanru
+  numeric:
+    好感度: 4
+    忠诚度: 5
+    利益绑定: 4
+  tags:
+  - 旧交
+  stance: neutral
+  relationship_summary: 首辅善调和，也可能避责。
+  reveal_policy: visible
+- npc_id: wu_sangui
+  numeric:
+    好感度: 5
+    忠诚度: 6
+    利益绑定: 3
+  tags:
+  - 旧交
+  stance: neutral
+  relationship_summary: 守关关键，忠诚受饷银与局势影响。
+  reveal_policy: visible
+- npc_id: huang_taiji
+  numeric:
+    好感度: 1
+    忠诚度: 0
+    利益绑定: 0
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 边外雄主，以反间和攻势压迫大明。
+  reveal_policy: visible
+- npc_id: dorgon
+  numeric:
+    好感度: 1
+    忠诚度: 0
+    利益绑定: 0
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 冷静等待入关时机。
+  reveal_policy: visible
+- npc_id: li_zicheng
+  numeric:
+    好感度: 1
+    忠诚度: 0
+    利益绑定: 0
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 民变核心，动摇朝廷合法性。
+  reveal_policy: visible
+- npc_id: zhang_xianzhong
+  numeric:
+    好感度: 1
+    忠诚度: 0
+    利益绑定: 0
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 西营反复，地方兵祸源头。
+  reveal_policy: visible
+- npc_id: chen_yuanyuan
+  numeric:
+    好感度: 4
+    忠诚度: 3
+    利益绑定: 1
+  tags:
+  - 亲缘
+  stance: unknown
+  relationship_summary: 她本非国策人物，却可能牵动吴三桂。
+  reveal_policy: partial
+protagonist_npcs:
+- npc_id: yuan_chonghuan
+  role_id: frontier_general
+  name: 边关将领
+  goal: 守住辽东与山海关，并争取朝廷信任。
+  priority: high
+  behavior_driver:
+  - phase: 早期
+    condition:
+      time_before:
+        year: 3
+        month: 6
+    action: 向中枢索饷并加强边防自主权。
+    world_impact:
+      兵力: -1
+    player_impact: 玩家会收到此人主动推进目标线的消息，若无回应会改变可选方案。
+  - phase: 中后期
+    condition:
+      dimension: 兵力
+      operator: '<='
+      value: 4
+    action: 以保境为名扩大统兵权限。
+    world_impact:
+      兵力: -1
+    player_impact: 该角色目标线会挤压玩家资源，并可能改变终局阵营格局。
+  interaction_with_player:
+    hostility: medium
+    negotiable: true
+    alliance_conditions:
+    - 共同敌人威胁过高
+    - 给予关键资源或名分
+    betrayal_conditions:
+    - 利益绑定低于2
+    - 玩家连续损害其核心目标
+- npc_id: zhou_yanru
+  role_id: grand_secretary
+  name: 内阁首辅
+  goal: 稳住内阁、财政与皇帝信任，避免成为替罪羊。
+  priority: high
+  behavior_driver:
+  - phase: 早期
+    condition:
+      time_before:
+        year: 3
+        month: 6
+    action: 组织廷议，试图把危机纳入内阁流程。
+    world_impact:
+      派系势力: 1
+    player_impact: 玩家会收到此人主动推进目标线的消息，若无回应会改变可选方案。
+  - phase: 中后期
+    condition:
+      dimension: 派系势力
+      operator: '>='
+      value: 6
+    action: 将责任转移给政敌或要求非常授权。
+    world_impact:
+      派系势力: 1
+    player_impact: 该角色目标线会挤压玩家资源，并可能改变终局阵营格局。
+  interaction_with_player:
+    hostility: medium
+    negotiable: true
+    alliance_conditions:
+    - 共同敌人威胁过高
+    - 给予关键资源或名分
+    betrayal_conditions:
+    - 利益绑定低于2
+    - 玩家连续损害其核心目标
+- npc_id: li_zicheng
+  role_id: rebel_leader
+  name: 起义领袖
+  goal: 聚众争粮并把民变转为新秩序。
+  priority: critical
+  behavior_driver:
+  - phase: 早期
+    condition:
+      time_before:
+        year: 3
+        month: 6
+    action: 趁灾荒吸纳流民并攻打州县粮仓。
+    world_impact:
+      民心: -1
+    player_impact: 玩家会收到此人主动推进目标线的消息，若无回应会改变可选方案。
+  - phase: 中后期
+    condition:
+      dimension: 民心
+      operator: '<='
+      value: 4
+    action: 建号称王或东进京师。
+    world_impact:
+      民心: -1
+    player_impact: 该角色目标线会挤压玩家资源，并可能改变终局阵营格局。
+  interaction_with_player:
+    hostility: high
+    negotiable: true
+    alliance_conditions:
+    - 共同敌人威胁过高
+    - 给予关键资源或名分
+    betrayal_conditions:
+    - 利益绑定低于2
+    - 玩家连续损害其核心目标
+- npc_id: wang_chengen
+  role_id: chief_eunuch
+  name: 大宦官
+  goal: 掌控宫禁情报，在忠君与保权之间行动。
+  priority: medium
+  behavior_driver:
+  - phase: 早期
+    condition:
+      time_before:
+        year: 3
+        month: 6
+    action: 扩大厂卫探报，截取宫禁与外朝消息。
+    world_impact:
+      派系势力: 0
+    player_impact: 玩家会收到此人主动推进目标线的消息，若无回应会改变可选方案。
+  - phase: 中后期
+    condition:
+      dimension: 派系势力
+      operator: '>='
+      value: 6
+    action: 以密报左右皇帝判断，触发外朝反弹。
+    world_impact:
+      派系势力: 1
+    player_impact: 该角色目标线会挤压玩家资源，并可能改变终局阵营格局。
+  interaction_with_player:
+    hostility: medium
+    negotiable: true
+    alliance_conditions:
+    - 共同敌人威胁过高
+    - 给予关键资源或名分
+    betrayal_conditions:
+    - 利益绑定低于2
+    - 玩家连续损害其核心目标
+role_events:
+  timeline:
+  - event_id: RE_emperor_first_purge
+    name: 乾清新政定调
+    at:
+      year: 1
+      month: 9
+    severity: major
+    description: 魏党余脉处置决定新君威望与朝局承压方式。
+    narrative_hint: 从崇祯皇帝视角呈现为直接压力，而非客观史料。
+    involved_npcs:
+    - wen_tiren
+    - wang_chengen
+    recommended_responses:
+    - 大索朝野
+    - 诛首恶
+    - 暂缓追究
+    default_effects:
+      world_dimensions: {}
+      role_dimensions: {}
+      npc_relation_deltas: {}
+      information_added:
+      - I_emperor_first_purge
+  conditional:
+  - event_id: RE_emperor_court_isolation
+    name: 孤君临朝
+    trigger:
+      all:
+      - dimension: 派系势力
+        operator: '>='
+        value: 8
+    severity: critical
+    description: 外朝与内廷都开始只报对自己有利的消息。
+    recommended_responses:
+    - 谈判缓冲
+    - 强硬处置
+    - 寻找盟友
+    default_effects:
+      world_dimensions: {}
+      role_dimensions: {}
+      npc_relation_deltas: {}
+  random:
+  - event_id: RR_emperor_private_memorial
+    name: 密折越级
+    weight: 2
+    conditions: []
+    severity: minor
+    description: 某位地方官越过内阁密奏灾情或兵变。
+    default_effects:
+      npc_relation_deltas: {}
+endings:
+  bottom_lines:
+  - bottom_line_id: BL_emperor_capital_falls
+    name: 京师陷落
+    condition:
+      all:
+      - dimension: 派系势力
+        operator: '>='
+        value: 10
+    ending_id: END_emperor_meishan
+    warning_threshold:
+      dimension: 派系势力
+      operator: '>='
+      value: 8
+    description: 京师陷落或中枢秩序归零，皇帝已失去继续治理天下的基础。
+  achievement_checks:
+  - check_id: ACH_emperor_revival
+    name: 中兴条件
+    condition:
+      all:
+      - dimension: 财政
+        operator: '>='
+        value: 6
+      - dimension: 兵力
+        operator: '>='
+        value: 6
+      - dimension: 民心
+        operator: '>='
+        value: 5
+    unlocks:
+    - END_emperor_revival
+  - check_id: ACH_emperor_reform
+    name: 改革条件
+    condition:
+      all:
+      - dimension: 民心
+        operator: '>='
+        value: 7
+      - dimension: 派系势力
+        operator: '<='
+        value: 5
+    unlocks:
+    - END_emperor_reform
+  catalog:
+  - ending_id: END_emperor_revival
+    tier: gold
+    name: 中兴大明
+    priority: 100
+    conditions:
+      all:
+      - dimension: 财政
+        operator: '>='
+        value: 6
+      - dimension: 兵力
+        operator: '>='
+        value: 6
+      - dimension: 民心
+        operator: '>='
+        value: 5
+    description: 你以非常手段稳住财赋与军政，内外危机被逐步化解，大明在断崖边回身，另开新局。
+    epilogue_hooks:
+    - 孙承宗与袁崇焕去向
+    - 新政遗产
+    - 边防余波
+  - ending_id: END_emperor_reform
+    tier: gold
+    name: 改革新政
+    priority: 95
+    conditions:
+      all:
+      - dimension: 民心
+        operator: '>='
+        value: 7
+      - dimension: 派系势力
+        operator: '<='
+        value: 5
+    description: 你以制度革新重整官僚与财赋，旧朝虽危，新政却开出另一条历史支流。
+    epilogue_hooks:
+    - 政务院争议
+    - 士林评价
+    - 旧制反扑
+  - ending_id: END_emperor_southern_court
+    tier: silver
+    name: 南渡偏安
+    priority: 80
+    conditions:
+      all:
+      - dimension: 兵力
+        operator: '<='
+        value: 4
+      - dimension: 财政
+        operator: '>='
+        value: 4
+    description: 北地失守已难挽回，你南迁重建中枢，江左仍悬日月旗，但山河从此南北分裂。
+    epilogue_hooks:
+    - 北地百姓
+    - 江南财政
+    - 正统争论
+  - ending_id: END_emperor_abdication
+    tier: mixed
+    name: 禅让求和
+    priority: 60
+    conditions:
+      all:
+      - dimension: 派系势力
+        operator: '>='
+        value: 8
+      - dimension: 民心
+        operator: '>='
+        value: 3
+    description: 你以帝位换一线生机，刀兵暂歇，然天下对正统与尊严的争论终难平息。
+    epilogue_hooks:
+    - 退位余生
+    - 新政权承诺
+    - 臣民责难
+  - ending_id: END_emperor_tyrant
+    tier: failure
+    name: 暴君覆灭
+    priority: 20
+    conditions:
+      all:
+      - dimension: 民心
+        operator: '<='
+        value: 1
+      - dimension: 派系势力
+        operator: '>='
+        value: 9
+    description: 苛政与猜忌耗尽最后信任，众叛亲离之下，皇权在怒潮中被彻底吞没。
+    epilogue_hooks:
+    - 清算名单
+    - 宫禁崩塌
+    - 后世恶名
+  - ending_id: END_emperor_meishan
+    tier: failure
+    name: 煤山殉国
+    priority: 10
+    conditions:
+      all:
+      - dimension: 民心
+        operator: '<='
+        value: 2
+      - dimension: 兵力
+        operator: '<='
+        value: 3
+    description: 京师陷落，宗社难支。你以一死殉国，史书留名，王朝却在风雨中倾覆。
+    epilogue_hooks:
+    - 王承恩随主
+    - 百官散亡
+    - 甲申史笔
+narration_style:
+  person: second_person
+  player_address: 陛下
+  narrator_voice: 冷峻史笔，近臣奏报与御前独白交替，强调帝王决断的孤独与代价
+  information_delivery:
+    fallback_enabled: true
+    fallback_after_units: 3
+    fallback_style: 以急报、密折、军报、传闻或营中对话自然补足信息。
+  taboo:
+  - 不要直接剧透隐藏真相
+  - 不要替玩家做价值判断
+  - 不要把历史必然写成玩家无能
+information_pool:
+- info_id: I_emperor_treasury_emptying
+  type: persistent
+  content: 户部账册显示辽饷、赈灾与京营欠饷已无法同时满足。
+  known_by:
+  - zhou_yanru
+  - wang_chengen
+  delivery_priority: urgent
+  expires_after_units: null
+  delivered_by: []
+- info_id: I_emperor_yuan_rumors
+  type: fact
+  content: 袁崇焕案中军情、言官弹章和后金反间的线索彼此冲突。
+  known_by:
+  - yuan_chonghuan
+  - wen_tiren
+  delivery_priority: high
+  expires_after_units: null
+  delivered: false
+- info_id: I_emperor_wu_hesitation
+  type: escalating
+  content: 山海关守将既可为屏障，也可能成为最后筹码。
+  known_by:
+  - wu_sangui
+  - chen_yuanyuan
+  delivery_priority: high
+  expires_after_units: null
+  severity: 1
+  escalation:
+    1: 山海关守将既可为屏障，也可能成为最后筹码。
+    2: 该线索开始影响NPC判断。
+    3: 若继续忽视，将触发被动响应。
+  max_severity_event: RE_emperor_court_isolation
+  delivered_by: []
+consequence_seed_defaults:
+  enabled: true
+  chances_by_severity:
+    low: 2
+    medium: 3
+    high: 4
+  check_points:
+  - time_advance
+  - major_decision
+  - before_ending
+  trigger_policy: random_one
+loader_hints:
+  merge_strategy:
+    world_dimensions: 先读取 world.initial，再应用 role.world_dimension_overrides。
+    npc_relationships: 按 npc_id 合并 world.global_npc_pool 与 role.npc_relationships；chongzhen 表示未入全局NPC池的皇帝前主角线。
+    events: world timeline/condition/random 与 role_events 分池加载，触发后统一进入被动响应。
+  stable_ids_required:
+  - event_id
+  - npc_id
+  - role_id
+  - info_id
+  - ending_id

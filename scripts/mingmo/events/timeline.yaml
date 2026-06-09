@@ -1,0 +1,90 @@
+# 主线时间锚点事件（按时间排列，必然发生）
+timeline:
+  - id: "E_jisi_invasion"
+    type: timeline
+    name: "己巳之变"
+    severity: critical
+    time: { year: 2, month: 11 }
+    description: "后金绕道蒙古入关，兵锋直逼京师"
+    narrative_hint: "凌晨，兵部尚书浑身是汗闯入寝宫——'陛下！蓟门急报！'"
+    forced_npcs: ["皇太极", "袁崇焕"]
+    player_options_hint:
+      - "固守京师待援"
+      - "出城截击"
+      - "急召袁崇焕回援"
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 边防: -20, 民心: -15 }
+      narrative: "京畿三府沦陷，百姓流离失所，朝野震动"
+
+  - id: "E_yuan_arrest"
+    type: timeline
+    name: "袁崇焕下狱"
+    severity: critical
+    time: { year: 2, month: 12 }
+    description: "袁崇焕被押入诏狱，朝中议论纷纷"
+    narrative_hint: "锦衣卫指挥使入殿禀报：'袁崇焕已押入诏狱，百官联名上疏。'"
+    forced_npcs: ["袁崇焕", "温体仁"]
+    prerequisite_events: ["E_jisi_invasion"]
+    default_consequence:
+      delay_time_units: 3
+      effects:
+        metrics: { 边防: -10, 朝廷稳定: -8 }
+      narrative: "辽东将士闻袁帅下狱，军心浮动"
+
+  - id: "E_shaanxi_famine"
+    type: timeline
+    name: "陕西大旱"
+    severity: critical
+    time: { year: 3, month: 3 }
+    description: "陕西连年大旱，饥民揭竿而起"
+    narrative_hint: "陕西巡抚八百里加急：'赤地千里，饥民已聚众数万！'"
+    forced_npcs: ["李自成"]
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 民心: -15, 国库: -10 }
+      narrative: "流民四起，陕豫交界已成无人区"
+
+  - id: "E_huang_taiji_reform"
+    type: timeline
+    name: "后金改国号"
+    severity: moderate
+    time: { year: 9, month: 4 }
+    description: "皇太极改国号为清，称帝建元"
+    narrative_hint: "边关探马回报：'奴酋已改国号为清，自称皇帝，野心昭然。'"
+    forced_npcs: ["皇太极", "多尔衮"]
+    default_consequence:
+      delay_time_units: 3
+      effects:
+        metrics: { 边防: -8, 朝廷稳定: -5 }
+      narrative: "清国正式建立，辽东局势更加严峻"
+
+  - id: "E_songjin_battle"
+    type: timeline
+    name: "松锦大战"
+    severity: critical
+    time: { year: 14, month: 2 }
+    description: "明清在松山锦州展开决战"
+    narrative_hint: "前线急报如雪片飞来：'松山被围，粮道已断！'"
+    forced_npcs: ["吴三桂", "皇太极"]
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 军力: -20, 边防: -25 }
+      narrative: "松锦惨败，关宁防线名存实亡"
+
+  - id: "E_li_zicheng_march"
+    type: timeline
+    name: "闯军东进"
+    severity: critical
+    time: { year: 17, month: 1 }
+    description: "李自成大军从西安出发，直指北京"
+    narrative_hint: "探马来报：'闯贼号称百万，已过潼关，沿途州县望风而降！'"
+    forced_npcs: ["李自成"]
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 民心: -20, 朝廷稳定: -20, 军力: -10 }
+      narrative: "闯军势如破竹，京师人心惶惶"

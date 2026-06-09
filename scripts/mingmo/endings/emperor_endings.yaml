@@ -1,0 +1,47 @@
+role: 崇祯皇帝
+endings:
+  - ending_id: E_emperor_revival
+    name: 中兴大明
+    conditions:
+      - "国库 >= 60"
+      - "军力 >= 60"
+      - "民心 >= 50"
+    description: 你以非常手段稳住财赋与军政，内外危机被逐步化解，大明在断崖边回身，另开新局。
+
+  - ending_id: E_emperor_southern_court
+    name: 南渡偏安
+    conditions:
+      - "军力 < 40"
+      - "国库 >= 40"
+      - "关键决策:D_last_line == relocate_south"
+    description: 北地失守已难挽回，你南迁重建中枢，江左仍悬日月旗，但山河从此南北分裂。
+
+  - ending_id: E_emperor_meishan
+    name: 煤山殉国
+    conditions:
+      - "民心 < 20"
+      - "军力 < 30"
+      - "关键决策:D_last_line != relocate_south"
+    description: 京师陷落，宗社难支。你以一死殉国，史书留名，王朝却在风雨中倾覆。
+
+  - ending_id: E_emperor_abdication
+    name: 禅让求和
+    conditions:
+      - "朝廷稳定 < 15"
+      - "关键决策:D_final_stand == negotiate_peace"
+    description: 你以帝位换一线生机，刀兵暂歇，然天下对正统与尊严的争论终难平息。
+
+  - ending_id: E_emperor_tyrant
+    name: 暴君覆灭
+    conditions:
+      - "民心 < 10"
+      - "朝廷稳定 < 10"
+    description: 苛政与猜忌耗尽最后信任，众叛亲离之下，皇权在怒潮中被彻底吞没。
+
+  - ending_id: E_emperor_reform
+    name: 改革新政
+    conditions:
+      - "民心 >= 70"
+      - "朝廷稳定 >= 50"
+      - "关键决策:D_postwar_order == reform_cabinet"
+    description: 你以制度革新重整官僚与财赋，旧朝虽危，新政却开出另一条历史支流。

@@ -1,0 +1,271 @@
+# 世界层模板：所有可选角色共享的剧本基础数据；不包含玩家专属目标、关系数值和结局。
+
+# schema_version：模板结构版本；loader 可按此字段做兼容分支。
+schema_version: "2.0"
+
+# script_id：剧本唯一标识；建议小写英文、数字、下划线，作为目录名或存档键。
+script_id: "example_script_id"
+
+# name：剧本展示名；用于选剧本界面。
+name: "示例剧本名称"
+
+# description：剧本一句话到一段话简介；不写具体角色结局。
+description: "这里填写世界层简介，例如时代背景、核心矛盾和整体游玩氛围。"
+
+# design_intent：给 AI 生成与验证使用的设计意图；不直接参与数值结算。
+design_intent:
+  # core_conflict：世界的核心矛盾；要求能驱动多个阵营/角色产生冲突。
+  core_conflict: "示例核心矛盾：旧秩序衰败，新势力崛起。"
+  # tone：叙事基调；建议枚举：严肃、轻松、黑暗、戏剧化、史诗、荒诞，可多词组合。
+  tone: "严肃"
+  # choice_principles：本剧本选择设计原则；每条应体现代价、信息不完全或后果。
+  choice_principles:
+    - "重要选择必须改变至少一个世界维度或NPC关系。"
+    - "不同阵营提供的信息允许互相矛盾，但要各自合理。"
+
+# gameplay：玩法与世界观声明；系统据此裁剪维度池和推荐事件类型。
+gameplay:
+  # gameplay_types：玩法类型；可多选。建议值：权谋政斗、战争策略、悬疑推理、冒险探索、经营模拟、恐怖生存、社交推理。
+  gameplay_types: ["权谋政斗", "战争策略"]
+  # world_settings：世界观类型；可多选。建议值：历史、奇幻、科幻、恐怖、暗黑、废土、现代、架空。
+  world_settings: ["架空"]
+  # length_profile：推荐长度；建议值：short、medium、long；仅作节奏配置，不再绑定章节。
+  length_profile: "medium"
+  # player_count：默认玩家人数；当前引擎建议为 1，保留给未来多人扩展。
+  player_count: 1
+
+# world_background：世界观背景；用于旁白、NPC知识边界和事件生成。
+world_background:
+  # era：时代/时期；历史题材写具体纪年，架空题材写时代阶段。
+  era: "示例时代"
+  # geography：主要地理舞台；可写国家、城市、星区、地牢层级等。
+  geography: "示例地域"
+  # public_situation：普通人可感知的总体局势。
+  public_situation: "表面秩序尚存，但危机正在累积。"
+  # hidden_situation：幕后真相或深层危机；可供世界导演使用，玩家初始不一定知道。
+  hidden_situation: "某个隐藏势力正在推动局势恶化。"
+  # factions：世界层阵营列表；只定义阵营立场，不定义与玩家的关系数值。
+  factions:
+    - # faction_id：阵营唯一标识；建议小写英文、数字、下划线。
+      faction_id: "faction_alpha"
+      # name：阵营展示名。
+      name: "示例阵营甲"
+      # agenda：阵营长期目标。
+      agenda: "维护现有秩序。"
+      # resources：阵营掌握的资源；可用于事件、NPC行动和谈判筹码。
+      resources: ["行政网络", "资金"]
+      # conflict_with：天然冲突阵营ID；用于生成NPC冲突和响应事件。
+      conflict_with: ["faction_beta"]
+
+# dimension_definitions：本世界可用维度定义；所有数值默认 0-10，除非 range 另行声明。
+dimension_definitions:
+  # world：世界状态维度；描述全局局势，可升可降。
+  world:
+    - # id：维度唯一标识；建议中文名或 snake_case，但全剧本保持一致。
+      id: "财政"
+      # name：维度展示名；通常与 id 相同。
+      name: "财政"
+      # range：取值范围；建议 [0, 10]，loader 可据此夹取数值。
+      range: [0, 10]
+      # initial：世界层初始值；角色层可用 overrides 覆盖或微调。
+      initial: 5
+      # higher_is_better：数值越高是否越好；true 表示高值有利，false 表示高值代表风险。
+      higher_is_better: true
+      # description：维度含义和何时变化。
+      description: "可支配资金、粮食或运营资源的总体水平。"
+    - id: "秩序"
+      name: "秩序"
+      range: [0, 10]
+      initial: 5
+      higher_is_better: true
+      description: "制度、治安或组织结构的稳定程度。"
+    - id: "威胁"
+      name: "威胁"
+      range: [0, 10]
+      initial: 4
+      higher_is_better: false
+      description: "敌对势力、灾害或未知危险的总体逼近程度。"
+  # relationship_numeric：关系数值型维度定义；具体初始值放在角色层 npc_relationships。
+  relationship_numeric:
+    - id: "好感度"
+      range: [0, 10]
+      default: 5
+      description: "NPC 对玩家个人的情绪态度。"
+    - id: "忠诚度"
+      range: [0, 10]
+      default: 5
+      description: "NPC 对玩家命令、阵营或事业的服从意愿。"
+    - id: "利益绑定"
+      range: [0, 10]
+      default: 0
+      description: "NPC 与玩家在资源、前途或秘密上的绑定深度。"
+  # relationship_tags：关系标签池；标签为固定修正或叙事约束，不直接用 0-10 表示。
+  relationship_tags:
+    - id: "旧交"
+      modifier_hint: "+1 社交类行动"
+      description: "双方曾有长期正面交情。"
+    - id: "恩怨"
+      modifier_hint: "影响好感初值或对话态度"
+      description: "双方存在恩情、仇怨或未清算旧账。"
+  # extension：世界观扩展维度；如魔力、理智值、腐化度、装备、身份隐匿度等。
+  extension:
+    - id: "扩展示例维度"
+      range: [0, 10]
+      initial: 5
+      higher_is_better: true
+      enabled_when: ["奇幻"]
+      description: "仅在匹配世界观或玩法时启用的扩展维度。"
+
+# time_system：连续时间系统配置；新格式不再使用章节推进条件。
+time_system:
+  # unit：最小推进单位；建议值：回合、小时、天、周、月、年。
+  unit: "月"
+  # display_format：时间展示格式；支持 {year}、{month}、{day}、{turn} 等占位符。
+  display_format: "第{year}年{month}月"
+  # start：初始时间；字段可按 unit 裁剪，保持 key 稳定方便 loader 解析。
+  start: { year: 1, month: 1, day: 1, turn: 1 }
+  # max_time：可选最大时间；到达后应触发结算检查或终局压力。
+  max_time: { year: 3, month: 12, day: 1, turn: 36 }
+  # turns_per_unit：每个时间单位内允许的行动批次数；用于兼容旧格式或精细节奏。
+  turns_per_unit: 3
+  # auto_skip_quiet_time：无事件且只有常规衰减时，是否允许自动跳到下个事件点。
+  auto_skip_quiet_time: true
+  # action_time_cost：行动耗时规范；AI 生成确认卡片时参考。
+  action_time_cost:
+    min_units: 0
+    max_units: 3
+    default_units: 1
+    description: "对话通常 0，普通行动 1，长期计划 2-3；超长行动应拆分为阶段。"
+
+# timeline_milestones：时间线里程碑事件；到了指定时间默认触发，体现世界自主运转。
+timeline_milestones:
+  - # event_id：事件唯一标识；建议前缀 T_。
+    event_id: "T_example_milestone"
+    # name：事件展示名。
+    name: "示例时间线事件"
+    # at：触发时间；字段与 time_system.start 同构，可只写必要字段。
+    at: { year: 1, month: 6 }
+    # severity：严重度；建议值：minor、moderate、major、critical。
+    severity: "major"
+    # description：事件客观描述。
+    description: "某个不可忽视的世界节点按时到来。"
+    # narrative_hint：旁白生成提示；不要求最终原文照抄。
+    narrative_hint: "用紧迫但克制的语气通知玩家。"
+    # involved_factions：相关阵营ID；用于挑选NPC视角和后续影响。
+    involved_factions: ["faction_alpha"]
+    # involved_npcs：强制或推荐登场NPC ID；NPC必须存在于 global_npc_pool。
+    involved_npcs: ["npc_example"]
+    # prerequisites：前置事件ID；为空表示无前置。
+    prerequisites: []
+    # default_effects：玩家不处理或处理失败时的默认后果。
+    default_effects:
+      world_dimensions: { "秩序": -1, "威胁": 1 }
+      information_added: ["I_example_warning"]
+      consequence_seed:
+        enabled: true
+        severity: "medium"
+        directions: ["局势升级", "阵营反扑"]
+
+# condition_events：条件触发事件；根据维度、标签、事件状态或时间窗口触发。
+condition_events:
+  - event_id: "C_example_low_order"
+    name: "示例条件事件"
+    severity: "moderate"
+    # trigger：触发条件；建议使用 all/any/not 组合，便于 loader 统一解析。
+    trigger:
+      all:
+        - { dimension: "秩序", operator: "<=", value: 3 }
+        - { event_not_triggered: "C_example_low_order" }
+    description: "当秩序过低时，某种危机爆发。"
+    narrative_hint: "强调这是长期失控的自然结果，而非随机噪音。"
+    recommended_responses: ["安抚", "镇压", "谈判"]
+    default_effects:
+      world_dimensions: { "财政": -1, "威胁": 1 }
+      npc_relation_deltas: {}
+
+# random_event_pool：随机事件池；用于增加不可预测性，但需符合世界逻辑。
+random_event_pool:
+  # check_policy：随机检查策略；loader 可先读全局策略再抽取 entries。
+  check_policy:
+    # enabled：是否启用随机池。
+    enabled: true
+    # check_per_time_unit：是否每个时间单位检查一次。
+    check_per_time_unit: true
+    # max_events_per_check：单次最多触发事件数。
+    max_events_per_check: 1
+  # entries：随机事件条目；每条必须有 weight。
+  entries:
+    - event_id: "R_example_opportunity"
+      name: "示例随机机会"
+      severity: "minor"
+      # weight：抽取权重；正整数，0 表示暂不进入池。
+      weight: 2
+      # conditions：进入随机池的条件；为空表示始终可抽。
+      conditions: []
+      description: "一个小规模机会或麻烦突然出现。"
+      narrative_hint: "把随机事件写成世界逻辑的结果。"
+      suggested_response_types: ["调查", "投入资源", "忽略"]
+      default_effects:
+        world_dimensions: { "财政": -1 }
+
+# global_npc_pool：全局NPC池骨架；定义人格、目标和知识范围，不定义玩家专属关系数值。
+global_npc_pool:
+  - # npc_id：NPC唯一标识；角色层关系、事件引用都使用该ID。
+    npc_id: "npc_example"
+    # name：NPC展示名。
+    name: "示例NPC"
+    # title：身份/职务/称号；可为空字符串。
+    title: "示例职务"
+    # faction_id：所属阵营ID；可为空表示独立角色。
+    faction_id: "faction_alpha"
+    # archetype：功能定位；建议值：信息源、利害陈述者、机会揭示者、后果镜子、冲突制造者、对手、盟友。
+    archetype: "信息源"
+    # personality_layer：人格层；决定怎么说话。
+    personality_layer:
+      traits: ["谨慎", "务实"]
+      values: ["秩序", "自保"]
+      speaking_style: "句子简短，先讲事实，再讲判断。"
+    # goal_layer：目标层；NPC自己想要什么，不一定与玩家一致。
+    goal_layer:
+      long_term_goal: "维护自身阵营利益。"
+      short_term_goals: ["争取资源", "降低风险"]
+      unacceptable_outcomes: ["阵营彻底失败"]
+    # knowledge_layer：情报层；定义知道什么、不知道什么、偏见是什么。
+    knowledge_layer:
+      knows: ["本阵营内部动向", "公开局势"]
+      does_not_know: ["隐藏真相示例"]
+      biases: ["倾向低估敌对阵营能力"]
+    # default_memory_hooks：记忆层初始钩子；具体互动记忆由运行时追加。
+    default_memory_hooks: ["初次见面时保持试探。"]
+    # usable_as_player_role：是否也可作为可选角色；true 的角色未被选择时可转为前主角NPC。
+    usable_as_player_role: true
+
+# optional_roles：可选角色列表；用户在世界层确认后从这里选择角色，再生成角色层。
+optional_roles:
+  - # role_id：角色唯一标识；对应 role_template.yaml 的 role.role_id。
+    role_id: "role_example_leader"
+    # name：玩家看到的角色名/身份。
+    name: "示例领袖"
+    # source_npc_id：若该角色也在 global_npc_pool 中，填对应 npc_id；否则可为空。
+    source_npc_id: "npc_example"
+    # perspective：视角范围；例如全局、民间、军方、调查者、怪物视角。
+    perspective: "全局"
+    # core_play：核心玩法体验概述。
+    core_play: "在资源不足与多方压力之间做取舍。"
+    # playstyle_tags：玩法标签；用于角色选择界面筛选。
+    playstyle_tags: ["决策", "谈判", "资源管理"]
+    # difficulty：推荐难度；建议值：easy、normal、hard、expert。
+    difficulty: "normal"
+    # teaser_goal：目标预告；不是最终完整目标，可避免剧透。
+    teaser_goal: "阻止局势滑向默认失败。"
+    # branch_hints：可探索路线提示；不承诺一定胜利。
+    branch_hints: ["改革线", "妥协线", "强硬线"]
+
+# validation_hints：给生成器/检查器的软约束；不直接进入游戏。
+validation_hints:
+  # minimum_meaningful_choices：期望至少存在的关键取舍数量。
+  minimum_meaningful_choices: 5
+  # npc_conflict_required：是否要求NPC目标之间存在明确冲突。
+  npc_conflict_required: true
+  # pressure_has_counterplay：压力源是否必须配置可缓解手段；建议 true。
+  pressure_has_counterplay: true

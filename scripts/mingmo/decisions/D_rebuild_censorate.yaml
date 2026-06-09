@@ -1,0 +1,29 @@
+decision_id: D_rebuild_censorate
+id: D_rebuild_censorate
+name: 重整都察院
+chapter: ch01_ascend
+context: 言路失真已久。是重开言官体系以纠偏，还是收束弹劾以保效率，朝中争论不休。
+related_npcs: [温体仁, 孙承宗]
+options:
+  - key: restore_censors
+    label: 广开言路，增设巡按
+    effect:
+      朝廷稳定: -3
+      民心: 6
+      国库: -4
+      narration: 百官畏惮，风纪稍振，但内耗随之增加。
+  - key: strict_control
+    label: 严控言路，先保中枢令出一门
+    effect:
+      朝廷稳定: 5
+      民心: -5
+      帝王威望: 2
+      narration: 行政效率上升，舆情却转入地下。
+  - key: mixed_reform
+    label: 限额言事，先试半年
+    effect:
+      朝廷稳定: 2
+      民心: 2
+      国库: -2
+      narration: 改革温和推进，短期内风险可控。
+allow_free_input: false

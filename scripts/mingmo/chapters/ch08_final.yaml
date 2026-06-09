@@ -1,0 +1,21 @@
+chapter_id: ch08_final
+id: ch08_final
+name: 甲申终局
+title: 甲申终局
+game_date_start: "1644年三月"
+opening_narration: |
+  京城城门在晨雾里沉默如铁，宫阙之上却已闻得战鼓近响。旧秩序正在崩解，
+  新秩序尚未成形，忠臣、降将、流民、枭雄同在一盘残局中争最后一手。
+  你所做的选择，不再只关一城一地，而是决定后世如何书写“崇祯十七年”。
+initial_scene:
+  location: 乾清宫
+  context: 闯军攻城在即，关外清军与吴三桂动向未明，朝廷进行最终决议。
+  present_npcs: [王承恩, 李自成, 吴三桂, 多尔衮]
+advance_conditions:
+  min_turns: 3
+  max_turns: 12
+  acceleration:
+    enabled: true
+    turns_reduction: 1
+    key_decisions: [D_final_stand, D_postwar_order]
+key_decisions: [D_final_stand, D_postwar_order]

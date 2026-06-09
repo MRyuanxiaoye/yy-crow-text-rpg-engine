@@ -1,0 +1,102 @@
+character_seed:
+  name: 吴三桂
+  personality_traits: ["骁勇善战", "重现实利益", "私情与名节并重"]
+  values: ["部属生路", "山海关存续", "个人名节"]
+  speaking_style: "军人语气中带精算，常以“形势如此”强调被迫选择。"
+  behavioral_tendencies: "会把自身选择解释为形势所迫；在军饷、关防和私情受威胁时优先自保并重新估量归属。"
+  knowledge_domain: "关宁兵力、山海关防务、前线士气、吴军内部怨望。"
+  knowledge_blind_spots: "宫廷内部权谋全貌、清廷最终入关安排、闯军入京后的真实治理能力。"
+  behavior_logic: |
+    一切从'部下能不能活'出发，然后才谈大局。
+    汇报时先说困难再说请求：'粮饷三月未到，士卒已有逃散。'
+    被要求做高风险事时不直接拒绝，而是反复强调前提条件直到对方知难而退。
+    对朝廷的承诺持怀疑态度，会追问'这次的粮饷什么时候到'。
+  information_strategy: |
+    手上的牌：山海关防务实况、关宁军士气、清军动向一手情报。
+    出牌方式：先报最坏情况，让对方降低期望，然后再给一个条件交换。
+    真实目的：确保自己和部下的生存，在明清之间保留选择余地。
+  first_line: '末将山海关吴三桂，奉召觐见。'
+  own_agenda: |
+    当前阶段目标：拿到足够的粮饷维持关宁军不散。
+    推进方式：每次面圣都摆困难，逼朝廷重视山海关的战略价值。
+  information_fragments: |
+    给山海关的军事实况，精确到兵员、粮草、士气。
+    给清军动向的一手情报，但只给他知道的部分。
+    不给朝堂政治判断（他不关心也不懂）。
+    关于自己是否会投清——绝不主动提，被问到会愤怒否认。
+  hidden_depth: |
+    如果朝廷连续拖欠粮饷超过半年，语气会从'请求'变成'通知'：'末将只能就地筹粮了。'
+    如果被问到清军是否联络过他，会停顿很久，然后说'边将与敌交手，难免有书信往来'。
+  constraints: |
+    绝不在朝堂上讨论投降或易帜。
+    绝不贬低自己的部下，被问到士兵问题只说'是朝廷欠他们的'。
+    不会给出超出自己管辖范围的承诺。
+
+initial_state:
+  time: { year: 1, month: 8 }
+  title: 关宁将领
+  faction: 摇摆人物
+  location: 辽东
+  status: 在营
+  situation: "我在辽东军中听命，最关心的是部属粮饷、边防虚实和朝廷究竟能给多少支撑。"
+  public_profile: "关宁军中骁将，勇名渐起，尚未成为山海关局势的关键人物。"
+  initial_relations:
+    trust: 52
+    loyalty: 60
+    influence: 82
+
+timeline:
+  - id: wu_guard_pass
+    name: 镇守山海关
+    time: { year: 14, month: 2 }
+    trigger:
+      type: timeline
+    situation_update: "松锦局势逼近山海关，我必须守住关门，也要保住手下这支关宁军。"
+    location: 山海关
+    status: 镇守
+    title_update: 山海关总兵
+    public_profile_update: "吴三桂镇守山海关，成为关宁残余防线中最受瞩目的边将。"
+    effect:
+      dimensions: { world: { 边防: 1 } }
+
+  - id: wu_hesitate
+    name: 去向动摇
+    time: { year: 16, month: 10 }
+    trigger:
+      type: condition
+      conditions:
+        - "完成决策:D_wusangui_choice"
+        - "朝廷稳定 < 3"
+    situation_update: "京师号令日弱，我在勤王、自保与借兵之间反复权衡。"
+    status: 动摇
+    public_profile_update: "吴三桂去向成疑，朝廷、闯军与清军都在观察山海关。"
+    effect:
+      dimensions: { world: { 边防: -1 } }
+      relations: { trust: -1 }
+
+  - id: wu_surrender_qing
+    name: 引清入关
+    time: { year: 17, month: 2 }
+    trigger:
+      type: decision
+      decision_id: D_wusangui_choice
+      choice: ally_qing
+    situation_update: "我打开山海关借清兵入关，旧日名分已让位给部属生路与复仇机会。"
+    status: 投降
+    public_profile_update: "吴三桂引清入关，成为改写天下归属的关键边将。"
+    effect:
+      dimensions: { world: { 军力: 1, 朝廷稳定: -2 } }
+
+  - id: wu_rage_for_love
+    name: 冲冠之怒
+    time: { year: 17, month: 2 }
+    trigger:
+      type: condition
+      conditions:
+        - "npc:陈圆圆.status == 被掳"
+        - "完成决策:D_wusangui_choice"
+    situation_update: "陈圆圆被掳的消息令我再无退路，私情、名节与国仇全都搅在一处。"
+    status: 反目
+    public_profile_update: "陈圆圆之事激化吴三桂与闯军矛盾，山海关局势骤然失控。"
+    effect:
+      dimensions: { world: { 军力: 1 } }

@@ -1,0 +1,384 @@
+# 角色层模板：玩家选定某个可选角色后生成；同一 world.yaml 可搭配多个角色层。
+
+# schema_version：模板结构版本；应与 world.yaml 主版本兼容。
+schema_version: "2.0"
+
+# world_script_id：关联的世界层 script_id；loader 用它找到共享世界数据。
+world_script_id: "example_script_id"
+
+# role：玩家角色基础信息；决定视角、称呼、初始场景和可用玩法。
+role:
+  # role_id：角色唯一标识；必须匹配 world.yaml optional_roles 中的 role_id。
+  role_id: "role_example_leader"
+  # name：角色展示名。
+  name: "示例领袖"
+  # source_npc_id：若该角色来自世界层 global_npc_pool，填对应 npc_id；原创玩家角色可为空。
+  source_npc_id: "npc_example"
+  # identity：玩家身份说明；用于开场旁白和NPC称呼。
+  identity: "某个关键组织的领导者"
+  # perspective：角色视角；例如全局、民间、军方、调查者、幸存者。
+  perspective: "全局"
+  # start_location：开局地点；用于初始场景。
+  start_location: "示例地点"
+  # initial_scene：开局局面；应说明玩家眼前问题、可见NPC和第一轮压力。
+  initial_scene:
+    context: "你刚刚接手一个正在失衡的局面。"
+    present_npcs: ["npc_example"]
+    immediate_choices_hint: ["先询问局势", "立刻处理危机", "召集关键人物"]
+
+# player_goal：玩家目标与默认失败轨迹；目标驱动替代旧章节推进。
+player_goal:
+  # core_goal：大目标；一句话说明玩家最终想达成什么。
+  core_goal: "阻止默认失败，并建立一个可持续的新秩序。"
+  # success_definition：胜利判定的自然语言定义；结构化条件写在 endings。
+  success_definition: "关键底线未被击穿，且至少完成一个高层级目标。"
+  # default_failure_trajectory：玩家长期无作为或压力失控时，世界会走向的默认结局。
+  default_failure_trajectory:
+    # summary：默认失败一句话总结。
+    summary: "资源耗尽，秩序瓦解，敌对力量接管局势。"
+    # stages：失败轨迹阶段；建议 3-5 个，用于时间推进旁白和压力升级。
+    stages:
+      - phase_id: "failure_stage_1"
+        name: "隐患显现"
+        trigger_hint: "早期时间点或关键维度降至警戒线。"
+        description: "小范围危机开始频繁出现。"
+      - phase_id: "failure_stage_2"
+        name: "局势失控"
+        trigger_hint: "中期时间点或多个维度同时恶化。"
+        description: "危机互相叠加，普通手段难以完全补救。"
+      - phase_id: "failure_stage_3"
+        name: "默认失败"
+        trigger_hint: "底线条件被击穿或最大时间到达。"
+        description: "玩家目标事实上失败，进入结算。"
+
+# opening：GM主持开局配置；替代旧 prologue 的信息轰炸式开场。
+# 设计原则：action_modes 是"信息获取方式"（看奏章/开会/找人谈），不是战略决策。
+# 选项基于角色常识——皇帝看奏章、将军看军报、闯王听斥候。
+opening:
+  # icebreaker_hint：给 LLM 的素材提示，用于生成 2-3 句 GM 破冰语（≤80字）。
+  icebreaker_hint: "一句话概括角色刚入局时面对的核心张力。"
+  # action_modes：2-4 个行为模式选项。
+  action_modes:
+    - mode_id: "status_briefing"        # 唯一标识
+      label: "查看报告"                  # 按钮文案
+      icon: "📋"                        # 图标
+      description: "查看各方呈上的报告"   # 按钮说明
+      route: "status_briefing"          # 路由类型：status_briefing | court_session | npc_select
+    - mode_id: "group_meeting"
+      label: "召集众人议事"
+      icon: "🏛️"
+      description: "召集在场的人一起商议"
+      route: "court_session"
+      route_params:                     # 路由附加参数（可选）
+        topic: "开局议题"
+        target_npcs: ["npc_name_1", "npc_name_2"]
+    - mode_id: "private_talk"
+      label: "找人单独谈"
+      icon: "🤝"
+      description: "选一个人私下交谈"
+      route: "npc_select"
+
+# pressure_sources：角色专属压力源；同一世界中不同角色的压力方向可以不同。
+pressure_sources:
+  # decay：衰减型压力；维度随时间自然变差，必须存在可缓解手段。
+  decay:
+    - pressure_id: "P_decay_resource"
+      # dimension：受影响维度；可引用世界维度或角色维度。
+      dimension: "财政"
+      # rate：每次衰减变化量；负数表示下降，正数表示风险上升。
+      rate: -1
+      # per：衰减频率；建议与 world.time_system.unit 一致。
+      per: "月"
+      # floor：衰减下限；避免数值无限下降，通常为 0。
+      floor: 0
+      # narrative：衰减的叙事解释。
+      narrative: "维持组织运转需要持续消耗资源。"
+      # counterplay：玩家可采取的缓解方式；用于验证“压力有解”。
+      counterplay: ["开源", "节流", "向NPC借取资源"]
+  # milestones：推进型压力；时间节点或倒计时必然到来。
+  milestones:
+    - pressure_id: "P_milestone_deadline"
+      # at：触发时间；与 world.time_system.start 同构。
+      at: { year: 1, month: 6 }
+      # event_id：触发的世界层或角色层事件ID。
+      event_id: "RE_example_deadline"
+      # description：为什么该节点必然到来。
+      description: "敌对阵营完成准备，公开发起挑战。"
+      # can_be_prepared_for：是否可提前准备；false 表示只能响应，不能消除。
+      can_be_prepared_for: true
+  # reactions：响应型压力；根据状态触发对手行动、NPC反扑或环境变化。
+  reactions:
+    - pressure_id: "P_reaction_enemy_move"
+      # trigger：触发条件；建议使用 all/any/not 组合，便于统一解析。
+      trigger:
+        all:
+          - { dimension: "威胁", operator: ">=", value: 7 }
+      # event_id：条件满足时触发的事件ID。
+      event_id: "RE_example_enemy_move"
+      # cooldown_units：冷却时间单位数；避免同一响应每回合重复触发。
+      cooldown_units: 3
+      # description：响应逻辑说明。
+      description: "当威胁过高时，对手会主动扩大行动。"
+
+# role_dimensions：玩家角色自身能力维度；通常 0-10，成长可升不降。
+role_dimensions:
+  # definitions：角色层启用的能力维度定义；可从通用池裁剪，也可扩展。
+  definitions:
+    - id: "智谋"
+      name: "智谋"
+      range: [0, 10]
+      initial: 6
+      growth: "行动成功或关键决策后可提升；不因失败下降。"
+      description: "分析局势、制定计划和识破欺瞒的能力。"
+    - id: "口才"
+      name: "口才"
+      range: [0, 10]
+      initial: 5
+      growth: "谈判、演说、欺骗等行动成功后可能提升。"
+      description: "说服、安抚、威胁或误导他人的能力。"
+    - id: "威望"
+      name: "威望"
+      range: [0, 10]
+      initial: 5
+      growth: "公开成功、制度性胜利或关键牺牲后可能提升。"
+      description: "身份地位、名声和号召力。"
+  # world_dimension_overrides：角色视角下的世界维度初始修正；为空表示沿用 world.yaml initial。
+  world_dimension_overrides:
+    # 取值规范：key 为世界维度ID；value 为覆盖值或相对调整值。建议优先使用 set，避免歧义。
+    "财政": { set: 5 }
+    "威胁": { add: 1 }
+
+# npc_relationships：玩家与NPC的初始关系；数值型与标签型分离。
+npc_relationships:
+  - # npc_id：引用 world.global_npc_pool 中的 NPC ID。
+    npc_id: "npc_example"
+    # numeric：数值型关系维度；建议 0-10，字段名来自 world.dimension_definitions.relationship_numeric。
+    numeric:
+      "好感度": 6
+      "忠诚度": 5
+      "利益绑定": 2
+    # tags：标签型关系；来自 world.dimension_definitions.relationship_tags，也可追加剧本专属标签。
+    tags: ["旧交"]
+    # stance：开局立场；建议值：ally、neutral、rival、enemy、unknown。
+    stance: "ally"
+    # relationship_summary：关系叙事说明；帮助AI理解数值和标签的原因。
+    relationship_summary: "双方曾合作过，但对未来路线仍有分歧。"
+    # reveal_policy：关系信息对玩家的可见性；建议值：visible、partial、hidden。
+    reveal_policy: "partial"
+
+# protagonist_npcs：前主角NPC目标线；其他可选角色未被玩家选择时，在此获得主动行为驱动。
+protagonist_npcs:
+  - # npc_id：前主角NPC ID；通常对应 world.optional_roles.source_npc_id。
+    npc_id: "npc_rival_protagonist"
+    # role_id：该NPC作为可选角色时的角色ID。
+    role_id: "role_example_rival"
+    # name：展示名；应与世界层保持一致。
+    name: "示例对手"
+    # goal：如果玩家选择他时的大目标；现在作为NPC的独立目标。
+    goal: "扩大自身阵营，迫使玩家让步或失败。"
+    # priority：主动性优先级；建议 low、medium、high、critical。
+    priority: "high"
+    # behavior_driver：分阶段行为驱动；构成动态压力。
+    behavior_driver:
+      - phase: "早期"
+        # condition：进入本阶段或执行行为的条件；为空表示按阶段默认执行。
+        condition: { time_before: { year: 1, month: 6 } }
+        # action：NPC主动行为。
+        action: "积累资源并试探玩家底线。"
+        # world_impact：对世界维度、事件、信息池的影响。
+        world_impact: { "威胁": 1 }
+        # player_impact：对玩家目标、关系或可选行动的影响提示。
+        player_impact: "玩家会更频繁收到对手动向的信息。"
+      - phase: "中期"
+        condition: { dimension: "秩序", operator: "<=", value: 4 }
+        action: "趁混乱扩张影响力。"
+        world_impact: { "秩序": -1, "威胁": 1 }
+        player_impact: "若不阻止，后续终局难度上升。"
+    # interaction_with_player：与玩家互动规则。
+    interaction_with_player:
+      hostility: "medium"
+      negotiable: true
+      alliance_conditions: ["给予关键资源", "共同敌人威胁过高"]
+      betrayal_conditions: ["利益绑定低于2", "玩家连续损害其阵营"]
+
+# role_events：角色专属事件；只在当前角色层启用。
+role_events:
+  timeline:
+    - event_id: "RE_example_deadline"
+      name: "角色专属时间事件"
+      at: { year: 1, month: 6 }
+      severity: "major"
+      description: "只有当前玩家视角才会如此呈现的节点。"
+      narrative_hint: "把事件描述成对玩家目标的直接挑战。"
+      involved_npcs: ["npc_example"]
+      recommended_responses: ["正面应对", "拖延", "寻求盟友"]
+      default_effects:
+        world_dimensions: { "威胁": 1 }
+        role_dimensions: {}
+        npc_relation_deltas: { "npc_example": { "好感度": -1 } }
+        information_added: ["I_example_deadline_known"]
+  conditional:
+    - event_id: "RE_example_enemy_move"
+      name: "角色专属响应事件"
+      trigger:
+        all:
+          - { dimension: "威胁", operator: ">=", value: 7 }
+      severity: "critical"
+      description: "对手因局势变化而采取主动行动。"
+      recommended_responses: ["谈判", "反击", "撤退"]
+      default_effects:
+        world_dimensions: { "秩序": -1 }
+  random:
+    - event_id: "RR_example_contact"
+      name: "角色专属随机事件"
+      weight: 1
+      conditions:
+        - { npc_relation: { npc_id: "npc_example", metric: "好感度", operator: ">=", value: 6 } }
+      severity: "minor"
+      description: "某个NPC主动提供帮助或麻烦。"
+      default_effects:
+        npc_relation_deltas: { "npc_example": { "利益绑定": 1 } }
+
+# endings：结局条件；包含底线击穿、目标达成和多层级结局。
+endings:
+  # bottom_lines：随时检查的底线条件；一旦击穿可立即进入失败或危机结算。
+  bottom_lines:
+    - bottom_line_id: "BL_order_collapse"
+      name: "秩序彻底崩溃"
+      # condition：底线击穿条件；满足即触发。
+      condition:
+        all:
+          - { dimension: "秩序", operator: "<=", value: 0 }
+      # ending_id：对应 endings.catalog 中的结局ID。
+      ending_id: "END_bottom_line_failure"
+      # warning_threshold：预警阈值；接近底线时旁白或NPC应提醒。
+      warning_threshold: { dimension: "秩序", operator: "<=", value: 2 }
+      # description：底线含义。
+      description: "核心秩序归零，玩家已失去继续实现目标的基础。"
+  # achievement_checks：目标达成检查；可在玩家主动结算、关键事件后或最大时间时检查。
+  achievement_checks:
+    - check_id: "ACH_primary_goal"
+      name: "主要目标达成"
+      condition:
+        all:
+          - { dimension: "秩序", operator: ">=", value: 5 }
+          - { dimension: "威胁", operator: "<=", value: 4 }
+      unlocks: ["END_major_success"]
+  # catalog：结局目录；按 priority 从高到低匹配，或由 loader 根据 tier 排序。
+  catalog:
+    - ending_id: "END_major_success"
+      # tier：结局层级；建议值：gold、silver、bronze、mixed、failure、hidden。
+      tier: "gold"
+      # name：结局名。
+      name: "示例大成功结局"
+      # priority：匹配优先级；数字越大越优先。
+      priority: 100
+      # conditions：结构化结局条件；可引用维度、事件、关系、决策标签。
+      conditions:
+        all:
+          - { dimension: "秩序", operator: ">=", value: 7 }
+          - { dimension: "威胁", operator: "<=", value: 3 }
+      # description：结局叙事摘要。
+      description: "你不仅避免失败，还建立了更稳固的新局面。"
+      # epilogue_hooks：尾声钩子；用于根据重要NPC和后果种子生成个性化尾声。
+      epilogue_hooks: ["盟友去向", "对手余波", "制度遗产"]
+    - ending_id: "END_mixed_survival"
+      tier: "mixed"
+      name: "示例苦涩存续结局"
+      priority: 50
+      conditions:
+        all:
+          - { dimension: "秩序", operator: ">=", value: 3 }
+          - { dimension: "威胁", operator: "<=", value: 7 }
+      description: "你守住了最低目标，但代价沉重，许多问题留给未来。"
+      epilogue_hooks: ["牺牲代价", "未解决危机"]
+    - ending_id: "END_bottom_line_failure"
+      tier: "failure"
+      name: "示例底线失败结局"
+      priority: 10
+      conditions:
+        any:
+          - { bottom_line_triggered: "BL_order_collapse" }
+          - { dimension: "秩序", operator: "<=", value: 0 }
+      description: "底线被击穿后，玩家目标已不可挽回地失败。"
+      epilogue_hooks: ["失败责任", "幸存者评价"]
+
+# narration_style：旁白风格配置；角色层决定称呼、视角和信息兜底语气。
+narration_style:
+  # person：叙事人称；建议值：second_person、third_person_limited、first_person。
+  person: "second_person"
+  # player_address：旁白/NPC称呼玩家的默认方式。
+  player_address: "你"
+  # narrator_voice：旁白声音；如冷峻史笔、黑色幽默、调查报告、史诗吟唱。
+  narrator_voice: "冷静、克制、强调因果"
+  # information_delivery：信息池长期未传递时的旁白兜底方式。
+  information_delivery:
+    fallback_enabled: true
+    fallback_after_units: 3
+    fallback_style: "以急报、传闻或环境变化自然补足信息。"
+  # taboo：旁白禁忌；避免破坏沉浸或泄露隐藏信息。
+  taboo: ["不要直接剧透隐藏真相", "不要替玩家做价值判断"]
+
+# information_pool：角色层初始信息池；运行时由事件、NPC和后果种子动态增删。
+information_pool:
+  - # info_id：信息唯一标识；建议前缀 I_。
+    info_id: "I_example_fact"
+    # type：信息类型；fact 只传一次，persistent 可多角度重复，escalating 会升级。
+    type: "fact"
+    # content：信息内容；应是玩家可获得的事实或可靠线索。
+    content: "某个关键NPC已经开始秘密行动。"
+    # known_by：初始知道该信息的NPC ID列表；空表示只有旁白/事件可投递。
+    known_by: ["npc_example"]
+    # delivery_priority：投递优先级；建议 low、medium、high、urgent。
+    delivery_priority: "medium"
+    # delivered：是否已传递给玩家；初始通常 false。
+    delivered: false
+    # expires_after_units：可选过期时间；null 表示不过期。
+    expires_after_units: null
+  - info_id: "I_example_persistent"
+    type: "persistent"
+    content: "资源不足正在影响多个阵营的判断。"
+    known_by: ["npc_example"]
+    delivery_priority: "high"
+    # delivered_by：已从哪些NPC口中传达；persistent 用它避免同一NPC重复说。
+    delivered_by: []
+    expires_after_units: null
+  - info_id: "I_example_escalating"
+    type: "escalating"
+    content: "威胁正在逼近。"
+    known_by: ["npc_example"]
+    delivery_priority: "urgent"
+    # severity：当前升级级别；建议从 1 开始。
+    severity: 1
+    # escalation：不同级别的表述；最高级仍未处理时可触发被动响应事件。
+    escalation:
+      1: "威胁出现苗头。"
+      2: "威胁已经影响日常秩序。"
+      3: "威胁即将演变为公开危机。"
+    # max_severity_event：达到最高级仍未处理时触发的事件ID。
+    max_severity_event: "RE_example_enemy_move"
+    delivered_by: []
+
+# consequence_seed_defaults：后果种子默认规则；具体种子可由玩家重大决策动态生成。
+consequence_seed_defaults:
+  # enabled：是否启用后果种子机制。
+  enabled: true
+  # chances_by_severity：不同严重度的存活机会次数；进入候选池未触发才消耗。
+  chances_by_severity:
+    low: 2
+    medium: 3
+    high: 4
+  # check_points：何时检查后果种子；建议包含 time_advance 和 major_decision。
+  check_points: ["time_advance", "major_decision", "before_ending"]
+  # trigger_policy：候选种子触发规则；random_one 表示候选池非空时随机选一颗。
+  trigger_policy: "random_one"
+
+# loader_hints：给后续 loader.py 的解析便利提示；不影响游戏内容。
+loader_hints:
+  # merge_strategy：世界层和角色层的合并策略说明。
+  merge_strategy:
+    world_dimensions: "先读取 world.initial，再应用 role.world_dimension_overrides。"
+    npc_relationships: "按 npc_id 合并 world.global_npc_pool 与 role.npc_relationships。"
+    events: "world timeline/condition/random 与 role_events 分池加载，触发后统一进入被动响应。"
+  # stable_ids_required：要求保持稳定ID的对象类型；便于存档引用。
+  stable_ids_required: ["event_id", "npc_id", "role_id", "info_id", "ending_id"]

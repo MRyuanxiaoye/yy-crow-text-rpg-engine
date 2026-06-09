@@ -1,0 +1,1 @@
+{"ts": "2026-05-22T14:22:31", "chat_id": "debug_bzy", "type": "card_action", "function": "handle_card_action", "data": {"action": "", "value": {"role_id": "emperor"}}, "state": {"turn": 0, "game_time": {"year": 1, "month": 8}, "phase": "choosing_role", "talking_to": "", "court_active": false, "settlement_phase": "free", "npc_location_keys": []}}

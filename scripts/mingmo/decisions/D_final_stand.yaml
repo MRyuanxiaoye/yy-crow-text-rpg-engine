@@ -1,0 +1,35 @@
+decision_id: D_final_stand
+id: D_final_stand
+name: 最终决战方案
+chapter: ch08_final
+context: 城门将破，最后的国策抉择必须在一夜之间完成。每个选项都可能留下百年争议。
+options:
+  - key: martyr_defense
+    label: 皇帝亲督守城，战至最后
+    effect:
+      帝王威望: 12
+      军力: -12
+      民心: 4
+      narration: 君臣同城共死，或可换来后世忠义之名。
+  - key: southern_court
+    label: 立刻南迁，保全法统
+    effect:
+      国库: -8
+      军力: 4
+      朝廷稳定: -10
+      narration: 江南尚可图存，但北地百姓将先受兵燹。
+  - key: negotiate_peace
+    label: 议和停战，暂让权位
+    effect:
+      军力: 2
+      朝廷稳定: -14
+      民心: -12
+      narration: 能换一时生机，却以王朝尊严为代价。
+  - key: abdicate_reform
+    label: 禅让监国，换取新政整合
+    effect:
+      朝廷稳定: -8
+      民心: 8
+      帝王威望: -6
+      narration: 退位求变，或许能让制度先于王朝存续。
+allow_free_input: true

@@ -1,0 +1,28 @@
+decision_id: D_songjin_commit
+id: D_songjin_commit
+name: 松锦战役取舍
+chapter: ch06_songjin
+context: 前线请增兵增粮。救锦州可能一战翻盘，也可能拖垮全国后勤。
+options:
+  - key: all_in_relief
+    label: 倾国增援，死保锦州
+    effect:
+      军力: -14
+      边防: 10
+      国库: -10
+      narration: 这是以国运换战机的孤注一掷。
+  - key: staged_relief
+    label: 分批增援，保有机动力
+    effect:
+      军力: -8
+      边防: 4
+      国库: -6
+      narration: 风险可控但见效偏慢，前线承压时间拉长。
+  - key: strategic_withdraw
+    label: 放弃孤城，收缩防线
+    effect:
+      军力: 6
+      边防: -14
+      民心: -8
+      narration: 保住骨干，却把战略主动拱手让人。
+allow_free_input: true

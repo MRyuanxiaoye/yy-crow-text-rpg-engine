@@ -1,0 +1,647 @@
+schema_version: '2.0'
+world_script_id: mingmo
+role:
+  role_id: rebel_leader
+  name: 起义领袖
+  source_npc_id: li_zicheng
+  identity: 闯军首领，饥民与义军的共同旗帜
+  perspective: 民间
+  start_location: 陕豫流民大营
+  initial_scene:
+    context: 陕西赤地千里，饥民围在营外等一口粮。有人劝你立刻攻城，有人劝招安求活，也有人开始谈“分田免粮”的旗号。
+    present_npcs:
+    - zhang_xianzhong
+    - chen_yuanyuan
+    - zhou_yanru
+    immediate_choices_hint:
+    - 开仓分粮立信
+    - 攻打州县夺粮
+    - 派人试探招安
+player_goal:
+  core_goal: 把求活之众整合成能争天下的新秩序，在明廷、清军和内部军纪之间守住民心。
+  success_definition: 义军保有民心和兵力，攻占关键地区或迫使明廷承认新秩序，且没有被军纪失控反噬。
+  default_failure_trajectory:
+    summary: 若玩家长期无作为，财政、军心、民心与政治信任会互相拖垮，角色目标被历史默认线吞没。
+    stages:
+    - phase_id: failure_stage_1
+      name: 隐患显现
+      trigger_hint: 早期里程碑到来或关键维度降至4。
+      description: 奏报、流言或军情开始互相矛盾，角色必须牺牲一部分目标止血。
+    - phase_id: failure_stage_2
+      name: 局势失控
+      trigger_hint: 中期多个世界维度低于3，或角色核心维度跌破警戒。
+      description: NPC开始按自身目标主动行动，玩家不再能用单一命令统合局面。
+    - phase_id: failure_stage_3
+      name: 默认失败
+      trigger_hint: 底线条件被击穿或崇祯十七年三月到达。
+      description: 京师、边防、内阁、义军或宫禁之一彻底崩坏，进入失败或苦涩结算。
+opening:
+  icebreaker_hint: "营外饥民越聚越多，部将催你拿主意——是攻城抢粮还是派人去谈招安。"
+  action_modes:
+    - mode_id: status_briefing
+      label: "听取斥候回报"
+      icon: "📋"
+      description: "让探马和细作汇报周边官军与粮仓情报"
+      route: status_briefing
+    - mode_id: court_session
+      label: "召集头领议事"
+      icon: "🔥"
+      description: "把几位核心头领叫到大帐商量"
+      route: court_session
+      route_params:
+        topic: "下一步是攻城、流动还是招安"
+        target_npcs: ["张献忠"]
+    - mode_id: npc_select
+      label: "找人单独谈"
+      icon: "🤝"
+      description: "叫一个人过来私下说话"
+      route: npc_select
+pressure_sources:
+  decay:
+  - pressure_id: P_rebel_food_pressure
+    dimension: 兵力
+    rate: -1
+    per: 月
+    floor: 1
+    narrative: 流民越聚越多，粮草若断，义军会迅速散乱。
+    counterplay:
+    - 攻仓取粮
+    - 分田筹粮
+    - 与地方豪强交易
+  - pressure_id: P_rebel_discipline_pressure
+    dimension: 士气
+    rate: -1
+    per: 月
+    floor: 0
+    narrative: 长期流动作战会诱发抢掠和私斗，损害民心。
+    counterplay:
+    - 严明军法
+    - 设立粮官
+    - 公开惩戒
+  milestones:
+  - pressure_id: P_jisi_invasion
+    at:
+      year: 2
+      month: 11
+    event_id: E_jisi_invasion
+    description: 己巳之变必然逼近京师与边防。
+    can_be_prepared_for: true
+  - pressure_id: P_shaanxi_famine
+    at:
+      year: 3
+      month: 3
+    event_id: E_shaanxi_famine
+    description: 陕西大旱会把民困推成兵火。
+    can_be_prepared_for: true
+  - pressure_id: P_songjin_battle
+    at:
+      year: 14
+      month: 2
+    event_id: E_songjin_battle
+    description: 松锦大战是边防与国力的一次总账。
+    can_be_prepared_for: true
+  - pressure_id: P_li_march
+    at:
+      year: 17
+      month: 1
+    event_id: E_li_zicheng_march
+    description: 闯军东进会迫使所有角色进入终局。
+    can_be_prepared_for: true
+  reactions:
+  - pressure_id: P_rebel_leader_low_treasury
+    trigger:
+      all:
+      - dimension: 财政
+        operator: <=
+        value: 2
+    event_id: T_financial_crisis
+    cooldown_units: 3
+    description: 财政过低会触发欠饷、赈灾和官僚停摆的连锁反应。
+  - pressure_id: P_rebel_leader_low_people
+    trigger:
+      all:
+      - dimension: 民心
+        operator: <=
+        value: 2
+    event_id: T_civil_unrest
+    cooldown_units: 3
+    description: 民心过低时，地方会把灾荒转化为民变。
+role_dimensions:
+  definitions:
+  - id: 武力
+    name: 武力
+    range:
+    - 0
+    - 10
+    initial: 7
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 个人战斗、军事指挥或武力威慑能力。
+  - id: 智谋
+    name: 智谋
+    range:
+    - 0
+    - 10
+    initial: 3
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 分析局势、谋划策略和识破计谋的能力。
+  - id: 口才
+    name: 口才
+    range:
+    - 0
+    - 10
+    initial: 5
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 说服、谈判和公开表达能力。
+  - id: 意志
+    name: 意志
+    range:
+    - 0
+    - 10
+    initial: 4
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 承压、坚持、抗诱惑和精神韧性。
+  - id: 感知
+    name: 感知
+    range:
+    - 0
+    - 10
+    initial: 5
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 观察、直觉、侦查和察觉异常能力。
+  - id: 魅力
+    name: 魅力
+    range:
+    - 0
+    - 10
+    initial: 7
+    growth: 行动成功、关键谈判或重大历史节点后可提升；通常不因单次失败下降。
+    description: 个人吸引力、亲和力和社交影响力。
+  world_dimension_overrides:
+    民心:
+      add: 1
+    兵力:
+      set: 4
+    派系势力:
+      add: 1
+    财政:
+      set: 3
+npc_relationships:
+- npc_id: zhang_xianzhong
+  numeric:
+    好感度: 4
+    忠诚度: 3
+    利益绑定: 3
+  tags:
+  - 旧交
+  - 恩怨
+  stance: rival
+  relationship_summary: 同为义军，路线与军纪差异极大。
+  reveal_policy: partial
+- npc_id: chen_yuanyuan
+  numeric:
+    好感度: 5
+    忠诚度: 2
+    利益绑定: 1
+  tags:
+  - 亲缘
+  stance: neutral
+  relationship_summary: 她能照见乱军裹挟无辜的代价。
+  reveal_policy: visible
+- npc_id: zhou_yanru
+  numeric:
+    好感度: 2
+    忠诚度: 0
+    利益绑定: 1
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 明廷首辅既可能招安，也可能调兵。
+  reveal_policy: visible
+- npc_id: wen_tiren
+  numeric:
+    好感度: 1
+    忠诚度: 0
+    利益绑定: 0
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 朝堂权臣会把民困称作贼乱。
+  reveal_policy: visible
+- npc_id: sun_chengzong
+  numeric:
+    好感度: 3
+    忠诚度: 0
+    利益绑定: 0
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 老臣若主持剿抚，会让义军扩张受阻。
+  reveal_policy: visible
+- npc_id: yuan_chonghuan
+  numeric:
+    好感度: 2
+    忠诚度: 0
+    利益绑定: 0
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 边军威名虽远，仍代表官军秩序。
+  reveal_policy: visible
+- npc_id: wu_sangui
+  numeric:
+    好感度: 3
+    忠诚度: 0
+    利益绑定: 1
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 山海关兵力可能决定你入京后的生死。
+  reveal_policy: visible
+- npc_id: huang_taiji
+  numeric:
+    好感度: 2
+    忠诚度: 0
+    利益绑定: 1
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 清军可借势，也会夺走天下。
+  reveal_policy: visible
+- npc_id: dorgon
+  numeric:
+    好感度: 2
+    忠诚度: 0
+    利益绑定: 1
+  tags:
+  - 恩怨
+  stance: enemy
+  relationship_summary: 入关清军是更冷酷的新对手。
+  reveal_policy: visible
+- npc_id: wang_chengen
+  numeric:
+    好感度: 2
+    忠诚度: 0
+    利益绑定: 0
+  tags:
+  - 旧交
+  stance: enemy
+  relationship_summary: 宫中近侍代表旧皇权最后防线。
+  reveal_policy: visible
+protagonist_npcs:
+- npc_id: chongzhen
+  role_id: emperor
+  name: 崇祯皇帝
+  goal: 守住大明法统并避免京师陷落。
+  priority: critical
+  behavior_driver:
+  - phase: 早期
+    condition:
+      time_before:
+        year: 3
+        month: 6
+    action: 催促各方拿出可立即执行的国策。
+    world_impact:
+      派系势力: 1
+    player_impact: 玩家会收到此人主动推进目标线的消息，若无回应会改变可选方案。
+  - phase: 中后期
+    condition:
+      dimension: 派系势力
+      operator: '>='
+      value: 6
+    action: 在危急中采取极端国策，压迫所有阵营表态。
+    world_impact:
+      派系势力: 1
+    player_impact: 该角色目标线会挤压玩家资源，并可能改变终局阵营格局。
+  interaction_with_player:
+    hostility: medium
+    negotiable: false
+    alliance_conditions:
+    - 共同敌人威胁过高
+    - 给予关键资源或名分
+    betrayal_conditions:
+    - 利益绑定低于2
+    - 玩家连续损害其核心目标
+- npc_id: yuan_chonghuan
+  role_id: frontier_general
+  name: 边关将领
+  goal: 守住辽东与山海关，并争取朝廷信任。
+  priority: high
+  behavior_driver:
+  - phase: 早期
+    condition:
+      time_before:
+        year: 3
+        month: 6
+    action: 向中枢索饷并加强边防自主权。
+    world_impact:
+      兵力: -1
+    player_impact: 玩家会收到此人主动推进目标线的消息，若无回应会改变可选方案。
+  - phase: 中后期
+    condition:
+      dimension: 兵力
+      operator: <=
+      value: 4
+    action: 以保境为名扩大统兵权限。
+    world_impact:
+      兵力: -1
+    player_impact: 该角色目标线会挤压玩家资源，并可能改变终局阵营格局。
+  interaction_with_player:
+    hostility: medium
+    negotiable: true
+    alliance_conditions:
+    - 共同敌人威胁过高
+    - 给予关键资源或名分
+    betrayal_conditions:
+    - 利益绑定低于2
+    - 玩家连续损害其核心目标
+- npc_id: zhou_yanru
+  role_id: grand_secretary
+  name: 内阁首辅
+  goal: 稳住内阁、财政与皇帝信任，避免成为替罪羊。
+  priority: high
+  behavior_driver:
+  - phase: 早期
+    condition:
+      time_before:
+        year: 3
+        month: 6
+    action: 组织廷议，试图把危机纳入内阁流程。
+    world_impact:
+      派系势力: 1
+    player_impact: 玩家会收到此人主动推进目标线的消息，若无回应会改变可选方案。
+  - phase: 中后期
+    condition:
+      dimension: 派系势力
+      operator: '>='
+      value: 6
+    action: 将责任转移给政敌或要求非常授权。
+    world_impact:
+      派系势力: 1
+    player_impact: 该角色目标线会挤压玩家资源，并可能改变终局阵营格局。
+  interaction_with_player:
+    hostility: medium
+    negotiable: true
+    alliance_conditions:
+    - 共同敌人威胁过高
+    - 给予关键资源或名分
+    betrayal_conditions:
+    - 利益绑定低于2
+    - 玩家连续损害其核心目标
+- npc_id: wang_chengen
+  role_id: chief_eunuch
+  name: 大宦官
+  goal: 掌控宫禁情报，在忠君与保权之间行动。
+  priority: medium
+  behavior_driver:
+  - phase: 早期
+    condition:
+      time_before:
+        year: 3
+        month: 6
+    action: 扩大厂卫探报，截取宫禁与外朝消息。
+    world_impact:
+      派系势力: 0
+    player_impact: 玩家会收到此人主动推进目标线的消息，若无回应会改变可选方案。
+  - phase: 中后期
+    condition:
+      dimension: 派系势力
+      operator: '>='
+      value: 6
+    action: 以密报左右皇帝判断，触发外朝反弹。
+    world_impact:
+      派系势力: 1
+    player_impact: 该角色目标线会挤压玩家资源，并可能改变终局阵营格局。
+  interaction_with_player:
+    hostility: medium
+    negotiable: true
+    alliance_conditions:
+    - 共同敌人威胁过高
+    - 给予关键资源或名分
+    betrayal_conditions:
+    - 利益绑定低于2
+    - 玩家连续损害其核心目标
+role_events:
+  timeline:
+  - event_id: RE_rebel_grain_oath
+    name: 分粮立誓
+    at:
+      year: 3
+      month: 4
+    severity: major
+    description: 饥民要求你兑现分田免粮，部将则要求先取城池。
+    narrative_hint: 从起义领袖视角呈现为直接压力，而非客观史料。
+    involved_npcs:
+    - zhang_xianzhong
+    recommended_responses:
+    - 开仓分粮
+    - 攻城取粮
+    - 接受招安
+    default_effects:
+      world_dimensions: {}
+      role_dimensions: {}
+      npc_relation_deltas: {}
+      information_added:
+      - I_rebel_grain_oath
+  conditional:
+  - event_id: RE_rebel_discipline_break
+    name: 营中抢掠
+    trigger:
+      all:
+      - dimension: 士气
+        operator: <=
+        value: 2
+    severity: critical
+    description: 部众抢掠开始损害义军名声，百姓开始畏惧而非追随。
+    recommended_responses:
+    - 谈判缓冲
+    - 强硬处置
+    - 寻找盟友
+    default_effects:
+      world_dimensions: {}
+      role_dimensions: {}
+      npc_relation_deltas: {}
+  random:
+  - event_id: RR_rebel_local_gentry
+    name: 乡绅献粮
+    weight: 2
+    conditions: []
+    severity: minor
+    description: 一批乡绅愿以粮草换取义军保护。
+    default_effects:
+      npc_relation_deltas: {}
+endings:
+  bottom_lines:
+  - bottom_line_id: BL_rebel_scattered
+    name: 义军溃散
+    condition:
+      all:
+      - dimension: 兵力
+        operator: <=
+        value: 0
+    ending_id: END_rebel_scattered
+    warning_threshold:
+      dimension: 兵力
+      operator: <=
+      value: 2
+    description: 兵力归零时，饥民重新散入山野，闯王旗号失去现实力量。
+  achievement_checks:
+  - check_id: ACH_rebel_new_order
+    name: 新顺建制
+    condition:
+      all:
+      - dimension: 民心
+        operator: '>='
+        value: 6
+      - dimension: 兵力
+        operator: '>='
+        value: 6
+    unlocks:
+    - END_rebel_new_dynasty
+  catalog:
+  - ending_id: END_rebel_new_dynasty
+    tier: gold
+    name: 新顺开国
+    priority: 100
+    conditions:
+      all:
+      - dimension: 民心
+        operator: '>='
+        value: 7
+      - dimension: 兵力
+        operator: '>='
+        value: 6
+    description: 你把“分田免粮”从口号变为制度，闯军入主京师后没有立刻失控，一个新政权艰难开局。
+    epilogue_hooks:
+    - 入京军纪
+    - 旧官任用
+    - 清军威胁
+  - ending_id: END_rebel_people_king
+    tier: silver
+    name: 民心闯王
+    priority: 85
+    conditions:
+      all:
+      - dimension: 民心
+        operator: '>='
+        value: 6
+      - dimension: 士气
+        operator: '>='
+        value: 5
+    description: 你未必夺得全天下，却让饥民知道义军不是另一支劫掠之师，明廷再难用“贼”字概括你。
+    epilogue_hooks:
+    - 乡村新约
+    - 招安谈判
+    - 张献忠分歧
+  - ending_id: END_rebel_amnesty
+    tier: mixed
+    name: 招安裂旗
+    priority: 65
+    conditions:
+      all:
+      - dimension: 派系势力
+        operator: <=
+        value: 6
+      - dimension: 兵力
+        operator: <=
+        value: 5
+    description: 你接受招安换来部众暂活，却也让旗号分裂；有人称你识时务，有人说你背弃饥民。
+    epilogue_hooks:
+    - 部众分裂
+    - 朝廷封赏
+    - 旧怨难平
+  - ending_id: END_rebel_bloody_warlord
+    tier: mixed
+    name: 血火割据
+    priority: 45
+    conditions:
+      all:
+      - dimension: 兵力
+        operator: '>='
+        value: 6
+      - dimension: 民心
+        operator: <=
+        value: 3
+    description: 你靠恐惧夺城立威，地盘扩大，民心却从拥戴转为畏惧，新秩序变成另一场兵祸。
+    epilogue_hooks:
+    - 军纪崩坏
+    - 地方逃亡
+    - 张献忠合流
+  - ending_id: END_rebel_scattered
+    tier: failure
+    name: 饥军散尽
+    priority: 10
+    conditions:
+      all:
+      - dimension: 兵力
+        operator: <=
+        value: 0
+    description: 粮尽、军散、首领失信，曾经追随你的饥民重新流亡，旗号被风吹落泥中。
+    epilogue_hooks:
+    - 幸存部众
+    - 明廷追剿
+    - 流民余烬
+narration_style:
+  person: second_person
+  player_address: 闯王
+  narrator_voice: 民间传闻、军营号令与饥民哭声并置，语言直白有煽动力，强调求活与建制的张力
+  information_delivery:
+    fallback_enabled: true
+    fallback_after_units: 3
+    fallback_style: 以急报、密折、军报、传闻或营中对话自然补足信息。
+  taboo:
+  - 不要直接剧透隐藏真相
+  - 不要替玩家做价值判断
+  - 不要把历史必然写成玩家无能
+information_pool:
+- info_id: I_rebel_famine_truth
+  type: persistent
+  content: 地方官仓并非无粮，而是粮在仓中、人在道旁。
+  known_by:
+  - zhang_xianzhong
+  delivery_priority: urgent
+  expires_after_units: null
+  delivered_by: []
+- info_id: I_rebel_ming_divided
+  type: fact
+  content: 明廷在剿、抚、加税和边防之间争执不下。
+  known_by:
+  - zhou_yanru
+  delivery_priority: high
+  expires_after_units: null
+  delivered: false
+- info_id: I_rebel_discipline_risk
+  type: escalating
+  content: 部众抢掠会让“分田免粮”失去可信度。
+  known_by:
+  - chen_yuanyuan
+  delivery_priority: high
+  expires_after_units: null
+  severity: 1
+  escalation:
+    1: 部众抢掠会让“分田免粮”失去可信度。
+    2: 该线索开始影响NPC判断。
+    3: 若继续忽视，将触发被动响应。
+  max_severity_event: RE_rebel_discipline_break
+  delivered_by: []
+consequence_seed_defaults:
+  enabled: true
+  chances_by_severity:
+    low: 2
+    medium: 3
+    high: 4
+  check_points:
+  - time_advance
+  - major_decision
+  - before_ending
+  trigger_policy: random_one
+loader_hints:
+  merge_strategy:
+    world_dimensions: 先读取 world.initial，再应用 role.world_dimension_overrides。
+    npc_relationships: 按 npc_id 合并 world.global_npc_pool 与 role.npc_relationships；chongzhen 表示未入全局NPC池的皇帝前主角线。
+    events: world timeline/condition/random 与 role_events 分池加载，触发后统一进入被动响应。
+  stable_ids_required:
+  - event_id
+  - npc_id
+  - role_id
+  - info_id
+  - ending_id

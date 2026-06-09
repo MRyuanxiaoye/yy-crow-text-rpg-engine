@@ -1,0 +1,25 @@
+decision_id: D_wu_command
+id: D_wu_command
+name: 吴三桂统兵权限
+chapter: ch06_songjin
+context: 关宁军需要统一指挥，但集中兵权可能带来尾大不掉。
+options:
+  - key: full_command
+    label: 全权委任吴三桂
+    effect:
+      军力: 8
+      朝廷稳定: -5
+      边防: 4
+  - key: shared_command
+    label: 设监军与分权制衡
+    effect:
+      朝廷稳定: 3
+      军力: -3
+      边防: 1
+  - key: rotate_commanders
+    label: 轮调诸将，防一家独大
+    effect:
+      朝廷稳定: 2
+      军力: -6
+      边防: -4
+allow_free_input: false

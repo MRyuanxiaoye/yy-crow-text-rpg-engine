@@ -1,0 +1,21 @@
+chapter_id: ch03_yuan
+id: ch03_yuan
+name: 宁锦疑云
+title: 宁锦疑云
+game_date_start: "1630年夏"
+opening_narration: |
+  战事方歇，流言已满京城。有人言袁崇焕有擅杀、有通虏，也有人称其苦撑危局、
+  功过不当一笔抹杀。御前奏疏堆如山，字里行间皆是刀。
+  皇权需要一个答案，可这个答案若错，或许再无人能守辽东。
+initial_scene:
+  location: 文华殿
+  context: 会审袁崇焕案，言官、军中与宫中意见冲突。
+  present_npcs: [袁崇焕, 温体仁, 王承恩]
+advance_conditions:
+  min_turns: 2
+  max_turns: 8
+  acceleration:
+    enabled: true
+    turns_reduction: 1
+    key_decisions: [D_yuan_fate, D_jinyi_scope]
+key_decisions: [D_yuan_fate, D_jinyi_scope]

@@ -1,0 +1,24 @@
+decision_id: D_postwar_order
+id: D_postwar_order
+name: 战后秩序设想
+chapter: ch08_final
+context: 无论胜败，天下秩序都要重建。是沿旧制缝补，还是彻底改制，将影响结局走向。
+options:
+  - key: restore_old_system
+    label: 维持祖制，先求安定
+    effect:
+      朝廷稳定: 6
+      民心: -4
+  - key: military_regency
+    label: 军政并轨，战时体制延续
+    effect:
+      军力: 6
+      朝廷稳定: -3
+      民心: -3
+  - key: reform_cabinet
+    label: 设新政务院，推行改革
+    effect:
+      民心: 8
+      朝廷稳定: -6
+      国库: -2
+allow_free_input: false

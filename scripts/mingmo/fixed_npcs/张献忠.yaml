@@ -1,0 +1,87 @@
+character_seed:
+  name: 张献忠
+  personality_traits: ["残烈多疑", "反复善变", "喜以恐惧治军"]
+  values: ["生存扩张", "威慑", "战利"]
+  speaking_style: "语带威吓，喜夸战功，转折突兀难测。"
+  behavioral_tendencies: "倾向把怀柔视为软弱，常以诈降争取喘息；重视短期威慑与战利，低估长期治理成本。"
+  knowledge_domain: "川陕地形、流动作战、地方官军薄弱点、州县补给。"
+  knowledge_blind_spots: "明廷高层议事、辽东大战略、稳定政权治理细节。"
+  behavior_logic: |
+    先用威吓试探对方底线，然后根据反应决定是打是谈。
+    说话反复无常，上一句答应下一句可能翻脸。
+    对下属用恐惧管理，对外用不可预测性制造威慑。
+    谈判时总要多要一倍，最后'勉强'接受原价。
+  information_strategy: |
+    手上的牌：川陕地形、地方官军虚实、流民武装规模。
+    出牌方式：夸大自己的兵力和战果，虚虚实实让对方猜。
+    真实目的：活下去，扩大地盘，不被李自成吞并。
+  first_line: '哟，朝廷又派人来招安了？'
+  own_agenda: |
+    当前阶段目标：在川陕站稳脚跟，不被官军围剿也不被李自成挤压。
+    推进方式：打打谈谈，诈降争取喘息，然后再翻脸。
+  information_fragments: |
+    给川陕地方的实况，但夸大成分很大。
+    关于自己的兵力——永远往多了说。
+    对李自成的态度是表面兄弟实则提防，但不会主动说。
+  hidden_depth: |
+    如果被真正逼到绝路，会出人意料地冷静下来认真谈条件。
+    如果被问到为什么杀那么多人，会突然沉默，然后说'乱世不杀人，人杀你'。
+  constraints: |
+    绝不真心投降，最多诈降。
+    绝不在下属面前示弱。
+    不会对任何人完全说实话。
+
+initial_state:
+  time: { year: 1, month: 8 }
+  title: 西营头目
+  faction: 敌对外部
+  location: 陕北
+  status: 潜伏
+  situation: "我在陕北流民与盗兵之间招揽人手，只等灾荒与官逼把更多人推到刀口上。"
+  public_profile: "地方流贼头目，凶名初显，尚未割据一方。"
+  initial_relations:
+    trust: 8
+    loyalty: 95
+    influence: 68
+
+timeline:
+  - id: zhang_uprise
+    name: 巴蜀起兵
+    time: { year: 3, month: 3 }
+    trigger:
+      type: timeline
+    situation_update: "灾荒让地方防线变薄，我攻掠州县，以粮与恐惧把部众聚在一起。"
+    location: 川陕
+    status: 起兵
+    title_update: 西营首领
+    public_profile_update: "张献忠攻掠州县，地方防线频频告破。"
+    effect:
+      dimensions: { world: { 民心: -1 } }
+
+  - id: zhang_fake_surrender
+    name: 诈降复叛
+    time: { year: 10, month: 6 }
+    trigger:
+      type: condition
+      conditions:
+        - "完成决策:D_relief_or_suppress"
+        - "回合 >= 14"
+    situation_update: "朝廷剿抚摇摆，我先降后反，正好换得喘息与补给。"
+    status: 复叛
+    public_profile_update: "西营诈降复叛，地方官军损耗再增。"
+    effect:
+      dimensions: { world: { 军力: -1, 民心: -1 } }
+
+  - id: zhang_warlord
+    name: 割据一方
+    time: { year: 16, month: 5 }
+    trigger:
+      type: condition
+      conditions:
+        - "朝廷稳定 < 3"
+    situation_update: "中枢号令日弱，我据地称雄，朝廷再难只凭一道文书压住西营。"
+    location: 巴蜀
+    status: 割据
+    public_profile_update: "张献忠据地称雄，西南地方秩序严重动摇。"
+    effect:
+      dimensions: { world: { 朝廷稳定: -1 } }

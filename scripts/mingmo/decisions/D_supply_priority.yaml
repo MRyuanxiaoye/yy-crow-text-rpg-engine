@@ -1,0 +1,26 @@
+decision_id: D_supply_priority
+id: D_supply_priority
+name: 粮饷调配先后
+chapter: ch02_jisi
+context: 国库有限，京营、边军与难民赈济三方同要粮银，必须立刻排序。
+options:
+  - key: army_first
+    label: 军饷优先，赈济后置
+    effect:
+      军力: 8
+      民心: -8
+      国库: -6
+  - key: relief_first
+    label: 赈灾优先，军饷从简
+    effect:
+      民心: 10
+      军力: -8
+      国库: -5
+  - key: split_even
+    label: 三方均摊，皆不充足
+    effect:
+      民心: 2
+      军力: 1
+      国库: -8
+      朝廷稳定: -2
+allow_free_input: false

@@ -1,0 +1,28 @@
+decision_id: D_jisi_defense
+id: D_jisi_defense
+name: 己巳京师防务
+chapter: ch02_jisi
+context: 后金绕关深入，京师危急。主帅建议分兵截击，兵部则主张固守九门。
+options:
+  - key: field_intercept
+    label: 野战截击，争取在京畿外决战
+    effect:
+      军力: -12
+      边防: 6
+      民心: 8
+      narration: 若胜可振国威，若败则京师门户洞开。
+  - key: fortress_hold
+    label: 坚守京城，保存主力
+    effect:
+      军力: -4
+      民心: -6
+      朝廷稳定: 3
+      narration: 中枢得保，但地方百姓承受更重兵灾。
+  - key: recall_border_elites
+    label: 急调辽东精锐回援
+    effect:
+      边防: -10
+      军力: 5
+      朝廷稳定: -2
+      narration: 京师压力稍缓，辽东防线却出现空隙。
+allow_free_input: true

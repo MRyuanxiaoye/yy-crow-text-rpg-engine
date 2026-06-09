@@ -1,0 +1,31 @@
+decision_id: D_new_tax
+id: D_new_tax
+name: 新饷与清丈
+chapter: ch05_twofront
+context: 财政濒危，若不加赋则军需断绝；若加赋过急，民变更盛。
+options:
+  - key: emergency_tax
+    label: 加征辽饷，立刻筹银
+    effect:
+      国库: 14
+      民心: -12
+      朝廷稳定: -4
+  - key: land_audit
+    label: 清丈田亩，先追逃税豪强
+    effect:
+      国库: 8
+      朝廷稳定: -6
+      民心: 4
+  - key: cut_palace_cost
+    label: 裁宫廷冗费与冗官
+    effect:
+      国库: 6
+      帝王威望: 3
+      朝廷稳定: -3
+  - key: audit_and_remove
+    label: 借税案清洗权臣并整饷
+    effect:
+      国库: 10
+      朝廷稳定: 2
+      民心: -4
+allow_free_input: false

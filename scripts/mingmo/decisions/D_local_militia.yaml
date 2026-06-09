@@ -1,0 +1,25 @@
+decision_id: D_local_militia
+id: D_local_militia
+name: 团练与乡绅
+chapter: ch04_uprising
+context: 官军不足，地方士绅请办团练自保。放权可补兵力，也可能滋生割据。
+options:
+  - key: authorize_militia
+    label: 允许各地募练自卫
+    effect:
+      军力: 6
+      朝廷稳定: -6
+      民心: 2
+  - key: centralize_command
+    label: 团练归兵部节制
+    effect:
+      军力: 3
+      国库: -4
+      朝廷稳定: 1
+  - key: reject_militia
+    label: 严禁私兵，维持官军体系
+    effect:
+      朝廷稳定: 4
+      军力: -5
+      民心: -3
+allow_free_input: false

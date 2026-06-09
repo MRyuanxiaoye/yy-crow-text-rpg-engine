@@ -1,0 +1,21 @@
+chapter_id: ch06_songjin
+id: ch06_songjin
+name: 松锦国赌
+title: 松锦国赌
+game_date_start: "1638年夏"
+opening_narration: |
+  松山、锦州之间，壕堑纵横，白骨渐埋于黄沙。前线急报一封紧过一封：
+  粮道被截、援兵迟滞、将帅互不相下。此战若胜，可挽颓势；若败，
+  关宁防线将如折瓦。大明把最后几分元气都押在这一局。
+initial_scene:
+  location: 军机幕府
+  context: 前线请求决断：是孤注一掷增援，还是保全主力后撤。
+  present_npcs: [吴三桂, 皇太极, 多尔衮]
+advance_conditions:
+  min_turns: 3
+  max_turns: 9
+  acceleration:
+    enabled: true
+    turns_reduction: 1
+    key_decisions: [D_songjin_commit, D_wu_command]
+key_decisions: [D_songjin_commit, D_wu_command]

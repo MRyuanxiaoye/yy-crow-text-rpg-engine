@@ -1,0 +1,102 @@
+# NPC主动行为事件
+npc_events:
+  - id: "N_wenti_impeach"
+    type: npc_action
+    name: "温体仁弹劾政敌"
+    severity: moderate
+    conditions:
+      - { metric: 朝廷稳定, operator: below, value: 45 }
+    description: "温体仁联合言官弹劾周延儒"
+    narrative_hint: "温体仁持奏疏入殿：'陛下，臣有本参劾首辅周延儒十大罪状！'"
+    forced_npcs: ["温体仁", "周延儒"]
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 朝廷稳定: -6 }
+      narrative: "党争加剧，朝政陷入内耗"
+
+  - id: "N_wusangui_request"
+    type: npc_action
+    name: "吴三桂请饷"
+    severity: moderate
+    conditions:
+      - { metric: 国库, operator: below, value: 35 }
+      - { metric: 边防, operator: below, value: 45 }
+    description: "吴三桂上疏请求增拨军饷"
+    narrative_hint: "关宁总兵吴三桂急奏：'军中欠饷三月，将士怨声载道，恳请拨饷！'"
+    forced_npcs: ["吴三桂"]
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 军力: -5, 边防: -5 }
+      narrative: "关宁军心浮动，吴三桂暗生异心"
+
+  - id: "N_li_zicheng_grow"
+    type: npc_action
+    name: "闯军壮大"
+    severity: moderate
+    conditions:
+      - { metric: 民心, operator: below, value: 35 }
+    description: "李自成势力急剧膨胀"
+    narrative_hint: "兵部急报：'闯贼裹挟流民，兵力已逾十万，攻陷数城！'"
+    forced_npcs: ["李自成"]
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 民心: -5, 军力: -3 }
+      narrative: "义军声势日壮，官军节节败退"
+
+  - id: "N_wang_chengen_warn"
+    type: npc_action
+    name: "王承恩密报"
+    severity: minor
+    conditions:
+      - { metric: 朝廷稳定, operator: below, value: 30 }
+    description: "王承恩密报宫中异动"
+    narrative_hint: "王承恩深夜求见：'陛下，奴婢探得宫中有人暗通外臣，恐有不测……'"
+    forced_npcs: ["王承恩"]
+    default_consequence:
+      delay_time_units: 3
+      effects:
+        metrics: { 朝廷稳定: -3 }
+      narrative: "宫中暗流未被察觉，隐患加深"
+
+  # 阈值触发事件
+  - id: "T_financial_crisis"
+    type: npc_action
+    trigger_tag: "financial_crisis"
+    name: "财政崩溃"
+    severity: critical
+    description: "国库见底，百官俸禄无法发放"
+    narrative_hint: "户部尚书跪地痛哭：'陛下，国库已空！百官俸禄、边军粮饷皆无着落！'"
+    default_consequence:
+      delay_time_units: 1
+      effects:
+        metrics: { 朝廷稳定: -10, 军力: -8 }
+      narrative: "欠饷引发兵变，朝廷威信扫地"
+
+  - id: "T_mutiny_risk"
+    type: npc_action
+    trigger_tag: "mutiny_risk"
+    name: "兵变危机"
+    severity: critical
+    description: "军队哗变一触即发"
+    narrative_hint: "锦衣卫急报：'京营有人散布谣言，煽动哗变，形势危急！'"
+    default_consequence:
+      delay_time_units: 1
+      effects:
+        metrics: { 朝廷稳定: -12, 民心: -8 }
+      narrative: "兵变爆发，京城陷入混乱"
+
+  - id: "T_civil_unrest"
+    type: npc_action
+    trigger_tag: "civil_unrest"
+    name: "民变四起"
+    severity: critical
+    description: "多地百姓揭竿而起"
+    narrative_hint: "各省急报纷至：'民变四起，官府已无力弹压！'"
+    default_consequence:
+      delay_time_units: 1
+      effects:
+        metrics: { 民心: -10, 国库: -5 }
+      narrative: "民变蔓延，地方失控"

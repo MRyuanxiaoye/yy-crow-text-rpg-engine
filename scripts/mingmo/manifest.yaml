@@ -1,0 +1,86 @@
+id: mingmo
+name: 大明残照：明末风云录
+description: |
+  你将置身崇祯一朝，从京师到辽东、从朝堂到民间，在内忧外患并起的十六年里做出抉择。
+  五种身份共享主线国运，却各有立场与代价：每一步都可能改写王朝命运。
+
+# 时间系统
+time:
+  unit: "月"
+  display_format: "崇祯{year}年{month}月"
+  start: { year: 1, month: 8 }
+  turns_per_unit: 3
+  decay_rules:
+    - { metric: 国库, delta: -2 }
+    - { metric: 边防, delta: -1 }
+    - { metric: 朝廷稳定, delta: -1 }
+
+# 数值阈值触发
+metrics:
+  thresholds:
+    - { metric: 国库, below: 20, trigger_tag: "financial_crisis" }
+    - { metric: 军力, below: 30, trigger_tag: "mutiny_risk" }
+    - { metric: 民心, below: 20, trigger_tag: "civil_unrest" }
+    - { metric: 边防, below: 25, trigger_tag: "invasion_imminent" }
+    - { metric: 朝廷稳定, below: 15, trigger_tag: "court_collapse" }
+
+# 事件调度
+event_scheduler:
+  max_active_events: 3
+  random_check_per_time_unit: true
+
+available_roles:
+  - role_id: emperor
+    name: 崇祯皇帝
+    perspective: 全局
+    core_play: 治国决策、平衡文武与宫廷
+    branch_direction: 后宫线、帝王心术线
+  - role_id: frontier_general
+    name: 边关将领
+    perspective: 军事
+    core_play: 练兵守城、统筹关宁防线
+    branch_direction: 兵变线、军中派系线
+  - role_id: grand_secretary
+    name: 内阁首辅
+    perspective: 朝堂
+    core_play: 权谋博弈、辅政施令
+    branch_direction: 科举改革线、结党线
+  - role_id: rebel_leader
+    name: 起义领袖
+    perspective: 民间
+    core_play: 聚众起兵、争粮争地
+    branch_direction: 称王线、招安线
+  - role_id: chief_eunuch
+    name: 大宦官
+    perspective: 暗线
+    core_play: 宫廷操控、结党固权
+    branch_direction: 东厂线、夺权线
+length_configs:
+  short:
+    name: 短篇
+    chapters: [ch01_ascend, ch03_yuan, ch08_final]
+    rounds_per_chapter: 3
+    estimated_decisions: 9
+    description: 聚焦三次国运抉择，适合快速体验。
+  medium:
+    name: 中篇
+    chapters:
+      - ch01_ascend
+      - ch02_jisi
+      - ch03_yuan
+      - ch04_uprising
+      - ch05_twofront
+      - ch06_songjin
+      - ch07_collapse
+      - ch08_final
+    rounds_per_chapter: 5
+    estimated_decisions: 22
+    description: 完整八章主线，节奏均衡。
+  long:
+    name: 长篇
+    chapters: [ch01_ascend, ch02_jisi, ch03_yuan, ch04_uprising, ch05_twofront, ch06_songjin, ch07_collapse, ch08_final]
+    rounds_per_chapter: 7
+    estimated_decisions: 52
+    extension_hint: 在章节间插入过渡章至20章以上
+    description: 慢节奏深度体验，支线充分展开。
+first_chapter: ch01_ascend

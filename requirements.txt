@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+openai
+anthropic
+pydantic-settings
+pyyaml
+httpx
+python-dotenv
+cryptography

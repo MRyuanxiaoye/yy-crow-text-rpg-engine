@@ -1,0 +1,22 @@
+chapter_id: ch01_ascend
+id: ch01_ascend
+name: 乾清新政
+title: 乾清新政
+game_date_start: "1628年秋"
+opening_narration: |
+  先帝梓宫未远，钟鼓却已催人入局。紫禁城深处，烛影映着新天子的眉锋，
+  朝班之上旧党新臣各怀算计，人人都在试探这位少年皇帝的手腕。
+  魏阉虽死，其羽翼犹在要津；若快刀太急，朝局或崩，若优柔不决，威令不行。
+  大明第一道令旨，将决定往后十六年的风向。
+initial_scene:
+  location: 乾清宫东暖阁
+  context: 新帝召见内阁与司礼监，商议如何处置魏党余脉。
+  present_npcs: [温体仁, 孙承宗, 王承恩]
+advance_conditions:
+  min_turns: 2
+  max_turns: 7
+  acceleration:
+    enabled: true
+    turns_reduction: 1
+    key_decisions: [D_wei_party, D_rebuild_censorate]
+key_decisions: [D_wei_party, D_rebuild_censorate]

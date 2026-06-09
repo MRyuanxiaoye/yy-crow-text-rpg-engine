@@ -1,0 +1,29 @@
+decision_id: D_last_line
+id: D_last_line
+name: 最后防线
+chapter: ch07_collapse
+context: 李自成连战连胜，京师周边失守。国家必须决定是死守北京，还是保存火种南撤。
+options:
+  - key: defend_beijing
+    label: 集中兵力死守京师
+    effect:
+      军力: -10
+      帝王威望: 8
+      民心: 2
+      narration: 以天子守国门，可聚人心，也可能一战俱焚。
+  - key: relocate_south
+    label: 南迁南京，重建防线
+    effect:
+      朝廷稳定: -10
+      国库: -6
+      军力: 4
+      narration: 保政权于一线，却难免“弃都”之名。
+  - key: split_forces
+    label: 京师固守并秘密南运中枢
+    effect:
+      军力: -6
+      朝廷稳定: -4
+      国库: -8
+      民心: -2
+      narration: 两头兼顾，执行稍有迟误便两失其利。
+allow_free_input: true

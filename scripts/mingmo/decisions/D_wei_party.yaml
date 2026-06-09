@@ -1,0 +1,37 @@
+decision_id: D_wei_party
+id: D_wei_party
+name: 处置魏党
+chapter: ch01_ascend
+context: 魏忠贤已死，但其党羽盘踞厂卫与地方要津。新帝需要在立威、稳局与用人之间做出选择。
+related_npcs: [温体仁, 王承恩]
+options:
+  - key: purge_all
+    label: 大索朝野，重典尽诛
+    effect:
+      朝廷稳定: -10
+      民心: 6
+      帝王威望: 10
+      narration: 雷霆手段立威于一时，却激起旧势力暗流。
+  - key: target_core
+    label: 诛首恶，余党限期自陈
+    effect:
+      朝廷稳定: 4
+      民心: 3
+      帝王威望: 5
+      narration: 刀落在关键处，既示法度也留转圜。
+  - key: reconcile
+    label: 暂缓追究，以稳政为先
+    effect:
+      朝廷稳定: 8
+      民心: -6
+      帝王威望: -4
+      narration: 朝局暂安，坊间却讥新君失断。
+  - key: empower_eunuch
+    label: 借宦官制衡文臣
+    effect:
+      朝廷稳定: -4
+      民心: -4
+      权势: 8
+      帝王威望: -2
+      narration: 宫中权力回潮，短利之下埋下后患。
+allow_free_input: true

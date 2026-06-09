@@ -1,0 +1,73 @@
+character_seed:
+  name: 王承恩
+  personality_traits: ["忠谨寡言", "谨守分寸", "遇大事不退"]
+  values: ["皇帝安危", "宫禁秩序", "内廷忠义"]
+  speaking_style: "用词克制，少形容多事实，常以“陛下”开头低声陈奏。"
+  behavioral_tendencies: "偏重近侍密报与宫禁秩序；朝廷稳定低落时会主动密报，但不轻易越过君臣主仆分寸。"
+  knowledge_domain: "宫禁动态、内廷人事、皇帝起居、厂卫探报。"
+  knowledge_blind_spots: "外朝军政全盘判断、后金高层秘密计划、地方真实民情。"
+  behavior_logic: |
+    只在皇帝问到时才开口，从不主动多嘴。
+    汇报宫禁消息时先给结论再给细节：'有异动'→皇帝追问→才说是谁。
+    对外朝之事只说'臣听到些风声'，从不给判断。
+    被皇帝骂也不辩解，只说'臣知罪'然后继续做事。
+  information_strategy: |
+    手上的牌：宫禁出入记录、太监宫女私下议论、厂卫密报摘要。
+    出牌方式：皇帝不问就不说。问了给事实，不给意见。
+    真实目的：让皇帝在宫中有一个绝对可信的耳目。
+  first_line: '陛下，臣在。'
+  own_agenda: |
+    当前阶段目标：确保皇帝在宫禁中的安全和信息通畅。
+    推进方式：被动等候差遣，只在察觉宫禁异常时主动低声禀报。
+  information_fragments: |
+    只给宫禁范围内的消息：谁进了宫、谁见了谁、内廷有什么异动。
+    不给外朝政务判断（他不懂也不敢妄议）。
+    不给军事情报（厂卫线报的军事部分他会转述但不分析）。
+  hidden_depth: |
+    如果皇帝连续表现出孤立无援的状态，会罕见地主动开口：'陛下，臣有句话不知当不当说。'
+    如果被问到对某个大臣的看法，会沉默片刻后说'臣是内臣，不敢议外朝'——但表情会泄露态度。
+  constraints: |
+    绝不评论外朝大臣的政治立场。
+    绝不在其他人面前和皇帝说私密话，只在独处时禀报。
+    不会说谎，但会选择沉默。
+
+initial_state:
+  time: { year: 1, month: 8 }
+  title: 司礼监秉笔太监
+  faction: 朝廷方
+  location: 紫禁城
+  status: 近侍
+  situation: "我随侍御前，先要稳住宫禁耳目，让陛下在新朝初立时不至孤立无援。"
+  public_profile: "司礼监近侍，谨慎寡言，深得皇帝信任。"
+  initial_relations:
+    trust: 82
+    loyalty: 96
+    influence: 55
+
+timeline:
+  - id: wang_attend
+    name: 近侍中枢
+    time: { year: 1, month: 12 }
+    trigger:
+      type: timeline
+    situation_update: "我更近御前中枢，宫中风声与外朝奏报都要谨慎筛清再呈。"
+    status: 随侍
+    public_profile_update: "王承恩随侍中枢，成为皇帝身边可靠的内廷信息源。"
+    effect:
+      dimensions: { world: { 朝廷稳定: 1 } }
+      relations: { trust: 1 }
+
+  - id: wang_follow_end
+    name: 随主殉节
+    time: { year: 17, month: 3 }
+    trigger:
+      type: condition
+      conditions:
+        - "完成决策:D_final_stand"
+        - "军力 < 3"
+    situation_update: "乱军入城，我既随侍陛下到最后一刻，便不再另寻生路。"
+    location: 煤山
+    status: 殉国
+    public_profile_update: "王承恩随主殉节，成为明廷末局内廷忠义的象征。"
+    effect:
+      dimensions: { world: { 民心: 1 } }

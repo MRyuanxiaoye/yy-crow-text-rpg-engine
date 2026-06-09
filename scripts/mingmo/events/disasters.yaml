@@ -1,0 +1,68 @@
+# 天灾事件池
+disasters:
+  - id: "D_yellow_river_flood"
+    type: disaster
+    name: "黄河决口"
+    severity: critical
+    time: { year: 5, month: 7 }
+    description: "黄河在开封段决口，淹没数县"
+    narrative_hint: "河南巡抚八百里加急：'黄河决口！开封以东尽成泽国，灾民数十万！'"
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 民心: -12, 国库: -8 }
+      narrative: "洪水肆虐，朝廷赈灾不力，民怨沸腾"
+
+  - id: "D_plague_outbreak"
+    type: disaster
+    name: "瘟疫爆发"
+    severity: critical
+    time: { year: 16, month: 5 }
+    description: "京畿地区爆发大疫"
+    narrative_hint: "太医院急奏：'京城内外疫病蔓延，日死数百，军营亦有传染！'"
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 军力: -10, 民心: -10, 朝廷稳定: -5 }
+      narrative: "瘟疫横行，京营战力锐减"
+
+  - id: "D_locust_swarm"
+    type: disaster
+    name: "蝗灾"
+    severity: moderate
+    probability: 0.1
+    conditions:
+      - { metric: 民心, operator: below, value: 40 }
+    description: "蝗虫过境，庄稼尽毁"
+    narrative_hint: "地方急报：'蝗虫蔽日，所过之处颗粒无收！'"
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 民心: -8, 国库: -5 }
+      narrative: "蝗灾加剧饥荒，流民再增"
+
+  - id: "D_earthquake"
+    type: disaster
+    name: "地震"
+    severity: moderate
+    probability: 0.06
+    description: "京畿发生地震"
+    narrative_hint: "夜半地动山摇，宫墙裂缝，百官惊惶上疏言天谴。"
+    default_consequence:
+      delay_time_units: 3
+      effects:
+        metrics: { 朝廷稳定: -5, 民心: -5 }
+      narrative: "地震被视为天谴，朝野人心不安"
+
+  - id: "D_drought_henan"
+    type: disaster
+    name: "河南大旱"
+    severity: moderate
+    time: { year: 10, month: 6 }
+    description: "河南连月无雨，赤地千里"
+    narrative_hint: "河南巡抚泣血上疏：'连旱三月，井泉枯竭，百姓易子而食！'"
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 民心: -10, 国库: -5 }
+      narrative: "旱灾催生更多流民加入义军"

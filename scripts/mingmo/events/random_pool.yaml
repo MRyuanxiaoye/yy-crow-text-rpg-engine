@@ -1,0 +1,105 @@
+# 随机事件池（每次时间推进时按概率掷骰）
+random_pool:
+  - id: "R_corruption_case"
+    type: random
+    name: "地方贪腐案"
+    severity: minor
+    probability: 0.2
+    description: "御史弹劾某地方官贪墨赈灾银两"
+    narrative_hint: "都察院御史递上弹章：'臣参某府知府贪墨赈灾银三万两！'"
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 国库: -5, 民心: -3 }
+      narrative: "贪腐之风蔓延，百姓怨声载道"
+
+  - id: "R_border_skirmish"
+    type: random
+    name: "边境小规模冲突"
+    severity: minor
+    probability: 0.15
+    conditions:
+      - { metric: 边防, operator: below, value: 50 }
+    description: "蒙古部落骚扰边境"
+    narrative_hint: "边关总兵急报：'蒙古散骑犯边，已劫掠三村。'"
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 边防: -5, 民心: -3 }
+      narrative: "边民受害，守军疲于应付"
+
+  - id: "R_merchant_petition"
+    type: random
+    name: "商帮请愿"
+    severity: minor
+    probability: 0.15
+    description: "江南商帮联名请求减免商税"
+    narrative_hint: "户部侍郎呈上联名书：'江南商帮请减商税，否则恐有罢市之忧。'"
+    player_options_hint:
+      - "减税安商"
+      - "维持原税"
+      - "加税充军"
+    default_consequence:
+      delay_time_units: 3
+      effects:
+        metrics: { 国库: -3 }
+      narrative: "商帮不满，暗中抵制朝廷政令"
+
+  - id: "R_npc_conspiracy"
+    type: random
+    name: "朝臣密谋"
+    severity: moderate
+    probability: 0.12
+    conditions:
+      - { metric: 朝廷稳定, operator: below, value: 40 }
+    description: "有朝臣暗中串联，图谋不轨"
+    narrative_hint: "王承恩附耳低语：'陛下，东厂探子回报，有人在暗中串联……'"
+    forced_npcs: ["王承恩"]
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 朝廷稳定: -8 }
+      narrative: "密谋未被制止，朝中暗流涌动"
+
+  - id: "R_military_desertion"
+    type: random
+    name: "兵士逃亡"
+    severity: moderate
+    probability: 0.1
+    conditions:
+      - { metric: 国库, operator: below, value: 30 }
+    description: "欠饷日久，边军大量逃亡"
+    narrative_hint: "兵部尚书面色凝重：'陛下，辽东驻军月余未发饷，已有千人逃散。'"
+    default_consequence:
+      delay_time_units: 2
+      effects:
+        metrics: { 军力: -8, 边防: -5 }
+      narrative: "逃兵日增，防线出现缺口"
+
+  - id: "R_good_harvest"
+    type: random
+    name: "丰收年景"
+    severity: minor
+    probability: 0.08
+    conditions:
+      - { metric: 民心, operator: above, value: 40 }
+    description: "江南稻米丰收，民间安定"
+    narrative_hint: "户部呈报：'今岁江南丰收，粮价平稳，百姓安居。'"
+    default_consequence:
+      delay_time_units: 99
+      effects:
+        metrics: { 民心: 5, 国库: 3 }
+      narrative: "丰年带来短暂安宁"
+
+  - id: "R_talent_emerge"
+    type: random
+    name: "贤才出仕"
+    severity: minor
+    probability: 0.1
+    description: "科举选拔出一批干才"
+    narrative_hint: "吏部尚书喜报：'今科进士中有数人才干出众，可堪大用。'"
+    default_consequence:
+      delay_time_units: 99
+      effects:
+        metrics: { 朝廷稳定: 3 }
+      narrative: "新进官员充实了朝廷"

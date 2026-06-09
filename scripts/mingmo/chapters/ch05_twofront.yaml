@@ -1,0 +1,21 @@
+chapter_id: ch05_twofront
+id: ch05_twofront
+name: 两线沉浮
+title: 两线沉浮
+game_date_start: "1634年冬"
+opening_narration: |
+  辽东军需日增，中原贼势未衰，钱粮却只有一份。朝堂像一架过度拉紧的弓，
+  稍一偏转便要断弦。有人主张先安内再御外，有人坚称辽东一失则京师危；
+  取舍之间，不只是兵法，更是国本。
+initial_scene:
+  location: 内阁值房
+  context: 兵部与户部互相推诿，要求确定国家总战略。
+  present_npcs: [周延儒, 温体仁, 皇太极]
+advance_conditions:
+  min_turns: 3
+  max_turns: 9
+  acceleration:
+    enabled: true
+    turns_reduction: 1
+    key_decisions: [D_strategy, D_new_tax]
+key_decisions: [D_strategy, D_new_tax]

@@ -1,0 +1,37 @@
+decision_id: D_strategy
+id: D_strategy
+name: 攘外安内战略选择
+chapter: ch05_twofront
+context: 辽东强敌与中原内乱并压国库。国家必须选择主轴战略，任何折中都代价高昂。
+options:
+  - key: defend_north_first
+    label: 先固辽东，内地以守代攻
+    effect:
+      边防: 12
+      军力: -6
+      民心: -8
+      narration: 外敌震慑可减，但内地痛感被放弃。
+  - key: pacify_interior_first
+    label: 先平流寇，辽东转入守势
+    effect:
+      民心: 8
+      边防: -12
+      朝廷稳定: 2
+      narration: 内乱可望缓和，北线却逐步失去主动。
+  - key: dual_front_gamble
+    label: 两线并举，豪赌国力
+    effect:
+      军力: -12
+      国库: -15
+      边防: 5
+      民心: 4
+      narration: 若调度精准可逆转颓势，稍有失误即全盘崩裂。
+  - key: negotiate_border
+    label: 北线议和，集中清剿内患
+    effect:
+      边防: -6
+      民心: 3
+      朝廷稳定: -8
+      国库: 6
+      narration: 换得喘息，却背上“屈辱求和”之名。
+allow_free_input: true

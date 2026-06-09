@@ -1,0 +1,21 @@
+chapter_id: ch07_collapse
+id: ch07_collapse
+name: 关洛失序
+title: 关洛失序
+game_date_start: "1642年秋"
+opening_narration: |
+  潼关告破的消息入京那夜，宫城雨如泼墨。闯军由散而整，由剽而治，
+  军心民心都在向其倾斜；朝中却仍在互指误国。守城、南迁、借兵，
+  每一条路都带着羞辱与风险。天下已到无人可退的一步。
+initial_scene:
+  location: 武英殿
+  context: 李自成大军逼近，吴三桂请旨，京营士气低落。
+  present_npcs: [李自成, 吴三桂, 陈圆圆, 周延儒]
+advance_conditions:
+  min_turns: 3
+  max_turns: 10
+  acceleration:
+    enabled: true
+    turns_reduction: 1
+    key_decisions: [D_last_line, D_wusangui_choice]
+key_decisions: [D_last_line, D_wusangui_choice]

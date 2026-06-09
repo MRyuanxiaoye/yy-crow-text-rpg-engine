@@ -1,9 +1,24 @@
-node_modules/
-.next/
-.env
+# Python
 __pycache__/
-.DS_Store
+*.py[cod]
+*.so
+*.egg-info/
+.venv/
+venv/
 
-# SSL 证书文件（敏感信息，不要提交）
-nginx/certs/*.pem
-nginx/certs/*.key
+# Env
+.env
+*.pem
+
+# IDE
+.vscode/
+.idea/
+
+# Runtime
+*.log
+.pytest_cache/
+.mypy_cache/
+
+# Data
+/data/saves/*.json
+!/data/saves/.gitkeep

@@ -1,0 +1,28 @@
+decision_id: D_relief_or_suppress
+id: D_relief_or_suppress
+name: 剿抚先后
+chapter: ch04_uprising
+context: 流民与叛军交织，地方官请求明确国策：重兵清剿，还是先赈后剿。
+options:
+  - key: full_suppress
+    label: 集中兵力铁腕清剿
+    effect:
+      军力: -10
+      民心: -10
+      朝廷稳定: 5
+      narration: 短期见效，但仇怨与逃散使火种潜伏。
+  - key: combined_relief
+    label: 赈抚并举，剿抚并行
+    effect:
+      国库: -10
+      民心: 7
+      朝廷稳定: 2
+      narration: 花费极巨，却有机会切断起义补给来源。
+  - key: amnesty_first
+    label: 先大赦招安，再择要用兵
+    effect:
+      民心: 4
+      军力: -4
+      朝廷稳定: -6
+      narration: 人心稍稳，但军纪与权威遭到质疑。
+allow_free_input: true

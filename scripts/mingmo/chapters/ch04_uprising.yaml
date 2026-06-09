@@ -1,0 +1,21 @@
+chapter_id: ch04_uprising
+id: ch04_uprising
+name: 流火中原
+title: 流火中原
+game_date_start: "1631年春"
+opening_narration: |
+  陕豫连岁旱蝗，赤地千里。饥民初为求活，继而揭竿；官军剿抚反复，
+  今日招安、明日复叛已成常态。驿路上传来同一种哭声：
+  粮在仓中，人在道旁。若只见贼势，不见民困，火会越烧越旺。
+initial_scene:
+  location: 平台便殿
+  context: 各省抚按联名告急，请求增饷与兵权。
+  present_npcs: [李自成, 张献忠, 周延儒]
+advance_conditions:
+  min_turns: 3
+  max_turns: 9
+  acceleration:
+    enabled: true
+    turns_reduction: 1
+    key_decisions: [D_relief_or_suppress, D_local_militia]
+key_decisions: [D_relief_or_suppress, D_local_militia]

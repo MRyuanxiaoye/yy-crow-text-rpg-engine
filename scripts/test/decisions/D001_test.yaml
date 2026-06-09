@@ -1,0 +1,11 @@
+id: D001_test
+chapter: ch01_test
+narrator_setup: "将军问你：是战是和？"
+preset_choices:
+  - label: 出兵迎战
+    effects:
+      metrics: {军力: -10, 民心: +5}
+  - label: 议和
+    effects:
+      metrics: {国库: -20, 民心: -5}
+free_input: true

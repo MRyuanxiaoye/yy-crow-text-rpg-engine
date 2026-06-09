@@ -1,0 +1,36 @@
+decision_id: D_yuan_fate
+id: D_yuan_fate
+name: 袁崇焕处置
+chapter: ch03_yuan
+context: 袁崇焕功过并存，流言汹汹。此案关系军心、皇权与朝堂信任结构。
+options:
+  - key: execute
+    label: 依律处斩，以谢天下
+    effect:
+      边防: -15
+      朝廷稳定: 4
+      民心: -4
+      帝王威望: 3
+      narration: 朝议暂定，但辽东将士寒心。
+  - key: imprison
+    label: 下狱待勘，暂不定罪
+    effect:
+      边防: -8
+      朝廷稳定: -3
+      帝王威望: -2
+      narration: 各方继续角力，疑云久悬不散。
+  - key: pardon
+    label: 戴罪留任，以战功自证
+    effect:
+      边防: 10
+      朝廷稳定: -10
+      帝王威望: -3
+      narration: 用人不疑可固边，但言官群情激愤。
+  - key: remove_transfer
+    label: 免督师，改任闲职
+    effect:
+      边防: -6
+      朝廷稳定: 1
+      民心: -2
+      narration: 既不杀亦不任，换来的是平庸而昂贵的妥协。
+allow_free_input: true

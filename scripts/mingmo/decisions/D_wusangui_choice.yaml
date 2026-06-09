@@ -1,0 +1,25 @@
+decision_id: D_wusangui_choice
+id: D_wusangui_choice
+name: 吴三桂去向
+chapter: ch07_collapse
+context: 山海关成天下咽喉。吴三桂请示：勤王、观望，还是联外击闯。
+options:
+  - key: rush_to_king
+    label: 诏令火速勤王
+    effect:
+      军力: 6
+      边防: -8
+      朝廷稳定: 3
+  - key: hold_pass
+    label: 守关观变，暂不入京
+    effect:
+      边防: 6
+      朝廷稳定: -6
+      民心: -4
+  - key: ally_qing
+    label: 默许借清军入关破闯
+    effect:
+      军力: 10
+      朝廷稳定: -16
+      民心: -10
+allow_free_input: true

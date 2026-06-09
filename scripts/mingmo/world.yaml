@@ -1,0 +1,997 @@
+schema_version: "2.0"
+
+script_id: "mingmo"
+
+name: "大明残照：明末风云录"
+
+description: |
+  你将置身崇祯一朝，从京师到辽东、从朝堂到民间，在内忧外患并起的十六年里做出抉择。
+  五种身份共享主线国运，却各有立场与代价：每一步都可能改写王朝命运。
+
+design_intent:
+  core_conflict: "崇祯朝内忧外患——后金南侵、流贼四起、朝堂倾轧、财政枯竭，四条危机线同时逼近"
+  tone: "严肃"
+  choice_principles:
+    - "所有国策都必须在钱粮、军力、民心与朝廷稳定之间产生明确取舍，不提供无代价的万能解法。"
+    - "NPC奏报允许带有阵营偏见：边将重军饷，阁臣重名分，流贼重民困，玩家必须在不完整信息中判断。"
+    - "关键决策会留下后果种子，旧案、欠饷、团练与借兵等选择会在后期以NPC行动或终局条件回返。"
+
+gameplay:
+  gameplay_types: ["权谋政斗", "战争策略"]
+  world_settings: ["历史"]
+  length_profile: "medium"
+  player_count: 1
+
+world_background:
+  era: "明末崇祯朝（1627-1644）"
+  geography: "北京紫禁城为中心，辐射辽东、陕西、河南、山海关"
+  public_situation: "新君初立，魏党余波未平；边外后金窥伺，内地灾荒与流民渐成兵火，天下仍有名义秩序，却处处显露裂缝。"
+  hidden_situation: "财政枯竭与行政失灵正在互相放大：朝廷每一次短期止血，都可能削弱另一条防线，并给后金、流贼或地方武人创造机会。"
+  factions:
+    - faction_id: "ming_court"
+      name: "朝廷"
+      agenda: "维系崇祯朝法统，调度钱粮军政，压住党争与地方离心。"
+      resources: ["皇权名分", "官僚体系", "京师禁军", "税粮征发权"]
+      conflict_with: ["later_jin", "rebel_forces", "court_factions", "eunuch_bloc"]
+    - faction_id: "later_jin"
+      name: "后金/清"
+      agenda: "突破辽东与山海关防线，趁明廷内乱重塑天下秩序。"
+      resources: ["八旗精骑", "辽东情报", "反间手段", "入关时机"]
+      conflict_with: ["ming_court", "frontier_army", "rebel_forces"]
+    - faction_id: "rebel_forces"
+      name: "流贼义军"
+      agenda: "借饥荒与苛政聚众扩张，推翻或取代明廷地方秩序。"
+      resources: ["流民人潮", "机动作战", "分田免粮口号", "地方失序"]
+      conflict_with: ["ming_court", "frontier_army", "later_jin"]
+    - faction_id: "frontier_army"
+      name: "边军"
+      agenda: "守住辽东、宁锦与山海关，同时争取足够粮饷与自主指挥权。"
+      resources: ["关宁铁骑", "山海关", "边防经验", "武将网络"]
+      conflict_with: ["later_jin", "rebel_forces", "court_factions"]
+    - faction_id: "court_factions"
+      name: "朝臣党争集团"
+      agenda: "在辅政、言路与财政议题中夺取话语权，保存或扩大自身派系利益。"
+      resources: ["内阁票拟", "言官弹章", "地方官僚网络", "士林舆论"]
+      conflict_with: ["eunuch_bloc", "frontier_army", "ming_court"]
+    - faction_id: "eunuch_bloc"
+      name: "宦官集团"
+      agenda: "控制宫禁、厂卫和内廷情报，在皇权与外朝之间维持不可替代性。"
+      resources: ["司礼监", "东厂密探", "宫禁通道", "皇帝近侍身份"]
+      conflict_with: ["court_factions", "rebel_forces"]
+    - faction_id: "swing_figures"
+      name: "摇摆人物"
+      agenda: "在乱世中保全个人、家族或部属，必要时倒向能给出生路的一方。"
+      resources: ["关键情报", "私人声望", "局部军事力量", "人情牵连"]
+      conflict_with: ["ming_court", "rebel_forces", "later_jin"]
+
+dimension_definitions:
+  world:
+    - id: "财政"
+      name: "财政"
+      range: [0, 10]
+      initial: 5
+      higher_is_better: true
+      description: "朝廷可支配的钱粮、税收与应急赈饷能力。"
+    - id: "兵力"
+      name: "兵力"
+      range: [0, 10]
+      initial: 5
+      higher_is_better: true
+      description: "京营、边军与地方官军的可用战力和后勤状态。"
+    - id: "补给"
+      name: "补给"
+      range: [0, 10]
+      initial: 4
+      higher_is_better: true
+      description: "粮草、军饷、赈灾物资的储备与调运能力。"
+    - id: "情报"
+      name: "情报"
+      range: [0, 10]
+      initial: 3
+      higher_is_better: true
+      description: "对敌情、朝局暗流和地方实况的掌握程度。"
+    - id: "民心"
+      name: "民心"
+      range: [0, 10]
+      initial: 5
+      higher_is_better: true
+      description: "百姓对朝廷的忍耐、地方治安与流民是否继续投向义军。"
+    - id: "士气"
+      name: "士气"
+      range: [0, 10]
+      initial: 5
+      higher_is_better: true
+      description: "军队和官员的行动意愿与战斗精神。"
+    - id: "派系势力"
+      name: "派系势力"
+      range: [0, 10]
+      initial: 5
+      higher_is_better: false
+      description: "朝中对抗势力的强度；越高表示权臣/党争越严重。"
+  relationship_numeric:
+    - id: "好感度"
+      range: [0, 10]
+      default: 5
+      description: "NPC 对玩家个人的情绪态度与信任感。"
+    - id: "忠诚度"
+      range: [0, 10]
+      default: 5
+      description: "NPC 对玩家命令、阵营或事业的服从意愿。"
+    - id: "利益绑定"
+      range: [0, 10]
+      default: 0
+      description: "NPC 与玩家在钱粮、前途、秘密或生死处境上的绑定深度。"
+  relationship_tags:
+    - id: "旧交"
+      modifier_hint: "+1 社交类行动"
+      description: "双方曾有长期正面交情。"
+    - id: "恩怨"
+      modifier_hint: "-1 初次说服，+1 威胁或清算"
+      description: "双方有旧怨、冤案或利益损害。"
+    - id: "师生"
+      modifier_hint: "+1 谏言与学术名分相关行动"
+      description: "存在师承、提携或士林门生关系。"
+    - id: "主仆"
+      modifier_hint: "+1 命令执行，-1 平等谈判"
+      description: "身份秩序明确，一方依附另一方。"
+    - id: "君臣"
+      modifier_hint: "+1 名分动员，叛离时后果加重"
+      description: "以皇权、官职或法统维系的上下关系。"
+    - id: "同僚"
+      modifier_hint: "+1 协同政务，党争时易转负"
+      description: "同属朝廷或军政系统，可合作也可互相弹劾。"
+    - id: "政敌"
+      modifier_hint: "-1 公开合作，+1 攻讦行动"
+      description: "目标、派系或资源分配长期冲突。"
+    - id: "宿敌"
+      modifier_hint: "默认敌对，除非共同危机极高"
+      description: "军事或政治上难以调和的对手。"
+    - id: "私情"
+      modifier_hint: "+1 安抚或交换，失败会触发额外后果"
+      description: "私人感情或人情牵连能影响大局。"
+
+time_system:
+  unit: "月"
+  display_format: "崇祯{year}年{month}月"
+  start: { year: 1, month: 8 }
+  max_time: { year: 17, month: 3 }
+  turns_per_unit: 3
+  auto_skip_quiet_time: true
+  action_time_cost:
+    min_units: 0
+    max_units: 3
+    default_units: 1
+    description: "对话通常0个月，普通政务或军事调度1个月，长期改革、战役与赈灾2-3个月；超长行动应拆分阶段。"
+
+timeline_milestones:
+  - event_id: "E_jisi_invasion"
+    name: "己巳之变"
+    at: { year: 2, month: 11 }
+    severity: "critical"
+    description: "后金绕道蒙古入关，兵锋直逼京师。"
+    narrative_hint: "凌晨，兵部尚书浑身是汗闯入寝宫——'陛下！蓟门急报！'"
+    involved_factions: ["later_jin", "ming_court", "frontier_army"]
+    involved_npcs: ["huang_taiji", "yuan_chonghuan"]
+    prerequisites: []
+    default_effects:
+      world_dimensions: { "兵力": -2, "民心": -2 }
+      information_added: ["I_jisi_invasion_known"]
+      consequence_seed: { enabled: true, severity: "high", directions: ["京畿兵灾", "袁案疑云", "辽东空虚"] }
+  - event_id: "E_yuan_arrest"
+    name: "袁崇焕下狱"
+    at: { year: 2, month: 12 }
+    severity: "critical"
+    description: "袁崇焕被押入诏狱，朝中议论纷纷。"
+    narrative_hint: "锦衣卫指挥使入殿禀报：'袁崇焕已押入诏狱，百官联名上疏。'"
+    involved_factions: ["ming_court", "frontier_army", "court_factions", "later_jin"]
+    involved_npcs: ["yuan_chonghuan", "wen_tiren"]
+    prerequisites: ["E_jisi_invasion"]
+    default_effects:
+      world_dimensions: { "兵力": -1, "派系势力": 1 }
+      information_added: ["I_yuan_case_pressure"]
+      consequence_seed: { enabled: true, severity: "medium", directions: ["辽东军心浮动", "言官攻讦", "反间得势"] }
+  - event_id: "E_shaanxi_famine"
+    name: "陕西大旱"
+    at: { year: 3, month: 3 }
+    severity: "critical"
+    description: "陕西连年大旱，饥民揭竿而起。"
+    narrative_hint: "陕西巡抚八百里加急：'赤地千里，饥民已聚众数万！'"
+    involved_factions: ["rebel_forces", "ming_court"]
+    involved_npcs: ["li_zicheng"]
+    prerequisites: []
+    default_effects:
+      world_dimensions: { "民心": -2, "财政": -1 }
+      information_added: ["I_shaanxi_famine_known"]
+      consequence_seed: { enabled: true, severity: "high", directions: ["流民扩张", "赈灾钱粮缺口", "地方失控"] }
+  - event_id: "D_yellow_river_flood"
+    name: "黄河决口"
+    at: { year: 5, month: 7 }
+    severity: "critical"
+    description: "黄河在开封段决口，淹没数县。"
+    narrative_hint: "河南巡抚八百里加急：'黄河决口！开封以东尽成泽国，灾民数十万！'"
+    involved_factions: ["ming_court", "rebel_forces"]
+    involved_npcs: []
+    prerequisites: []
+    default_effects:
+      world_dimensions: { "民心": -1, "财政": -1 }
+      information_added: ["I_yellow_river_refugees"]
+      consequence_seed: { enabled: true, severity: "medium", directions: ["赈灾不力", "河南流民", "地方贪腐"] }
+  - event_id: "E_huang_taiji_reform"
+    name: "后金改国号"
+    at: { year: 9, month: 4 }
+    severity: "moderate"
+    description: "皇太极改国号为清，称帝建元。"
+    narrative_hint: "边关探马回报：'奴酋已改国号为清，自称皇帝，野心昭然。'"
+    involved_factions: ["later_jin", "ming_court"]
+    involved_npcs: ["huang_taiji", "dorgon"]
+    prerequisites: []
+    default_effects:
+      world_dimensions: { "兵力": -1, "派系势力": 1 }
+      information_added: ["I_qing_state_declared"]
+      consequence_seed: { enabled: true, severity: "medium", directions: ["清军制度化", "边防压力升级"] }
+  - event_id: "D_drought_henan"
+    name: "河南大旱"
+    at: { year: 10, month: 6 }
+    severity: "moderate"
+    description: "河南连月无雨，赤地千里。"
+    narrative_hint: "河南巡抚泣血上疏：'连旱三月，井泉枯竭，百姓易子而食！'"
+    involved_factions: ["ming_court", "rebel_forces"]
+    involved_npcs: ["li_zicheng", "zhang_xianzhong"]
+    prerequisites: []
+    default_effects:
+      world_dimensions: { "民心": -1, "财政": -1 }
+      information_added: ["I_henan_drought_known"]
+      consequence_seed: { enabled: true, severity: "medium", directions: ["流民入伙", "赈粮争夺"] }
+  - event_id: "E_songjin_battle"
+    name: "松锦大战"
+    at: { year: 14, month: 2 }
+    severity: "critical"
+    description: "明清在松山锦州展开决战。"
+    narrative_hint: "前线急报如雪片飞来：'松山被围，粮道已断！'"
+    involved_factions: ["frontier_army", "later_jin", "ming_court"]
+    involved_npcs: ["wu_sangui", "huang_taiji"]
+    prerequisites: []
+    default_effects:
+      world_dimensions: { "兵力": -5 }
+      information_added: ["I_songjin_crisis"]
+      consequence_seed: { enabled: true, severity: "high", directions: ["关宁防线折损", "吴三桂坐大", "清军入关窗口"] }
+  - event_id: "D_plague_outbreak"
+    name: "瘟疫爆发"
+    at: { year: 16, month: 5 }
+    severity: "critical"
+    description: "京畿地区爆发大疫。"
+    narrative_hint: "太医院急奏：'京城内外疫病蔓延，日死数百，军营亦有传染！'"
+    involved_factions: ["ming_court", "frontier_army", "rebel_forces"]
+    involved_npcs: []
+    prerequisites: []
+    default_effects:
+      world_dimensions: { "兵力": -1, "民心": -1, "派系势力": 1 }
+      information_added: ["I_plague_in_capital"]
+      consequence_seed: { enabled: true, severity: "high", directions: ["京营疫弱", "城防恐慌", "救治资源争夺"] }
+  - event_id: "E_li_zicheng_march"
+    name: "闯军东进"
+    at: { year: 17, month: 1 }
+    severity: "critical"
+    description: "李自成大军从西安出发，直指北京。"
+    narrative_hint: "探马来报：'闯贼号称百万，已过潼关，沿途州县望风而降！'"
+    involved_factions: ["rebel_forces", "ming_court", "frontier_army"]
+    involved_npcs: ["li_zicheng"]
+    prerequisites: []
+    default_effects:
+      world_dimensions: { "民心": -2, "派系势力": 2, "兵力": -1 }
+      information_added: ["I_rebel_march_capital"]
+      consequence_seed: { enabled: true, severity: "high", directions: ["京师围城", "吴三桂去向", "南迁争议"] }
+
+condition_events:
+  - event_id: "N_wenti_impeach"
+    name: "温体仁弹劾政敌"
+    severity: "moderate"
+    trigger:
+      all:
+        - { dimension: "派系势力", operator: ">=", value: 6 }
+        - { event_not_triggered: "N_wenti_impeach" }
+    description: "温体仁联合言官弹劾周延儒。"
+    narrative_hint: "温体仁持奏疏入殿：'陛下，臣有本参劾首辅周延儒十大罪状！'"
+    recommended_responses: ["压下弹章", "公开廷议", "借案清洗"]
+    default_effects:
+      world_dimensions: { "派系势力": 1 }
+      npc_relation_deltas: {}
+  - event_id: "N_wusangui_request"
+    name: "吴三桂请饷"
+    severity: "moderate"
+    trigger:
+      all:
+        - { dimension: "财政", operator: "<=", value: 3 }
+        - { dimension: "兵力", operator: "<=", value: 4 }
+        - { event_not_triggered: "N_wusangui_request" }
+    description: "吴三桂上疏请求增拨军饷。"
+    narrative_hint: "关宁总兵吴三桂急奏：'军中欠饷三月，将士怨声载道，恳请拨饷！'"
+    recommended_responses: ["拨饷稳军", "派监军核饷", "以爵赏拖延"]
+    default_effects:
+      world_dimensions: { "兵力": -2 }
+      npc_relation_deltas: {}
+  - event_id: "N_li_zicheng_grow"
+    name: "闯军壮大"
+    severity: "moderate"
+    trigger:
+      all:
+        - { dimension: "民心", operator: "<=", value: 3 }
+        - { event_not_triggered: "N_li_zicheng_grow" }
+    description: "李自成势力急剧膨胀。"
+    narrative_hint: "兵部急报：'闯贼裹挟流民，兵力已逾十万，攻陷数城！'"
+    recommended_responses: ["赈抚分化", "集中清剿", "招抚首领"]
+    default_effects:
+      world_dimensions: { "民心": -1, "兵力": -1 }
+      npc_relation_deltas: {}
+  - event_id: "N_wang_chengen_warn"
+    name: "王承恩密报"
+    severity: "minor"
+    trigger:
+      all:
+        - { dimension: "派系势力", operator: ">=", value: 7 }
+        - { event_not_triggered: "N_wang_chengen_warn" }
+    description: "王承恩密报宫中异动。"
+    narrative_hint: "王承恩深夜求见：'陛下，奴婢探得宫中有人暗通外臣，恐有不测……'"
+    recommended_responses: ["秘查宫禁", "召内阁对质", "暂压不发"]
+    default_effects:
+      world_dimensions: { "派系势力": 1 }
+      npc_relation_deltas: {}
+  - event_id: "T_financial_crisis"
+    name: "财政崩溃"
+    severity: "critical"
+    trigger:
+      all:
+        - { dimension: "财政", operator: "<=", value: 2 }
+        - { event_not_triggered: "T_financial_crisis" }
+    description: "国库见底，百官俸禄无法发放。"
+    narrative_hint: "户部尚书跪地痛哭：'陛下，国库已空！百官俸禄、边军粮饷皆无着落！'"
+    recommended_responses: ["加派新饷", "清丈追税", "裁撤冗费", "向商帮借贷"]
+    default_effects:
+      world_dimensions: { "派系势力": 1, "兵力": -1 }
+      npc_relation_deltas: {}
+  - event_id: "T_mutiny_risk"
+    name: "兵变危机"
+    severity: "critical"
+    trigger:
+      all:
+        - { dimension: "兵力", operator: "<=", value: 3 }
+        - { event_not_triggered: "T_mutiny_risk" }
+    description: "军队哗变一触即发。"
+    narrative_hint: "锦衣卫急报：'京营有人散布谣言，煽动哗变，形势危急！'"
+    recommended_responses: ["补发欠饷", "斩首弹压", "换将整军"]
+    default_effects:
+      world_dimensions: { "派系势力": 1, "民心": -1 }
+      npc_relation_deltas: {}
+  - event_id: "T_civil_unrest"
+    name: "民变四起"
+    severity: "critical"
+    trigger:
+      all:
+        - { dimension: "民心", operator: "<=", value: 2 }
+        - { event_not_triggered: "T_civil_unrest" }
+    description: "多地百姓揭竿而起。"
+    narrative_hint: "各省急报纷至：'民变四起，官府已无力弹压！'"
+    recommended_responses: ["开仓赈济", "招抚流民", "调兵清剿"]
+    default_effects:
+      world_dimensions: { "民心": -1, "财政": -1 }
+      npc_relation_deltas: {}
+  - event_id: "D_locust_swarm"
+    name: "蝗灾"
+    severity: "moderate"
+    trigger:
+      all:
+        - { dimension: "民心", operator: "<=", value: 4 }
+        - { event_not_triggered: "D_locust_swarm" }
+    description: "蝗虫过境，庄稼尽毁。"
+    narrative_hint: "地方急报：'蝗虫蔽日，所过之处颗粒无收！'"
+    recommended_responses: ["赈粮", "免税", "迁徙安置"]
+    default_effects:
+      world_dimensions: { "民心": -1, "财政": -1 }
+      npc_relation_deltas: {}
+  - event_id: "D_earthquake"
+    name: "地震"
+    severity: "moderate"
+    trigger:
+      all:
+        - { dimension: "派系势力", operator: ">=", value: 6 }
+        - { event_not_triggered: "D_earthquake" }
+    description: "京畿发生地震，被百官解读为天谴。"
+    narrative_hint: "夜半地动山摇，宫墙裂缝，百官惊惶上疏言天谴。"
+    recommended_responses: ["罪己诏", "修宫赈民", "禁绝妖言"]
+    default_effects:
+      world_dimensions: { "派系势力": 1, "民心": -1 }
+      npc_relation_deltas: {}
+
+random_event_pool:
+  check_policy:
+    enabled: true
+    check_per_time_unit: true
+    max_events_per_check: 1
+  entries:
+    - event_id: "R_corruption_case"
+      name: "地方贪腐案"
+      severity: "minor"
+      weight: 20
+      conditions: []
+      description: "御史弹劾某地方官贪墨赈灾银两。"
+      narrative_hint: "都察院御史递上弹章：'臣参某府知府贪墨赈灾银三万两！'"
+      suggested_response_types: ["查办", "压案", "借案整顿"]
+      default_effects:
+        world_dimensions: { "财政": -1, "民心": -1 }
+    - event_id: "R_border_skirmish"
+      name: "边境小规模冲突"
+      severity: "minor"
+      weight: 15
+      conditions:
+        - { dimension: "兵力", operator: "<=", value: 5 }
+      description: "蒙古部落骚扰边境。"
+      narrative_hint: "边关总兵急报：'蒙古散骑犯边，已劫掠三村。'"
+      suggested_response_types: ["巡边", "安抚边民", "调兵追击"]
+      default_effects:
+        world_dimensions: { "兵力": -1, "民心": -1 }
+    - event_id: "R_merchant_petition"
+      name: "商帮请愿"
+      severity: "minor"
+      weight: 15
+      conditions: []
+      description: "江南商帮联名请求减免商税。"
+      narrative_hint: "户部侍郎呈上联名书：'江南商帮请减商税，否则恐有罢市之忧。'"
+      suggested_response_types: ["减税安商", "维持原税", "加税充军"]
+      default_effects:
+        world_dimensions: { "财政": -1 }
+    - event_id: "R_npc_conspiracy"
+      name: "朝臣密谋"
+      severity: "moderate"
+      weight: 12
+      conditions:
+        - { dimension: "派系势力", operator: ">=", value: 6 }
+      description: "有朝臣暗中串联，图谋不轨。"
+      narrative_hint: "王承恩附耳低语：'陛下，东厂探子回报，有人在暗中串联……'"
+      suggested_response_types: ["密查", "公开廷议", "以人事调动拆散"]
+      default_effects:
+        world_dimensions: { "派系势力": 1 }
+    - event_id: "R_military_desertion"
+      name: "兵士逃亡"
+      severity: "moderate"
+      weight: 10
+      conditions:
+        - { dimension: "财政", operator: "<=", value: 3 }
+      description: "欠饷日久，边军大量逃亡。"
+      narrative_hint: "兵部尚书面色凝重：'陛下，辽东驻军月余未发饷，已有千人逃散。'"
+      suggested_response_types: ["补饷", "整军", "许诺战功赏格"]
+      default_effects:
+        world_dimensions: { "兵力": -2 }
+    - event_id: "R_good_harvest"
+      name: "丰收年景"
+      severity: "minor"
+      weight: 8
+      conditions:
+        - { dimension: "民心", operator: ">=", value: 4 }
+      description: "江南稻米丰收，民间安定。"
+      narrative_hint: "户部呈报：'今岁江南丰收，粮价平稳，百姓安居。'"
+      suggested_response_types: ["平粜积谷", "转运辽东", "减税蓄力"]
+      default_effects:
+        world_dimensions: { "民心": 1, "财政": 1 }
+    - event_id: "R_talent_emerge"
+      name: "贤才出仕"
+      severity: "minor"
+      weight: 10
+      conditions: []
+      description: "科举选拔出一批干才。"
+      narrative_hint: "吏部尚书喜报：'今科进士中有数人才干出众，可堪大用。'"
+      suggested_response_types: ["破格任用", "分派地方", "收入幕府"]
+      default_effects:
+        world_dimensions: { "派系势力": -1 }
+
+global_npc_pool:
+  - npc_id: "chongzhen"
+    name: "崇祯皇帝"
+    title: "大明天子"
+    faction_id: "imperial_court"
+    archetype: "利害陈述者"
+    personality_layer:
+      traits: ["多疑刚愎", "勤政操切", "志大才疏"]
+      values: ["皇权至上", "祖宗社稷", "中兴大明"]
+      speaking_style: "以天子口吻发令，急躁时语速加快，猜忌时绵里藏针。"
+    goal_layer:
+      long_term_goal: "中兴大明，扫平内忧外患，恢复太祖基业。"
+      short_term_goals: ["平衡文武", "充实国库", "压制流贼"]
+      unacceptable_outcomes: ["社稷倾覆", "被迫禅位或出逃"]
+    knowledge_layer:
+      knows: ["朝堂局势", "各部奏章", "宫廷内务"]
+      does_not_know: ["边关实际战况细节", "民间真实疾苦", "NPC私下联络"]
+      biases: ["高估朝廷命令的执行力", "倾向怀疑武将拥兵自重"]
+    default_memory_hooks: ["崇祯会记住谁在危急时刻进言、谁在推诿。"]
+    usable_as_player_role: true
+  - npc_id: "wu_sangui"
+    name: "吴三桂"
+    title: "山海关总兵"
+    faction_id: "swing_figures"
+    archetype: "利害陈述者"
+    personality_layer:
+      traits: ["骁勇善战", "重现实利益", "私情与名节并重"]
+      values: ["部属生路", "山海关存续", "个人名节"]
+      speaking_style: "军人语气中带精算，常以“形势如此”强调被迫选择。"
+    goal_layer:
+      long_term_goal: "保住关宁军与自身出路，在明廷、闯军与清军之间寻找最有胜算的归宿。"
+      short_term_goals: ["索取军饷", "稳住山海关", "观察京师与闯军强弱"]
+      unacceptable_outcomes: ["关宁军无饷溃散", "山海关被无谓牺牲", "陈圆圆被敌方用作筹码"]
+    knowledge_layer:
+      knows: ["关宁兵力", "山海关防务", "前线士气", "吴军内部怨望"]
+      does_not_know: ["宫廷内部权谋全貌", "清廷最终入关安排"]
+      biases: ["倾向把自身选择解释为形势所迫", "高估边军讨价还价能力"]
+    default_memory_hooks: ["若玩家拖欠军饷，吴三桂会逐步转向自保。"]
+    usable_as_player_role: false
+  - npc_id: "zhou_yanru"
+    name: "周延儒"
+    title: "内阁首辅"
+    faction_id: "court_factions"
+    archetype: "机会揭示者"
+    personality_layer:
+      traits: ["圆滑审势", "长于周旋", "临事多保身"]
+      values: ["官僚秩序", "个人官位", "朝局可控"]
+      speaking_style: "话留三分，先称圣断再陈利害，善用模糊措辞。"
+    goal_layer:
+      long_term_goal: "在危局中保住首辅权位，并让朝廷以可执行的折中方案延续。"
+      short_term_goals: ["调和兵部户部争议", "避免成为失策替罪羊", "压制过激言官"]
+      unacceptable_outcomes: ["被迫谢罪赐死", "党争彻底拖垮内阁"]
+    knowledge_layer:
+      knows: ["朝堂派系", "地方官僚网络", "户部与兵部矛盾"]
+      does_not_know: ["后金内部权力细节", "流贼深层组织变化"]
+      biases: ["倾向低估民间怨气", "偏好短期折中而非彻底改革"]
+    default_memory_hooks: ["周延儒会记住玩家是否把失败责任推给内阁。"]
+    usable_as_player_role: true
+  - npc_id: "dorgon"
+    name: "多尔衮"
+    title: "后金亲王"
+    faction_id: "later_jin"
+    archetype: "对手"
+    personality_layer:
+      traits: ["冷静果断", "野心深沉", "重视时机"]
+      values: ["军事主动", "秩序重建", "权力集中"]
+      speaking_style: "措辞冷峻，句句指向利益与秩序重建。"
+    goal_layer:
+      long_term_goal: "借明廷内乱与山海关裂缝入主中原。"
+      short_term_goals: ["收拢兵权", "等待明军内耗", "争取吴三桂等边将倒向"]
+      unacceptable_outcomes: ["清军主力被拖入无利消耗", "入关窗口被明廷重新封死"]
+    knowledge_layer:
+      knows: ["后金权力结构", "军事调度", "辽东战局", "明军弱点"]
+      does_not_know: ["明朝地方民生细节", "宫中私密关系"]
+      biases: ["倾向把明廷妥协视为衰败信号"]
+    default_memory_hooks: ["多尔衮会在边防低落或吴三桂动摇时加速行动。"]
+    usable_as_player_role: false
+  - npc_id: "sun_chengzong"
+    name: "孙承宗"
+    title: "东阁大学士（前督师）"
+    faction_id: "ming_court"
+    archetype: "盟友"
+    personality_layer:
+      traits: ["沉稳持重", "识大体", "谋定后动"]
+      values: ["社稷存续", "辽东防线", "士林名节"]
+      speaking_style: "引经据典而不繁，引古证今，语气温和却极少退让。"
+    goal_layer:
+      long_term_goal: "以稳健军政和制度修补延缓明廷崩塌。"
+      short_term_goals: ["稳住辽东", "劝阻急躁清算", "保留可用将才"]
+      unacceptable_outcomes: ["辽东柱石被自毁", "朝廷只剩相互攻讦"]
+    knowledge_layer:
+      knows: ["辽东全局", "朝政运作", "老臣人脉"]
+      does_not_know: ["民间起义内部派系", "清廷秘密离间细节"]
+      biases: ["倾向相信名分和稳健制度仍有修复力"]
+    default_memory_hooks: ["若玩家连续采纳急功近利路线，孙承宗会转为苦谏。"]
+    usable_as_player_role: false
+  - npc_id: "zhang_xianzhong"
+    name: "张献忠"
+    title: "西营首领"
+    faction_id: "rebel_forces"
+    archetype: "冲突制造者"
+    personality_layer:
+      traits: ["残烈多疑", "反复善变", "喜以恐惧治军"]
+      values: ["生存扩张", "威慑", "战利"]
+      speaking_style: "语带威吓，喜夸战功，转折突兀难测。"
+    goal_layer:
+      long_term_goal: "在川陕豫乱局中割据称雄。"
+      short_term_goals: ["趁灾荒裹挟流民", "诈降争取喘息", "攻掠州县补给"]
+      unacceptable_outcomes: ["被彻底招抚收编", "部众失去恐惧约束"]
+    knowledge_layer:
+      knows: ["川陕地形", "流动作战", "地方官军薄弱点"]
+      does_not_know: ["明廷高层议事", "辽东大战略"]
+      biases: ["倾向把怀柔视为软弱", "低估长期治理成本"]
+    default_memory_hooks: ["张献忠会利用朝廷赈剿摇摆时诈降复叛。"]
+    usable_as_player_role: false
+  - npc_id: "li_zicheng"
+    name: "李自成"
+    title: "闯王"
+    faction_id: "rebel_forces"
+    archetype: "对手"
+    personality_layer:
+      traits: ["坚韧果断", "善于收众", "能屈能伸"]
+      values: ["分田免粮", "军心民心", "新秩序"]
+      speaking_style: "直白而带号召力，常以“分田免粮”激发民情。"
+    goal_layer:
+      long_term_goal: "推翻明廷旧秩序，建立以闯军为核心的新政权。"
+      short_term_goals: ["吸纳流民", "攻占关中与河南", "东进京师"]
+      unacceptable_outcomes: ["起义军被分化瓦解", "民心重新回流朝廷"]
+    knowledge_layer:
+      knows: ["西北民情", "流寇战法", "地方薄弱点"]
+      does_not_know: ["辽东大战略", "宫廷细务"]
+      biases: ["低估入京后的治理难度", "倾向相信民困足以压倒名分"]
+    default_memory_hooks: ["民心越低，李自成越主动扩张。"]
+    usable_as_player_role: true
+  - npc_id: "wen_tiren"
+    name: "温体仁"
+    title: "内阁大学士"
+    faction_id: "court_factions"
+    archetype: "冲突制造者"
+    personality_layer:
+      traits: ["阴柔善谋", "善借势", "排斥异己"]
+      values: ["权位", "言官网络", "派系优势"]
+      speaking_style: "言辞婉转、层层设套，常以“为社稷计”包裹私心。"
+    goal_layer:
+      long_term_goal: "借危机重塑内阁权力格局，使政敌失势而自身居中操盘。"
+      short_term_goals: ["弹劾政敌", "借袁案扩权", "掌握言路"]
+      unacceptable_outcomes: ["被税案或弹劾牵连罢免", "言路脱离控制"]
+    knowledge_layer:
+      knows: ["朝堂人事", "言官网络", "内阁攻防"]
+      does_not_know: ["前线真实战况", "流贼基层组织"]
+      biases: ["倾向把政敌行为解释为私心", "低估军事专业意见"]
+    default_memory_hooks: ["温体仁会利用低稳定时期主动弹劾。"]
+    usable_as_player_role: false
+  - npc_id: "wang_chengen"
+    name: "王承恩"
+    title: "司礼监秉笔太监"
+    faction_id: "eunuch_bloc"
+    archetype: "信息源"
+    personality_layer:
+      traits: ["忠谨寡言", "谨守分寸", "遇大事不退"]
+      values: ["皇帝安危", "宫禁秩序", "内廷忠义"]
+      speaking_style: "用词克制，少形容多事实，常以“陛下”开头低声陈奏。"
+    goal_layer:
+      long_term_goal: "守住皇帝与宫禁中枢，在末局中维持最后秩序。"
+      short_term_goals: ["侦知宫中异动", "调和内廷与外朝", "保护御前信息通道"]
+      unacceptable_outcomes: ["宫禁失控", "皇帝孤立无援", "内廷被清算殆尽"]
+    knowledge_layer:
+      knows: ["宫禁动态", "内廷人事", "皇帝起居", "厂卫探报"]
+      does_not_know: ["外朝军政全盘判断", "后金高层秘密计划"]
+      biases: ["更相信近侍密报而非外朝公开奏报"]
+    default_memory_hooks: ["王承恩会在朝廷稳定低落时主动密报。"]
+    usable_as_player_role: true
+  - npc_id: "huang_taiji"
+    name: "皇太极"
+    title: "后金大汗"
+    faction_id: "later_jin"
+    archetype: "对手"
+    personality_layer:
+      traits: ["雄才大略", "善谋全局", "长于离间"]
+      values: ["制度化扩张", "军事胜机", "敌国内耗"]
+      speaking_style: "言简意决，常先定大势再谈细节，语中自有压迫感。"
+    goal_layer:
+      long_term_goal: "整合后金军政，瓦解明廷边防并建立入主中原的制度基础。"
+      short_term_goals: ["绕道入关", "离间袁崇焕", "围猎松锦"]
+      unacceptable_outcomes: ["明廷边防重新稳固", "袁崇焕等将帅获得充分信任"]
+    knowledge_layer:
+      knows: ["后金军政", "明廷边防弱点", "辽东情报"]
+      does_not_know: ["明宫内廷私密关系"]
+      biases: ["认为明廷党争会持续自毁"]
+    default_memory_hooks: ["皇太极会把明廷误杀将帅视作扩大攻势信号。"]
+    usable_as_player_role: false
+  - npc_id: "yuan_chonghuan"
+    name: "袁崇焕"
+    title: "辽东督师"
+    faction_id: "frontier_army"
+    archetype: "利害陈述者"
+    personality_layer:
+      traits: ["忠烈刚愎", "自信过人", "急于求成"]
+      values: ["辽东防线", "军令专一", "战功自证"]
+      speaking_style: "语速急而断句硬，常以军令口吻陈词，少铺垫多结论。"
+    goal_layer:
+      long_term_goal: "以强硬边防守住宁锦，并证明用兵判断胜过朝堂流言。"
+      short_term_goals: ["争取信任", "统一前线指挥", "压制反间流言"]
+      unacceptable_outcomes: ["被诏狱处死", "辽东军心崩坏", "军令受言官牵制"]
+    knowledge_layer:
+      knows: ["辽东军情", "宁锦防线", "关宁军务"]
+      does_not_know: ["深宫党争细节", "后金高层私议"]
+      biases: ["高估战功可平息朝议", "低估皇帝疑心"]
+    default_memory_hooks: ["袁崇焕会记住玩家是否在流言中给予军事信任。"]
+    usable_as_player_role: true
+  - npc_id: "chen_yuanyuan"
+    name: "陈圆圆"
+    title: "秦淮名姬"
+    faction_id: "swing_figures"
+    archetype: "后果镜子"
+    personality_layer:
+      traits: ["温婉敏感", "身不由己", "善察人心"]
+      values: ["自保", "情义", "免受裹挟"]
+      speaking_style: "言辞柔和含蓄，常以委婉比喻表达忧惧。"
+    goal_layer:
+      long_term_goal: "在乱军、权贵与流言之间保全自身，并尽量避免成为他人决断的筹码。"
+      short_term_goals: ["脱离乱军裹挟", "影响吴三桂判断", "寻找庇护"]
+      unacceptable_outcomes: ["被掳作筹码", "私情引发更大兵祸"]
+    knowledge_layer:
+      knows: ["军中流言", "人情冷暖", "吴三桂私人心绪"]
+      does_not_know: ["国家战略", "军政细务"]
+      biases: ["更敏感于个人命运而非宏观名分"]
+    default_memory_hooks: ["陈圆圆的处境会放大吴三桂后期选择的情绪代价。"]
+    usable_as_player_role: false
+
+optional_roles:
+  - role_id: "emperor"
+    name: "崇祯皇帝"
+    source_npc_id: "chongzhen"
+    perspective: "全局"
+    core_play: "治国决策、平衡文武与宫廷，在国库、边防、民心和朝廷稳定之间取舍。"
+    playstyle_tags: ["全局治理", "权谋", "资源管理", "终局抉择"]
+    difficulty: "hard"
+    teaser_goal: "守住大明法统，并在内忧外患中争取中兴或最低限度的存续。"
+    branch_hints: ["后宫线", "帝王心术线", "改革新政线", "南迁续命线"]
+  - role_id: "frontier_general"
+    name: "边关将领"
+    source_npc_id: "yuan_chonghuan"
+    perspective: "军事"
+    core_play: "练兵守城、统筹关宁防线，在朝廷猜忌、欠饷与清军压力下求生。"
+    playstyle_tags: ["战争策略", "军中派系", "防线经营", "朝堂博弈"]
+    difficulty: "hard"
+    teaser_goal: "保住边防与军心，避免自己成为党争和反间的牺牲品。"
+    branch_hints: ["兵变线", "军中派系线", "戴罪立功线", "山海关线"]
+  - role_id: "grand_secretary"
+    name: "内阁首辅"
+    source_npc_id: "zhou_yanru"
+    perspective: "朝堂"
+    core_play: "权谋博弈、辅政施令，在皇帝疑心、言官攻讦与财政危机中维持中枢。"
+    playstyle_tags: ["权谋政斗", "行政改革", "派系经营", "财政调度"]
+    difficulty: "normal"
+    teaser_goal: "让内阁从替罪羊变成真正的危机调度中枢。"
+    branch_hints: ["科举改革线", "结党线", "清丈财政线", "权臣线"]
+  - role_id: "rebel_leader"
+    name: "起义领袖"
+    source_npc_id: "li_zicheng"
+    perspective: "民间"
+    core_play: "聚众起兵、争粮争地，在民心、军纪和新秩序之间选择。"
+    playstyle_tags: ["起义经营", "战争机动", "民心争夺", "建制称王"]
+    difficulty: "normal"
+    teaser_goal: "从求活之众变成能问鼎天下的新政权，或在招安与称王间选择另一条路。"
+    branch_hints: ["称王线", "招安线", "分田免粮线", "入京建制线"]
+  - role_id: "chief_eunuch"
+    name: "大宦官"
+    source_npc_id: "wang_chengen"
+    perspective: "暗线"
+    core_play: "宫廷操控、结党固权，以厂卫情报和内廷近侍身份影响国运。"
+    playstyle_tags: ["暗线权谋", "情报操控", "宫廷政治", "忠义两难"]
+    difficulty: "expert"
+    teaser_goal: "在忠君、保权与自保之间周旋，决定宦官集团是殉国、夺权还是被清算。"
+    branch_hints: ["东厂线", "夺权线", "忠义殉节线", "外朝制衡线"]
+
+validation_hints:
+  minimum_meaningful_choices: 16
+  npc_conflict_required: true
+  pressure_has_counterplay: true
+
+board_regions:
+  jingshi:
+    name: 京师
+    category: geographic
+    info_layers:
+      - id: court
+        label: 朝堂
+        initial_known: "魏党余孽仍占要职，六部尚书多为旧臣观望。新君即位未满一年，朝中分为拥立派、中立派与潜伏魏党三股势力。"
+        initial_fog:
+          hint: "有传言朝中有人暗通外敌，但消息来源不可靠"
+          unlock_condition:
+            dimension: 情报
+            threshold: 5
+          unlock_text: null
+      - id: personnel
+        label: 人物
+        initial_known: "温体仁（礼部侍郎·善揣圣意·立场不明）、王承恩（司礼监秉笔·忠心可用）、孙承宗（兵部尚书·老成持重·力主边防）"
+        initial_fog:
+          hint: "温体仁与魏党余脉是否有未断的联系？"
+          unlock_condition:
+            dimension: 情报
+            threshold: 4
+          unlock_text: null
+      - id: finance
+        label: 财务
+        initial_known: "国库存银不足百万两，辽饷、赈灾、京营三项开支已无法同时满足。户部建议加派三饷，但民间已有怨言。"
+        initial_fog:
+          hint: "魏忠贤抄家所得银两去向不明"
+          unlock_condition:
+            dimension: 情报
+            threshold: 5
+          unlock_text: null
+      - id: palace
+        label: 宫禁
+        initial_known: "司礼监运转正常，厂卫系统因魏忠贤倒台后士气低落但架构尚存。"
+        initial_fog:
+          hint: "宫中是否仍有魏忠贤埋下的暗桩？"
+          unlock_condition:
+            dimension: 情报
+            threshold: 6
+          unlock_text: null
+      - id: intelligence
+        label: 情报网
+        initial_known: "锦衣卫指挥使骆养性可用，东厂眼线因清洗而残缺。京师内外消息传递依赖驿站和厂卫两条线。"
+        initial_fog:
+          hint: "厂卫内部有人在向外泄露宫中决策"
+          unlock_condition:
+            dimension: 情报
+            threshold: 7
+          unlock_text: null
+      - id: public
+        label: 民间
+        initial_known: "京师物价尚稳，百姓对新君有期待。但坊间流言渐多，有关辽东败报和流贼四起的消息在茶馆传播。"
+        initial_fog:
+          hint: "有人在散布动摇人心的谣言，背后是谁？"
+          unlock_condition:
+            action: "派锦衣卫暗查京师舆情"
+          unlock_text: null
+
+  liaodong:
+    name: 辽东
+    category: geographic
+    info_layers:
+      - id: military
+        label: 军情
+        initial_known: "宁远守军约三万，欠饷四月，关宁铁骑战力尚存但士气低迷。山海关防线基本稳固。"
+        initial_fog:
+          hint: "后金近期兵力调动频繁，具体意图不明"
+          unlock_condition:
+            dimension: 情报
+            threshold: 4
+          unlock_text: "皇太极正在沈阳以北集结八旗精锐，规模约六万。情报显示他可能计划绕道蒙古突入长城。"
+      - id: personnel
+        label: 人物
+        initial_known: "袁崇焕（辽东督师·能战善守·朝中有人弹劾其擅杀毛文龙）；吴三桂（山海关总兵·年轻骁勇·忠诚随饷银浮动）"
+        initial_fog:
+          hint: "边将之间暗中角力，各有盘算"
+          unlock_condition:
+            dimension: 情报
+            threshold: 5
+          unlock_text: null
+      - id: economy
+        label: 经济
+        initial_known: "辽饷每年需银400万两以上，占朝廷岁入近半。宁远商市原可贴补军需，但战事一紧即断。"
+        initial_fog:
+          hint: "辽东商路上有大量货物流向后金方向"
+          unlock_condition:
+            dimension: 情报
+            threshold: 5
+          unlock_text: null
+      - id: supply
+        label: 补给
+        initial_known: "粮草主要走山海关陆路，运力有限且常被马匪骚扰。海运通道理论上更快但未常设。"
+        initial_fog:
+          hint: "是否可以开辟天津至觉华岛的海运补给线？"
+          unlock_condition:
+            action: "召见知情者讨论海运可行性"
+          unlock_text: null
+      - id: terrain
+        label: 地势
+        initial_known: "宁锦防线依托城堡群和地利，正面强攻代价极大。但关外地形复杂，有多条绕行路线。"
+        initial_fog:
+          hint: "大安口、龙井关等长城薄弱段是否有人戍守？"
+          unlock_condition:
+            dimension: 情报
+            threshold: 6
+          unlock_text: null
+      - id: undercurrent
+        label: 暗线
+        initial_known: null
+        initial_fog:
+          hint: "有密报称后金在实施反间计，目标可能是袁崇焕"
+          unlock_condition:
+            dimension: 情报
+            threshold: 6
+          unlock_text: null
+
+  shanxi:
+    name: 陕西
+    category: geographic
+    info_layers:
+      - id: civil
+        label: 民情
+        initial_known: "连年旱灾，赤地千里。关中平原流民已逾十万，多聚于山谷荒地。官府赈济杯水车薪。"
+        initial_fog:
+          hint: "流民中是否已有人在暗中串联组织？"
+          unlock_condition:
+            dimension: 情报
+            threshold: 4
+          unlock_text: "流民尚无统一指挥，但有数股势力在争夺人心。一个叫高迎祥的前驿卒聚众最多，另有王嘉胤在府谷起事。"
+      - id: officials
+        label: 官员
+        initial_known: "陕西巡抚衙门多次请旨赈济，均因国库空虚被搁置。地方州县官员有的尚在勉力维持，有的已弃城而走。"
+        initial_fog:
+          hint: "当地官员是否有人中饱私囊、截留赈灾银？"
+          unlock_condition:
+            action: "派人暗查陕西吏治"
+          unlock_text: null
+      - id: garrison
+        label: 驻军
+        initial_known: "陕西卫所兵空额严重，在册三万实际能调动不足万人。边军精锐已被调往辽东。"
+        initial_fog:
+          hint: "若流贼坐大，陕西驻军是否足以剿灭？"
+          unlock_condition:
+            dimension: 兵力
+            threshold: 5
+          unlock_text: null
+      - id: relief
+        label: 赈灾
+        initial_known: "上月已批复赈灾银十万两，但尚未抵达。旱灾持续恶化，预计明年春荒更甚。"
+        initial_fog:
+          hint: "赈灾银走到哪一站了？沿途是否安全？"
+          unlock_condition:
+            action: "追查赈灾银运送进度"
+          unlock_text: null
+      - id: undercurrent
+        label: 隐患
+        initial_known: "有奏报称流民中开始流传'十八子当主天下'的谶语，指向李姓。"
+        initial_fog:
+          hint: "流民领袖背后是否有读书人在出谋划策？"
+          unlock_condition:
+            dimension: 情报
+            threshold: 5
+          unlock_text: null
+      - id: geography
+        label: 地势
+        initial_known: "潼关扼守东西咽喉，函谷关控制入中原通道。陕北黄土沟壑利于游击，不利正规军围剿。"
+        initial_fog:
+          hint: "流贼若突破潼关，中原门户大开"
+          unlock_condition:
+            dimension: 情报
+            threshold: 5
+          unlock_text: null
+
+  jiangnan:
+    name: 江南
+    category: geographic
+    info_layers:
+      - id: overview
+        label: 概况
+        initial_known: "天下赋税半出江南。苏杭繁华，商贾云集。但朝廷对江南的直接掌控力随距离递减。"
+        initial_fog:
+          hint: "江南地方势力与朝廷的实际关系如何？"
+          unlock_condition:
+            action: "派人或召见相关官员了解江南实况"
+          unlock_text: null
+      - id: salt
+        label: 盐商
+        initial_known: "两淮盐税是朝廷重要收入来源。盐商富可敌国，与地方官员关系盘根错节。"
+        initial_fog:
+          hint: "盐商在朝中有哪些靠山？是否可以借力？"
+          unlock_condition:
+            dimension: 情报
+            threshold: 5
+          unlock_text: null
+      - id: tax
+        label: 税赋
+        initial_known: "江南赋税占全国近三成，但年年拖欠。地方以灾报为由截留税银的情况越来越多。"
+        initial_fog:
+          hint: "实际税收与上报数字之间差距有多大？"
+          unlock_condition:
+            dimension: 财政
+            threshold: 5
+          unlock_text: null
+      - id: literati
+        label: 士林
+        initial_known: "东林书院与复社影响力极大。江南士子掌握舆论，弹劾奏章多出其手。对魏党深恶痛绝，但也排斥异己。"
+        initial_fog:
+          hint: "东林中坚人物对新君持什么态度？是否可以为己所用？"
+          unlock_condition:
+            action: "召见江南籍官员或派人打探"
+          unlock_text: null
+      - id: transport
+        label: 漕运
+        initial_known: "大运河是南粮北运的命脉。漕运总督掌控南北物资流通，权势极大。近年漕船老化，运力下降。"
+        initial_fog:
+          hint: "漕运系统是否存在中饱私囊、以次充好的弊端？"
+          unlock_condition:
+            dimension: 情报
+            threshold: 6
+          unlock_text: null
+      - id: coastal
+        label: 海防
+        initial_known: "东南沿海偶有海盗出没。福建郑芝龙据海为王，名义受招安但实际独立。"
+        initial_fog:
+          hint: "郑芝龙的海上势力实际控制范围有多大？能否纳为己用？"
+          unlock_condition:
+            dimension: 情报
+            threshold: 7
+          unlock_text: null

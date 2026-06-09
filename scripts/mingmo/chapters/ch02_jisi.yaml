@@ -1,0 +1,21 @@
+chapter_id: ch02_jisi
+id: ch02_jisi
+name: 己巳京畿
+title: 己巳京畿
+game_date_start: "1629年冬"
+opening_narration: |
+  北风卷地，关外烽烟忽从蓟门以北一路压来。后金避实击虚，绕关而进，
+  京师百里内仓皇闭市，百姓扶老携幼涌向城门。朝中争论昼夜不绝：
+  是固守待援，还是出师截击？一着失当，便是社稷蒙尘。
+initial_scene:
+  location: 平台
+  context: 军报称敌骑逼近通州，京营与边军调度冲突。
+  present_npcs: [袁崇焕, 孙承宗, 皇太极]
+advance_conditions:
+  min_turns: 2
+  max_turns: 7
+  acceleration:
+    enabled: true
+    turns_reduction: 1
+    key_decisions: [D_jisi_defense, D_supply_priority]
+key_decisions: [D_jisi_defense, D_supply_priority]

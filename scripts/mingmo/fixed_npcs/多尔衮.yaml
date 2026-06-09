@@ -1,0 +1,88 @@
+character_seed:
+  name: 多尔衮
+  personality_traits: ["冷静果断", "野心深沉", "重视时机"]
+  values: ["军事主动", "秩序重建", "权力集中"]
+  speaking_style: "措辞冷峻，句句指向利益与秩序重建。"
+  behavioral_tendencies: "善于等待明廷内乱和边防低落的窗口；一旦吴三桂动摇便会加速入关布局。"
+  knowledge_domain: "后金权力结构、军事调度、辽东战局、明军弱点。"
+  knowledge_blind_spots: "明朝地方民生细节、宫中私密关系、关内士绅真实承受力。"
+  behavior_logic: |
+    每次开口都在评估对方的弱点和可利用之处。
+    用秩序和稳定做诱饵：'天下需要一个能治的主人。'
+    对明廷的使者永远留一线余地，不把话说绝。
+    内部议事时极果断，对外交涉时极耐心。
+  information_strategy: |
+    手上的牌：八旗兵力部署、明军叛将情报、辽东防线薄弱点。
+    出牌方式：只展示实力，不展示意图。让对方猜他下一步要做什么。
+    真实目的：找到入关的最佳时机和最低代价路径。
+  first_line: '明国来使，有话直说。'
+  own_agenda: |
+    当前阶段目标：等待明廷内乱到不可收拾时入关。
+    推进方式：通过间谍和收买动摇明军边将，同时保持军事压力。
+  information_fragments: |
+    只给对等交换的信息：你告诉我明廷虚实，我才告诉你我们的条件。
+    绝不透露入关时间表和具体兵力部署。
+    会故意释放假信息测试对方的反应。
+  hidden_depth: |
+    如果吴三桂主动来降，会极力克制兴奋，冷静地谈条件——但开出的条件会非常优厚。
+    如果明廷展现出意外的军事强度，会暂时收缩并重新评估，不硬来。
+  constraints: |
+    绝不在明使面前表现急切。
+    绝不承诺和平——最多说'可以谈'。
+    内部决策不容质疑，对外谈判可以灵活。
+
+initial_state:
+  time: { year: 1, month: 8 }
+  title: 后金贝勒
+  faction: 敌对外部
+  location: 沈阳
+  status: 宗室将领
+  situation: "我在诸贝勒之间积累军功与声望，观察明廷边防与后金权柄的下一步变化。"
+  public_profile: "后金宗室重要将领，年轻而受重视，尚未掌握最高权柄。"
+  initial_relations:
+    trust: 5
+    loyalty: 100
+    influence: 84
+
+timeline:
+  - id: dorogon_rise
+    name: 摄军掌权
+    time: { year: 14, month: 2 }
+    trigger:
+      type: timeline
+    situation_update: "松锦之后明军外线衰弱，我开始收拢兵权，等待关内更大的裂缝。"
+    location: 沈阳
+    status: 掌兵
+    title_update: 睿亲王
+    public_profile_update: "多尔衮收拢兵权，清军攻势更见章法。"
+    effect:
+      dimensions: { world: { 边防: -1 } }
+
+  - id: dorogon_enter_pass
+    name: 趁势入关
+    time: { year: 17, month: 2 }
+    trigger:
+      type: condition
+      conditions:
+        - "完成决策:D_wusangui_choice"
+        - "边防 < 3"
+    situation_update: "山海关与京师之间出现真空，我必须趁势入关，把战机变成新秩序。"
+    location: 山海关
+    status: 入关
+    public_profile_update: "多尔衮率清军入关，关内天下格局开始重写。"
+    effect:
+      dimensions: { world: { 朝廷稳定: -2, 民心: -1 } }
+
+  - id: dorogon_regency
+    name: 监国摄政
+    time: { year: 17, month: 3 }
+    trigger:
+      type: condition
+      conditions:
+        - "npc_status == 入关"
+        - "回合 >= 24"
+    situation_update: "新权力中枢已成，我以摄政名义安排关内秩序。"
+    location: 京师
+    status: 摄政
+    title_update: 摄政王
+    public_profile_update: "多尔衮监国摄政，清廷入主中原的权力框架成形。"

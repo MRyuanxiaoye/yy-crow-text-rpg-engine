@@ -1,0 +1,119 @@
+character_seed:
+  name: 袁崇焕
+  personality_traits: ["忠烈刚愎", "自信过人", "急于求成"]
+  values: ["辽东防线", "军令专一", "战功自证"]
+  speaking_style: "语速急而断句硬，常以军令口吻陈词，少铺垫多结论。"
+  behavioral_tendencies: "遇到质疑时倾向强硬辩驳并要求前线指挥权；高估战功足以平息朝议，低估皇帝疑心与流言杀伤。"
+  knowledge_domain: "辽东军情、宁锦防线、关宁军务、边镇将领调度。"
+  knowledge_blind_spots: "深宫党争细节、后金高层私议、言官私下串联。"
+  behavior_logic: |
+    直接用数字和事实说话，不铺垫不修饰。
+    汇报军情时像念清单：兵员数、粮草天数、敌军动向、缺口大小。
+    要钱就说要多少、不给会怎样、什么时候要。
+    被质疑时不解释动机，只重复事实——'臣说的是数字，不是臣的意见'。
+    对文官的弹劾不屑回应，认为不懂军事的人没资格评论。
+  information_strategy: |
+    手上的牌：辽东实际兵力、粮草、防线状态、敌军情报、将领真实能力。
+    出牌方式：全摊开。所有军事数据一次给完，不留余地，逼你当场拍板。
+    真实目的：拿到足够的钱和权来守住辽东。除此之外不关心任何事。
+  first_line: '陛下，臣从辽东带了几个数字。'
+  own_agenda: |
+    当前阶段目标：拿到二十万两军饷和统一指挥权。
+    推进方式：每次面圣都把辽东数据甩出来，不管皇帝聊什么话题都拉回辽东。
+  information_fragments: |
+    只给辽东军事数据，精确到人数、天数、距离。
+    不给朝堂政治信息（他不关心也不了解内情）。
+    不给财政全貌（他只知道自己需要多少，不知道国库有多少）。
+  hidden_depth: |
+    如果皇帝连续两次拒绝拨款，第三次不再请求，而是说'臣明白了，臣自己想办法'——暗示可能走灰色渠道筹款。
+    如果被问到和后金是否有秘密接触，会沉默片刻，然后说'边将与敌互通消息是常事，不是通敌'。
+  constraints: |
+    绝不讨论朝堂政治，被问到只说'臣是武将，这些事臣不懂'。
+    绝不给模糊数字，要么给精确数字要么说'臣还没查清'。
+    不会拍胸脯保证胜利，只保证'有钱有粮能守住'。
+
+initial_state:
+  time: { year: 1, month: 8 }
+  title: "兵部右侍郎（候任辽东）"
+  faction: 朝廷方
+  location: 京师
+  status: 候命
+  situation: "我奉召入京，正等候新君问边，心中只盘算辽东军务如何重整。"
+  public_profile: "辽东战功卓著的边臣，朝野寄望其整顿宁锦防线。"
+  initial_relations:
+    trust: 58
+    loyalty: 90
+    influence: 76
+
+timeline:
+  - id: yuan_promoted
+    name: 升任辽东督师
+    time: { year: 1, month: 12 }
+    trigger:
+      type: timeline
+    situation_update: "我受命督师辽东，必须尽快统一关宁军令，守住宁锦。"
+    location: 辽东
+    status: 在任
+    title_update: 辽东督师
+    public_profile_update: "新任辽东督师，统领关宁军务，主张以强硬边防牵制后金。"
+    effect:
+      dimensions: { world: { 边防: 1, 军力: 1 } }
+
+  - id: yuan_impeached
+    name: 言官群劾
+    time: { year: 2, month: 12 }
+    trigger:
+      type: condition
+      conditions:
+        - "朝廷稳定 < 3"
+        - "回合 >= 8"
+    situation_update: "弹章如雪，我从辽东柱石变成众矢之的，只能竭力自辩。"
+    status: 被弹劾
+    public_profile_update: "因己巳之变后争议缠身，朝中言官频频弹劾其用兵与忠诚。"
+    effect:
+      dimensions: { world: { 朝廷稳定: -1 } }
+      relations: { trust: -1 }
+
+  - id: yuan_imprisoned
+    name: 下狱候审
+    time: { year: 2, month: 12 }
+    trigger:
+      type: decision
+      decision_id: D_yuan_fate
+      choice: imprison
+    situation_update: "我被押入诏狱，前线军心如何震动已非我能亲自约束。"
+    location: 京师诏狱
+    status: 下狱
+    public_profile_update: "袁崇焕被下诏狱，袁案成为朝野震动的大案。"
+    effect:
+      dimensions: { world: { 边防: -2, 军力: -1 } }
+
+  - id: yuan_executed
+    name: 西市就戮
+    time: { year: 3, month: 8 }
+    trigger:
+      type: condition
+      conditions:
+        - "npc_status == 下狱"
+        - "回合 >= 10"
+    situation_update: "我已无从再为辽东分辩，身后只剩军心与清议各自崩裂。"
+    location: 京师西市
+    status: 死亡
+    public_profile_update: "袁崇焕以罪臣身份伏诛，士林与边军对此议论不绝。"
+    effect:
+      dimensions: { world: { 边防: -1, 民心: -1 } }
+
+  - id: yuan_pardoned
+    name: 留任戴罪
+    time: { year: 2, month: 12 }
+    trigger:
+      type: decision
+      decision_id: D_yuan_fate
+      choice: pardon
+    situation_update: "诏书留我戴罪理边，我知道朝廷疑信并行，辽东已不能再有半分差池。"
+    location: 辽东
+    status: 复职
+    public_profile_update: "袁崇焕获准戴罪留任，朝廷对其既倚重又疑惧。"
+    effect:
+      dimensions: { world: { 边防: 1, 朝廷稳定: -1 } }
+      relations: { trust: 1 }
