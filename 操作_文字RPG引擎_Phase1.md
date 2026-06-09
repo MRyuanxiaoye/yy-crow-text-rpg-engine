@@ -400,21 +400,21 @@ free_input: true
 ### .env 配置模板
 ```env
 # DeepSeek
-DEEPSEEK_API_KEY=sk-515edc5dd5754bc78efd4b20217c3837
+DEEPSEEK_API_KEY=<your-deepseek-api-key>
 DEEPSEEK_BASE_URL=https://api.deepseek.com
 DEEPSEEK_MODEL=deepseek-chat
 
 # 旁白Bot（飞书应用凭证）
-NARRATOR_APP_ID=cli_a977204f24f09bdd
-NARRATOR_APP_SECRET=II2blmWIZ1GBD3rR1dVyHGbDNZgl6zb3
+NARRATOR_APP_ID=<your-narrator-app-id>
+NARRATOR_APP_SECRET=<your-narrator-app-secret>
 
 # NPC Bot（飞书应用凭证）
-NPC_APP_ID=cli_a9772162eefc5bd7
-NPC_APP_SECRET=qSEayf4u0zORnu799NG2rhMjVWXJyDK4
+NPC_APP_ID=<your-npc-app-id>
+NPC_APP_SECRET=<your-npc-app-secret>
 
 # 飞书事件验证（旁白Bot的加密策略，部署前在飞书后台设置）
-FEISHU_ENCRYPT_KEY=ZO8KRAsJvMIfwutKXVvN3ggdRZ3DPrnm
-FEISHU_VERIFICATION_TOKEN=ZBbl0dXG9YJXpsuoXAUcleGoNaLspnit
+FEISHU_ENCRYPT_KEY=<your-feishu-encrypt-key>
+FEISHU_VERIFICATION_TOKEN=<your-feishu-verification-token>
 
 # 游戏群
 GAME_CHAT_ID=（部署后创建群再填）
